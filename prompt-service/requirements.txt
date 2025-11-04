@@ -1,0 +1,10 @@
+Flask==2.3.2
+flask-cors==4.0.0
+redis==4.5.5
+opentelemetry-api==1.18.0
+opentelemetry-sdk==1.18.0
+opentelemetry-exporter-otlp==1.18.0
+opentelemetry-instrumentation-flask==0.39b0
+opentelemetry-instrumentation-requests==0.39b0
+openai==0.27.8
+python-dotenv==1.0.0
