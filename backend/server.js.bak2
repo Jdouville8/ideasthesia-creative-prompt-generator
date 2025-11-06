@@ -221,6 +221,8 @@ app.post('/api/prompts/generate', authenticateToken, async (req, res) => {
     
     const prompt = promptServiceResponse.data;
     
+    // Cache the result
+    await redis.setex(cacheKey, 3600, JSON.stringify(prompt)); // Cache for 1 hour
     
     // Store in database
     await logPromptGeneration(userId, genres, prompt);

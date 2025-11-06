@@ -315,6 +315,13 @@ def generate():
             else:
                 prompt = generate_prompt_from_template(genres)
             
+            # Cache the result (with some randomness to ensure variety)
+            if random.random() > 0.5:  # 50% chance to cache
+                redis_client.setex(
+                    cache_key_hash,
+                    3600,  # 1 hour TTL
+                    json.dumps(prompt)
+                )
             
             # Track metrics
             span.set_attribute("prompt.title", prompt['title'])
