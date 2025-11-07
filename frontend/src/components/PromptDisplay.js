@@ -16,9 +16,9 @@ const PromptDisplay = ({ prompt, genres }) => {
         ))}
       </div>
       
-      <p className="text-gray-700 leading-relaxed mb-6">
+      <div className="text-gray-700 leading-relaxed mb-6 whitespace-pre-line">
         {prompt.content}
-      </p>
+      </div>
       
       <div className="grid grid-cols-2 gap-4 mb-6">
         <div className="bg-gray-50 p-3 rounded">

@@ -185,56 +185,99 @@ def generate_prompt_from_template(genres):
     }
 
 def generate_prompt_with_ai(genres):
-    """Generate a writing prompt using OpenAI API"""
+    """Generate creative writing exercises focused on skill-building"""
+    import random
+    
     genre_string = ", ".join(genres)
     
-    system_prompt = """You are a creative writing prompt generator. Create engaging, detailed writing prompts that inspire writers. Each prompt should:
-    1. Set up an intriguing scenario
-    2. Introduce a compelling conflict or mystery
-    3. Hint at stakes or consequences
-    4. Leave room for creative interpretation
-    5. Be suitable for the specified genres"""
+    exercise_types = [
+        {
+            "name": "Idea Generation Drill",
+            "prompt": f"Create an idea generation exercise for {genre_string} writing. Format: Exercise Name, Goal (one sentence), Exercise instructions, Example progression showing 3 examples from simple to unusual, Pro Tip. NO character names. Focus on the TECHNIQUE of generating ideas."
+        },
+        {
+            "name": "World-Building Technique",
+            "prompt": f"Create a world-building exercise for {genre_string}. Format: Technique Name, Goal, Exercise instructions (250 words), Rules (what to do/avoid), Example approach (2-3 sentences showing METHOD not full example). NO character names. Teach the CRAFT."
+        },
+        {
+            "name": "Structural Exercise",
+            "prompt": f"Create a structural writing exercise for {genre_string}. Format: Structure Technique Name, Goal about story structure, The Exercise explaining the technique, Rules with structural constraints, Application instructions (500 words). Focus on STRUCTURE and TECHNIQUE not plot."
+        },
+        {
+            "name": "Description Technique",
+            "prompt": f"Create a descriptive writing exercise for {genre_string}. Format: Description Technique name, Goal, The Challenge explaining the technique, Requirements (technical requirements, word count), Forbidden (generic words/habits to avoid). Teach CRAFT of description."
+        },
+        {
+            "name": "Dialogue Craft",
+            "prompt": f"Create a dialogue craft exercise for {genre_string}. Format: Dialogue Technique Name, Goal, The Exercise (HOW to write dialogue), What Dialogue Should Reveal (3 elements), Technical Rules (2 dialogue rules). Focus on dialogue CRAFT."
+        },
+        {
+            "name": "Theme & Subtext",
+            "prompt": f"Create a theme/subtext exercise for {genre_string}. Format: Exercise Name, Goal, The Challenge (how to embed theme without preaching), Approach (2-3 techniques), Practice instructions (300-500 words). Teach TECHNIQUE of thematic writing."
+        },
+        {
+            "name": "Genre Convention Study",
+            "prompt": f"Create a genre study exercise for {genre_string}. Format: Genre Exercise Name, Goal, The Exercise (analyzing/working with genre conventions), Genre Mashup Option (combining with another genre), What You'll Learn (2 skills). Focus on GENRE as craft tool."
+        },
+        {
+            "name": "Reverse Engineering",
+            "prompt": f"Create a reverse engineering exercise for {genre_string}. Format: Analysis Exercise Name, Goal, The Exercise (pick a story, analyze 4 elements to outline), Then (what to do with analysis), What You'll Learn. Teach ANALYTICAL skills."
+        },
+        {
+            "name": "Constraint Creativity",
+            "prompt": f"Create a constraint-based exercise for {genre_string}. Format: Constraint Exercise Name, Goal, The Constraint (specific limitation and why useful), How to Apply It (instructions for 500-750 words), What This Teaches. Focus on constraints as LEARNING TOOLS."
+        },
+        {
+            "name": "Revision Technique",
+            "prompt": f"Create a revision exercise for {genre_string}. Format: Revision Technique Name, Goal, The Exercise (specific revision approach step-by-step), What to Look For (3 red flags), The Fix (how to revise each). Teach REVISION as craft skill."
+        }
+    ]
     
-    user_prompt = f"""Create a writing prompt that combines these genres: {genre_string}
-    
-    The prompt should be 2-3 sentences long and spark creativity.
-    Also suggest a compelling title for the story."""
+    exercise_type = random.choice(exercise_types)
     
     try:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt}
+                {"role": "system", "content": "You are a creative writing instructor teaching techniques and skills. Create exercises that are instructional and teach craft, not story prompts. Avoid character names and specific scenarios. Focus on teaching HOW to write."},
+                {"role": "user", "content": exercise_type["prompt"]}
             ],
-            temperature=0.9,
-            max_tokens=200
+            temperature=0.85,
+            max_tokens=700,
+            presence_penalty=0.7,
+            frequency_penalty=0.7
         )
         
         content = response.choices[0].message.content
         
-        # Parse response (assuming format: "Title: XXX\n\nPrompt: YYY")
+        title = None
         lines = content.split('\n')
-        title = lines[0].replace('Title:', '').strip() if lines else 'Untitled Prompt'
-        prompt_text = '\n'.join(lines[2:]).replace('Prompt:', '').strip() if len(lines) > 2 else content
+        for line in lines[:5]:
+            line = line.strip()
+            if line.startswith('**') or line.startswith('#'):
+                title = line.replace('**', '').replace('#', '').strip()
+                if title and len(title) > 3 and len(title) < 100:
+                    break
         
-        # Get random word count and difficulty
-        word_count, difficulty = get_random_word_count_and_difficulty()        
+        if not title:
+            title = f"{exercise_type['name']}: {genre_string}"
+        
+        word_count, difficulty = get_random_word_count_and_difficulty()
+        
         return {
             'title': title,
-            'content': prompt_text,
+            'content': content,
             'genres': genres,
             'difficulty': difficulty,
             'wordCount': word_count,
+            'exerciseType': exercise_type['name'],
             'tips': generate_writing_tips(genres),
             'timestamp': datetime.utcnow().isoformat(),
             'ai_generated': True
         }
     except Exception as e:
         logger.error(f"AI generation failed: {str(e)}")
-        # Fallback to template generation
         return generate_prompt_from_template(genres)
-
 def generate_writing_tips(genres):
     """Generate writing tips based on selected genres"""
     tips = []
