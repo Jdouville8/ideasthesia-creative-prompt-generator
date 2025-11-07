@@ -184,52 +184,214 @@ def generate_prompt_from_template(genres):
         'timestamp': datetime.utcnow().isoformat()
     }
 
+
 def generate_prompt_with_ai(genres):
     """Generate creative writing exercises focused on skill-building"""
     import random
+    import re
     
     genre_string = ", ".join(genres)
     
     exercise_types = [
         {
             "name": "Idea Generation Drill",
-            "prompt": f"Create an idea generation exercise for {genre_string} writing. Format: Exercise Name, Goal (one sentence), Exercise instructions, Example progression showing 3 examples from simple to unusual, Pro Tip. NO character names. Focus on the TECHNIQUE of generating ideas."
+            "prompt": f"""Create an idea generation exercise for {genre_string} writing. 
+
+Format:
+**Exercise Name**: [Creative name]
+**Goal**: [One sentence - what skill this develops]
+**Exercise**: [Clear instructions explaining the drill]
+**Example Progression**: [Show 3 examples from simple to unusual]
+**Pro Tip**: [One sentence advice]
+
+At the end, add a section:
+**Writing Tips for This Exercise**:
+- [Tip 1 specific to this exercise]
+- [Tip 2 specific to this exercise]  
+- [Tip 3 specific to this exercise]
+
+NO character names. Focus on the TECHNIQUE of generating ideas."""
         },
         {
             "name": "World-Building Technique",
-            "prompt": f"Create a world-building exercise for {genre_string}. Format: Technique Name, Goal, Exercise instructions (250 words), Rules (what to do/avoid), Example approach (2-3 sentences showing METHOD not full example). NO character names. Teach the CRAFT."
+            "prompt": f"""Create a world-building exercise for {genre_string}.
+
+Format:
+**Technique Name**: [Name]
+**Goal**: [What this teaches]
+**Exercise**: [Instructions for the technique, 200-250 words]
+**Rules**:
+- [What to do]
+- [What to avoid]
+**Example Approach**: [2-3 sentences showing the METHOD]
+
+At the end, add:
+**Writing Tips for This Exercise**:
+- [Tip 1 specific to world-building technique]
+- [Tip 2 specific to world-building technique]
+- [Tip 3 specific to world-building technique]
+
+NO character names. Teach the CRAFT."""
         },
         {
             "name": "Structural Exercise",
-            "prompt": f"Create a structural writing exercise for {genre_string}. Format: Structure Technique Name, Goal about story structure, The Exercise explaining the technique, Rules with structural constraints, Application instructions (500 words). Focus on STRUCTURE and TECHNIQUE not plot."
+            "prompt": f"""Create a structural writing exercise for {genre_string}.
+
+Format:
+**Structure Technique**: [Name]
+**Goal**: [What this teaches about story structure]
+**The Exercise**: [Explain the structural technique]
+**Rules**: [Structural constraints and what they teach]
+**Application**: [How to apply in 500 words]
+
+At the end, add:
+**Writing Tips for This Exercise**:
+- [Tip 1 about story structure]
+- [Tip 2 about story structure]
+- [Tip 3 about story structure]
+
+Focus on STRUCTURE and TECHNIQUE."""
         },
         {
             "name": "Description Technique",
-            "prompt": f"Create a descriptive writing exercise for {genre_string}. Format: Description Technique name, Goal, The Challenge explaining the technique, Requirements (technical requirements, word count), Forbidden (generic words/habits to avoid). Teach CRAFT of description."
+            "prompt": f"""Create a descriptive writing exercise for {genre_string}.
+
+Format:
+**Description Technique**: [Name]
+**Goal**: [What skill this builds]
+**The Challenge**: [Explain the descriptive technique]
+**Requirements**:
+- [Technical requirement 1]
+- [Technical requirement 2]
+- [Word count: 300-400 words]
+**Forbidden**: [Generic words/habits to avoid]
+
+At the end, add:
+**Writing Tips for This Exercise**:
+- [Tip 1 about descriptive writing]
+- [Tip 2 about descriptive writing]
+- [Tip 3 about descriptive writing]
+
+Teach CRAFT of description."""
         },
         {
             "name": "Dialogue Craft",
-            "prompt": f"Create a dialogue craft exercise for {genre_string}. Format: Dialogue Technique Name, Goal, The Exercise (HOW to write dialogue), What Dialogue Should Reveal (3 elements), Technical Rules (2 dialogue rules). Focus on dialogue CRAFT."
+            "prompt": f"""Create a dialogue craft exercise for {genre_string}.
+
+Format:
+**Dialogue Technique**: [Name]
+**Goal**: [What this teaches about dialogue]
+**The Exercise**: [Instructions on HOW to write dialogue]
+**What Dialogue Should Reveal**: [3 elements]
+**Technical Rules**: [2 dialogue rules]
+
+At the end, add:
+**Writing Tips for This Exercise**:
+- [Tip 1 about dialogue craft]
+- [Tip 2 about dialogue craft]
+- [Tip 3 about dialogue craft]
+
+Focus on dialogue CRAFT."""
         },
         {
             "name": "Theme & Subtext",
-            "prompt": f"Create a theme/subtext exercise for {genre_string}. Format: Exercise Name, Goal, The Challenge (how to embed theme without preaching), Approach (2-3 techniques), Practice instructions (300-500 words). Teach TECHNIQUE of thematic writing."
+            "prompt": f"""Create a theme/subtext exercise for {genre_string}.
+
+Format:
+**Exercise Name**: [Name]
+**Goal**: [What this teaches about theme]
+**The Challenge**: [How to embed theme without preaching]
+**Approach**: [2-3 techniques for showing theme]
+**Practice**: [How to practice this skill in 300-500 words]
+
+At the end, add:
+**Writing Tips for This Exercise**:
+- [Tip 1 about theme and subtext]
+- [Tip 2 about theme and subtext]
+- [Tip 3 about theme and subtext]
+
+Teach TECHNIQUE of thematic writing."""
         },
         {
             "name": "Genre Convention Study",
-            "prompt": f"Create a genre study exercise for {genre_string}. Format: Genre Exercise Name, Goal, The Exercise (analyzing/working with genre conventions), Genre Mashup Option (combining with another genre), What You'll Learn (2 skills). Focus on GENRE as craft tool."
+            "prompt": f"""Create a genre study exercise for {genre_string}.
+
+Format:
+**Genre Exercise**: [Name]
+**Goal**: [What this teaches about genre craft]
+**The Exercise**: [Instructions for working with genre conventions]
+**Genre Mashup Option**: [How to combine {genre_string} with another genre]
+**What You'll Learn**: [2 skills]
+
+At the end, add:
+**Writing Tips for This Exercise**:
+- [Tip 1 about genre conventions]
+- [Tip 2 about genre conventions]
+- [Tip 3 about genre conventions]
+
+Focus on GENRE as craft tool."""
         },
         {
             "name": "Reverse Engineering",
-            "prompt": f"Create a reverse engineering exercise for {genre_string}. Format: Analysis Exercise Name, Goal, The Exercise (pick a story, analyze 4 elements to outline), Then (what to do with analysis), What You'll Learn. Teach ANALYTICAL skills."
+            "prompt": f"""Create a reverse engineering exercise for {genre_string}.
+
+Format:
+**Analysis Exercise**: [Name]
+**Goal**: [What this teaches about story construction]
+**The Exercise**: Pick a {genre_string} story you admire. Analyze:
+- [Element 1 to outline]
+- [Element 2 to outline]
+- [Element 3 to outline]
+- [Element 4 to outline]
+**Then**: [What to do with this analysis]
+**What You'll Learn**: [The technique this reveals]
+
+At the end, add:
+**Writing Tips for This Exercise**:
+- [Tip 1 about analyzing stories]
+- [Tip 2 about analyzing stories]
+- [Tip 3 about analyzing stories]
+
+Teach ANALYTICAL skills."""
         },
         {
             "name": "Constraint Creativity",
-            "prompt": f"Create a constraint-based exercise for {genre_string}. Format: Constraint Exercise Name, Goal, The Constraint (specific limitation and why useful), How to Apply It (instructions for 500-750 words), What This Teaches. Focus on constraints as LEARNING TOOLS."
+            "prompt": f"""Create a constraint-based exercise for {genre_string}.
+
+Format:
+**Constraint Exercise**: [Name]
+**Goal**: [What this constraint teaches]
+**The Constraint**: [Specific limitation and why it's useful]
+**How to Apply It**: [Instructions for using this constraint in 500-750 words]
+**What This Teaches**: [The craft skill forced by this constraint]
+
+At the end, add:
+**Writing Tips for This Exercise**:
+- [Tip 1 about working with constraints]
+- [Tip 2 about working with constraints]
+- [Tip 3 about working with constraints]
+
+Focus on constraints as LEARNING TOOLS."""
         },
         {
             "name": "Revision Technique",
-            "prompt": f"Create a revision exercise for {genre_string}. Format: Revision Technique Name, Goal, The Exercise (specific revision approach step-by-step), What to Look For (3 red flags), The Fix (how to revise each). Teach REVISION as craft skill."
+            "prompt": f"""Create a revision exercise for {genre_string}.
+
+Format:
+**Revision Technique**: [Name]
+**Goal**: [What editing skill this builds]
+**The Exercise**: Take any draft and apply this technique:
+[Specific revision approach step-by-step]
+**What to Look For**: [3 red flags]
+**The Fix**: [How to revise each issue]
+
+At the end, add:
+**Writing Tips for This Exercise**:
+- [Tip 1 about revision and editing]
+- [Tip 2 about revision and editing]
+- [Tip 3 about revision and editing]
+
+Teach REVISION as craft skill."""
         }
     ]
     
@@ -239,17 +401,18 @@ def generate_prompt_with_ai(genres):
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a creative writing instructor teaching techniques and skills. Create exercises that are instructional and teach craft, not story prompts. Avoid character names and specific scenarios. Focus on teaching HOW to write."},
+                {"role": "system", "content": "You are a creative writing instructor teaching techniques and skills. Create exercises that are instructional and teach craft, not story prompts. Avoid character names and specific scenarios. Focus on teaching HOW to write. Always include 3 specific writing tips tailored to the exercise."},
                 {"role": "user", "content": exercise_type["prompt"]}
             ],
             temperature=0.85,
-            max_tokens=700,
+            max_tokens=800,
             presence_penalty=0.7,
             frequency_penalty=0.7
         )
         
         content = response.choices[0].message.content
         
+        # Extract title
         title = None
         lines = content.split('\n')
         for line in lines[:5]:
@@ -262,22 +425,53 @@ def generate_prompt_with_ai(genres):
         if not title:
             title = f"{exercise_type['name']}: {genre_string}"
         
+        # Extract writing tips from the content
+        tips = []
+        content_without_tips = content
+        
+        # Find the "Writing Tips" section
+        tip_section_match = re.search(r'\*\*Writing Tips.*?\*\*:?\s*\n(.*?)(?=\n\n|\Z)', content, re.DOTALL | re.IGNORECASE)
+        
+        if tip_section_match:
+            tip_section = tip_section_match.group(1)
+            
+            # Extract individual tips
+            for line in tip_section.split('\n'):
+                line = line.strip()
+                if line.startswith('-') or line.startswith('•') or line.startswith('*'):
+                    tip = re.sub(r'^[-•*]\s*', '', line).strip()
+                    if tip and len(tip) > 10:
+                        tips.append(tip)
+            
+            # Remove the entire "Writing Tips" section from content
+            content_without_tips = re.sub(r'\*\*Writing Tips.*?\*\*:?\s*\n.*?(?=\n\n|\Z)', '', content, flags=re.DOTALL | re.IGNORECASE)
+            content_without_tips = content_without_tips.strip()
+        
+        # Fallback to generic tips if none found
+        if not tips:
+            tips = [
+                f"Practice this exercise regularly to build muscle memory for {exercise_type['name'].lower()}",
+                "Don't edit while doing the exercise - focus on exploration first",
+                "Review your work after completing the exercise to identify patterns"
+            ]
+        
         word_count, difficulty = get_random_word_count_and_difficulty()
         
         return {
             'title': title,
-            'content': content,
+            'content': content_without_tips,  # Content WITHOUT the tips section
             'genres': genres,
             'difficulty': difficulty,
             'wordCount': word_count,
             'exerciseType': exercise_type['name'],
-            'tips': generate_writing_tips(genres),
+            'tips': tips[:3],  # Tips extracted separately, only first 3
             'timestamp': datetime.utcnow().isoformat(),
             'ai_generated': True
         }
     except Exception as e:
         logger.error(f"AI generation failed: {str(e)}")
         return generate_prompt_from_template(genres)
+
 def generate_writing_tips(genres):
     """Generate writing tips based on selected genres"""
     tips = []
