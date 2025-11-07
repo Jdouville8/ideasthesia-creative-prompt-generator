@@ -129,14 +129,24 @@ PROMPT_TEMPLATES = {
 }
 
 def get_random_word_count_and_difficulty():
-    """Randomly select word count and corresponding difficulty"""
+    """Randomly select word count and corresponding difficulty with weighted probabilities"""
+    import random
+    
+    # Options with (word_count, difficulty, weight)
+    # Very Easy: 30%, Easy: 30%, Medium: 25%, Hard: 15%
     options = [
-        (250, 'Very Easy'),
-        (500, 'Easy'),
-        (750, 'Medium'),
-        (1000, 'Hard')
+        (250, 'Very Easy', 30),
+        (500, 'Easy', 30),
+        (750, 'Medium', 25),
+        (1000, 'Hard', 15)
     ]
-    word_count, difficulty = random.choice(options)
+    
+    # Extract choices and weights
+    choices = [(wc, diff) for wc, diff, _ in options]
+    weights = [weight for _, _, weight in options]
+    
+    # Use random.choices for weighted selection
+    word_count, difficulty = random.choices(choices, weights=weights, k=1)[0]
     return word_count, difficulty
 
 def generate_prompt_from_template(genres):
