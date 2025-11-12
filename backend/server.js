@@ -251,18 +251,20 @@ app.post('/api/sound-design/generate', authenticateToken, async (req, res) => {
   const span = tracer.startSpan('generate-sound-design-prompt');
 
   try {
-    const { synthesizer, exerciseType } = req.body;
+    const { synthesizer, exerciseType, genre } = req.body;
     const userId = req.user.id;
 
     span.setAttributes({
       'user.id': userId,
       'synthesizer': synthesizer,
-      'exercise.type': exerciseType
+      'exercise.type': exerciseType,
+      'genre': genre || 'all'
     });
 
     // Validate inputs
     const validSynths = ['Serum 2', 'Phase Plant', 'Vital'];
     const validTypes = ['technical', 'creative'];
+    const validGenres = ['all', 'dubstep', 'glitch-hop', 'dnb', 'experimental-bass', 'house', 'psytrance', 'hard-techno'];
 
     if (!synthesizer || !validSynths.includes(synthesizer)) {
       span.setStatus({ code: 2, message: 'Invalid synthesizer' });
@@ -274,10 +276,18 @@ app.post('/api/sound-design/generate', authenticateToken, async (req, res) => {
       return res.status(400).json({ error: 'Invalid exercise type' });
     }
 
+    // Validate genre (optional, defaults to 'all')
+    const selectedGenre = genre || 'all';
+    if (!validGenres.includes(selectedGenre)) {
+      span.setStatus({ code: 2, message: 'Invalid genre' });
+      return res.status(400).json({ error: 'Invalid genre selection' });
+    }
+
     // Call Python prompt generation service
     const promptServiceResponse = await axios.post('http://prompt-service:5001/generate-sound-design', {
       synthesizer,
       exerciseType,
+      genre: selectedGenre,
       userId
     }, {
       timeout: 10000,
@@ -300,7 +310,6 @@ app.post('/api/sound-design/generate', authenticateToken, async (req, res) => {
     span.end();
   }
 });
-
 // Get user's prompt history
 app.get('/api/prompts/history', authenticateToken, async (req, res) => {
   const span = tracer.startSpan('get-prompt-history');

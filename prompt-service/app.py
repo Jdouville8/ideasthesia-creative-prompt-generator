@@ -518,7 +518,7 @@ def generate_writing_tips(genres):
     
     return tips[:3]  # Return top 3 tips
 
-def generate_sound_design_prompt(synthesizer, exercise_type):
+def generate_sound_design_prompt(synthesizer, exercise_type, genre="all"):
     """Generate sound design exercises for electronic music production"""
 
     # Synthesizer capabilities and context
@@ -559,36 +559,43 @@ def generate_sound_design_prompt(synthesizer, exercise_type):
     ]
 
     # Artist tracking for even distribution (technical exercises only)
-    all_artists = [
-        # Original artists
-        'Tipper', 'Space Laces', 'Virtual Riot', 'Resonant Language', 'Culprate', 'Chris Lorenzo',
-        'Skrillex', 'Tchami', 'Simula', 'Monty', 'Alix Perez', 'Eprom', 'G Jones',
-        'Koan Sound', 'Kursa', 'Seppa', 'Vorso', 'Flying Lotus', 'Chee', 'Tsuruda', 'Mr. Carmack',
-        'Noisia', 'Sleepnet', 'Broken Note', 'Clockvice', 'Ihatemodels', 'Sara Landry',
-        'Must Die!', 'Eptic', 'Charlesthefirst', 'Esseks', 'Tiedye Ky', 'Lab Group', 'Supertask', 'Detox Unit', 'Mr. Bill',
-        # Dubstep
-        'Excision', 'Zeds Dead', 'Flux Pavilion', 'Subtronics', 'Knife Party', 'Kompany', 'Zomboy', 'Rusko',
-        'Borgore', 'Downlink', 'Noisestorm', 'Spag Heddy', 'Kayzo', 'Kode9', 'Kill the Noise', 'Kahn', 'Liquid Stranger', 'Truth',
-        # Glitch Hop / Halftime
-        'The Glitch Mob', 'Opiuo', 'Gramatik', 'Haywyre', 'CloZee', 'The Polish Ambassador', 'Beats Antique',
-        'Random Rab', 'Glacier', 'Echo Map', 'Complexive', 'rabidZen', 'Two Fingers', 'Hudson Mohawke', 'Juno What', 'ill.Gates', 'Paper Tiger',
-        # Drum and Bass
-        'Goldie', 'LTJ Bukem', 'Andy C', 'Roni Size', 'Chase & Status', 'Sub Focus', 'Netsky', 'High Contrast', 'Pendulum', 'Dimension',
-        'Hedex', 'Irah', 'Trigga', 'Bou', 'K-Motionz', 'DJ Fresh', 'Black Sun Empire', 'Calibre', 'Phantasm', 'Metrik',
-        # Experimental Bass
-        'Of The Trees', 'Mersiv', 'Khiva', 'Templo', 'Risik', 'Seven Orbits', 'Abstrakt Sonance',
-        'Duke & Jones', 'Cozway', 'Jeanie', 'Razat', 'Roxas & Klahrk', 'Toadface', 'Sapped', 'Tsimba', 'DMVU', 'SLAVE',
-        # House
-        'Daft Punk', 'Larry Heard', 'Masters At Work', 'Derrick Carter', 'DJ Sneak', 'FISHER', 'John Summit', 'Joel Corry', 'Bob Sinclar', 'CID',
-        'BLOND:ISH', 'Noizu', 'Dom Dolla', 'Malaa', 'Wax Motif', 'Kaskade', 'Marten Hørger', 'Afrojack', 'Tiësto', 'Black Coffee',
-        # Psytrance
-        'Astrix', 'Vini Vici', 'Infected Mushroom', 'Liquid Soul', 'GMS', 'Ace Ventura', 'Hallucinogen', 'Electric Universe', 'Zen Mechanics', 'Avalon',
-        'Indira Paganotto', 'Phaxe', 'Morten Granau', 'Killerwatts', 'Outsiders', 'X-Noize', 'Blastoyz', 'Relativ', 'Faders', 'Tristan',
-        # Hard Techno
-        'Charlotte De Witte', 'Kobosil', 'Rephate', 'WNDRLST', 'In Verruf', 'Madwoman', 'Nicolas Julian', 'Helena Hauff', 'Alignment', 'Kozlov',
-        'Victor Ruiz', 'Layton Giordani', 'Bart Skils', 'Sven Väth', 'Paul Kalkbrenner', 'Stephan Bodzin', 'Peggy Gou', 'HI-LO', 'Space 92', 'Eli Brown'
-    ]
-
+    # Organized by genre for filtering
+    artists_by_genre = {
+        'dubstep': [
+            'Eptic', 'Must Die!', 'Monty', 'Skrillex', 'Virtual Riot', 'Space Laces', 'Excision', 'Zeds Dead', 'Flux Pavilion', 'Subtronics', 'Knife Party', 'Kompany', 'Zomboy', 'Rusko',
+            'Borgore', 'Downlink', 'Noisestorm', 'Spag Heddy', 'Kayzo', 'Kode9', 'Kill the Noise', 'Kahn', 'Liquid Stranger', 'Truth'
+        ],
+        'glitch-hop': [
+            'Detox Unit', 'Seppa', 'Kursa', 'Koan Sound', 'Resonant Language', 'Tipper', 'The Glitch Mob', 'Opiuo', 'Gramatik', 'Haywyre', 'CloZee', 'The Polish Ambassador', 'Beats Antique',
+            'Random Rab', 'Glacier', 'Echo Map', 'Complexive', 'rabidZen', 'Two Fingers', 'Hudson Mohawke', 'Juno What', 'ill.Gates', 'Paper Tiger'
+        ],
+        'dnb': [
+            'Noisia', 'Sleepnet', 'Broken Note', 'Clockvice', 'Vorso', 'Alix Perez', 'Simula', 'Culprate', 'Goldie', 'LTJ Bukem', 'Andy C', 'Roni Size', 'Chase & Status', 'Sub Focus', 'Netsky', 'High Contrast', 'Pendulum', 'Dimension',
+            'Hedex', 'Irah', 'Trigga', 'Bou', 'K-Motionz', 'DJ Fresh', 'Black Sun Empire', 'Calibre', 'Phantasm', 'Metrik'
+        ],
+        'experimental-bass': [
+            'Mr. Bill', 'Tiedye Ky', 'Lab Group', 'Supertask', 'Esseks', 'Charlesthefirst', 'Mr. Carmack', 'Tsuruda', 'Chee', 'Flying Lotus', 'G Jones', 'Eprom', 'Of The Trees', 'Mersiv', 'Khiva', 'Templo', 'Risik', 'Seven Orbits', 'Abstrakt Sonance',
+            'Duke & Jones', 'Cozway', 'Jeanie', 'Razat', 'Roxas & Klahrk', 'Toadface', 'Sapped', 'Tsimba', 'DMVU', 'SLAVE'
+        ],
+        'house': [
+            'Tchami', 'Chris Lorenzo', 'Daft Punk', 'Larry Heard', 'Masters At Work', 'Derrick Carter', 'DJ Sneak', 'FISHER', 'John Summit', 'Joel Corry', 'Bob Sinclar', 'CID',
+            'BLOND:ISH', 'Noizu', 'Dom Dolla', 'Malaa', 'Wax Motif', 'Kaskade', 'Marten Hørger', 'Afrojack', 'Tiësto', 'Black Coffee'
+        ],
+        'psytrance': [
+            'Astrix', 'Vini Vici', 'Infected Mushroom', 'Liquid Soul', 'GMS', 'Ace Ventura', 'Hallucinogen', 'Electric Universe', 'Zen Mechanics', 'Avalon',
+            'Indira Paganotto', 'Phaxe', 'Morten Granau', 'Killerwatts', 'Outsiders', 'X-Noize', 'Blastoyz', 'Relativ', 'Faders', 'Tristan'
+        ],
+        'hard-techno': [
+            'Ihatemodels', 'Sara Landry', 'Charlotte De Witte', 'Kobosil', 'Rephate', 'WNDRLST', 'In Verruf', 'Madwoman', 'Nicolas Julian', 'Helena Hauff', 'Alignment', 'Kozlov',
+            'Victor Ruiz', 'Layton Giordani', 'Bart Skils', 'Sven Väth', 'Paul Kalkbrenner', 'Stephan Bodzin', 'Peggy Gou', 'HI-LO', 'Space 92', 'Eli Brown'
+        ]
+    }
+    
+    # Create all_artists list from all genres
+    all_artists = []
+    for genre_artists in artists_by_genre.values():
+        all_artists.extend(genre_artists)
+    
     if not USE_AI:
         # Fallback templates for sound design
         if exercise_type == 'technical':
@@ -713,26 +720,62 @@ def generate_sound_design_prompt(synthesizer, exercise_type):
 
         if exercise_type == 'technical':
             # Get next artist from rotation to ensure even distribution
+            # Filter artists by selected genre
+            logger.info(f"[GENRE DEBUG] Received genre parameter: {genre}")
+
+            if genre == 'all':
+                artist_pool = all_artists
+                redis_key = 'sound_design:artist_rotation_index:all'
+                logger.info(f"[GENRE DEBUG] Using 'all' pool with {len(artist_pool)} artists")
+            else:
+                # Map frontend genre values to backend genre keys
+                genre_map = {
+                    'dubstep': 'dubstep',
+                    'glitch-hop': 'glitch-hop',
+                    'dnb': 'dnb',
+                    'experimental-bass': 'experimental-bass',
+                    'house': 'house',
+                    'psytrance': 'psytrance',
+                    'hard-techno': 'hard-techno'
+                }
+
+                backend_genre = genre_map.get(genre, 'all')
+                logger.info(f"[GENRE DEBUG] Mapped frontend genre '{genre}' to backend genre '{backend_genre}'")
+
+                if backend_genre in artists_by_genre:
+                    artist_pool = artists_by_genre[backend_genre]
+                    logger.info(f"[GENRE DEBUG] Found genre pool for '{backend_genre}' with {len(artist_pool)} artists")
+                    logger.info(f"[GENRE DEBUG] First 5 artists: {artist_pool[:5]}")
+                else:
+                    artist_pool = all_artists
+                    logger.info(f"[GENRE DEBUG] Genre '{backend_genre}' not found, using all_artists")
+
+                redis_key = f'sound_design:artist_rotation_index:{backend_genre}'
+
+            logger.info(f"[GENRE DEBUG] Redis key: {redis_key}")
+            
             try:
-                # Get the current artist index from Redis
-                artist_index_key = 'sound_design:artist_rotation_index'
-                current_index = redis_client.get(artist_index_key)
+                # Get the current artist index from Redis for this genre
+                current_index = redis_client.get(redis_key)
 
                 if current_index is None:
                     current_index = 0
                 else:
                     current_index = int(current_index)
 
-                # Get the next artist
-                selected_artist = all_artists[current_index % len(all_artists)]
+                logger.info(f"[GENRE DEBUG] Current index from Redis: {current_index}")
+
+                # Get the next artist from the filtered pool
+                selected_artist = artist_pool[current_index % len(artist_pool)]
+                logger.info(f"[GENRE DEBUG] Selected artist: {selected_artist}")
 
                 # Increment the index for next time
-                redis_client.set(artist_index_key, (current_index + 1) % len(all_artists))
+                redis_client.set(redis_key, (current_index + 1) % len(artist_pool))
 
             except Exception as e:
                 logger.error(f"Error with artist rotation: {str(e)}")
                 # Fallback to random selection
-                selected_artist = random.choice(all_artists)
+                selected_artist = random.choice(artist_pool)
 
             system_prompt = f"""You are an expert sound designer and educator specializing in {synthesizer}.
 {synthesizer} is a {synth_info['type']} synthesizer with {synth_info['features']}.
@@ -981,15 +1024,18 @@ def generate_sound_design():
             data = request.json
             synthesizer = data.get('synthesizer', 'Serum 2')
             exercise_type = data.get('exerciseType', 'technical')
+            genre = data.get('genre', 'all')
             user_id = data.get('userId', 'anonymous')
 
             span.set_attribute("user.id", user_id)
             span.set_attribute("synthesizer", synthesizer)
             span.set_attribute("exercise.type", exercise_type)
+            span.set_attribute("genre", genre)
 
             # Validate inputs
             valid_synths = ['Serum 2', 'Phase Plant', 'Vital']
             valid_types = ['technical', 'creative']
+            valid_genres = ['all', 'dubstep', 'glitch-hop', 'dnb', 'experimental-bass', 'house', 'psytrance', 'hard-techno']
 
             if synthesizer not in valid_synths:
                 return jsonify({'error': f'Invalid synthesizer. Must be one of: {", ".join(valid_synths)}'}), 400
@@ -997,9 +1043,12 @@ def generate_sound_design():
             if exercise_type not in valid_types:
                 return jsonify({'error': f'Invalid exercise type. Must be one of: {", ".join(valid_types)}'}), 400
 
+            if genre not in valid_genres:
+                return jsonify({'error': f'Invalid genre. Must be one of: {", ".join(valid_genres)}'}), 400
+
             # Generate prompt
             span.add_event("generating-sound-design-prompt")
-            prompt = generate_sound_design_prompt(synthesizer, exercise_type)
+            prompt = generate_sound_design_prompt(synthesizer, exercise_type, genre)
 
             # Track metrics
             span.set_attribute("prompt.title", prompt['title'])

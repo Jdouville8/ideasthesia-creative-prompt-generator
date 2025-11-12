@@ -4,12 +4,12 @@ import axios from 'axios';
 // Async thunk for generating sound design prompts
 export const generateSoundDesignPrompt = createAsyncThunk(
   'soundDesign/generate',
-  async ({ synthesizer, exerciseType }, { rejectWithValue }) => {
+  async ({ synthesizer, exerciseType, genre }, { rejectWithValue }) => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/api/sound-design/generate`,
-        { synthesizer, exerciseType },
+        { synthesizer, exerciseType, genre },
         {
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -31,7 +31,8 @@ const soundDesignSlice = createSlice({
     loading: false,
     error: null,
     selectedSynthesizer: 'Serum 2',
-    selectedExerciseType: 'technical'
+    selectedExerciseType: 'technical',
+    selectedGenre: 'all'
   },
   reducers: {
     setSynthesizer: (state, action) => {
@@ -39,6 +40,9 @@ const soundDesignSlice = createSlice({
     },
     setExerciseType: (state, action) => {
       state.selectedExerciseType = action.payload;
+    },
+    setGenre: (state, action) => {
+      state.selectedGenre = action.payload;
     },
     clearPrompt: (state) => {
       state.prompt = null;
@@ -66,5 +70,5 @@ const soundDesignSlice = createSlice({
   }
 });
 
-export const { setSynthesizer, setExerciseType, clearPrompt, clearError } = soundDesignSlice.actions;
+export const { setSynthesizer, setExerciseType, setGenre, clearPrompt, clearError } = soundDesignSlice.actions;
 export default soundDesignSlice.reducer;

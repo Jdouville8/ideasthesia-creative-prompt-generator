@@ -8,7 +8,7 @@ import SoundDesignPromptDisplay from './components/SoundDesignPromptDisplay';
 import BookBackground from './components/BookBackground';
 import { loginUser, logoutUser, restoreUser } from './store/authSlice';
 import { generatePrompt } from './store/promptSlice';
-import { generateSoundDesignPrompt, setSynthesizer, setExerciseType } from './store/soundDesignSlice';
+import { generateSoundDesignPrompt, setSynthesizer, setExerciseType, setGenre } from './store/soundDesignSlice';
 import { useTheme } from './contexts/ThemeContext';
 import './App.css';
 
@@ -18,12 +18,13 @@ function App() {
   const dispatch = useDispatch();
   const { user, isAuthenticated } = useSelector((state) => state.auth);
   const { prompt, loading, error } = useSelector((state) => state.prompt);
-  const {
+   const {
     prompt: soundDesignPrompt,
     loading: soundDesignLoading,
     error: soundDesignError,
     selectedSynthesizer,
-    selectedExerciseType
+    selectedExerciseType,
+    selectedGenre
   } = useSelector((state) => state.soundDesign);
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [activeTab, setActiveTab] = useState('writing'); // 'writing' or 'sound-design'
@@ -103,16 +104,25 @@ function App() {
   };
 
   const handleGenerateSoundDesign = async () => {
+    console.log('=== GENERATE BUTTON CLICKED ===');
+    console.log('[APP DEBUG] handleGenerateSoundDesign called with state:', {
+      selectedSynthesizer,
+      selectedExerciseType,
+      selectedGenre
+    });
+
     const span = tracer.startSpan('generate-sound-design-prompt');
     span.setAttributes({
       'synthesizer': selectedSynthesizer,
-      'exercise.type': selectedExerciseType
+      'exercise.type': selectedExerciseType,
+      'genre': selectedGenre
     });
 
     try {
       dispatch(generateSoundDesignPrompt({
         synthesizer: selectedSynthesizer,
-        exerciseType: selectedExerciseType
+        exerciseType: selectedExerciseType,
+        genre: selectedGenre
       }));
     } finally {
       span.end();
@@ -124,7 +134,14 @@ function App() {
   };
 
   const handleExerciseTypeChange = (type) => {
+    console.log('Exercise type changed to:', type);
+    console.log('Current selectedGenre:', selectedGenre);
     dispatch(setExerciseType(type));
+  };
+
+  const handleGenreChange = (genre) => {
+    console.log('Genre changed to:', genre);
+    dispatch(setGenre(genre));
   };
 
   return (
@@ -344,13 +361,18 @@ function App() {
                     onSynthesizerChange={handleSynthesizerChange}
                     selectedExerciseType={selectedExerciseType}
                     onExerciseTypeChange={handleExerciseTypeChange}
+                    selectedGenre={selectedGenre}
+                    onGenreChange={handleGenreChange}
                   />
                 </div>
 
                 {/* Generate Button */}
                 <div className="flex justify-center">
                   <button
-                    onClick={handleGenerateSoundDesign}
+                    onClick={() => {
+                    console.log('BUTTON CLICK EVENT FIRED');
+                    handleGenerateSoundDesign();
+                  }}
                     disabled={soundDesignLoading}
                     className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 ${
                       soundDesignLoading
