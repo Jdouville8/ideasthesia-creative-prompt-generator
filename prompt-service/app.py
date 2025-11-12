@@ -591,37 +591,50 @@ def generate_sound_design_prompt(synthesizer, exercise_type):
         else:  # creative/abstract
             templates = {
                 'Serum 2': [
-                    "**Seed Exercise**: Initialize your patch. Move one parameter at a time until something makes you lean forward. Stop. What caught your attention? Follow only that feeling. | Remember: There is no wrong answer.",
-                    "**Translation**: Close your eyes and feel your breath. Is it quick? Deep? Jagged? Open Serum and create a sound with that exact rhythm and texture. Let the sound breathe with you. | Stop when the energy shifts.",
-                    "**Limitation**: Use only one oscillator and one filter. No effects. What can you discover in this small space? Work until you find something that surprises you. | Begin from not knowing.",
-                    "**Accident**: Randomize all wavetable positions and modulation routings. Don't look at what changed. Adjust only by ear until something unexpected emerges. Trust the accident. | Follow what excites you.",
-                    "**Awareness**: What's the quietest sound in your room right now? Create a patch that captures its texture, rhythm, or feeling. Not a recreation—a translation. | Work until it feels complete.",
-                    "**Play**: Make a sound that would make a 4-year-old giggle. Don't overthink it. What makes your breath catch? | Time: 5 minutes or until you smile.",
-                    "**Context Shift**: Design a bass sound while imagining you're underwater. How would water change the movement, the pressure, the time? Let the sound tell you what it wants to become. | Open-ended.",
-                    "**Synesthesia**: What does the color purple taste like? Create that as a sound. There's no correct answer—only your answer. | Stop when the energy dissipates.",
-                    "**Discovery**: Cycle through wavetables slowly. Stop when one makes you curious. Build an entire patch from that single waveform. Follow the feeling of leaning forward. | Work intuitively."
+                    "**Translation**: The razor rain on Mars in Red Rising—glass shards falling from the sky. Create the sound of that descent. Not the impact, the falling. How does danger sound when it's beautiful? | Work until it cuts.",
+                    "**Context Shift**: In The Left Hand of Darkness, winter never ends. Design a bass that exists in permanent twilight, where warmth is a memory and cold has texture. What does glacial time sound like? | Begin from not knowing.",
+                    "**Synesthesia**: The ansible from Ender's Game—instantaneous communication across light-years. Create the sound of a message that arrives before it's sent. Backwards causality as tone. | Stop when time breaks.",
+                    "**Awareness**: In Station Eleven, the traveling symphony performs Shakespeare after civilization ends. Design the sound of culture persisting through collapse. Fragile but unbreakable. | Trust what emerges.",
+                    "**Accident**: The reality overlay in The Peripheral—two timelines bleeding through each other. Randomize your routing. Let two patches exist in the same space. Don't resolve the paradox. | Follow what excites you.",
+                    "**Limitation**: Neuromancer's cyberspace, built from pure data. Use only one oscillator and one filter. What can consciousness sound like when stripped to its simplest form? | Begin from not knowing.",
+                    "**Discovery**: The Goldfinch painting—how Theo sees the world through it. Cycle through wavetables until one makes you feel something you can't name. Build from that unnameable thing. | Work intuitively.",
+                    "**Play**: In The Hitchhiker's Guide, Earth is demolished for a hyperspace bypass. Create the bureaucratic sound of a planet being deleted. Absurd. Mundane. Catastrophic. | 5 minutes or until you laugh.",
+                    "**Context Shift**: The kites in The Kite Runner—freedom and guilt tangled together. Design a lead that climbs and falls. What does redemption sound like when it's too late? | Work until it aches.",
+                    "**Translation**: Borne by Vandermeer—a biotech creature that defies categories. Design something that shouldn't be alive but is. What does impossible biology sound like? | Follow what excites you.",
+                    "**Awareness**: Dark Matter's box—every choice creates a new universe. Create a tone. Then modulate it. Each tweak is a branching world. Which path do you follow? | Trust what emerges.",
+                    "**Synesthesia**: The Illustrated Man's living tattoos—stories written on skin. Build a patch where every parameter tells a different tale. What does illustrated sound look like? | Work intuitively.",
+                    "**Discovery**: Recursion's memory chairs—you can relive any moment. Cycle through presets until one feels like a memory you never had. Build from false nostalgia. | Begin from not knowing."
                 ],
                 'Phase Plant': [
-                    "**Seed Exercise**: Add oscillators one at a time. After each one, listen. When something sparks excitement, stop adding. Shape only what excites you. | Remember: Follow what wants to emerge.",
-                    "**Translation**: Touch the surface you're sitting on. Rough? Smooth? Cold? Warm? Create a sound with that exact texture. Let your fingers guide your ears. | Open-ended exploration.",
-                    "**Limitation**: Build a complete patch using only snapin effects—no oscillators. What can effects become when they are the source? Embrace the constraint. | Trust the process.",
-                    "**Accident**: Route modulation sources randomly to six different destinations. Don't undo anything. Work with what appeared. Let the accident guide you. | Stop when it feels right.",
-                    "**Awareness**: Listen to the room tone around you for 30 seconds. Eyes closed. Then open Phase Plant and recreate not the sound, but the feeling of listening. | Work until the energy shifts.",
-                    "**Play**: Design a sound that a plant would make if it could laugh. Completely unserious. What makes you smile while making it? | 5 minutes maximum.",
-                    "**Context Shift**: Create a lead sound while pretending this is the last sound you'll ever make. What becomes important? What falls away? | Work until complete.",
-                    "**Synesthesia**: What does 3 AM feel like? Not look like—feel like. Translate that feeling into modular routing and snapin chains. | Follow your intuition.",
-                    "**Discovery**: Choose three random snapins. Chain them. Now find five different sounds using only those three. Notice what makes your breath catch. | Explore freely."
+                    "**Awareness**: The split cities in The City & the City—two places occupying the same space, each unseeing the other. Build a bass where two layers coexist but never touch. Parallel sonic realities. | Work until the energy shifts.",
+                    "**Translation**: Allomancy in Mistborn—burning metals to push and pull on the world. Create sound that feels like telekinesis. Physical force at a distance. Choose snapins that push or pull. | Stop when it feels right.",
+                    "**Limitation**: The Memory of Empire—a diplomat in a foreign court where every word is strategy. Build using only snapin effects, no oscillators. Politics as pure modulation. | Trust the process.",
+                    "**Accident**: The ansible in A Memory Called Empire—cultural memory downloaded directly into the mind. Route modulation randomly to six destinations. Don't undo. Let foreign memories guide you. | Follow what excites you.",
+                    "**Discovery**: The Three-Body Problem's chaotic eras—unpredictable swings between stability and disaster. Chain three random snapins. Find five sounds. Notice which ones feel like home, which like catastrophe. | Explore freely.",
+                    "**Context Shift**: In Fahrenheit 451, books are burned and firemen start fires. Create a lead that's both destroyer and preserver. What burns? What survives? | Work until complete.",
+                    "**Synesthesia**: The Nightingale's two sisters—one brave, one invisible, both essential. Design drums with two voices. One urgent, one patient. Both necessary. | Follow your intuition.",
+                    "**Play**: The House in the Cerulean Sea—magical children in bureaucratic care. Design something that shouldn't work but does. Rules broken gently. | 5 minutes maximum.",
+                    "**Translation**: The spice melange in Dune—awareness expanding across time. Design a texture that seems to know what's coming. Prescient sound. | Open-ended exploration.",
+                    "**Context Shift**: Annihilation's Area X—where nature rewrites the rules. Layer oscillators that mutate each other. Let biology become architecture. What does transformation sound like? | Stop when it feels right.",
+                    "**Awareness**: Upgrade's gene-editing plague—becoming more and less human simultaneously. Build a patch that improves as it degrades. Enhancement as loss. | Work until the energy shifts.",
+                    "**Accident**: Wayward Pines' town—perfect prison disguised as paradise. Route modulation to hidden destinations. Surface order, underlying chaos. What looks safe but isn't? | Follow what excites you.",
+                    "**Discovery**: The Martian's survival math—solving impossible problems with duct tape and cleverness. Chain random snapins. Make them work through pure problem-solving. | Explore freely."
                 ],
                 'Vital': [
-                    "**Seed Exercise**: Load a basic wavetable. Apply one spectral warp. If it excites you, continue. If not, try another. Stop when you lean forward. | Begin from not knowing.",
-                    "**Translation**: How do shadows move across a room? Create a sound that changes at that exact pace. Let time stretch. | Work as slowly as shadows move.",
-                    "**Limitation**: Use only one LFO to modulate everything. Every parameter connects to this one source. What relationships emerge? | Embrace what appears.",
-                    "**Accident**: Enable spectral warping and drag the controls randomly. Don't look at the values. Adjust by feeling alone. Trust what surprises you. | Stop when it feels alive.",
-                    "**Awareness**: Notice the temperature of your hands right now. Create a sound that has that exact temperature. Cold is texture. Warmth is movement. | Let the sound tell you.",
-                    "**Play**: Make the sound of what purple tastes like. No overthinking. First thought, best thought. | 5 minutes of pure play.",
-                    "**Context Shift**: Design a pad while imagining you're the size of an atom. How does scale change the feeling of space and time? | Work until the perspective shifts.",
-                    "**Synesthesia**: What does rough tree bark sound like? Not a literal recreation—a sonic translation. Let texture become tone. | Open-ended exploration.",
-                    "**Discovery**: Set a filter to self-oscillate. Now treat it as an oscillator. What happens when you flip the roles? Follow the curiosity. | Explore until complete."
+                    "**Discovery**: In Cloud Atlas, six stories echo across time. Set a filter to self-oscillate. Now treat it as an oscillator. The roles flip. The echo becomes the source. | Explore until complete.",
+                    "**Translation**: The Woman in White—a figure glimpsed at midnight, impossible to forget. Create a pad that haunts the edges. Present but not quite there. Victorian dread. | Work as slowly as shadows move.",
+                    "**Limitation**: Foundation's psychohistory—predicting civilization with one equation. Use only one LFO to modulate everything. One source, infinite outcomes. What patterns emerge? | Embrace what appears.",
+                    "**Accident**: Snow Crash's metaverse—digital religion as computer virus. Enable spectral warping. Drag randomly. Don't look. Let the infection spread through sound. | Stop when it feels alive.",
+                    "**Context Shift**: The Long Way to a Small, Angry Planet—found family in deep space. Design a sound at atomic scale. When you're small enough, loneliness feels different. | Work until the perspective shifts.",
+                    "**Synesthesia**: Frankenstein's creature—assembled from pieces, alive despite impossibility. What does unnatural life sound like? Not horror. Tragedy. | Open-ended exploration.",
+                    "**Play**: American Gods—old deities working at gas stations. Design something ancient trying to be modern. Mythology in fluorescent light. Absurd displacement. | 5 minutes of pure play.",
+                    "**Awareness**: 1984's memory holes—history erased in real-time. Create a lead that forgets itself as it plays. What remains when the recording is deleted? | Let the sound tell you.",
+                    "**Translation**: The Hunger Games' mockingjay—rebellion encoded in birdsong. Spectral warp a simple tone until it carries a message it doesn't understand. | Begin from not knowing.",
+                    "**Synesthesia**: Nexus nano-drug—thoughts transmitted between minds. Create spectral movement that feels like telepathy. Direct consciousness transfer as filter sweep. | Stop when it feels alive.",
+                    "**Context Shift**: The Mountain in the Sea's octopus language—intelligence that doesn't think like us. Design at alien scale. What does non-human thought sound like? | Work until the perspective shifts.",
+                    "**Play**: Scythe's immortal world—where death is a profession. Make something beautiful about endings. Mortality as melody. | 5 minutes of pure play.",
+                    "**Awareness**: Watchmen's Dr. Manhattan—experiencing all time simultaneously. Create a lead that plays past, present, future at once. Omnitemporality as tone. | Let the sound tell you.",
+                    "**Translation**: Dorohedoro's magic smoke—it transforms what it touches. Spectral warp until identity dissolves. What does shapeshifting sound like? | Begin from not knowing."
                 ]
             }
 
@@ -673,46 +686,35 @@ Examples: "Create a Skrillex-style metallic bass", "Design a Tipper surgical bas
             user_prompt = "Create a technical sound design exercise based on one of these artists' signature sounds, with step-by-step synthesis instructions."
 
         else:  # creative/abstract
-            system_prompt = f"""You are a creative companion for sound design. Create exercises for {synthesizer} that feel like invitations to play, not instructions to follow.
+            system_prompt = f"""You are a creative companion for sound design. Create exercises for {synthesizer} that draw inspiration from literature—pulling in vivid imagery, emotional textures, and conceptual depth from novels.
 
 {synthesizer} is a {synth_info['type']} synthesizer with {synth_info['features']}.
 
+Draw inspiration from books like: Neuromancer, Dune, The Left Hand of Darkness, Station Eleven, The Three-Body Problem, Red Rising, Mistborn, The City & the City, 1984, Fahrenheit 451, Cloud Atlas, American Gods, Snow Crash, The Peripheral, Foundation, Ender's Game, The Kite Runner, The Goldfinch, Frankenstein, The Hunger Games, The Woman in White, Borne, Annihilation, Dark Matter, Upgrade, Recursion, Wayward Pines, Nexus, The Illustrated Man, The Mountain in the Sea, Scythe, The Martian, Watchmen, Dorohedoro, Howl's Moving Castle, Eragon, and similar literary works.
+
 Exercise Types (choose one):
-- **Seed Exercise**: Finding sonic moments that spark excitement, collecting sounds that make you lean forward
-- **Translation**: Translating non-sonic experiences into sound (synesthesia, textures, feelings, sensations)
-- **Limitation**: Strict creative constraints that force new discoveries (one oscillator, no effects, etc.)
-- **Accident**: Embracing randomness and working with unexpected results
-- **Awareness**: Deep listening exercises, presence, noticing what's here now
-- **Context Shift**: Changing perspective or environment (underwater, atomic scale, last sound ever, etc.)
-- **Play**: Completely unserious, childlike exploration with no right answers
-- **Synesthesia**: What does a color taste like? What does a texture sound like?
-- **Discovery**: Exploring one element deeply, following curiosity
+- **Translation**: Translating literary imagery or concepts into sound (the ansible, psychohistory, allomancy, etc.)
+- **Context Shift**: Shifting perspective through a book's lens (cyberspace, split cities, eternal winter, post-apocalypse)
+- **Limitation**: Constraints inspired by story elements (one equation, one metal, stripped consciousness)
+- **Accident**: Embracing chaos through narrative concepts (timeline bleeding, cultural memory, viral spread)
+- **Awareness**: Deep listening through a story's emotional core (collapse, persistence, displacement)
+- **Synesthesia**: Literary concepts as sonic textures (rebellion as birdsong, danger as beauty, guilt as flight)
+- **Play**: Absurdist or tragicomic concepts from stories (gods at gas stations, planets as paperwork)
+- **Discovery**: Exploring inversions and paradoxes from narratives (echo as source, forgetting as creation)
 
-Format the exercise like this:
-**[Exercise Type]**: [Main instruction as a question or invitation. Use short sentences. Create space for discovery.]
-
-[Optional brief guidance in present tense]
-
-[End with an inviting phrase]:
-- "Remember: There is no wrong answer"
-- "Follow what excites you"
-- "Begin from not knowing"
-- "Trust the accident"
-- "Let the sound tell you what it wants to become"
-- "Stop when the energy shifts"
-- "Work until it feels complete"
-- "What makes your breath catch?"
+Format like this:
+**[Exercise Type]**: [Reference a specific book/concept]. [Main instruction—concrete, evocative, strange]. [Short poetic questions or observations]. | [Inviting end phrase]
 
 IMPORTANT:
-- Remove ALL judgment language (no "good," "professional," "correct")
-- Use questions more than commands
-- Embrace incompleteness
-- Suggest varied time frames: "5 minutes," "until you smile," "open-ended," "as slowly as shadows move"
-- Focus on awareness and intuition, not technical achievement
-- Create space for the user's artistic intuition to emerge
-- Feel like play, not work"""
+- Be specific with literary references—name the book, the concept, the image
+- Make it feel literary, not generic ("razor rain on Mars" not "rain")
+- Remove ALL judgment language
+- Create emotional/conceptual depth, not just "make a spooky sound"
+- Embrace paradox and complexity from the source material
+- Suggest varied time frames: "5 minutes," "until it aches," "work until it cuts," "stop when time breaks"
+- Let the exercise feel like play, not work"""
 
-            user_prompt = "Create a creative/abstract sound design exercise that invites playful exploration and discovery. Make it feel like an invitation from a creative companion, not a technical tutorial."
+            user_prompt = "Create a creative/abstract sound design exercise inspired by a specific moment, concept, or imagery from literature. Make it evocative and strange, not generic. Reference the book by name."
 
         try:
             response = openai.ChatCompletion.create(
