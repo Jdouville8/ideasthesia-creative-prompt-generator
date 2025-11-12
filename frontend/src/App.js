@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GoogleLogin } from '@react-oauth/google';
 import { trace } from '@opentelemetry/api';
-import GenreSelector from './components/GenreSelector';
 import PromptDisplay from './components/PromptDisplay';
+import SynthSelector from './components/SynthSelector';
+import SoundDesignPromptDisplay from './components/SoundDesignPromptDisplay';
 import BookBackground from './components/BookBackground';
 import { loginUser, logoutUser, restoreUser } from './store/authSlice';
 import { generatePrompt } from './store/promptSlice';
+import { generateSoundDesignPrompt, setSynthesizer, setExerciseType } from './store/soundDesignSlice';
 import { useTheme } from './contexts/ThemeContext';
 import './App.css';
 
@@ -16,7 +18,15 @@ function App() {
   const dispatch = useDispatch();
   const { user, isAuthenticated } = useSelector((state) => state.auth);
   const { prompt, loading, error } = useSelector((state) => state.prompt);
+  const {
+    prompt: soundDesignPrompt,
+    loading: soundDesignLoading,
+    error: soundDesignError,
+    selectedSynthesizer,
+    selectedExerciseType
+  } = useSelector((state) => state.soundDesign);
   const [selectedGenres, setSelectedGenres] = useState([]);
+  const [activeTab, setActiveTab] = useState('writing'); // 'writing' or 'sound-design'
   const { isDarkMode, toggleTheme } = useTheme();
 
   // Restore user session on mount
@@ -92,6 +102,31 @@ function App() {
     });
   };
 
+  const handleGenerateSoundDesign = async () => {
+    const span = tracer.startSpan('generate-sound-design-prompt');
+    span.setAttributes({
+      'synthesizer': selectedSynthesizer,
+      'exercise.type': selectedExerciseType
+    });
+
+    try {
+      dispatch(generateSoundDesignPrompt({
+        synthesizer: selectedSynthesizer,
+        exerciseType: selectedExerciseType
+      }));
+    } finally {
+      span.end();
+    }
+  };
+
+  const handleSynthesizerChange = (synth) => {
+    dispatch(setSynthesizer(synth));
+  };
+
+  const handleExerciseTypeChange = (type) => {
+    dispatch(setExerciseType(type));
+  };
+
   return (
     <div className={`min-h-screen transition-colors duration-200 ${isDarkMode ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-gradient-to-br from-purple-50 to-indigo-100'}`}>
       {/* Header */}
@@ -100,7 +135,7 @@ function App() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <h1 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                📚 Writing Prompt Generator
+                ✨ Creative Prompt Generator
               </h1>
             </div>
 
@@ -153,15 +188,53 @@ function App() {
         </div>
       </header>
 
+      {/* Tab Navigation - Only shown when authenticated */}
+      {isAuthenticated && (
+        <div className={`border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex space-x-8">
+              <button
+                onClick={() => setActiveTab('writing')}
+                className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${
+                  activeTab === 'writing'
+                    ? isDarkMode
+                      ? 'border-indigo-500 text-indigo-400'
+                      : 'border-indigo-600 text-indigo-600'
+                    : isDarkMode
+                    ? 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                📝 Writing Prompts
+              </button>
+              <button
+                onClick={() => setActiveTab('sound-design')}
+                className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${
+                  activeTab === 'sound-design'
+                    ? isDarkMode
+                      ? 'border-purple-500 text-purple-400'
+                      : 'border-purple-600 text-purple-600'
+                    : isDarkMode
+                    ? 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                🎹 Sound Design
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {!isAuthenticated ? (
           <div className="text-center py-20">
             <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
-              Welcome to Writing Prompt Generator
+              Welcome to Creative Prompt Generator
             </h2>
             <p className={`text-xl mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Sign in with Google to start generating creative writing prompts
+              Sign in with Google to start generating creative writing prompts and sound design exercises
             </p>
             <div className="flex justify-center">
               <GoogleLogin
@@ -175,14 +248,17 @@ function App() {
           </div>
         ) : (
           <div className="space-y-8">
-            {/* Genre Selection */}
-            <div className={`relative rounded-lg shadow-xl p-8 transition-colors duration-200 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-              <BookBackground />
-              <div className="relative z-10">
-                <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
-                  Select Your Genres
-                </h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {/* Writing Prompts Tab */}
+            {activeTab === 'writing' && (
+              <>
+                {/* Genre Selection */}
+                <div className={`relative rounded-lg shadow-xl p-8 transition-colors duration-200 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                  <BookBackground />
+                  <div className="relative z-10">
+                    <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
+                      Select Your Genres
+                    </h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 {genres.map((genre) => (
                   <button
                     key={genre}
@@ -251,6 +327,74 @@ function App() {
                   </div>
                 </div>
               </div>
+            )}
+              </>
+            )}
+
+            {/* Sound Design Tab */}
+            {activeTab === 'sound-design' && (
+              <>
+                {/* Synth and Exercise Type Selection */}
+                <div className={`rounded-lg shadow-xl p-8 transition-colors duration-200 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                  <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
+                    Configure Your Exercise
+                  </h2>
+                  <SynthSelector
+                    selectedSynthesizer={selectedSynthesizer}
+                    onSynthesizerChange={handleSynthesizerChange}
+                    selectedExerciseType={selectedExerciseType}
+                    onExerciseTypeChange={handleExerciseTypeChange}
+                  />
+                </div>
+
+                {/* Generate Button */}
+                <div className="flex justify-center">
+                  <button
+                    onClick={handleGenerateSoundDesign}
+                    disabled={soundDesignLoading}
+                    className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 ${
+                      soundDesignLoading
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-lg transform hover:scale-105'
+                    }`}
+                  >
+                    {soundDesignLoading ? (
+                      <span className="flex items-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Generating...
+                      </span>
+                    ) : (
+                      '🎹 Generate Sound Design Exercise'
+                    )}
+                  </button>
+                </div>
+
+                {/* Sound Design Prompt Display */}
+                {soundDesignPrompt && (
+                  <SoundDesignPromptDisplay prompt={soundDesignPrompt} />
+                )}
+
+                {/* Error Display */}
+                {soundDesignError && (
+                  <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-lg">
+                    <div className="flex">
+                      <div className="flex-shrink-0">
+                        <svg className="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm text-red-700">
+                          {soundDesignError}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </>
             )}
           </div>
         )}

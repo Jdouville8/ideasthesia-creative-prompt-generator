@@ -4,6 +4,7 @@ import redis
 import json
 import random
 import hashlib
+import re
 from opentelemetry import trace, metrics
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 from opentelemetry.sdk.trace import TracerProvider
@@ -517,6 +518,284 @@ def generate_writing_tips(genres):
     
     return tips[:3]  # Return top 3 tips
 
+def generate_sound_design_prompt(synthesizer, exercise_type):
+    """Generate sound design exercises for electronic music production"""
+
+    # Synthesizer capabilities and context
+    synth_context = {
+        'Serum 2': {
+            'type': 'wavetable',
+            'features': 'advanced modulation matrix, visual feedback, effects rack, wavetable editor',
+            'strengths': 'complex modulation routing, visual waveform manipulation, FM synthesis'
+        },
+        'Phase Plant': {
+            'type': 'modular',
+            'features': 'snapin effects, flexible routing, multiple oscillator types',
+            'strengths': 'modular signal flow, creative effects combinations, harmonic oscillators'
+        },
+        'Vital': {
+            'type': 'wavetable',
+            'features': 'spectral warping, advanced modulation, free and open-source',
+            'strengths': 'spectral effects, stereo modulation, filter morphing'
+        }
+    }
+
+    if not USE_AI:
+        # Fallback templates for sound design
+        if exercise_type == 'technical':
+            templates = {
+                'Serum 2': [
+                    "Create a Skrillex-style metallic bass using FM modulation with detuned oscillators and harsh filtering",
+                    "Design a Virtual Riot supersized growl with heavy unison (8+ voices), movement automation, and vowel-like filter morphing",
+                    "Build a Space Laces glitchy lead with rapid wavetable morphing, chaos modulation, and pitch shifting",
+                    "Create a Tchami future house bass using filtered square waves with punchy envelope and subtle pitch modulation",
+                    "Design a G Jones experimental texture using custom wavetables, extreme modulation routing, and unconventional LFO rates",
+                    "Build a Chee-style neuro bass with complex FM routing, filter drive saturation, and rhythmic modulation",
+                    "Create a Resonant Language organic lead using evolving wavetables, subtle detuning, and harmonic filtering",
+                    "Design a Noisia reese bass with multiple detuned saw waves, precise filter automation, and subtle movement",
+                    "Build an Eptic heavy riddim bass using square wave FM, aggressive filtering, and pitch envelope modulation",
+                    "Create an Esseks wonky mid-bass with wavetable morphing, stereo movement, and creative modulation routing",
+                    "Design a Mr. Bill glitchy texture using rapid wavetable scanning, micro-modulation, and rhythmic gating",
+                    "Build a Charlesthefirst melodic bass using warm wavetables, filter movement, and subtle portamento"
+                ],
+                'Phase Plant': [
+                    "Create an Eprom heavy bass using layered oscillators with distortion snapins and parallel processing chains",
+                    "Design a Tipper-style surgical bass with modular signal flow, precise filter automation, and subtle harmonic movement",
+                    "Build a Culprate atmospheric texture combining multiple oscillator types with creative snapin effect routing",
+                    "Create a Koan Sound neurofunk bass using harmonic oscillators, modular routing, and aggressive distortion staging",
+                    "Design a Kursa experimental sound using non-standard oscillator combinations and unconventional effect chains",
+                    "Build a Seppa downtempo lead with smooth oscillator blending, modular filter routing, and spatial effects",
+                    "Create a Vorso glitch bass using granular-style oscillator manipulation and complex modulation matrices",
+                    "Design a Noisia neurofunk reese with parallel oscillator processing, multiband distortion, and stereo width control",
+                    "Build a Sleepnet heavy techno bass using analog oscillators, aggressive snapin chains, and movement automation",
+                    "Create a Broken Note industrial sound with noise oscillators, distortion routing, and modular signal flow",
+                    "Design a Clockvice neurohop bass using oscillator layering, creative snapin routing, and precise automation",
+                    "Build a Detox Unit experimental bass with unconventional oscillator combinations and chaotic modulation matrices"
+                ],
+                'Vital': [
+                    "Create an Alix Perez deep bass using spectral warping on sine waves with subtle harmonic enhancement",
+                    "Design a Flying Lotus experimental lead using spectral effects, filter morphing, and stereo width modulation",
+                    "Build a Tsuruda wonky bass with filter drive, spectral warping, and unconventional pitch modulation",
+                    "Create a Mr. Carmack trap lead using saw waves with stereo spreading, filter movement, and distortion",
+                    "Design a Monty future bass sound with bright wavetables, stereo modulation, and spectral processing",
+                    "Build a Chris Lorenzo bassline house bass using filtered saws, punchy envelopes, and subtle distortion warmth",
+                    "Create a Simula atmospheric pad using spectral warping, slow filter morphing, and wide stereo field",
+                    "Design an Ihatemodels hard techno kick-bass using sine waves with spectral distortion and pitch envelope",
+                    "Build a Sara Landry techno lead using spectral warping, stereo modulation, and filter drive",
+                    "Create a Must Die! heavy bass using spectral effects, aggressive filtering, and movement automation",
+                    "Design a Tiedye Ky melodic bass with spectral warping, filter morphing, and stereo width",
+                    "Build a Lab Group experimental sound using spectral processing, LFO modulation, and filter movement",
+                    "Create a Supertask neuro bass with spectral warping, precise filter automation, and stereo enhancement"
+                ]
+            }
+        else:  # creative/abstract
+            templates = {
+                'Serum 2': [
+                    "**Seed Exercise**: Initialize your patch. Move one parameter at a time until something makes you lean forward. Stop. What caught your attention? Follow only that feeling. | Remember: There is no wrong answer.",
+                    "**Translation**: Close your eyes and feel your breath. Is it quick? Deep? Jagged? Open Serum and create a sound with that exact rhythm and texture. Let the sound breathe with you. | Stop when the energy shifts.",
+                    "**Limitation**: Use only one oscillator and one filter. No effects. What can you discover in this small space? Work until you find something that surprises you. | Begin from not knowing.",
+                    "**Accident**: Randomize all wavetable positions and modulation routings. Don't look at what changed. Adjust only by ear until something unexpected emerges. Trust the accident. | Follow what excites you.",
+                    "**Awareness**: What's the quietest sound in your room right now? Create a patch that captures its texture, rhythm, or feeling. Not a recreation—a translation. | Work until it feels complete.",
+                    "**Play**: Make a sound that would make a 4-year-old giggle. Don't overthink it. What makes your breath catch? | Time: 5 minutes or until you smile.",
+                    "**Context Shift**: Design a bass sound while imagining you're underwater. How would water change the movement, the pressure, the time? Let the sound tell you what it wants to become. | Open-ended.",
+                    "**Synesthesia**: What does the color purple taste like? Create that as a sound. There's no correct answer—only your answer. | Stop when the energy dissipates.",
+                    "**Discovery**: Cycle through wavetables slowly. Stop when one makes you curious. Build an entire patch from that single waveform. Follow the feeling of leaning forward. | Work intuitively."
+                ],
+                'Phase Plant': [
+                    "**Seed Exercise**: Add oscillators one at a time. After each one, listen. When something sparks excitement, stop adding. Shape only what excites you. | Remember: Follow what wants to emerge.",
+                    "**Translation**: Touch the surface you're sitting on. Rough? Smooth? Cold? Warm? Create a sound with that exact texture. Let your fingers guide your ears. | Open-ended exploration.",
+                    "**Limitation**: Build a complete patch using only snapin effects—no oscillators. What can effects become when they are the source? Embrace the constraint. | Trust the process.",
+                    "**Accident**: Route modulation sources randomly to six different destinations. Don't undo anything. Work with what appeared. Let the accident guide you. | Stop when it feels right.",
+                    "**Awareness**: Listen to the room tone around you for 30 seconds. Eyes closed. Then open Phase Plant and recreate not the sound, but the feeling of listening. | Work until the energy shifts.",
+                    "**Play**: Design a sound that a plant would make if it could laugh. Completely unserious. What makes you smile while making it? | 5 minutes maximum.",
+                    "**Context Shift**: Create a lead sound while pretending this is the last sound you'll ever make. What becomes important? What falls away? | Work until complete.",
+                    "**Synesthesia**: What does 3 AM feel like? Not look like—feel like. Translate that feeling into modular routing and snapin chains. | Follow your intuition.",
+                    "**Discovery**: Choose three random snapins. Chain them. Now find five different sounds using only those three. Notice what makes your breath catch. | Explore freely."
+                ],
+                'Vital': [
+                    "**Seed Exercise**: Load a basic wavetable. Apply one spectral warp. If it excites you, continue. If not, try another. Stop when you lean forward. | Begin from not knowing.",
+                    "**Translation**: How do shadows move across a room? Create a sound that changes at that exact pace. Let time stretch. | Work as slowly as shadows move.",
+                    "**Limitation**: Use only one LFO to modulate everything. Every parameter connects to this one source. What relationships emerge? | Embrace what appears.",
+                    "**Accident**: Enable spectral warping and drag the controls randomly. Don't look at the values. Adjust by feeling alone. Trust what surprises you. | Stop when it feels alive.",
+                    "**Awareness**: Notice the temperature of your hands right now. Create a sound that has that exact temperature. Cold is texture. Warmth is movement. | Let the sound tell you.",
+                    "**Play**: Make the sound of what purple tastes like. No overthinking. First thought, best thought. | 5 minutes of pure play.",
+                    "**Context Shift**: Design a pad while imagining you're the size of an atom. How does scale change the feeling of space and time? | Work until the perspective shifts.",
+                    "**Synesthesia**: What does rough tree bark sound like? Not a literal recreation—a sonic translation. Let texture become tone. | Open-ended exploration.",
+                    "**Discovery**: Set a filter to self-oscillate. Now treat it as an oscillator. What happens when you flip the roles? Follow the curiosity. | Explore until complete."
+                ]
+            }
+
+        content = random.choice(templates.get(synthesizer, templates['Serum 2']))
+        title = f"{exercise_type.capitalize()} Sound Design Exercise"
+
+        if exercise_type == 'technical':
+            tips = [
+                "Start with initializing the synth to hear your changes clearly",
+                "Use your ears - trust what sounds good rather than just visual feedback",
+                "Save variations as you go to compare different approaches"
+            ]
+        else:  # creative/abstract
+            tips = [
+                "There is no destination, only discovery. Follow what makes you curious",
+                "If you're overthinking, you're not playing. Trust your first instinct",
+                "The 'mistake' that excites you is the exercise working",
+                "Stop when the energy shifts. Not everything needs finishing",
+                "Your ears know more than your eyes. Close the screen if it helps",
+                "If nothing excites you after 5 minutes, start completely over",
+                "The exercise is in the noticing, not the result"
+            ]
+            tips = random.sample(tips, 3)  # Pick 3 random tips
+    else:
+        # AI-generated sound design prompts
+        synth_info = synth_context.get(synthesizer, synth_context['Serum 2'])
+
+        if exercise_type == 'technical':
+            system_prompt = f"""You are an expert sound designer and educator specializing in {synthesizer}.
+{synthesizer} is a {synth_info['type']} synthesizer with {synth_info['features']}.
+It excels at {synth_info['strengths']}.
+
+Generate a technical sound design exercise based on the signature sounds of these artists:
+- Tipper, Space Laces, Virtual Riot, Resonant Language, Culprate, Chris Lorenzo
+- Skrillex, Tchami, Simula, Monty, Alix Perez, Eprom, G Jones
+- Koan Sound, Kursa, Seppa, Vorso, Flying Lotus, Chee, Tsuruda, Mr. Carmack
+- Noisia, Sleepnet, Broken Note, Clockvice, Ihatemodels, Sara Landry
+- Must Die!, Eptic, Charlesthefirst, Esseks, Tiedye Ky, Lab Group, Supertask, Detox Unit, Mr. Bill
+
+The exercise should:
+1. Reference a specific artist's signature sound style
+2. Provide step-by-step technical guidance using {synthesizer}'s specific features
+3. Detail synthesis parameters (oscillators, filters, modulation, effects)
+4. Include tips for achieving that artist's characteristic production techniques
+
+Keep instructions clear and actionable, referencing {synthesizer}'s actual interface elements.
+Examples: "Create a Skrillex-style metallic bass", "Design a Tipper surgical bass", "Build a Virtual Riot supersized growl"."""
+
+            user_prompt = "Create a technical sound design exercise based on one of these artists' signature sounds, with step-by-step synthesis instructions."
+
+        else:  # creative/abstract
+            system_prompt = f"""You are a creative companion for sound design. Create exercises for {synthesizer} that feel like invitations to play, not instructions to follow.
+
+{synthesizer} is a {synth_info['type']} synthesizer with {synth_info['features']}.
+
+Exercise Types (choose one):
+- **Seed Exercise**: Finding sonic moments that spark excitement, collecting sounds that make you lean forward
+- **Translation**: Translating non-sonic experiences into sound (synesthesia, textures, feelings, sensations)
+- **Limitation**: Strict creative constraints that force new discoveries (one oscillator, no effects, etc.)
+- **Accident**: Embracing randomness and working with unexpected results
+- **Awareness**: Deep listening exercises, presence, noticing what's here now
+- **Context Shift**: Changing perspective or environment (underwater, atomic scale, last sound ever, etc.)
+- **Play**: Completely unserious, childlike exploration with no right answers
+- **Synesthesia**: What does a color taste like? What does a texture sound like?
+- **Discovery**: Exploring one element deeply, following curiosity
+
+Format the exercise like this:
+**[Exercise Type]**: [Main instruction as a question or invitation. Use short sentences. Create space for discovery.]
+
+[Optional brief guidance in present tense]
+
+[End with an inviting phrase]:
+- "Remember: There is no wrong answer"
+- "Follow what excites you"
+- "Begin from not knowing"
+- "Trust the accident"
+- "Let the sound tell you what it wants to become"
+- "Stop when the energy shifts"
+- "Work until it feels complete"
+- "What makes your breath catch?"
+
+IMPORTANT:
+- Remove ALL judgment language (no "good," "professional," "correct")
+- Use questions more than commands
+- Embrace incompleteness
+- Suggest varied time frames: "5 minutes," "until you smile," "open-ended," "as slowly as shadows move"
+- Focus on awareness and intuition, not technical achievement
+- Create space for the user's artistic intuition to emerge
+- Feel like play, not work"""
+
+            user_prompt = "Create a creative/abstract sound design exercise that invites playful exploration and discovery. Make it feel like an invitation from a creative companion, not a technical tutorial."
+
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=1.1,
+                max_tokens=600,
+                presence_penalty=0.9,
+                frequency_penalty=0.9
+            )
+
+            content = response.choices[0].message.content.strip()
+
+            # Extract title if present
+            lines = content.split('\n')
+            if lines[0].startswith('#') or (len(lines[0]) < 60 and not lines[0].endswith('.')):
+                title = lines[0].replace('#', '').strip()
+                content = '\n'.join(lines[1:]).strip()
+            else:
+                title = f"{synthesizer} - {exercise_type.capitalize()} Exercise"
+
+            # Extract tips
+            tips = []
+            tip_section_match = re.search(r'\*\*Tips.*?\*\*:?\s*\n(.*?)(?=\n\n|\Z)', content, re.DOTALL | re.IGNORECASE)
+            if tip_section_match:
+                tip_section = tip_section_match.group(1)
+                for line in tip_section.split('\n'):
+                    line = line.strip()
+                    if line.startswith('-') or line.startswith('•') or line.startswith('*'):
+                        tip = re.sub(r'^[-•*]\s*', '', line).strip()
+                        if tip and len(tip) > 10:
+                            tips.append(tip)
+                content = re.sub(r'\*\*Tips.*?\*\*:?\s*\n.*?(?=\n\n|\Z)', '', content, flags=re.DOTALL | re.IGNORECASE).strip()
+
+            if not tips:
+                if exercise_type == 'technical':
+                    tips = [
+                        "Reference tracks can help guide your sound design decisions",
+                        "A/B test your patch in a mix context, not just solo",
+                        "Document your process - you'll learn patterns in your workflow"
+                    ]
+                else:  # creative/abstract
+                    tips = [
+                        "There is no destination, only discovery. Follow what makes you curious",
+                        "If you're overthinking, you're not playing. Trust your first instinct",
+                        "The 'mistake' that excites you is the exercise working",
+                        "Stop when the energy shifts. Not everything needs finishing",
+                        "Your ears know more than your eyes. Close the screen if it helps",
+                        "If nothing excites you after 5 minutes, start completely over",
+                        "The exercise is in the noticing, not the result"
+                    ]
+                    tips = random.sample(tips, 3)
+
+        except Exception as e:
+            logger.error(f"OpenAI API error: {str(e)}")
+            # Fallback to template
+            content = random.choice(templates.get(synthesizer, templates['Serum 2']))
+            title = f"{synthesizer} - {exercise_type.capitalize()} Exercise"
+            tips = ["Experiment with modulation sources", "Layer multiple oscillators", "Use effects creatively"]
+
+    # Determine difficulty and estimated time (matched pairs)
+    difficulty_time_pairs = [
+        ('Beginner', '15 minutes'),
+        ('Intermediate', '30 minutes'),
+        ('Expert', '45 minutes')
+    ]
+
+    difficulty, estimated_time = random.choice(difficulty_time_pairs)
+
+    return {
+        'title': title,
+        'content': content,
+        'synthesizer': synthesizer,
+        'exerciseType': exercise_type,
+        'difficulty': difficulty,
+        'estimatedTime': estimated_time,
+        'tips': tips[:3],
+        'timestamp': datetime.utcnow().isoformat()
+    }
+
 @app.route('/health', methods=['GET'])
 def health():
     """Health check endpoint"""
@@ -577,11 +856,11 @@ def feedback():
             prompt_id = data.get('promptId')
             rating = data.get('rating')
             user_id = data.get('userId', 'anonymous')
-            
+
             span.set_attribute("user.id", user_id)
             span.set_attribute("prompt.id", prompt_id)
             span.set_attribute("feedback.rating", rating)
-            
+
             # Store feedback in Redis
             feedback_key = f"feedback:{prompt_id}:{user_id}"
             redis_client.setex(
@@ -592,13 +871,54 @@ def feedback():
                     'timestamp': datetime.utcnow().isoformat()
                 })
             )
-            
+
             return jsonify({'status': 'success'}), 200
-            
+
         except Exception as e:
             span.record_exception(e)
             logger.error(f"Feedback submission failed: {str(e)}")
             return jsonify({'error': 'Failed to submit feedback'}), 500
+
+@app.route('/generate-sound-design', methods=['POST'])
+def generate_sound_design():
+    """Generate a sound design exercise based on synthesizer and exercise type"""
+    with tracer.start_as_current_span("generate-sound-design") as span:
+        try:
+            data = request.json
+            synthesizer = data.get('synthesizer', 'Serum 2')
+            exercise_type = data.get('exerciseType', 'technical')
+            user_id = data.get('userId', 'anonymous')
+
+            span.set_attribute("user.id", user_id)
+            span.set_attribute("synthesizer", synthesizer)
+            span.set_attribute("exercise.type", exercise_type)
+
+            # Validate inputs
+            valid_synths = ['Serum 2', 'Phase Plant', 'Vital']
+            valid_types = ['technical', 'creative']
+
+            if synthesizer not in valid_synths:
+                return jsonify({'error': f'Invalid synthesizer. Must be one of: {", ".join(valid_synths)}'}), 400
+
+            if exercise_type not in valid_types:
+                return jsonify({'error': f'Invalid exercise type. Must be one of: {", ".join(valid_types)}'}), 400
+
+            # Generate prompt
+            span.add_event("generating-sound-design-prompt")
+            prompt = generate_sound_design_prompt(synthesizer, exercise_type)
+
+            # Track metrics
+            span.set_attribute("prompt.title", prompt['title'])
+            span.set_attribute("prompt.difficulty", prompt['difficulty'])
+            span.set_attribute("prompt.estimated_time", prompt['estimatedTime'])
+
+            return jsonify(prompt), 200
+
+        except Exception as e:
+            span.record_exception(e)
+            span.set_status(trace.Status(trace.StatusCode.ERROR, str(e)))
+            logger.error(f"Sound design prompt generation failed: {str(e)}")
+            return jsonify({'error': 'Failed to generate sound design prompt'}), 500
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5001))

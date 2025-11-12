@@ -246,6 +246,61 @@ app.post('/api/prompts/generate', authenticateToken, async (req, res) => {
   }
 });
 
+// Generate sound design prompt
+app.post('/api/sound-design/generate', authenticateToken, async (req, res) => {
+  const span = tracer.startSpan('generate-sound-design-prompt');
+
+  try {
+    const { synthesizer, exerciseType } = req.body;
+    const userId = req.user.id;
+
+    span.setAttributes({
+      'user.id': userId,
+      'synthesizer': synthesizer,
+      'exercise.type': exerciseType
+    });
+
+    // Validate inputs
+    const validSynths = ['Serum 2', 'Phase Plant', 'Vital'];
+    const validTypes = ['technical', 'creative'];
+
+    if (!synthesizer || !validSynths.includes(synthesizer)) {
+      span.setStatus({ code: 2, message: 'Invalid synthesizer' });
+      return res.status(400).json({ error: 'Invalid synthesizer selection' });
+    }
+
+    if (!exerciseType || !validTypes.includes(exerciseType)) {
+      span.setStatus({ code: 2, message: 'Invalid exercise type' });
+      return res.status(400).json({ error: 'Invalid exercise type' });
+    }
+
+    // Call Python prompt generation service
+    const promptServiceResponse = await axios.post('http://prompt-service:5001/generate-sound-design', {
+      synthesizer,
+      exerciseType,
+      userId
+    }, {
+      timeout: 10000,
+      headers: {
+        'X-Request-ID': span.spanContext().traceId
+      }
+    });
+
+    const prompt = promptServiceResponse.data;
+
+    span.setStatus({ code: 1 });
+    res.json(prompt);
+  } catch (error) {
+    span.recordException(error);
+    span.setStatus({ code: 2, message: error.message });
+
+    logger.error('Sound design prompt generation error:', error);
+    res.status(500).json({ error: 'Failed to generate sound design prompt' });
+  } finally {
+    span.end();
+  }
+});
+
 // Get user's prompt history
 app.get('/api/prompts/history', authenticateToken, async (req, res) => {
   const span = tracer.startSpan('get-prompt-history');
