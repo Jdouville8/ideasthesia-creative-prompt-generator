@@ -150,6 +150,90 @@ def get_random_word_count_and_difficulty():
     word_count, difficulty = random.choices(choices, weights=weights, k=1)[0]
     return word_count, difficulty
 
+
+def sanitize_ai_content(content):
+    """Sanitize AI-generated content to remove garbled text and corruption"""
+    if not content:
+        return None
+    
+    import unicodedata
+    
+    # Remove control characters except newlines, carriage returns, and tabs
+    content = ''.join(char for char in content if unicodedata.category(char)[0] != 'C' or char in '\n\r\t')
+    
+    # Detect and remove corrupted lines
+    lines = content.split('\n')
+    cleaned_lines = []
+    
+    for line in lines:
+        stripped_line = line.strip()
+        
+        # Skip empty lines (but preserve them for formatting)
+        if not stripped_line:
+            cleaned_lines.append(line)
+            continue
+        
+        # Count various corruption indicators
+        hex_escapes = len(re.findall(r'\\\\x[0-9A-Fa-f]', line))
+        html_tags = len(re.findall(r'<[^>]*>', line))
+        protocols = len(re.findall(r'(file://|ftp://|hidden_params|innerHTML|getElementById)', line))
+        blocks = len(re.findall(r'[█▓▒░]', line))
+        punct_clusters = len(re.findall(r'[!@#$%^&*()+={}\[\]|\\:;"<>?,./]{5,}', line))
+        code_patterns = len(re.findall(r'(\$\(|\.entrySet\(|@@|[µ°†Δφε☐])', line))
+        
+        # Calculate corruption score
+        corruption_score = hex_escapes * 3 + html_tags * 2 + protocols * 5 + blocks * 3 + punct_clusters * 2 + code_patterns * 3
+        
+        # If corruption score is too high, skip the line
+        if len(stripped_line) > 10 and corruption_score > len(stripped_line) * 0.2:
+            logger.warning(f"[SANITIZE] Skipping corrupted line: {stripped_line[:80]}")
+            continue
+        
+        # If line starts with suspicious patterns, skip it
+        if re.match(r'^\s*[.=]="<|^\s*[{\[][@$]|^\s*\\x', line):
+            logger.warning(f"[SANITIZE] Skipping suspicious line: {stripped_line[:80]}")
+            continue
+        
+        # Clean up remaining minor issues
+        line = re.sub(r'\\\\x[0-9A-Fa-f]{2}', '', line)
+        line = re.sub(r'[█▓▒░]+', '', line)
+        line = re.sub(r'\\\\u[0-9A-Fa-f]{4}', '', line)
+        
+        cleaned_lines.append(line)
+    
+    content = '\n'.join(cleaned_lines)
+    content = re.sub(r'\n{3,}', '\n\n', content)
+    
+    # Final validation: Check if remaining content is mostly printable
+    if len(content) > 50:
+        printable_ratio = sum(1 for c in content if c.isprintable() or c in '\n\r\t') / len(content)
+        if printable_ratio < 0.85:
+            logger.error(f"[SANITIZE] Content failed printability check ({printable_ratio:.2%}), returning None")
+            return None
+
+    # Check for semantic corruption patterns (word salad, incoherent text)
+    # Look for lines with excessive capitalized words in sequence (likely corruption)
+    for line in content.split('\n'):
+        words = line.split()
+        if len(words) > 10:
+            # Count consecutive capitalized words (excluding proper sentence starts)
+            cap_sequences = []
+            current_seq = 0
+            for i, word in enumerate(words):
+                # Skip first word of sentence
+                if i > 0 and word[0].isupper() and len(word) > 1:
+                    current_seq += 1
+                else:
+                    if current_seq >= 5:  # 5+ consecutive capitalized words is suspicious
+                        cap_sequences.append(current_seq)
+                    current_seq = 0
+
+            if cap_sequences and max(cap_sequences) >= 5:
+                logger.warning(f"[SANITIZE] Detected suspicious capitalization pattern (word salad): {line[:100]}")
+                return None
+
+    return content.strip()
+
 def generate_prompt_from_template(genres):
     """Generate a writing prompt using templates when AI is not available"""
     selected_templates = []
@@ -595,12 +679,11 @@ def generate_sound_design_prompt(synthesizer, exercise_type, genre="all"):
     all_artists = []
     for genre_artists in artists_by_genre.values():
         all_artists.extend(genre_artists)
-    
-    if not USE_AI:
-        # Fallback templates for sound design
-        if exercise_type == 'technical':
-            templates = {
-                'Serum 2': [
+
+    # Define fallback templates (used both when USE_AI is False and as fallback in exception handlers)
+    if exercise_type == 'technical':
+        templates = {
+            'Serum 2': [
                     "Create a Skrillex-style metallic bass using FM modulation with detuned oscillators and harsh filtering",
                     "Design a Virtual Riot supersized growl with heavy unison (8+ voices), movement automation, and vowel-like filter morphing",
                     "Build a Space Laces glitchy lead with rapid wavetable morphing, chaos modulation, and pitch shifting",
@@ -643,10 +726,10 @@ def generate_sound_design_prompt(synthesizer, exercise_type, genre="all"):
                     "Build a Lab Group experimental sound using spectral processing, LFO modulation, and filter movement",
                     "Create a Supertask neuro bass with spectral warping, precise filter automation, and stereo enhancement"
                 ]
-            }
-        else:  # creative/abstract
-            templates = {
-                'Serum 2': [
+        }
+    else:  # creative/abstract
+        templates = {
+            'Serum 2': [
                     "**Translation**: The razor rain on Mars in Red Rising—glass shards falling from the sky. Create the sound of that descent. Not the impact, the falling. How does danger sound when it's beautiful? | Work until it cuts.",
                     "**Context Shift**: In The Left Hand of Darkness, winter never ends. Design a bass that exists in permanent twilight, where warmth is a memory and cold has texture. What does glacial time sound like? | Begin from not knowing.",
                     "**Synesthesia**: The ansible from Ender's Game—instantaneous communication across light-years. Create the sound of a message that arrives before it's sent. Backwards causality as tone. | Stop when time breaks.",
@@ -694,6 +777,8 @@ def generate_sound_design_prompt(synthesizer, exercise_type, genre="all"):
                 ]
             }
 
+
+    if not USE_AI:
         content = random.choice(templates.get(synthesizer, templates['Serum 2']))
         title = f"{exercise_type.capitalize()} Sound Design Exercise"
 
@@ -858,13 +943,27 @@ IMPORTANT:
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
-                temperature=1.1,
+                temperature=0.8,
                 max_tokens=600,
-                presence_penalty=0.9,
-                frequency_penalty=0.9
+                presence_penalty=0.3,
+                frequency_penalty=0.3
             )
 
             content = response.choices[0].message.content.strip()
+            
+            # Sanitize the AI-generated content to remove corruption
+            sanitized = sanitize_ai_content(content)
+            if not sanitized:
+                logger.error("[SANITIZE] Writing prompt content sanitization failed, using fallback")
+                raise ValueError("Sanitized writing prompt content is invalid")
+            content = sanitized
+            
+            # Sanitize the AI-generated content to remove corruption
+            sanitized = sanitize_ai_content(content)
+            if not sanitized:
+                logger.error("[SANITIZE] Content sanitization failed, using fallback template")
+                raise ValueError("Sanitized content is invalid")
+            content = sanitized
 
             # Extract title if present
             lines = content.split('\n')

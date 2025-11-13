@@ -304,7 +304,7 @@ app.post('/api/sound-design/generate', authenticateToken, async (req, res) => {
     span.recordException(error);
     span.setStatus({ code: 2, message: error.message });
 
-    logger.error('Sound design prompt generation error:', error);
+    console.error('Sound design prompt generation error:', error);
     res.status(500).json({ error: 'Failed to generate sound design prompt' });
   } finally {
     span.end();
