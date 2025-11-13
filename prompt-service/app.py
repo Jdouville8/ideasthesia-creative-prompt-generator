@@ -15,6 +15,9 @@ import logging
 import os
 from datetime import datetime
 import openai
+from midiutil import MIDIFile
+import io
+import base64
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -50,6 +53,130 @@ if openai_api_key:
 else:
     USE_AI = False
     logger.info("OpenAI API key not found, using template-based generation")
+
+# Emotion data for chord progression generation
+EMOTIONS = [
+    {
+        "emotion": "Melancholy",
+        "tonal_center": "A minor or D minor",
+        "chord_colors": ["add9", "sus2", "minor7", "bVI", "bVII"],
+        "notes_for_generation": "Use unresolved minor progressions with soft transitions. Avoid dominant resolutions. Think of fading memories or rain."
+    },
+    {
+        "emotion": "Elation",
+        "tonal_center": "C major or A Mixolydian",
+        "chord_colors": ["major7", "add9", "IV → I", "Lydian #4"],
+        "notes_for_generation": "Bright voicings, open fifths, layered synths. Capture upward momentum and emotional lift."
+    },
+    {
+        "emotion": "Resentment",
+        "tonal_center": "F minor or G Phrygian",
+        "chord_colors": ["minor6", "dim7", "bII", "chromatic movement"],
+        "notes_for_generation": "Dark tension, unresolved cadences, low mid emphasis. Use half-steps or harsh dissonance sparingly."
+    },
+    {
+        "emotion": "Awe",
+        "tonal_center": "D Lydian or E major",
+        "chord_colors": ["maj7", "sus2", "add9", "pedal bass"],
+        "notes_for_generation": "Massive spatial reverb, sustained chords, harmonic suspension. Feel of cosmic scale or vastness."
+    },
+    {
+        "emotion": "Nostalgia",
+        "tonal_center": "B♭ major or G minor",
+        "chord_colors": ["major7", "6/9", "bVII", "borrowed iv"],
+        "notes_for_generation": "Blend major and minor. Gentle filter sweeps or tape saturation evoke memory and warmth."
+    },
+    {
+        "emotion": "Serenity",
+        "tonal_center": "E major or A Lydian",
+        "chord_colors": ["maj7", "add9", "sus4"],
+        "notes_for_generation": "Open voicings, soft attack envelopes, slow movement. Prioritize harmonic stillness and consonance."
+    },
+    {
+        "emotion": "Apprehension",
+        "tonal_center": "C# Phrygian or D minor",
+        "chord_colors": ["minor2", "bII", "dim7", "suspended movement"],
+        "notes_for_generation": "Use tense intervals (minor 2nd, tritone), subtle pulsing bass, and unresolved transitions."
+    },
+    {
+        "emotion": "Defiance",
+        "tonal_center": "E minor or A Dorian",
+        "chord_colors": ["power chords", "bVII", "sus4", "modal mix"],
+        "notes_for_generation": "Use modal grit, syncopation, and strong rhythmic accents. Think proud, rebellious harmonic energy."
+    },
+    {
+        "emotion": "Longing",
+        "tonal_center": "F# minor or C# minor",
+        "chord_colors": ["add9", "maj7", "minor11", "borrowed IV"],
+        "notes_for_generation": "Open harmonic tension, melodic upper voices rising against static bass. Emotional pull without release."
+    },
+    {
+        "emotion": "Tenderness",
+        "tonal_center": "C major or F major",
+        "chord_colors": ["maj7", "6", "add9", "IV → I"],
+        "notes_for_generation": "Warm major chords, gentle voice leading, high-register pads or pianos, subtle harmonic motion."
+    },
+    {
+        "emotion": "Shame",
+        "tonal_center": "A minor or C Phrygian",
+        "chord_colors": ["minor6", "dim", "chromatic bass movement"],
+        "notes_for_generation": "Closed voicings, descending basslines, muted dynamics. Harmonic weight that feels constricted or internal."
+    },
+    {
+        "emotion": "Triumph",
+        "tonal_center": "D major or A Mixolydian",
+        "chord_colors": ["sus2", "IV → I", "maj7", "add9"],
+        "notes_for_generation": "Strong major motion with lift. Wide voicings, delayed cadences for emotional payoff."
+    },
+    {
+        "emotion": "Ambivalence",
+        "tonal_center": "E♭ major ↔ C minor",
+        "chord_colors": ["add9", "maj7", "minor7", "borrowed chords"],
+        "notes_for_generation": "Alternate between major and minor qualities. Use modulation or chords that imply two emotional directions."
+    },
+    {
+        "emotion": "Existential Dread",
+        "tonal_center": "B Locrian or D minor",
+        "chord_colors": ["bII", "dim7", "cluster chords", "drone bass"],
+        "notes_for_generation": "Low, dense textures. Sparse harmonic movement. Build unease through dissonant intervals and reverb space."
+    },
+    {
+        "emotion": "Euphoria",
+        "tonal_center": "G major or D Lydian",
+        "chord_colors": ["maj9", "sus2", "add11", "IV → I"],
+        "notes_for_generation": "Bright, open chords with rhythmic drive. Use sidechained pads, uplifting melodies, harmonic clarity."
+    },
+    {
+        "emotion": "Loneliness",
+        "tonal_center": "E minor or G minor",
+        "chord_colors": ["minor9", "add9", "bVII", "sparse voicing"],
+        "notes_for_generation": "Sparse arrangement, wide stereo image, focus on high mids. Echoing delay, unresolved movement."
+    },
+    {
+        "emotion": "Vindication",
+        "tonal_center": "B♭ major or D Mixolydian",
+        "chord_colors": ["maj7", "add9", "IV → I"],
+        "notes_for_generation": "Triumphant but restrained. Major voicings with subtle tension, rhythmic confidence."
+    },
+    {
+        "emotion": "Wonder",
+        "tonal_center": "C Lydian or A major",
+        "chord_colors": ["maj7", "add9", "#11", "pedal drones"],
+        "notes_for_generation": "Floating chords, lush upper extensions, delayed resolutions, sparkle through high-register synths."
+    },
+    {
+        "emotion": "Frustration",
+        "tonal_center": "G minor or F Phrygian",
+        "chord_colors": ["bII", "sus4", "dim", "minor7b5"],
+        "notes_for_generation": "Repeated unresolved motifs. Build-up of harmonic tension that never quite releases."
+    },
+    {
+        "emotion": "Disgust",
+        "tonal_center": "C Locrian or D♭ minor",
+        "chord_colors": ["bII", "tritone intervals", "dissonant clusters"],
+        "notes_for_generation": "Unstable intervals, aggressive harmonics, bitcrushed or detuned chords. Ugly-beautiful tension."
+    }
+]
 
 # Prompt templates for fallback generation
 PROMPT_TEMPLATES = {
@@ -246,6 +373,104 @@ def sanitize_ai_content(content):
                 return None
 
     return content.strip()
+
+def chord_name_to_midi_notes(chord_name, root_note=60):
+    """
+    Convert a chord name like 'Cmaj7' or 'Am add9' to MIDI note numbers.
+    Returns a list of MIDI note numbers.
+    """
+    # Basic chord note mappings (intervals from root)
+    chord_patterns = {
+        'major': [0, 4, 7],
+        'minor': [0, 3, 7],
+        'maj7': [0, 4, 7, 11],
+        'minor7': [0, 3, 7, 10],
+        'm7': [0, 3, 7, 10],
+        'add9': [0, 4, 7, 14],  # root, major 3rd, 5th, 9th (octave + 2)
+        'sus2': [0, 2, 7],
+        'sus4': [0, 5, 7],
+        'dim': [0, 3, 6],
+        'dim7': [0, 3, 6, 9],
+        'maj9': [0, 4, 7, 11, 14],
+        'minor9': [0, 3, 7, 10, 14],
+        'm9': [0, 3, 7, 10, 14],
+        'add11': [0, 4, 7, 17],
+        '6': [0, 4, 7, 9],
+        'minor6': [0, 3, 7, 9],
+        'm6': [0, 3, 7, 9],
+        'power': [0, 7],  # power chord (root and 5th)
+    }
+
+    # Default to major triad if pattern not found
+    return [root_note + interval for interval in chord_patterns.get(chord_name.lower(), [0, 4, 7])]
+
+def parse_chord_progression(progression_text):
+    """
+    Parse AI-generated chord progression text into a list of chord dictionaries.
+    Expected format: "Cmaj7 - Am - Fmaj7 - G"
+    Returns: [{'name': 'Cmaj7', 'root': 60, 'notes': [60, 64, 67, 71]}, ...]
+    """
+    # Note name to MIDI number mapping (C4 = 60)
+    note_map = {
+        'C': 60, 'C#': 61, 'Db': 61, 'D': 62, 'D#': 63, 'Eb': 63,
+        'E': 64, 'F': 65, 'F#': 66, 'Gb': 66, 'G': 67, 'G#': 68,
+        'Ab': 68, 'A': 69, 'A#': 70, 'Bb': 70, 'B': 71
+    }
+
+    chords = []
+    # Split by common delimiters
+    chord_names = [c.strip() for c in progression_text.replace('→', '-').split('-')]
+
+    for chord_name in chord_names:
+        if not chord_name:
+            continue
+
+        # Extract root note
+        root_name = chord_name[0].upper()
+        if len(chord_name) > 1 and chord_name[1] in ['#', 'b', '♭', '♯']:
+            root_name += 'b' if chord_name[1] in ['b', '♭'] else '#'
+            quality = chord_name[2:].strip()
+        else:
+            quality = chord_name[1:].strip()
+
+        root_midi = note_map.get(root_name, 60)
+        notes = chord_name_to_midi_notes(quality if quality else 'major', root_midi)
+
+        chords.append({
+            'name': chord_name,
+            'root': root_midi,
+            'notes': notes
+        })
+
+    return chords
+
+def create_midi_file(chord_progression, tempo=80, duration_per_chord=4.0):
+    """
+    Create a MIDI file from a chord progression.
+    Returns the MIDI file as bytes.
+    """
+    # Create MIDI file with 1 track
+    midi = MIDIFile(1)
+    track = 0
+    channel = 0
+    time = 0  # Start at beat 0
+    volume = 100
+
+    # Add track name and tempo
+    midi.addTrackName(track, time, "Chord Progression")
+    midi.addTempo(track, time, tempo)
+
+    # Add each chord
+    for chord in chord_progression:
+        for note in chord['notes']:
+            midi.addNote(track, channel, note, time, duration_per_chord, volume)
+        time += duration_per_chord
+
+    # Write to bytes buffer
+    buffer = io.BytesIO()
+    midi.writeFile(buffer)
+    buffer.seek(0)
+    return buffer.read()
 
 def generate_prompt_from_template(genres):
     """Generate a writing prompt using templates when AI is not available"""
@@ -1178,6 +1403,172 @@ def feedback():
             span.record_exception(e)
             logger.error(f"Feedback submission failed: {str(e)}")
             return jsonify({'error': 'Failed to submit feedback'}), 500
+
+def generate_chord_progression(selected_emotions):
+    """Generate a chord progression based on 1-2 selected emotions"""
+    # Get emotion data
+    emotion_data = [e for e in EMOTIONS if e['emotion'] in selected_emotions]
+
+    if not emotion_data:
+        raise ValueError("No valid emotions selected")
+
+    # Combine emotion notes for AI prompt
+    combined_notes = " ".join([e['notes_for_generation'] for e in emotion_data])
+    combined_tonal_centers = ", ".join([e['tonal_center'] for e in emotion_data])
+    combined_chord_colors = list(set([color for e in emotion_data for color in e['chord_colors']]))
+    emotion_names = " + ".join([e['emotion'] for e in emotion_data])
+
+    # Generate with AI if available
+    if USE_AI:
+        system_prompt = f"""You are a music theory expert and composer specializing in emotional harmonic progression.
+
+Create a chord progression that evokes: {emotion_names}
+
+Tonal Center(s): {combined_tonal_centers}
+Suggested Chord Colors: {', '.join(combined_chord_colors)}
+
+Guidelines:
+{combined_notes}
+
+IMPORTANT FORMAT:
+1. Start with "Progression:" followed by the chord progression (e.g., "Progression: Cmaj7 - Am7 - Fmaj7 - G")
+2. Then provide a detailed explanation of WHY this progression was created, including:
+   - How the harmonic choices reflect the emotion(s)
+   - Voice leading and tension/resolution decisions
+   - The emotional arc of the progression
+   - Specific intervals or movements that create the feeling
+
+Keep the progression 4-8 chords. Be specific about chord qualities (maj7, add9, sus2, etc)."""
+
+        user_prompt = f"Create a chord progression for: {emotion_names}"
+
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=0.7,
+                max_tokens=500
+            )
+
+            content = response.choices[0].message.content.strip()
+
+            # Parse the response to extract progression and explanation
+            lines = content.split('\n')
+            progression_line = ""
+            explanation = []
+
+            for i, line in enumerate(lines):
+                if line.startswith("Progression:"):
+                    progression_line = line.replace("Progression:", "").strip()
+                elif progression_line:  # After we found the progression, rest is explanation
+                    explanation.append(line)
+
+            if not progression_line:
+                # Try to find chord progression in first line
+                progression_line = lines[0].strip()
+                explanation = lines[1:]
+
+            explanation_text = "\n".join(explanation).strip()
+
+            # Parse chord progression
+            chords = parse_chord_progression(progression_line)
+
+            # Create MIDI file
+            midi_bytes = create_midi_file(chords, tempo=80, duration_per_chord=4.0)
+            midi_base64 = base64.b64encode(midi_bytes).decode('utf-8')
+
+            # Determine difficulty and time based on complexity
+            num_chords = len(chords)
+            if num_chords <= 4:
+                difficulty = "Beginner"
+                estimated_time = "10 minutes"
+            elif num_chords <= 6:
+                difficulty = "Intermediate"
+                estimated_time = "15 minutes"
+            else:
+                difficulty = "Advanced"
+                estimated_time = "20 minutes"
+
+            return {
+                'title': f"{emotion_names} Chord Progression",
+                'progression': progression_line,
+                'explanation': explanation_text,
+                'emotions': selected_emotions,
+                'difficulty': difficulty,
+                'estimatedTime': estimated_time,
+                'midiFile': midi_base64
+            }
+
+        except Exception as e:
+            logger.error(f"Chord progression AI generation failed: {str(e)}")
+            # Fall through to template-based generation
+
+    # Template-based fallback
+    # Simple progression based on first emotion
+    emotion = emotion_data[0]
+    tonal_center = emotion['tonal_center'].split(' or ')[0]  # Pick first option
+
+    # Extract key from tonal center
+    if 'minor' in tonal_center:
+        key_note = tonal_center.split(' ')[0]
+        progression = f"{key_note}m - {key_note}m7 - {key_note}m add9 - {key_note}m"
+    else:
+        key_note = tonal_center.split(' ')[0]
+        progression = f"{key_note} - {key_note}maj7 - {key_note} add9 - {key_note}"
+
+    chords = parse_chord_progression(progression)
+    midi_bytes = create_midi_file(chords)
+    midi_base64 = base64.b64encode(midi_bytes).decode('utf-8')
+
+    return {
+        'title': f"{emotion_names} Chord Progression",
+        'progression': progression,
+        'explanation': f"A simple {tonal_center} progression designed to evoke {emotion_names.lower()}. {emotion['notes_for_generation']}",
+        'emotions': selected_emotions,
+        'difficulty': "Beginner",
+        'estimatedTime': "10 minutes",
+        'midiFile': midi_base64
+    }
+
+@app.route('/generate-chord-progression', methods=['POST'])
+def generate_chord_progression_endpoint():
+    """Generate a chord progression based on selected emotions"""
+    with tracer.start_as_current_span("generate-chord-progression") as span:
+        try:
+            data = request.json
+            emotions = data.get('emotions', [])
+            user_id = data.get('userId', 'anonymous')
+
+            span.set_attribute("user.id", user_id)
+            span.set_attribute("emotions", str(emotions))
+
+            # Validate inputs
+            if not emotions or len(emotions) < 1 or len(emotions) > 2:
+                return jsonify({'error': 'Must select 1 or 2 emotions'}), 400
+
+            valid_emotions = [e['emotion'] for e in EMOTIONS]
+            for emotion in emotions:
+                if emotion not in valid_emotions:
+                    return jsonify({'error': f'Invalid emotion: {emotion}'}), 400
+
+            # Generate progression
+            span.add_event("generating-chord-progression")
+            result = generate_chord_progression(emotions)
+
+            # Track metrics
+            span.set_attribute("progression.title", result['title'])
+            span.set_attribute("progression.difficulty", result['difficulty'])
+
+            return jsonify(result), 200
+
+        except Exception as e:
+            span.record_exception(e)
+            span.set_status(trace.Status(trace.StatusCode.ERROR, str(e)))
+            logger.error(f"Chord progression generation failed: {str(e)}")
+            return jsonify({'error': 'Failed to generate chord progression'}), 500
 
 @app.route('/generate-sound-design', methods=['POST'])
 def generate_sound_design():

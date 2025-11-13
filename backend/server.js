@@ -310,6 +310,49 @@ app.post('/api/sound-design/generate', authenticateToken, async (req, res) => {
     span.end();
   }
 });
+
+// Generate chord progression
+app.post('/api/chord-progression/generate', async (req, res) => {
+  const span = tracer.startSpan('chord-progression-generate');
+
+  try {
+    const { emotions, userId } = req.body;
+
+    span.setAttributes({
+      'user.id': userId || 'anonymous',
+      'emotions': JSON.stringify(emotions)
+    });
+
+    // Call prompt service
+    const promptServiceResponse = await axios.post(
+      'http://prompt-service:5001/generate-chord-progression',
+      {
+        emotions,
+        userId: userId || 'anonymous'
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Request-ID': span.spanContext().traceId
+        }
+      }
+    );
+
+    const progression = promptServiceResponse.data;
+
+    span.setStatus({ code: 1 });
+    res.json(progression);
+  } catch (error) {
+    span.recordException(error);
+    span.setStatus({ code: 2, message: error.message });
+
+    console.error('Chord progression generation error:', error);
+    res.status(500).json({ error: 'Failed to generate chord progression' });
+  } finally {
+    span.end();
+  }
+});
+
 // Get user's prompt history
 app.get('/api/prompts/history', authenticateToken, async (req, res) => {
   const span = tracer.startSpan('get-prompt-history');

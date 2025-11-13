@@ -8,3 +8,4 @@ opentelemetry-instrumentation-flask==0.39b0
 opentelemetry-instrumentation-requests==0.39b0
 openai==0.27.8
 python-dotenv==1.0.0
+midiutil==1.2.1
