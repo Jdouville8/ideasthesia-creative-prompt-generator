@@ -919,22 +919,49 @@ Examples: "Create a Skrillex-style metallic bass", "Design a Tipper surgical bas
             user_prompt = f"Create a technical sound design exercise based on {selected_artist}'s signature sounds, with step-by-step synthesis instructions specific to their production style."
 
         else:  # creative/abstract
-            # Get next book from rotation to ensure even distribution
+            # Get next book from rotation to ensure even distribution (randomized, no repeats)
             try:
-                # Get the current book index from Redis
-                book_index_key = 'sound_design:book_rotation_index'
-                current_index = redis_client.get(book_index_key)
+                # Get the shuffled book order and current position from Redis
+                book_key = 'sound_design:book_rotation'
+                shuffled_key = f'{book_key}:shuffled'
+                position_key = f'{book_key}:position'
 
-                if current_index is None:
-                    current_index = 0
+                # Get current shuffled order
+                shuffled_indices = redis_client.get(shuffled_key)
+
+                if shuffled_indices is None:
+                    # First time - create a shuffled list of indices
+                    indices = list(range(len(all_books)))
+                    random.shuffle(indices)
+                    redis_client.set(shuffled_key, json.dumps(indices))
+                    redis_client.set(position_key, 0)
+                    shuffled_indices = indices
+                    current_position = 0
+                    logger.info(f"[BOOK DEBUG] Created new shuffled book order")
                 else:
-                    current_index = int(current_index)
+                    # Parse the shuffled order from JSON
+                    shuffled_indices = json.loads(shuffled_indices)
+                    current_position = int(redis_client.get(position_key) or 0)
 
-                # Get the next book
-                selected_book = all_books[current_index % len(all_books)]
+                    # If we've gone through all books, reshuffle for next cycle
+                    if current_position >= len(shuffled_indices):
+                        indices = list(range(len(all_books)))
+                        random.shuffle(indices)
+                        redis_client.set(shuffled_key, json.dumps(indices))
+                        redis_client.set(position_key, 0)
+                        shuffled_indices = indices
+                        current_position = 0
+                        logger.info(f"[BOOK DEBUG] Reshuffled book order")
 
-                # Increment the index for next time
-                redis_client.set(book_index_key, (current_index + 1) % len(all_books))
+                logger.info(f"[BOOK DEBUG] Current position in shuffled list: {current_position}")
+
+                # Get the book at the current shuffled position
+                book_index = shuffled_indices[current_position]
+                selected_book = all_books[book_index]
+                logger.info(f"[BOOK DEBUG] Selected book: {selected_book} (index {book_index})")
+
+                # Increment position for next time
+                redis_client.set(position_key, current_position + 1)
 
             except Exception as e:
                 logger.error(f"Error with book rotation: {str(e)}")
