@@ -91,7 +91,7 @@ function App() {
 
   const handleGeneratePrompt = async () => {
     if (selectedGenres.length === 0) {
-      alert('Please select at least one genre');
+      alert('Please select at least 1 genre (max 2)');
       return;
     }
 
@@ -112,8 +112,13 @@ function App() {
     setSelectedGenres(prev => {
       if (prev.includes(genre)) {
         return prev.filter(g => g !== genre);
+      } else {
+        // Max 2 genres
+        if (prev.length >= 2) {
+          return [...prev.slice(1), genre];
+        }
+        return [...prev, genre];
       }
-      return [...prev, genre];
     });
   };
 
@@ -223,7 +228,7 @@ function App() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <h1 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                ✨ Creative Prompt Generator
+                Ideasthesia Creative Prompt Generator
               </h1>
             </div>
 
@@ -358,7 +363,7 @@ function App() {
                   <BookBackground />
                   <div className="relative z-10">
                     <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
-                      Select Your Genres
+                      Select Your Genres {selectedGenres.length > 0 && `(${selectedGenres.length}/2)`}
                     </h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 {genres.map((genre) => (
@@ -512,7 +517,7 @@ function App() {
                     Generate Emotional Chord Progression
                   </h2>
                   <p className={`mb-6 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Select 1 or 2 emotions to generate a chord progression with explanation and downloadable MIDI file.
+                    Select 1 or 2 emotions to generate a chord progression with explanation of the selection and downloadable MIDI file.
                   </p>
 
                   {/* Emotion Selector */}
