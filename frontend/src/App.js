@@ -79,8 +79,10 @@ function App() {
           credential: credentialResponse.credential
         })
       });
-      
+
       const data = await response.json();
+      console.log('Login response data:', data);
+      console.log('User picture URL:', data.user?.picture);
       dispatch(loginUser(data));
     } catch (error) {
       console.error('Login failed:', error);
@@ -262,11 +264,24 @@ function App() {
                 />
               ) : (
                 <div className="flex items-center space-x-4">
-                  <img
-                    className="h-8 w-8 rounded-full"
-                    src={user?.picture}
-                    alt={user?.name}
-                  />
+                  {user?.picture ? (
+                    <img
+                      className="h-8 w-8 rounded-full"
+                      src={user.picture}
+                      alt={user?.name}
+                      referrerPolicy="no-referrer"
+                      crossOrigin="anonymous"
+                      onError={(e) => {
+                        console.log('Profile picture failed to load, using fallback');
+                        e.target.onerror = null;
+                        e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || 'User')}&background=6366f1&color=fff`;
+                      }}
+                    />
+                  ) : (
+                    <div className="h-8 w-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-semibold">
+                      {user?.name?.charAt(0)?.toUpperCase() || 'U'}
+                    </div>
+                  )}
                   <span className={isDarkMode ? 'text-gray-200' : 'text-gray-700'}>{user?.name}</span>
                   <button
                     onClick={() => dispatch(logoutUser())}
