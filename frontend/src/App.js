@@ -6,6 +6,7 @@ import PromptDisplay from './components/PromptDisplay';
 import SynthSelector from './components/SynthSelector';
 import SoundDesignPromptDisplay from './components/SoundDesignPromptDisplay';
 import ChordProgressionPromptDisplay from './components/ChordProgressionPromptDisplay';
+import DrawingPromptDisplay from './components/DrawingPromptDisplay';
 import BookBackground from './components/BookBackground';
 import { loginUser, logoutUser, restoreUser } from './store/authSlice';
 import { generatePrompt } from './store/promptSlice';
@@ -28,7 +29,7 @@ function App() {
     selectedGenre
   } = useSelector((state) => state.soundDesign);
   const [selectedGenres, setSelectedGenres] = useState([]);
-  const [activeTab, setActiveTab] = useState('writing'); // 'writing', 'sound-design', or 'chord-progression'
+  const [activeTab, setActiveTab] = useState('writing'); // 'writing', 'sound-design', 'chord-progression', or 'drawing'
   const { isDarkMode, toggleTheme } = useTheme();
 
   // Chord Progression states
@@ -42,6 +43,22 @@ function App() {
     'Apprehension', 'Defiance', 'Longing', 'Tenderness', 'Shame', 'Triumph',
     'Ambivalence', 'Existential Dread', 'Euphoria', 'Loneliness', 'Vindication',
     'Wonder', 'Frustration', 'Disgust'
+  ];
+
+  // Drawing Exercise states
+  const [selectedSkills, setSelectedSkills] = useState([]);
+  const [drawingPrompt, setDrawingPrompt] = useState(null);
+  const [drawingLoading, setDrawingLoading] = useState(false);
+  const [drawingError, setDrawingError] = useState(null);
+
+  const drawingSkills = [
+    'Observation',
+    'Proportion & Scale',
+    'Gesture',
+    'Form (3D Thinking)',
+    'Light & Shadow',
+    'Line Control & Mark-Making',
+    'Composition'
   ];
 
   // Restore user session on mount
@@ -222,6 +239,62 @@ function App() {
     }
   };
 
+  const handleSkillToggle = (skill) => {
+    setSelectedSkills(prev => {
+      if (prev.includes(skill)) {
+        return prev.filter(s => s !== skill);
+      } else {
+        // Max 2 skills
+        if (prev.length >= 2) {
+          return [...prev.slice(1), skill];
+        }
+        return [...prev, skill];
+      }
+    });
+  };
+
+  const handleGenerateDrawingExercise = async () => {
+    if (selectedSkills.length === 0) {
+      alert('Please select at least 1 skill (max 2)');
+      return;
+    }
+
+    const span = tracer.startSpan('generate-drawing-exercise');
+    span.setAttributes({
+      'skills.count': selectedSkills.length,
+      'skills.selected': selectedSkills.join(',')
+    });
+
+    setDrawingLoading(true);
+    setDrawingError(null);
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/drawing/generate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          skills: selectedSkills,
+          userId: user?.id || 'anonymous'
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate drawing exercise');
+      }
+
+      const data = await response.json();
+      setDrawingPrompt(data);
+    } catch (error) {
+      console.error('Drawing exercise generation failed:', error);
+      setDrawingError(error.message);
+    } finally {
+      setDrawingLoading(false);
+      span.end();
+    }
+  };
+
   return (
     <div className={`min-h-screen transition-colors duration-200 ${isDarkMode ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-gradient-to-br from-purple-50 to-indigo-100'}`}>
       {/* Header */}
@@ -342,6 +415,20 @@ function App() {
                 }`}
               >
                 🎼 Chord Progressions
+              </button>
+              <button
+                onClick={() => setActiveTab('drawing')}
+                className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${
+                  activeTab === 'drawing'
+                    ? isDarkMode
+                      ? 'border-pink-500 text-pink-400'
+                      : 'border-pink-600 text-pink-600'
+                    : isDarkMode
+                    ? 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                🎨 Drawing Exercises
               </button>
             </div>
           </div>
@@ -606,6 +693,96 @@ function App() {
                       <div className="ml-3">
                         <p className="text-sm text-red-700">
                           {chordProgressionError}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </>
+            )}
+
+            {/* Drawing Exercises Tab */}
+            {activeTab === 'drawing' && (
+              <>
+                <div className={`mb-8 ${isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-lg p-6`}>
+                  <h2 className={`text-2xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    Generate Drawing Exercises
+                  </h2>
+                  <p className={`mb-6 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Select 1 or 2 drawing skills to focus on. Each exercise is designed to drill and improve those specific skills.
+                  </p>
+
+                  {/* Skill Selector */}
+                  <div className="mb-6">
+                    <h3 className={`text-lg font-semibold mb-3 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      Select Skills {selectedSkills.length > 0 && `(${selectedSkills.length}/2)`}
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                      {drawingSkills.map((skill) => (
+                        <button
+                          key={skill}
+                          onClick={() => handleSkillToggle(skill)}
+                          className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                            selectedSkills.includes(skill)
+                              ? isDarkMode
+                                ? 'bg-pink-600 text-white ring-2 ring-pink-400'
+                                : 'bg-pink-500 text-white ring-2 ring-pink-300'
+                              : isDarkMode
+                              ? 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          }`}
+                        >
+                          {skill}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Generate Button */}
+                  <button
+                    onClick={handleGenerateDrawingExercise}
+                    disabled={drawingLoading || selectedSkills.length === 0}
+                    className={`w-full py-4 rounded-lg font-semibold text-lg transition-all duration-200 ${
+                      drawingLoading || selectedSkills.length === 0
+                        ? isDarkMode
+                          ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        : isDarkMode
+                        ? 'bg-pink-600 hover:bg-pink-700 text-white'
+                        : 'bg-pink-500 hover:bg-pink-600 text-white'
+                    }`}
+                  >
+                    {drawingLoading ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Generating Exercise...
+                      </span>
+                    ) : (
+                      '🎨 Generate Drawing Exercise'
+                    )}
+                  </button>
+                </div>
+
+                {/* Drawing Prompt Display */}
+                {drawingPrompt && (
+                  <DrawingPromptDisplay prompt={drawingPrompt} />
+                )}
+
+                {/* Error Display */}
+                {drawingError && (
+                  <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-lg">
+                    <div className="flex">
+                      <div className="flex-shrink-0">
+                        <svg className="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm text-red-700">
+                          {drawingError}
                         </p>
                       </div>
                     </div>

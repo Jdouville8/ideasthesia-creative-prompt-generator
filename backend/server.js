@@ -353,6 +353,47 @@ app.post('/api/chord-progression/generate', async (req, res) => {
   }
 });
 
+app.post('/api/drawing/generate', async (req, res) => {
+  const span = tracer.startSpan('drawing-exercise-generate');
+
+  try {
+    const { skills, userId } = req.body;
+
+    span.setAttributes({
+      'user.id': userId || 'anonymous',
+      'skills': JSON.stringify(skills)
+    });
+
+    // Call prompt service
+    const promptServiceResponse = await axios.post(
+      'http://prompt-service:5001/generate-drawing-exercise',
+      {
+        skills,
+        userId: userId || 'anonymous'
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Request-ID': span.spanContext().traceId
+        }
+      }
+    );
+
+    const exercise = promptServiceResponse.data;
+
+    span.setStatus({ code: 1 });
+    res.json(exercise);
+  } catch (error) {
+    span.recordException(error);
+    span.setStatus({ code: 2, message: error.message });
+
+    console.error('Drawing exercise generation error:', error);
+    res.status(500).json({ error: 'Failed to generate drawing exercise' });
+  } finally {
+    span.end();
+  }
+});
+
 // Get user's prompt history
 app.get('/api/prompts/history', authenticateToken, async (req, res) => {
   const span = tracer.startSpan('get-prompt-history');

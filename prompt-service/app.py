@@ -1440,6 +1440,231 @@ def feedback():
             logger.error(f"Feedback submission failed: {str(e)}")
             return jsonify({'error': 'Failed to submit feedback'}), 500
 
+def generate_drawing_exercise(selected_skills):
+    """Generate a drawing exercise based on 1-2 selected skills"""
+    import random
+
+    # Skills with their detailed descriptions
+    SKILL_INFO = {
+        'Observation': {
+            'description': 'The ability to actually see what\'s in front of you, not what you think is there',
+            'focus': ['seeing angles and proportions accurately', 'noticing subtle shapes', 'recognizing light/shadow patterns', 'comparing distances and negative space']
+        },
+        'Proportion & Scale': {
+            'description': 'Understanding the size relationships between elements',
+            'focus': ['measuring relative sizes', 'comparative lengths', 'scale consistency', 'spatial relationships']
+        },
+        'Gesture': {
+            'description': 'Capturing the movement, flow, and energy of a pose',
+            'focus': ['body rhythm', 'weight distribution', 'pose essence', 'dynamic flow']
+        },
+        'Form (3D Thinking)': {
+            'description': 'Turning 2D shapes into 3D objects',
+            'focus': ['visualizing volumes', 'constructing from simple shapes', 'understanding form in space', 'dimensional thinking']
+        },
+        'Light & Shadow': {
+            'description': 'Understanding how light interacts with form',
+            'focus': ['cast shadows', 'core shadows', 'highlights', 'light direction', 'value relationships']
+        },
+        'Line Control & Mark-Making': {
+            'description': 'The physical skill of drawing confident, varied lines',
+            'focus': ['line weight variation', 'confident strokes', 'clean contours', 'hatching techniques', 'mark variety']
+        },
+        'Composition': {
+            'description': 'Arranging elements for maximum visual impact',
+            'focus': ['balance', 'focal points', 'depth', 'leading lines', 'visual hierarchy']
+        }
+    }
+
+    # Time durations and difficulty mappings
+    time_options = ['30 seconds', '1 minute', '5 minutes', '10 minutes', '30 minutes']
+    difficulties = ['Beginner', 'Intermediate', 'Advanced']
+
+    # Subject matter options
+    subjects = [
+        'figure drawing', 'still life', 'landscape', 'architecture',
+        'hands', 'feet', 'faces', 'drapery', 'animals', 'vehicles',
+        'plants', 'interiors', 'portraits', 'urban sketching'
+    ]
+
+    skill_string = ' and '.join(selected_skills)
+    skill_focus_points = []
+    for skill in selected_skills:
+        skill_focus_points.extend(SKILL_INFO[skill]['focus'])
+
+    # Create skill-specific exercise prompt based on combinations
+    if USE_AI:
+        # Build comprehensive prompt for AI
+        system_prompt = f"""You are an expert drawing instructor who creates targeted skill-building exercises.
+
+Create a drawing exercise focusing on: {skill_string}
+
+{"CRITICAL: This exercise must integrate BOTH " + " AND ".join(selected_skills) + ". Design the exercise so practicing it naturally develops both skills simultaneously." if len(selected_skills) > 1 else "Focus entirely on developing " + selected_skills[0] + "."}
+
+For context:
+{chr(10).join([f"- {skill}: {SKILL_INFO[skill]['description']}" for skill in selected_skills])}
+
+Key focus areas to address:
+{chr(10).join([f"- {point}" for point in skill_focus_points[:4]])}
+
+IMPORTANT FORMAT:
+1. Start with "Exercise:" followed by a clear, specific exercise title
+2. Provide detailed instructions (150-200 words) explaining:
+   - What to draw
+   - How to approach it
+   - What to focus on specifically for the {skill_string} skill(s)
+   - Common mistakes to avoid
+3. Include a "Success Criteria" section: 3 specific things to check
+4. End with 3 practical tips for this specific exercise
+
+Be specific and actionable. Focus on the METHOD, not just the outcome."""
+
+        user_prompt = f"Create a {'skill-fusion' if len(selected_skills) > 1 else skill_string} drawing exercise"
+
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=0.8,
+                max_tokens=600
+            )
+
+            content = response.choices[0].message.content.strip()
+
+            # Extract title
+            title = f"{skill_string} Exercise"
+            lines = content.split('\n')
+            for line in lines[:3]:
+                if line.startswith('Exercise:'):
+                    title = line.replace('Exercise:', '').strip()
+                    break
+
+            # Randomly assign time and difficulty
+            estimated_time = random.choice(time_options)
+            difficulty = random.choice(difficulties)
+
+            # Extract tips
+            tips = []
+            in_tips_section = False
+            for line in content.split('\n'):
+                if 'tip' in line.lower() or 'remember' in line.lower():
+                    in_tips_section = True
+                if in_tips_section and (line.strip().startswith('-') or line.strip().startswith('•')):
+                    tip = line.strip().lstrip('-•').strip()
+                    if len(tip) > 10:
+                        tips.append(tip)
+
+            if not tips:
+                tips = [
+                    f"Focus on {skill_focus_points[0]} throughout the exercise",
+                    "Don't rush - quality of observation matters more than speed",
+                    f"Review your work specifically for {skill_string} development"
+                ]
+
+            return {
+                'title': title,
+                'content': content,
+                'skills': selected_skills,
+                'difficulty': difficulty,
+                'estimatedTime': estimated_time,
+                'tips': tips[:3],
+                'timestamp': datetime.utcnow().isoformat(),
+                'ai_generated': True
+            }
+
+        except Exception as e:
+            logger.error(f"AI drawing exercise generation failed: {str(e)}")
+            # Fall through to template fallback
+
+    # Template fallback
+    templates = [
+        {
+            'type': 'Timed Practice',
+            'content': f"""**Exercise:** {skill_string} - Rapid Studies
+
+Set a timer and create multiple quick studies focusing specifically on {skill_string}.
+
+**Instructions:**
+Complete 10-15 rapid sketches, each focusing on {', '.join([SKILL_INFO[skill]['focus'][0] for skill in selected_skills])}. {'Work to integrate both skills in each drawing - observe how they inform each other.' if len(selected_skills) > 1 else 'Focus exclusively on this single skill aspect.'}
+
+Start simple and gradually increase complexity. Don't erase - commit to each mark. The goal is building muscle memory and training your eye, not creating finished pieces.
+
+**Success Criteria:**
+- You can identify clear improvement from first to last sketch
+- {'Both skills are visible in your approach' if len(selected_skills) > 1 else 'The target skill is consistently applied'}
+- You're seeing more accurately by the end of the session
+
+**Subject Matter:** Choose from {', '.join(random.sample(subjects, 3))}
+**Recommended Time Per Study:** {random.choice(['30 seconds', '1 minute', '2 minutes'])}"""
+        },
+        {
+            'type': 'Focused Study',
+            'content': f"""**Exercise:** {skill_string} - Analytical Drawing
+
+Create a single, carefully observed drawing emphasizing {skill_string}.
+
+**Instructions:**
+Choose your subject thoughtfully. Before drawing, spend time purely observing and identifying {', '.join([point for skill in selected_skills for point in SKILL_INFO[skill]['focus'][:2]])}.
+
+Draw slowly and methodically. {'Consciously apply both ' + ' and '.join(selected_skills) + ' throughout - notice how they support each other.' if len(selected_skills) > 1 else 'Every mark should demonstrate ' + selected_skills[0] + ' awareness.'}
+
+Take breaks to step back and assess. Compare your drawing to the subject specifically for {skill_string} accuracy.
+
+**Success Criteria:**
+- Clear evidence of {skill_string} understanding in the final drawing
+- Conscious decision-making visible in your marks
+- Accurate representation of the targeted skill elements
+
+**Subject Matter:** {random.choice(subjects)}
+**Recommended Approach:** Work from large shapes to small details"""
+        },
+        {
+            'type': 'Blind Contour Variation',
+            'content': f"""**Exercise:** {skill_string} - Observation Through Restriction
+
+Use blind/modified blind contour drawing to isolate and develop {skill_string}.
+
+**Instructions:**
+Draw your subject while looking {'95% at the subject, 5% at your paper' if random.random() > 0.5 else 'only at the subject (true blind contour)'}. Focus intensely on {', '.join([SKILL_INFO[skill]['focus'][0] for skill in selected_skills])}.
+
+{'This exercise forces both ' + ' and '.join(selected_skills) + " to work together since you can't rely on correction." if len(selected_skills) > 1 else 'This restriction forces pure ' + selected_skills[0] + " without the ability to correct."}
+
+The goal isn't a "good" drawing - it's training your eye-hand connection and observation skills.
+
+**Success Criteria:**
+- You maintained focus on the subject, not your paper
+- The drawing shows understanding of {skill_string} even if distorted
+- You can identify what you learned about seeing
+
+**Subject Matter:** {random.choice(['your non-dominant hand', 'a plant', 'a shoe', 'a chair', 'your face in a mirror'])}
+**Duration:** {random.choice(['5 minutes', '10 minutes', '15 minutes'])}"""
+        }
+    ]
+
+    template = random.choice(templates)
+    estimated_time = random.choice(time_options)
+    difficulty = random.choice(difficulties)
+
+    tips = [
+        f"The exercise specifically targets {skill_string} - stay focused on these aspects",
+        f"{'Notice how ' + ' and '.join(selected_skills) + ' inform each other as you work' if len(selected_skills) > 1 else 'Every decision should reinforce ' + selected_skills[0]}",
+        "Repetition builds skill - consider doing this exercise multiple times this week"
+    ]
+
+    return {
+        'title': f"{skill_string} - {template['type']}",
+        'content': template['content'],
+        'skills': selected_skills,
+        'difficulty': difficulty,
+        'estimatedTime': estimated_time,
+        'tips': tips,
+        'timestamp': datetime.utcnow().isoformat(),
+        'ai_generated': False
+    }
+
 def generate_chord_progression(selected_emotions):
     """Generate a chord progression based on 1-2 selected emotions"""
     # Get emotion data
@@ -1652,6 +1877,48 @@ def generate_sound_design():
             span.set_status(trace.Status(trace.StatusCode.ERROR, str(e)))
             logger.error(f"Sound design prompt generation failed: {str(e)}")
             return jsonify({'error': 'Failed to generate sound design prompt'}), 500
+
+@app.route('/generate-drawing-exercise', methods=['POST'])
+def generate_drawing_exercise_endpoint():
+    """Generate a drawing exercise based on selected skills"""
+    with tracer.start_as_current_span("generate-drawing-exercise") as span:
+        try:
+            data = request.json
+            skills = data.get('skills', [])
+            user_id = data.get('userId', 'anonymous')
+
+            span.set_attribute("user.id", user_id)
+            span.set_attribute("skills", str(skills))
+
+            # Validate inputs
+            if not skills or len(skills) < 1 or len(skills) > 2:
+                return jsonify({'error': 'Must select 1 or 2 skills'}), 400
+
+            valid_skills = [
+                'Observation', 'Proportion & Scale', 'Gesture',
+                'Form (3D Thinking)', 'Light & Shadow',
+                'Line Control & Mark-Making', 'Composition'
+            ]
+            for skill in skills:
+                if skill not in valid_skills:
+                    return jsonify({'error': f'Invalid skill: {skill}'}), 400
+
+            # Generate exercise
+            span.add_event("generating-drawing-exercise")
+            result = generate_drawing_exercise(skills)
+
+            # Track metrics
+            span.set_attribute("exercise.title", result['title'])
+            span.set_attribute("exercise.difficulty", result['difficulty'])
+            span.set_attribute("exercise.estimated_time", result['estimatedTime'])
+
+            return jsonify(result), 200
+
+        except Exception as e:
+            span.record_exception(e)
+            span.set_status(trace.Status(trace.StatusCode.ERROR, str(e)))
+            logger.error(f"Drawing exercise generation failed: {str(e)}")
+            return jsonify({'error': 'Failed to generate drawing exercise'}), 500
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5001))
