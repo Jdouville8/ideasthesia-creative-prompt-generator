@@ -522,207 +522,233 @@ def generate_prompt_with_ai(genres):
     """Generate creative writing exercises focused on skill-building"""
     import random
     import re
-    
-    genre_string = ", ".join(genres)
+
+    # Create genre blending language based on number of genres
+    if len(genres) == 1:
+        genre_string = genres[0]
+        blend_instruction = f"focusing on {genre_string}"
+    else:
+        genre_string = " and ".join(genres)
+        blend_instruction = f"that FUSES {' and '.join(genres)} together into a single cohesive approach"
     
     exercise_types = [
         {
             "name": "Idea Generation Drill",
-            "prompt": f"""Create an idea generation exercise for {genre_string} writing. 
+            "prompt": f"""Create an idea generation exercise {blend_instruction}.
+
+{"IMPORTANT: The exercise must deeply integrate conventions, tropes, and techniques from BOTH " + " AND ".join(genres) + ". Do not treat them separately - show how they create something NEW together." if len(genres) > 1 else "Focus on core " + genres[0] + " techniques."}
 
 Format:
-**Exercise Name**: [Creative name]
+**Exercise Name**: [Creative name that reflects the genre blend]
 **Goal**: [One sentence - what skill this develops]
-**Exercise**: [Clear instructions explaining the drill]
-**Example Progression**: [Show 3 examples from simple to unusual]
-**Pro Tip**: [One sentence advice]
+**Exercise**: [Clear instructions explaining the drill{" - must show how " + " and ".join(genres) + " elements work together" if len(genres) > 1 else ""}]
+**Example Progression**: [Show 3 examples from simple to unusual{", each demonstrating the genre fusion" if len(genres) > 1 else ""}]
+**Pro Tip**: [One sentence advice about {genre_string}]
 
 At the end, add a section:
 **Writing Tips for This Exercise**:
 - [Tip 1 specific to this exercise]
-- [Tip 2 specific to this exercise]  
+- [Tip 2 specific to this exercise]
 - [Tip 3 specific to this exercise]
 
 NO character names. Focus on the TECHNIQUE of generating ideas."""
         },
         {
             "name": "World-Building Technique",
-            "prompt": f"""Create a world-building exercise for {genre_string}.
+            "prompt": f"""Create a world-building exercise {blend_instruction}.
+
+{"CRITICAL: Your world must blend " + " WITH ".join(genres) + " conventions seamlessly. Show how these genres intersect in the world's rules, atmosphere, and logic. The world should feel like a TRUE FUSION, not one genre with the other sprinkled on top." if len(genres) > 1 else ""}
 
 Format:
-**Technique Name**: [Name]
-**Goal**: [What this teaches]
-**Exercise**: [Instructions for the technique, 200-250 words]
+**Technique Name**: [Name reflecting the {genre_string} blend]
+**Goal**: [What this teaches about {genre_string} world-building]
+**Exercise**: [Instructions for the technique, 200-250 words{" - explain how to merge " + " and ".join(genres) + " world-building elements into ONE coherent world" if len(genres) > 1 else ""}]
 **Rules**:
-- [What to do]
+- [What to do{" - must include both genre elements working together" if len(genres) > 1 else ""}]
 - [What to avoid]
-**Example Approach**: [2-3 sentences showing the METHOD]
+**Example Approach**: [2-3 sentences showing the METHOD{" of blending these genres" if len(genres) > 1 else ""}]
 
 At the end, add:
 **Writing Tips for This Exercise**:
-- [Tip 1 specific to world-building technique]
-- [Tip 2 specific to world-building technique]
-- [Tip 3 specific to world-building technique]
+- [Tip 1 specific to world-building in this genre blend]
+- [Tip 2 specific to world-building in this genre blend]
+- [Tip 3 specific to world-building in this genre blend]
 
 NO character names. Teach the CRAFT."""
         },
         {
             "name": "Structural Exercise",
-            "prompt": f"""Create a structural writing exercise for {genre_string}.
+            "prompt": f"""Create a structural writing exercise {blend_instruction}.
+
+{"ESSENTIAL: The structure must leverage conventions from BOTH " + " AND ".join(genres) + ". Show how combining these genre structures creates something unique - for example, how " + genres[0] + " pacing might interact with " + genres[1] + " plot architecture." if len(genres) > 1 else ""}
 
 Format:
 **Structure Technique**: [Name]
-**Goal**: [What this teaches about story structure]
-**The Exercise**: [Explain the structural technique]
-**Rules**: [Structural constraints and what they teach]
+**Goal**: [What this teaches about {genre_string} story structure]
+**The Exercise**: [Explain the structural technique{" that combines " + " with ".join(genres) if len(genres) > 1 else ""}]
+**Rules**: [Structural constraints that enforce the {genre_string} blend]
 **Application**: [How to apply in 500 words]
 
 At the end, add:
 **Writing Tips for This Exercise**:
-- [Tip 1 about story structure]
-- [Tip 2 about story structure]
-- [Tip 3 about story structure]
+- [Tip 1 about {genre_string} story structure]
+- [Tip 2 about {genre_string} story structure]
+- [Tip 3 about {genre_string} story structure]
 
 Focus on STRUCTURE and TECHNIQUE."""
         },
         {
             "name": "Description Technique",
-            "prompt": f"""Create a descriptive writing exercise for {genre_string}.
+            "prompt": f"""Create a descriptive writing exercise {blend_instruction}.
+
+{"IMPORTANT: Your descriptive technique must show how to write scenes/settings that feel simultaneously like " + " AND ".join(genres) + ". The atmosphere, sensory details, and word choice should reflect BOTH genres at once." if len(genres) > 1 else ""}
 
 Format:
 **Description Technique**: [Name]
-**Goal**: [What skill this builds]
-**The Challenge**: [Explain the descriptive technique]
+**Goal**: [What skill this builds in {genre_string} writing]
+**The Challenge**: [Explain the descriptive technique{" for fusing these genres" if len(genres) > 1 else ""}]
 **Requirements**:
-- [Technical requirement 1]
+- [Technical requirement 1{" - must incorporate both genre styles" if len(genres) > 1 else ""}]
 - [Technical requirement 2]
 - [Word count: 300-400 words]
-**Forbidden**: [Generic words/habits to avoid]
+**Forbidden**: [Generic words/habits to avoid in {genre_string}]
 
 At the end, add:
 **Writing Tips for This Exercise**:
-- [Tip 1 about descriptive writing]
-- [Tip 2 about descriptive writing]
-- [Tip 3 about descriptive writing]
+- [Tip 1 about descriptive writing in this genre blend]
+- [Tip 2 about descriptive writing in this genre blend]
+- [Tip 3 about descriptive writing in this genre blend]
 
 Teach CRAFT of description."""
         },
         {
             "name": "Dialogue Craft",
-            "prompt": f"""Create a dialogue craft exercise for {genre_string}.
+            "prompt": f"""Create a dialogue craft exercise {blend_instruction}.
+
+{"KEY: Dialogue should reflect the unique tone created when " + " MEETS ".join(genres) + ". Not alternating between styles, but truly merged - characters speak in a way that embodies BOTH genres." if len(genres) > 1 else ""}
 
 Format:
 **Dialogue Technique**: [Name]
-**Goal**: [What this teaches about dialogue]
-**The Exercise**: [Instructions on HOW to write dialogue]
-**What Dialogue Should Reveal**: [3 elements]
-**Technical Rules**: [2 dialogue rules]
+**Goal**: [What this teaches about dialogue in {genre_string}]
+**The Exercise**: [Instructions on HOW to write dialogue{" that embodies both genres simultaneously" if len(genres) > 1 else ""}]
+**What Dialogue Should Reveal**: [3 elements specific to {genre_string}]
+**Technical Rules**: [2 dialogue rules for this genre blend]
 
 At the end, add:
 **Writing Tips for This Exercise**:
-- [Tip 1 about dialogue craft]
-- [Tip 2 about dialogue craft]
-- [Tip 3 about dialogue craft]
+- [Tip 1 about dialogue craft in {genre_string}]
+- [Tip 2 about dialogue craft in {genre_string}]
+- [Tip 3 about dialogue craft in {genre_string}]
 
 Focus on dialogue CRAFT."""
         },
         {
             "name": "Theme & Subtext",
-            "prompt": f"""Create a theme/subtext exercise for {genre_string}.
+            "prompt": f"""Create a theme/subtext exercise {blend_instruction}.
+
+{"CRITICAL: Explore themes that arise specifically from combining " + " WITH ".join(genres) + ". What unique thematic territory does this mashup unlock? What can you explore by fusing these genres that neither could do alone?" if len(genres) > 1 else ""}
 
 Format:
 **Exercise Name**: [Name]
-**Goal**: [What this teaches about theme]
-**The Challenge**: [How to embed theme without preaching]
-**Approach**: [2-3 techniques for showing theme]
+**Goal**: [What this teaches about theme in {genre_string}]
+**The Challenge**: [How to embed theme without preaching{" while honoring both genre conventions" if len(genres) > 1 else ""}]
+**Approach**: [2-3 techniques for showing theme in this genre blend]
 **Practice**: [How to practice this skill in 300-500 words]
 
 At the end, add:
 **Writing Tips for This Exercise**:
-- [Tip 1 about theme and subtext]
-- [Tip 2 about theme and subtext]
-- [Tip 3 about theme and subtext]
+- [Tip 1 about theme and subtext in {genre_string}]
+- [Tip 2 about theme and subtext in {genre_string}]
+- [Tip 3 about theme and subtext in {genre_string}]
 
 Teach TECHNIQUE of thematic writing."""
         },
         {
-            "name": "Genre Convention Study",
-            "prompt": f"""Create a genre study exercise for {genre_string}.
+            "name": "Genre Fusion Study",
+            "prompt": f"""Create a genre fusion exercise {blend_instruction}.
+
+{"MANDATORY: Analyze existing works that successfully blend " + " AND ".join(genres) + ". Identify specific techniques authors use to merge these genres seamlessly. What makes the fusion work?" if len(genres) > 1 else "Analyze core " + genres[0] + " conventions."}
 
 Format:
 **Genre Exercise**: [Name]
-**Goal**: [What this teaches about genre craft]
-**The Exercise**: [Instructions for working with genre conventions]
-**Genre Mashup Option**: [How to combine {genre_string} with another genre]
-**What You'll Learn**: [2 skills]
+**Goal**: [What this teaches about {genre_string} craft]
+**The Exercise**: [Instructions for understanding and applying the {genre_string} {"fusion" if len(genres) > 1 else "conventions"}]
+{"**The Fusion Point**: [Identify exactly where and how " + " and ".join(genres) + " intersect - what makes them compatible?]" if len(genres) > 1 else "**Core Conventions**: [Key " + genres[0] + " elements to master]"}
+**What You'll Learn**: [2 skills specific to this genre combination]
 
 At the end, add:
 **Writing Tips for This Exercise**:
-- [Tip 1 about genre conventions]
-- [Tip 2 about genre conventions]
-- [Tip 3 about genre conventions]
+- [Tip 1 about {genre_string} conventions]
+- [Tip 2 about {genre_string} conventions]
+- [Tip 3 about {genre_string} conventions]
 
-Focus on GENRE as craft tool."""
+Focus on GENRE FUSION as craft tool."""
         },
         {
             "name": "Reverse Engineering",
-            "prompt": f"""Create a reverse engineering exercise for {genre_string}.
+            "prompt": f"""Create a reverse engineering exercise {blend_instruction}.
+
+{"IMPORTANT: Choose a work that successfully blends " + " AND ".join(genres) + ". Analyze HOW it integrates both genres seamlessly - what structural, stylistic, and thematic choices create the fusion?" if len(genres) > 1 else ""}
 
 Format:
 **Analysis Exercise**: [Name]
-**Goal**: [What this teaches about story construction]
-**The Exercise**: Pick a {genre_string} story you admire. Analyze:
-- [Element 1 to outline]
+**Goal**: [What this teaches about {genre_string} story construction]
+**The Exercise**: Pick a {genre_string} story that {("successfully fuses " + " with ".join(genres)) if len(genres) > 1 else "exemplifies the genre"}. Analyze:
+- [Element 1 to outline{" - focus on how genres integrate" if len(genres) > 1 else ""}]
 - [Element 2 to outline]
 - [Element 3 to outline]
 - [Element 4 to outline]
 **Then**: [What to do with this analysis]
-**What You'll Learn**: [The technique this reveals]
+**What You'll Learn**: [The technique this reveals about {genre_string}]
 
 At the end, add:
 **Writing Tips for This Exercise**:
-- [Tip 1 about analyzing stories]
-- [Tip 2 about analyzing stories]
-- [Tip 3 about analyzing stories]
+- [Tip 1 about analyzing {genre_string} stories]
+- [Tip 2 about analyzing {genre_string} stories]
+- [Tip 3 about analyzing {genre_string} stories]
 
 Teach ANALYTICAL skills."""
         },
         {
             "name": "Constraint Creativity",
-            "prompt": f"""Create a constraint-based exercise for {genre_string}.
+            "prompt": f"""Create a constraint-based exercise {blend_instruction}.
+
+{"KEY CONSTRAINT: You must honor conventions from BOTH " + " AND ".join(genres) + " simultaneously. The constraint should force you to find creative ways to integrate them, not just juggle them." if len(genres) > 1 else ""}
 
 Format:
 **Constraint Exercise**: [Name]
-**Goal**: [What this constraint teaches]
-**The Constraint**: [Specific limitation and why it's useful]
-**How to Apply It**: [Instructions for using this constraint in 500-750 words]
-**What This Teaches**: [The craft skill forced by this constraint]
+**Goal**: [What this constraint teaches about {genre_string}]
+**The Constraint**: [Specific limitation that forces {genre_string} {"integration - make it impossible to write one genre without the other" if len(genres) > 1 else "mastery"}]
+**How to Apply It**: [Instructions for using this constraint in 500-750 words{" - must address both genres simultaneously" if len(genres) > 1 else ""}]
+**What This Teaches**: [The craft skill forced by this constraint in {genre_string}]
 
 At the end, add:
 **Writing Tips for This Exercise**:
-- [Tip 1 about working with constraints]
-- [Tip 2 about working with constraints]
-- [Tip 3 about working with constraints]
+- [Tip 1 about working with constraints in {genre_string}]
+- [Tip 2 about working with constraints in {genre_string}]
+- [Tip 3 about working with constraints in {genre_string}]
 
 Focus on constraints as LEARNING TOOLS."""
         },
         {
             "name": "Revision Technique",
-            "prompt": f"""Create a revision exercise for {genre_string}.
+            "prompt": f"""Create a revision exercise {blend_instruction}.
+
+{"FOCUS: Revise specifically for genre integration. Look for places where " + " and ".join(genres) + " feel separate rather than fused. Strengthen the moments where both genres work together." if len(genres) > 1 else ""}
 
 Format:
 **Revision Technique**: [Name]
-**Goal**: [What editing skill this builds]
+**Goal**: [What editing skill this builds for {genre_string}]
 **The Exercise**: Take any draft and apply this technique:
-[Specific revision approach step-by-step]
-**What to Look For**: [3 red flags]
+[Specific revision approach step-by-step{" - focus on strengthening the genre blend" if len(genres) > 1 else ""}]
+**What to Look For**: [3 red flags in {genre_string} writing]
 **The Fix**: [How to revise each issue]
 
 At the end, add:
 **Writing Tips for This Exercise**:
-- [Tip 1 about revision and editing]
-- [Tip 2 about revision and editing]
-- [Tip 3 about revision and editing]
+- [Tip 1 about revision in {genre_string}]
+- [Tip 2 about revision in {genre_string}]
+- [Tip 3 about revision in {genre_string}]
 
 Teach REVISION as craft skill."""
         }
@@ -731,10 +757,20 @@ Teach REVISION as craft skill."""
     exercise_type = random.choice(exercise_types)
     
     try:
+        # Create system message based on whether multiple genres are being blended
+        if len(genres) > 1:
+            system_message = f"""You are a creative writing instructor specializing in GENRE FUSION. When given multiple genres, you must create exercises that deeply integrate them - not treat them separately or alternate between them.
+
+CRITICAL: If asked to blend {' and '.join(genres)}, the exercise must show how these genres create something NEW together. The fusion should feel inevitable and cohesive, not forced or superficial.
+
+Create exercises that are instructional and teach craft, not story prompts. Avoid character names and specific scenarios. Focus on teaching HOW to write genre-blended work. Always include 3 specific writing tips tailored to the exercise and the genre blend."""
+        else:
+            system_message = "You are a creative writing instructor teaching techniques and skills. Create exercises that are instructional and teach craft, not story prompts. Avoid character names and specific scenarios. Focus on teaching HOW to write. Always include 3 specific writing tips tailored to the exercise."
+
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a creative writing instructor teaching techniques and skills. Create exercises that are instructional and teach craft, not story prompts. Avoid character names and specific scenarios. Focus on teaching HOW to write. Always include 3 specific writing tips tailored to the exercise."},
+                {"role": "system", "content": system_message},
                 {"role": "user", "content": exercise_type["prompt"]}
             ],
             temperature=0.85,

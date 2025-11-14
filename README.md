@@ -57,6 +57,8 @@ Generate AI-powered creative writing exercises tailored to your preferred genres
   - Download your writing as `.txt`
   - Progress tracking toward word count goals
 
+![Writing Prompt Demo](assets/writing-prompt-demo.gif)
+
 ---
 
 ## 🎹 Tab 2: Sound Design Exercises
@@ -108,7 +110,9 @@ Create a sound that captures the vastness and danger of
 Arrakis. Use reverb and granular synthesis to evoke
 endless desert horizons...
 ```
+![Technical Exercise Demo](assets/technical-excercise-demo.gif)
 
+![Creative Exercise Demo](assets/creative-excercise-demo.gif)
 ---
 
 ## 🎼 Tab 3: Chord Progressions
@@ -151,6 +155,7 @@ of bittersweet hope without providing complete resolution...
 
 Download MIDI → [melancholy_longing.mid]
 ```
+![Creative Exercise Demo](assets/chord-progression-demo.gif)
 
 ---
 
