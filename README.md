@@ -9,11 +9,12 @@ An AI-powered creative training platform that generates exercises for writers an
 
 ## ✨ Overview
 
-Ideasthesia combines three specialized creative training modules:
+Ideasthesia combines four specialized creative training modules:
 
 1. **📝 Writing Prompts** - AI-generated writing exercises across multiple genres
 2. **🎹 Sound Design** - Technical and creative synthesizer exercises for music producers
 3. **🎼 Chord Progressions** - Emotion-based chord progressions with MIDI export
+4. **✏️ Drawing Exercises** - Skill-focused drawing practice for artists
 
 Each module includes:
 - ⏱️ Built-in countdown timers
@@ -156,6 +157,68 @@ of bittersweet hope without providing complete resolution...
 Download MIDI → [melancholy_longing.mid]
 ```
 ![Creative Exercise Demo](assets/chord-progression-demo.gif)
+
+---
+
+## ✏️ Tab 4: Drawing Exercises
+
+Generate skill-focused drawing exercises that target fundamental artistic abilities.
+
+### Features
+
+- **7 Core Drawing Skills**:
+  - **Observation** - Seeing what's actually in front of you, not what you think is there
+  - **Proportion & Scale** - Understanding size relationships between elements
+  - **Gesture** - Capturing movement, flow, and energy of a pose
+  - **Form (3D Thinking)** - Turning 2D shapes into 3D objects
+  - **Light & Shadow** - Understanding how light interacts with form
+  - **Line Control & Mark-Making** - Drawing confident, varied lines
+  - **Composition** - Arranging elements for maximum visual impact
+
+- **Skill Selection**: Choose 1-2 skills for targeted practice
+  - Single skill exercises drill deep into one fundamental
+  - Dual skill exercises integrate both skills simultaneously
+
+- **AI-Generated Exercises** with template fallbacks when offline
+
+- **Difficulty Levels**:
+  - **Beginner**: 20 minutes - Longer studies for learning foundations
+  - **Intermediate**: 10 minutes - Moderate-length focused practice
+  - **Advanced**: 1 minute - Quick studies for experienced artists
+
+- **Each Exercise Includes**:
+  - Clear, specific instructions
+  - Subject matter suggestions
+  - Success criteria to self-evaluate
+  - 3 practical tips for the exercise
+  - Countdown timer with pause/resume
+
+### Example Exercise
+```
+Skills: Gesture + Form (3D Thinking)
+Difficulty: Intermediate
+Time: 10 minutes
+
+Exercise: Dynamic Form Sketches
+
+Create quick figure sketches that capture both the energy
+of the pose AND the underlying 3D structure of the body.
+Use flowing lines to establish gesture, then reinforce
+with simple volumes (cylinders, spheres, boxes) to show
+form in space.
+
+Success Criteria:
+✓ Drawings show clear directional flow and movement
+✓ 3D forms are evident beneath the gesture lines
+✓ Both skills work together, not separately
+
+Tips:
+• Start with the gesture line, then build form around it
+• Think of limbs as cylinders in space, torso as boxes
+• Notice how gesture affects the compression/expansion of forms
+```
+
+![Drawing Exercise Demo](assets/drawing-exercise-demo.gif)
 
 ---
 

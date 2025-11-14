@@ -1477,7 +1477,11 @@ def generate_drawing_exercise(selected_skills):
     }
 
     # Time durations and difficulty mappings
-    time_options = ['30 seconds', '1 minute', '5 minutes', '10 minutes', '30 minutes']
+    difficulty_time_map = {
+        'Beginner': '20 minutes',
+        'Intermediate': '10 minutes',
+        'Advanced': '1 minute'
+    }
     difficulties = ['Beginner', 'Intermediate', 'Advanced']
 
     # Subject matter options
@@ -1542,9 +1546,9 @@ Be specific and actionable. Focus on the METHOD, not just the outcome."""
                     title = line.replace('Exercise:', '').strip()
                     break
 
-            # Randomly assign time and difficulty
-            estimated_time = random.choice(time_options)
+            # Randomly assign difficulty and get corresponding time
             difficulty = random.choice(difficulties)
+            estimated_time = difficulty_time_map[difficulty]
 
             # Extract tips
             tips = []
@@ -1645,8 +1649,8 @@ The goal isn't a "good" drawing - it's training your eye-hand connection and obs
     ]
 
     template = random.choice(templates)
-    estimated_time = random.choice(time_options)
     difficulty = random.choice(difficulties)
+    estimated_time = difficulty_time_map[difficulty]
 
     tips = [
         f"The exercise specifically targets {skill_string} - stay focused on these aspects",
