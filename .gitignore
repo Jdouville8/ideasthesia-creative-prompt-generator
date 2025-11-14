@@ -145,6 +145,14 @@ grafana_data/
 # AWS
 .aws/
 *.pem
+aws-deploy.env
+*-task-def.json
+secret-access-policy.json
+task-execution-role-policy.json
+budget-config.json
+dashboard-config.json
+create-task-definitions.sh
+AWS_DEPLOYMENT_GUIDE.md
 
 # GCP
 gcp-key.json
