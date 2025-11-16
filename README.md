@@ -1,6 +1,6 @@
 # 🎨 Ideasthesia Creative Prompt Generator
 
-An AI-powered creative training platform that generates exercises for writers and music producers. Built with React, Node.js, Python, and OpenAI's GPT-3.5-turbo, **Ideasthesia** helps you develop your creative skills through structured, AI-generated practice exercises.
+An AI-powered creative training platform that generates exercises for writers, artists, and music producers. Built with React, Node.js, Python, and OpenAI's GPT models (GPT-3.5-turbo and GPT-4o Vision), **Ideasthesia** helps you develop your creative skills through structured, AI-generated practice exercises with intelligent feedback.
 
 ![Ideasthesia](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -21,6 +21,7 @@ Each module includes:
 - 📊 Difficulty levels and estimated completion times
 - 🌙 Full dark mode support
 - 💾 Export capabilities (text files, MIDI files)
+- 🤖 AI-powered feedback (Story Studio & Drawing Studio)
 
 ---
 
@@ -57,6 +58,16 @@ Generate AI-powered creative writing exercises tailored to your preferred genres
   - Live word and character counter
   - Download your writing as `.txt`
   - Progress tracking toward word count goals
+
+- **AI Feedback System**:
+  - Submit your writing for constructive AI analysis once you reach the word count target
+  - Powered by OpenAI GPT-3.5-turbo for intelligent, context-aware feedback
+  - Critical, honest feedback that addresses you directly (not generic "the student" responses)
+  - Markdown-formatted feedback with clear sections:
+    - **Strengths**: What worked well in your writing
+    - **Areas for Improvement**: Specific suggestions for growth
+    - **Next Steps**: Actionable advice for revision
+  - Feedback considers the exercise type, genres, difficulty level, and word count requirements
 
 ![Writing Prompt Demo](assets/writing-prompt-demo.gif)
 
@@ -194,6 +205,23 @@ Generate skill-focused drawing exercises that target fundamental artistic abilit
   - 3 practical tips for the exercise
   - Countdown timer with pause/resume
 
+- **AI Feedback System**:
+  - Upload your finished drawing for professional AI critique
+  - Powered by OpenAI GPT-4o Vision API for visual analysis
+  - **Image Upload**:
+    - Click to upload or drag & drop
+    - Supports JPG and PNG formats
+    - Maximum file size: 20MB
+    - Visual feedback during drag operations
+  - **Intelligent Analysis**:
+    - Critical, constructive feedback addressing you directly
+    - Evaluates both skills you practiced in the exercise
+    - Markdown-formatted feedback with:
+      - **Strengths**: What you executed well
+      - **Areas for Improvement**: Specific technical guidance
+      - **Next Steps**: Actionable practice recommendations
+    - Considers the exercise context, skills practiced, difficulty level, and time constraints
+
 ### Example Exercise
 ```
 Skills: Gesture + Form (3D Thinking)
@@ -242,10 +270,12 @@ Tips:
 
 **Prompt Generation Service (Python):**
 - Flask API
-- OpenAI GPT-3.5-turbo integration
+- OpenAI GPT-3.5-turbo for text generation and writing feedback
+- OpenAI GPT-4o Vision API for drawing image analysis
 - MIDIUtil for MIDI file generation
 - Content sanitization to prevent AI hallucinations
 - Redis-based randomization for artists and books
+- 20MB request size limits for image uploads
 
 **Infrastructure:**
 - Docker & Docker Compose
@@ -595,6 +625,37 @@ docker-compose logs -f frontend
 - Verify `midiutil` is installed: `docker-compose exec prompt-service pip list | grep midiutil`
 - Check prompt-service logs: `docker-compose logs prompt-service`
 
+#### 7. AI Feedback Not Working
+
+**Writing Feedback Issues:**
+- Ensure you've reached the minimum word count before submitting
+- Check prompt-service logs: `docker-compose logs prompt-service`
+- Verify OpenAI API key has sufficient credits
+- Check for OpenAI API rate limits
+
+**Drawing Feedback Issues:**
+- **"413 Payload Too Large"**: Image file exceeds 20MB limit - resize or compress your image
+- **"Please upload a JPG or PNG image"**: Only JPG and PNG formats are supported
+- **"Image file is too large"**: File exceeds 20MB - use image compression tools
+- Verify GPT-4o Vision API is accessible (check OpenAI account status)
+- Check backend logs: `docker-compose logs backend`
+- Check prompt-service logs: `docker-compose logs prompt-service`
+
+**General AI Feedback Troubleshooting:**
+```bash
+# Check if prompt service is running
+docker-compose ps prompt-service
+
+# Restart prompt service
+docker-compose restart prompt-service
+
+# View detailed logs
+docker-compose logs -f prompt-service
+
+# Test OpenAI connection
+docker-compose exec prompt-service python -c "import openai; print('OpenAI imported successfully')"
+```
+
 ---
 
 ## 📊 Monitoring & Observability
@@ -676,7 +737,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **OpenAI** for GPT-3.5-turbo API
+- **OpenAI** for GPT-3.5-turbo and GPT-4o Vision APIs
 - **Google** for OAuth authentication
 - **The music production community** for artist references
 - **Literary community** for creative inspiration
