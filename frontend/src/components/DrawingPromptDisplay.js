@@ -11,6 +11,7 @@ function DrawingPromptDisplay({ prompt }) {
   const [feedback, setFeedback] = useState(null);
   const [feedbackLoading, setFeedbackLoading] = useState(false);
   const [feedbackError, setFeedbackError] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   // Render markdown-formatted feedback
   const renderFeedback = (text) => {
@@ -147,14 +148,13 @@ function DrawingPromptDisplay({ prompt }) {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
+  // Process image file (shared by click upload and drag & drop)
+  const processImageFile = (file) => {
     if (!file) return;
 
     // Check file type
     if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
       setFeedbackError('Please upload a JPG or PNG image');
-      e.target.value = ''; // Clear the input
       return;
     }
 
@@ -162,7 +162,6 @@ function DrawingPromptDisplay({ prompt }) {
     const maxSize = 20 * 1024 * 1024;
     if (file.size > maxSize) {
       setFeedbackError('Image file is too large. Please upload an image smaller than 20MB.');
-      e.target.value = ''; // Clear the input
       return;
     }
 
@@ -178,6 +177,43 @@ function DrawingPromptDisplay({ prompt }) {
     // Clear previous feedback
     setFeedback(null);
     setFeedbackError(null);
+  };
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    processImageFile(file);
+    if (e.target.value) {
+      e.target.value = ''; // Clear the input for re-upload
+    }
+  };
+
+  // Drag and drop handlers
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+
+    const files = e.dataTransfer.files;
+    if (files && files.length > 0) {
+      processImageFile(files[0]);
+    }
   };
 
   const handleRemoveImage = () => {
@@ -325,15 +361,29 @@ function DrawingPromptDisplay({ prompt }) {
         </h3>
 
         {!imagePreview ? (
-          <div className={`border-2 border-dashed rounded-lg p-8 text-center ${isDarkMode ? 'border-gray-600' : 'border-gray-300'}`}>
-            <label htmlFor="drawing-upload" className="cursor-pointer">
+          <div
+            className={`border-2 border-dashed rounded-lg p-8 text-center transition-all duration-200 ${
+              isDragging
+                ? isDarkMode
+                  ? 'border-purple-500 bg-purple-900/20'
+                  : 'border-purple-500 bg-purple-50'
+                : isDarkMode
+                  ? 'border-gray-600'
+                  : 'border-gray-300'
+            }`}
+            onDragEnter={handleDragEnter}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+          >
+            <label htmlFor="drawing-upload" className="cursor-pointer block">
               <div className="mb-4">
                 <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
                   <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <p className={`mb-2 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Click to upload your drawing
+              <p className={`mb-2 font-medium ${isDragging ? 'text-purple-600 dark:text-purple-400' : isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                {isDragging ? 'Drop your image here' : 'Click to upload or drag and drop'}
               </p>
               <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                 JPG or PNG (max 20MB)
