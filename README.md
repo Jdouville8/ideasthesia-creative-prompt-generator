@@ -299,7 +299,7 @@ Tips:
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ideasthesia-creative-prompt-generator.git
+git clone https://github.com/Jdouville8/ideasthesia-creative-prompt-generator.git
 cd ideasthesia-creative-prompt-generator
 ```
 
@@ -363,8 +363,14 @@ docker-compose down
 #### 6. Initialize the Database
 
 ```bash
-# Run the database setup script
+# macOS/Linux/Git Bash (Windows):
 bash scripts/setup-db.sh
+
+# Windows Command Prompt:
+scripts\setup-db.bat
+
+# Windows PowerShell:
+.\scripts\setup-db.ps1
 ```
 
 #### 7. Access the Application
@@ -430,6 +436,151 @@ ideasthesia-creative-prompt-generator/
 ```
 
 ---
+
+
+---
+
+## 🛠️ Alternative: Manual Installation (Without Docker)
+
+If you prefer to run the services locally without Docker:
+
+### Prerequisites
+- Node.js 14+ and npm
+- Python 3.8+ and pip
+- PostgreSQL 13+
+- Redis 6+
+
+### Installation Steps
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Jdouville8/ideasthesia-creative-prompt-generator.git
+cd ideasthesia-creative-prompt-generator
+```
+
+#### 2. Install All Dependencies
+
+Run this one-liner to install all dependencies:
+
+```bash
+cd frontend && npm install && cd ../backend && npm install && cd ../prompt-service && pip install -r requirements.txt && cd ..
+```
+
+Or install individually:
+
+```bash
+# Frontend
+cd frontend
+npm install
+cd ..
+
+# Backend
+cd backend
+npm install
+cd ..
+
+# Python Prompt Service
+cd prompt-service
+pip install -r requirements.txt
+# OR use a virtual environment (recommended):
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+cd ..
+```
+
+#### 3. Set Up Environment Variables
+
+Create `.env` files in each service directory:
+
+**`backend/.env`:**
+```env
+PORT=4000
+POSTGRES_HOST=localhost
+POSTGRES_DB=writingprompts
+POSTGRES_USER=promptuser
+POSTGRES_PASSWORD=your-secure-password
+REDIS_HOST=localhost
+REDIS_PORT=6379
+GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
+JWT_SECRET=your-super-secret-jwt-key-change-this
+PROMPT_SERVICE_URL=http://localhost:5001
+NODE_ENV=development
+```
+
+**`prompt-service/.env`:**
+```env
+FLASK_ENV=development
+OPENAI_API_KEY=sk-your-openai-api-key
+REDIS_HOST=localhost
+REDIS_PORT=6379
+```
+
+**`frontend/.env`** (optional):
+```env
+REACT_APP_API_URL=http://localhost:4000
+REACT_APP_GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
+```
+
+#### 4. Set Up PostgreSQL and Redis
+
+Make sure PostgreSQL and Redis are running locally:
+
+```bash
+# PostgreSQL (macOS with Homebrew)
+brew install postgresql
+brew services start postgresql
+
+# Create database
+createdb writingprompts
+
+# Redis (macOS with Homebrew)
+brew install redis
+brew services start redis
+```
+
+#### 5. Run Tests (Optional)
+
+```bash
+# Frontend tests
+cd frontend && npm test
+
+# Backend tests
+cd backend && npm test
+
+# Python tests
+cd prompt-service && pytest
+```
+
+#### 6. Start All Services
+
+Open **three separate terminals** and run:
+
+**Terminal 1 - Frontend:**
+```bash
+cd frontend
+npm start
+# Runs on http://localhost:3000
+```
+
+**Terminal 2 - Backend:**
+```bash
+cd backend
+npm start
+# Runs on http://localhost:4000
+```
+
+**Terminal 3 - Prompt Service:**
+```bash
+cd prompt-service
+python app.py
+# Runs on http://localhost:5001
+```
+
+#### 7. Access the Application
+
+Open your browser and navigate to **http://localhost:3000**
 
 ## 🔧 Development
 

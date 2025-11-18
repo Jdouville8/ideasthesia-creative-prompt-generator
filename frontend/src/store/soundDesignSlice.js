@@ -6,13 +6,11 @@ export const generateSoundDesignPrompt = createAsyncThunk(
   'soundDesign/generate',
   async ({ synthesizer, exerciseType, genre }, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem('token');
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/api/sound-design/generate`,
         { synthesizer, exerciseType, genre },
         {
           headers: {
-            'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         }

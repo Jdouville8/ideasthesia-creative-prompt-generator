@@ -248,12 +248,12 @@ app.post('/api/prompts/generate', authenticateToken, async (req, res) => {
 });
 
 // Generate sound design prompt
-app.post('/api/sound-design/generate', authenticateToken, async (req, res) => {
+app.post('/api/sound-design/generate', async (req, res) => {
   const span = tracer.startSpan('generate-sound-design-prompt');
 
   try {
     const { synthesizer, exerciseType, genre } = req.body;
-    const userId = req.user.id;
+    const userId = 'anonymous'; // Allow anonymous access like other creative prompts
 
     span.setAttributes({
       'user.id': userId,
