@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axiosInstance from '../utils/axiosConfig';
 
 // Async thunk for generating sound design prompts
 export const generateSoundDesignPrompt = createAsyncThunk(
   'soundDesign/generate',
   async ({ synthesizer, exerciseType, genre }, { rejectWithValue }) => {
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/sound-design/generate`,
+      const response = await axiosInstance.post(
+        '/api/sound-design/generate',
         { synthesizer, exerciseType, genre },
         {
           headers: {

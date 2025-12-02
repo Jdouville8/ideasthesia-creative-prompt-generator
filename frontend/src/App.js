@@ -12,6 +12,7 @@ import { loginUser, logoutUser, restoreUser } from './store/authSlice';
 import { generatePrompt } from './store/promptSlice';
 import { generateSoundDesignPrompt, setSynthesizer, setExerciseType, setGenre } from './store/soundDesignSlice';
 import { useTheme } from './contexts/ThemeContext';
+import axiosInstance from './utils/axiosConfig';
 import './App.css';
 
 const tracer = trace.getTracer('frontend-app');
@@ -87,17 +88,11 @@ function App() {
   const handleGoogleSuccess = async (credentialResponse) => {
     const span = tracer.startSpan('google-login');
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/google`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          credential: credentialResponse.credential
-        })
+      const response = await axiosInstance.post('/api/auth/google', {
+        credential: credentialResponse.credential
       });
 
-      const data = await response.json();
+      const data = response.data;
       console.log('Login response data:', data);
       console.log('User picture URL:', data.user?.picture);
       dispatch(loginUser(data));
@@ -213,23 +208,12 @@ function App() {
     setChordProgressionError(null);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/chord-progression/generate`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          emotions: selectedEmotions,
-          userId: user?.id || 'anonymous'
-        })
+      const response = await axiosInstance.post('/api/chord-progression/generate', {
+        emotions: selectedEmotions,
+        userId: user?.id || 'anonymous'
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to generate chord progression');
-      }
-
-      const data = await response.json();
-      setChordProgression(data);
+      setChordProgression(response.data);
     } catch (error) {
       console.error('Chord progression generation failed:', error);
       setChordProgressionError(error.message);
@@ -269,23 +253,12 @@ function App() {
     setDrawingError(null);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/drawing/generate`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          skills: selectedSkills,
-          userId: user?.id || 'anonymous'
-        })
+      const response = await axiosInstance.post('/api/drawing/generate', {
+        skills: selectedSkills,
+        userId: user?.id || 'anonymous'
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to generate drawing exercise');
-      }
-
-      const data = await response.json();
-      setDrawingPrompt(data);
+      setDrawingPrompt(response.data);
     } catch (error) {
       console.error('Drawing exercise generation failed:', error);
       setDrawingError(error.message);

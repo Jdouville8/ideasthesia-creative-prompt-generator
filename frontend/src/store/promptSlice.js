@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axiosInstance from '../utils/axiosConfig';
 
 export const generatePrompt = createAsyncThunk(
   'prompt/generate',
   async (genres) => {
     const token = localStorage.getItem('token');
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}/api/prompts/generate`,
+    const response = await axiosInstance.post(
+      '/api/prompts/generate',
       { genres },
       {
         headers: {
