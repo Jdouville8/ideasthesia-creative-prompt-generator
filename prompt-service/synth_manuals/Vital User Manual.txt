@@ -1,0 +1,2315 @@
+--- Page 1 ---
+
+Vital User Manual
+
+Author: Zachary Hill | Hookline | @hooklineismyhomie | hooklinemusicofficial@gmail.com |
+https://hooklineismyhomie.weebly.com/
+
+Table of Contents
+
+0.0 DisclaiMmer............ccccceccesccessceessceeseeceseceseeceeeeeceeeaaeeesaecsaeceseecsaeeeeaeecsaecesaecsaecsceceeeeeaeeesaeceaaecaeeseeeeceaeeeaeecaeeesaeees 2
+1.0 Gereral Imf0...... cece eesseessecessecesecesseceeceseceesceceaeeeseecesaecsaecesaecseecsaeeeeaeeseaeeesaeeeaaecsaaecsaeceaaeceaeeseaeseeseeeaaeeeaaeenaees 3
+LL SiZi go eee eee ceececeenceseeeseessecsaecseeeseeseessecsaecsaecsaeeseesecsaecseeeseesseeseesecsaecsaecseeeseeseessessaecaaecaeeeseeseeeeesaecuaeenseeas 3
+1.2 General Navigation...........ccccceccccesscessscesecceesccesseecesceceacecacecsaecesaeceaeceaaecsaaeceaeecaecesuecsaecseeeceeeeeeeseeeeeeeeeeeeaees 3
+1.3 PL@SOtS........esccecesssseceeceessecececsssaceeccesssncceseesssaaececessaaeeesesesnceceeessaaaeeecesesaceeseeessuaaececessaaeceecesaaeeeseseseaaaeeeenseea 3
+1.4 Parameter AdjUStMents...........cccccesccesccesceeescecsseceseceeeeeeaeecsaecssecsaeesaeeeaeecsaecsaecseaeeesaecsaecaeceeaeeeaeecsueceseeeeaeeeaees 4
+2.0 VOICE... eeeesseceeesssecececssnaececessceecesssneececssaaeeecsssaceeseessaaeceessaaaececessuceeceeseaaececssaaeeecessaceeseesaaaececssaaeeeceesaceeseeeaaeeeeees fs)
+2.1 OSCiAtOTS...... cece ceeccesecessecesseceseecesceesecececeeaeceeaeceeaeeseaeeeaaeeeaseeeaaeceaaecaaecaaecuecesaecesaecesueceseeceseeseaeceeeeeseaeeeaes 5
+2.1.a Pitch Settings... eecccssecessecesecceeceececsecceseecesseeeesaecsacecsaecesaecesuecssecessecseeeeseeeeeeeeeeaeecesaecssaecaeeesaeeeaeeenes 6
+
+2.1.5 Routing Options.........ccececcscesccsscesseecssecesecsecceeseecsaecesecseeeeeaaecsaecaecseseeeaeecsaeceaeceeeeseaeecsaeceaeeeeeeeeaeeesaeengs 7
+
+2.1.c Wavetable View..........ccccssccssscessseeesecescecsncecsseceaecesuecaeecsecsscecssnecsaeesceeeaeeeeaeeceaeecaeecaecesaeceaeceseeenseeeags 7
+2.1.0.) Wavetable ECitOr.........cccececccesecesseceseceeseeesseceseccaececeseaeecsaecesuecsaececeseaeecsaeecsaecsaeceeeeeaeeeeaeeeaeenseeaes 7
+
+2.1.d Unison and Phase Settings... ccescesccesscesscecsseceecseceesseecsaecesecseeeeeaaecsaeceaecseeeeeaeecsaecaeeseaeeeaeecaeeneeeaes 8
+
+2.1.e Oscillator Modulation KnoD5.............cccceccscessccesseceseeceseeceseeeeseeeeseeeeseeeeseeeeseaeeseeeeseaeeseeeeseeeeeeeeeeeaeeeeeeeeaes 8
+
+2.2 SAMPlel......cescccescccssecesseceseceseeceseeeseeceeeeceeseesececseaeeseaeecaeecaeeeaeceaeceaaecesaeceaeeesseeeesecesaecseeeeseeeeseeeeseeeeeaeeneaees 10
+2.2. Pitch Settings... cecesccssecessecsseccsseceseecseeeeceeceeaecseneeesaeeesaeceseecacecsaecesueceeeceseeeesecseaeeeeseeesaeeeaeeceaeeesaeees 10
+
+2.2.5 Routing Options..........ccesceccsccssccesseessceeseeceseceseceeseeesaecsaeceeececeeeaeecsaecaeceeeeeeaeecsuecesaeceseeseeeeeaaecaeeneeeaes 11
+
+2.2.C Sample VieW.........cscccscccesceeseceeseeeseeceaecesceceaeceeecsseeeeseceeceecsaeeesaecaaecaecssaecseeeseeeeeaeeceseecsaeceaeceeeeneeeaes 11
+
+2.2.d Sample Playback Options.............cccccssccessceeseeessecesceceseceseeeeseeeaeeeeaaecsaecseeseaeeseeeeeasecsaeceseeeeeeseeeeeaeeeaeees 12
+
+2.3 Filters... cecccccccesscesscecssecescceeceeeseecsaeceseceeceecsaecsaecesaecsseeseaeeesaecsaecsuceeeaeeesaecsaecseeeeeaeecsaecsaecseeeeeaeecsaeseeeseeeeenees 12
+3.0 Modulation and Macro........:ccccsscceseccsseceseccesecsececseceesseceeaeecacecsaecaaecaecesaecseaeeseeeeeaeeceaeecsaecesaeceaeeseaeeeeeeseeeeeeaees 16
+3.1 Envelopes......c.ccccccssccesscesseceesceeseceesceceacecesecececssceseseceeaeeesaecesaecaeccsaecseeeseeeeaeeceaeecsaecaaecaecsaeceeeeeeeeeeaeeeaees 17
+B.2 LFOS.... i eeeseesceseessecesecseescessecsecsaeeseesseescessecsaecsaecaeenseessecsaecaeesseesceeseesaecsaeesseeseeaeesaecsaeeaaeeaeeseeesaecaaeeneeseeees 18
+B13 RamdOM.......eeeeccccessecsssecsscecsseceeeceseeeseeceeseceeceeeaeeesaecsaaecaecesaecsaecseeeeaeeseaeeceseecsaecesaecsaeceaeceaecseaeeeueeeeaeeeeaees 20
+3.4 Other Modulation SOULCES..........:.cssecessecsseecsscecsseeceeccseccssecesseccaeceaecesaecssaecseecseeeseeecseeeceeeeeeeeeeeeeeeeeeeeeaees 22
+3.5 MACTOS........ceessececeessncceceessnececessscceeceessnaeceessaaceescssssececeessaaececessaceeseesaaeeseesssaaeeecssaeeeseesuaaeecesseaaeeeceesaeeesseesaaas 23
+3.6 Keyboard........ccceccccsscesssceessecescecssecsceceseeeeceeseseeeaaecacecsaeceaeecssceseseeseseeeaaecsaeecsaecsseeeeeeeeeaeecsaeecsaeceaeesuseeseeeeeaees 23
+4.0 Matix... eee eseescsscsssecssecseescescceseessaecseesseeseessecsaecsasenseeseeseessecsaecsaeeseesseesaecsaeeseeeseeseesseesaecsaecaeeeaeeseeeseeaeeeaeeseeees 24
+A.1 Modulation Liste... ccc ecccecssecssecssecsseceeseeeeseeesaecsaeccssecsscesesecseceesaeecsaeccaaeceseeeeeeeeeseeeaeecsaeceaeceeeseeeeeeeeeenees 24
+4.2 Modulation Remap Curve..........cccccscccssscesecsseceeseceeseeeseeecseecsanecsaeceaecseeeeeeeeaeeeaeeeeaaecaeecsaeceaecseeeeeeceeeeeeaes 25
+5.0 Effects... eecceesecssecessecseceessecesaecesseecsaeecsaecaaecaeccsaeceseeceseeeeaecseaeeseseeesseceseecsaeccsaecesueceaeeesaeeeeaeeceseeesseeeaeeeaeecsaeees 27
+5.1 CHOTUS...... cee ccesecescccesecssecseceeseceesseeceacecacecsaecesaecsaecssaecscecseaeeeaeeeeaaeesaeecsueccsaecaeecaaecsaecseeeeeeeeeeseeseseeesaeeesaeees 27
+5.2 COMPTSSOT...........sesececcesssnccecesessneceecssssceeseesssnececeeessaaeceecsssneeeceeessnaaeceessssaeceecsssaeeeseessaaeeeecsseaaeceeeessaeeeeees 28
+5.3 Delay.....cecccessccssscssneceseccssccsssecseceesaeeeeaeeceacecsaecesaecaeecssecesaecseneeseeceeaaeceaaecsaeecsaecsauecaecesaecseeeceeaeeeaeeeeaeeesaaeeaeees 30
+D4 DiStOFtiONn....... eee eeesseeceesscececssssceecesssccececssaaeeecsssaeeeecesssneececssaaeescssaaeeeseesaaeececssaaeeecessaeeeseeaaeeseessaaeeseessaeesees 31
+B.D EQ. ecesessessessssesseessecsseesscessecsaecsseeeecseeeaeessecacessecsaecsseeseeesaecaseseeseceseeesecsseceseescecsaecaceeseeaaecaeesseesaeeeaeessessase 33
+5.6 Filters... eee eeessecscesccsecsseeeeesecssecescessesseecseecscessecsaecsaecssesecsaceeseeseeesaecseeeseesseesaecsaeeseeeseeeseeeseeseecsaeeneeeeesaeesaee 34
+5.7 FIAM GEL... .eeceessecesecesecesccesscecssecseceecceeseecsaecsaecseceeeaeeesaaecsaecsaecseceeeaeecsaecssecseceeeaeecsaecsaecseaeeeaeecsaeceseseeeeeeaeeesaeees 35
+5.8 PhAaSeL......esceeccessecesccessecesscecsacecaeceaecsecsececseceeeaaeesaaecsaecesuecaeecsecseceeseeeeeaeeceaeecsueceaaecaecsesecseaeeeaeeeeaeeesaeeeaeees 36
+5.9 ReVELD.......cesccescceseccesecesecssceeseeeesaeeceacecsaeecsaecesuecssecssuecscecseaeeeaeeeeaeecsaeecsaecesuecsaeeceaecsaecseeeeeeaeeeaeeseaeeenaeeesaeees 37
+6.0 Global Settings... ce cescescessceescecscecssecsecseceeescecsaecesaecsecseceeeseecsaeceaaecsaecseeeeeaeecsaecseecsecseaeeeaeecsueceeeeeeeeees 39
+7.0 Advanced Settings...........ccccesccssscesseeessecseceseceeseeseneeesaecsaeceseceeaeeeasecsaeceseeseneeeaaecsaecesaeceseeeeaeeeaaecsaeceseeeeeeeeseeesaeees 40
+7.1 Oscillator Advanced Settings...........cccccecsccsssecsssceseeeeesccesseecescecsaeecsaecesaeceseeceseceeaecseaeeseeeeeeeeeeaeeeeaeeeeaeecsaeees 40
+
+7.2 Global Advanced Settings.........:.ccccessccssscesssceescecececseeceseecseecesecseaecseneeeaeeeeaeecsaecesaeceaeeceseeeeeeeeeeeeeaeeeeaeecsaeees 42
+
+
+--- Page 2 ---
+
+0.0 Disclaimer
+
+| am not employed by or associated with Vital Audio.
+
+| was not there when this synthesizer was being developed.
+
+| have developed this user manual by using my background of producing music for over 10 years, my ears,
+oscilloscopes, and frequency spectrum analyzers.
+
+There are certain things in this user manual where | theorized what the synthesizer is doing.
+For example, some of the oscillator morph algorithm descriptions may not be 100% accurate.
+
+With that being said this manual should be sufficiently accurate to learn the ins and outs of Vital.
+
+
+--- Page 3 ---
+
+1.0 General Info
+
+Vital is a versatile wavetable synthesizer that can be used for both additive and subtractive synthesis.
+Combining the voices, filters, effects and modulation in Vital can create almost any sound imaginable.
+
+1.1 Sizing
+Click on the Vital symbol in the upper left hand side of the synth to adjust the viewing size of Vital.
+
+In the sizing menu is an option which allows Vital to automatically search for updates.
+Vv iB can be toggled on or off.
+
+1.2 General Navigation
+At the top of the synth are options to navigate to different parts of the synth.
+
+Below is a brief description of each section.
+
+Voice: Oscillators, Sampler, and Filters
+
+Effects: Effects Rack containing 9 potential effects
+
+Matrix: Modulation matrix. Contains a list of all parameter modulation, and fine tuning for modulation curves.
+Advanced: Advanced oscillator and global options
+
+1.3 Presets
+
+At the top of the synth are preset options
+The components are labeled below
+
+1. Preset Selector
+2. Save Preset
+3. Preset Options
+
+Preset Selector
+
+Clicking on the preset selector will bring up the preset browser.
+
+The left hand side of the browser contains a description of the currently selected preset as well as preset
+folders and style tags.
+
+The right hand side of the browser shows the specific presets in a list. The presets can be sorted by name,
+author, style tag, or date created.
+
+Click the star icon next to a specific preset to add the preset to the favorites folder. Once the preset has been
+added to the favorites folder the start next to the preset will be shown in purple.
+
+Save Preset
+
+Saves the current settings in Vital as a preset in the user presets folder.
+
+When saving a preset, provide the preset name, author, style tags, and a brief description of the preset in the
+comments section.
+
+
+--- Page 4 ---
+
+Preset Options
+
+Browse Presets: Opens preset browser
+
+Save Preset: Saves the current settings in Vital as a preset in the user presets folder
+Open External Preset: Opens a Vital preset from anywhere your computer has access to
+Export Preset: Exports preset so it can be shared with others
+
+Import Bank: Imports many presets as preset folder(bank)
+
+Export Bank: Exports many presets as a preset folder(bank)
+
+Initialize Preset: Loads default settings for Vital
+
+Load Tuning File: A tuning file can be loaded here. Read advanced settings for more info.
+Log Out: Log out of Vital Audio account
+
+1.4 Parameter Adjustments
+
+Vital’s parameters can be adjusted with the use of knobs, sliders, or numeric, text, and percentage fields.
+Examples of these types of parameter adjustments are shown below.
+
+UNISON |
+
+1. Knob
+
+2. Slider
+
+3. Numeric field
+
+4. Percentage field
+5. Text Field
+
+Parameters can be adjusted by clicking and dragging with the mouse.
+
+Holding CTRL while clicking and dragging allows for fine tuning.
+
+Holding ALT while clicking a knob will pull up the value of that parameter.
+
+Type over this value to manually enter a new specific value for the parameter.
+
+To cancel the value change after the text box opens, delete all of the characters in the text box.
+Alternatively, right click the parameter and select "Enter Value"
+
+Double clicking a parameter will return the knob to it's default value.
+Alternatively, rick click the parameter and select "Set to Default value"
+
+
+--- Page 5 ---
+
+2.0 Voice
+
+The voice section of Vital comes equipped with 3 wavetable oscillators, 1 sampler, and 2 filters.
+
+The oscillators and sampler are run in parallel.
+However, each oscillator can receive frequency or ring modulation from other oscillators or the sampler.
+
+The filters can be applied to any of the oscillators, the sampler, or the other filter.
+
+LEVEL PAN
+
+EFFECTS
+
+PITCH
+
+EFFECTS
+
+\
+MIX KEY TRK
+
+
+
+--- Page 6 ---
+
+2.1 Oscillators
+
+Below is the Vital Oscillator with its components labeled.
+
+1. Activator
+
+2. Level Knob
+
+3. Pan Knob
+
+4. Pitch Settings
+
+5. Routing Options
+
+6. Wavetable View
+
+7. Unison Settings
+
+8. Phase Settings
+
+9. Left Modulation Knob
+10. Right Modulation Knob
+
+Each oscillator can be turned on or off using the activator the upper left corner of the oscillator.
+When turned on the oscillator will light up, and when off the oscillator will be dim and gray.
+
+The oscillator's volume can be adjusted with the level knob.
+The oscillator's output can be panned from left to right with the pan knob.
+
+2.1.a Pitch Settings
+
+The pitch adjustment on the left will adjust the incoming midi note by that number of semitones.
+
+This is set to O by default so that the oscillator will play the incoming midi note as is.
+
+The pitch adjustment on the right will adjust the incoming midi note by that number of cents. With 100 cents
+being 1 semitone.
+
+This is set to O by default so that the oscillator will play the incoming midi note as is.
+
+The keyboard under the word "pitch" will open the transpose snap settings.
+
+Once open, select specific semitones that you would like to limit the left pitch
+adjustment knob to.
+
+hen a semitone is selected it will lite up in purple.
+
+If no semitones are selected, then all semitones are allowed.
+
+To understand this better, here is an illustrative example.
+If | want to only be able to adjust my oscillator by 0, or 7 semitones (a perfect 5th) | would light up the C and G
+keys.
+
+
+--- Page 7 ---
+
+Now when | drag the pitch adjustment on the left the numbers 4 through 9 will adjust my midi note by 7
+semitones, and all other numbers will leave the pitch of the oscillator unchanged (In other words a O semitone
+change).
+
+Now if we modulate the pitch adjustment on the left with an LFO we can create an arpeggiated sound.
+
+Global snap is set up similar to transpose snap, but will limit the possible midi output notes. This can be used
+to force midi notes played to be in a specific scale or key.
+
+2.1.b Routing Options
+
+Below the pitch level and pan controls is a routing control.
+
+FILTER 1
+
+Each oscillator can be routed to either filter 1, filter 2, filter 1 & 2, effects, or direct out.
+If any of the filter choices are selected, the signal will flow into the effects rack after the filter.
+
+If a filter choice is selected and the filter is not turned on, then the signal will simply flow into the effects rack
+with no filter applied.
+
+If direct out is chosen then the oscillator's output will come out of the synth with no filters or effects applied.
+
+2.1.c Wavetable View
+
+In the middle of each oscillator is the wavetable view.
+Below is the wavetable view with each of its components labeled
+
+1: Wavetable Visual
+
+2: Wavetable Selector
+
+3: Wavetable Visual selector
+4: Wavetable Slider
+
+5: Wavetable Editor
+
+The wavetable can be chosen by clicking on the wavetable selector, selecting a folder on the left and then
+selecting a specific wavetable on the right.
+
+Click the star icon next to a specific wavetable, and the star will turn purple. The wavetable will be added to
+the favorites folder.
+
+Change the Wavetable Visual by clicking on the wavetable visual selector.
+
+2D shows a 2 dimensional view of the current frame of the wavetable.
+
+3D shows a birds eye 3 dimensional view of all of the frames of the wavetable with the current frame
+highlighted.
+
+
+--- Page 8 ---
+
+SP. Spectral. Shows the Harmonics of the wavetable.
+
+The wavetable slider slides between wavetable frames.
+
+2.1.c.i Wavetable Editor
+
+Clicking on the wavetable editor opens a wavetable editing window.
+
+This allows for editing the wave shape or the individual harmonics of any frame in a wavetable.
+This section is inherently based on visuals, so it is best described through video.
+
+Check out the following tutorials to learn more on Vital’s wavetable editor.
+https://www.youtube.com/watch?v=kco25cSixBQ&t=908s&ab_channel=MarulaMusic
+
+https://www.youtube.com/watch?v=ycNhgGOIBos&ab_channel=QB%21K
+https://www.youtube.com/watch?v=1Bwk1B-LmXU&ab_channel=DataBroth
+
+2.1.d Unison and Phase Settings
+
+UNISON __
+A\_ le
+
+On the left side of the unison settings, the number of unison voices can be set to any integer between 1 and
+16.
+
+Note that using many unison voices will increase CPU usage.
+
+On the right side of the unison settings, is the % of detune applied to the unison voices.
+
+A value of 0% will apply no detune. (However unison may still have an impact on the sound due to the phase
+of different voices.)
+
+A value of 100% will apply the full amount of detune as set in the advanced oscillator settings.
+
+The default detune range is 2 semitones. Meaning 2 semitones up and 2 semitones down.
+
+On the left side of the phase settings, the starting position of the waveform can be selected.
+
+A phase of 180 degrees will start in the middle of the waveform.
+
+A phase of 0 degrees will start at the leftmost side of the waveform.
+
+A phase of 360 degrees will start at the rightmost side of the waveform. Since the waveform repeats, we have
+come full circle and this is identical to O degrees.
+
+On the right side of the phase settings is a phase randomization setting.
+
+The oscillator will start the wave form at a random phase within a range of x% around the phase starting
+degree.
+
+For example if the phase starting degree is set to 180 degrees, and phase randomization is set to 50%.
+
+Then the waveform will randomly start anywhere from degree 90 to 270.
+
+If the phase randomization is set to 100% like it is by default, the phase starting position selector becomes
+irrelevant.
+
+If the phase randomization is set to 0%, the phase will always start at the exact degree of the waveform that is
+selected.
+
+
+--- Page 9 ---
+
+2.1.e Oscillator Modulation Knobs
+
+FM OSC 2
+
+The left modulation knob morphs the shape of the waveform using different algorithms.
+
+The right modulation knob has some addition algorithms to morph the shape of the waveform,
+
+but also includes the option to perform frequency modulation or ring modulation on the oscillator by using
+another oscillator or the sampler as input.
+
+Left Knob Morphing Algorithms
+Vocode: Vocoder formant shifting (Less extreme than formant scale)
+
+Formant Scale: Formant shifting (more extreme than vocoder)
+
+Harmonic Stretch: Keeps fundamental harmonic in place while shifting all other harmonics up and down the
+harmonic series. (Does not allow harmonics to go below fundamental harmonic)
+
+Inharmonic: Keeps fundamental harmonic in place while shifting all other harmonics up or down not in line
+with the harmonic series. (Does not allow harmonics to go below fundamental harmonic)
+
+Smear: Removes low ordered harmonics by morphing wave shape.
+
+Random Amplitudes: Randomizes the amplitude of each part of the waveform while holding onto some
+continuity. Not pure randomness.
+
+Low Pass: Applies a low-pass filter to the waveform. This effectively removes the higher order harmonics until
+the knob is turned all the way to left when only the fundamental harmonic remains, which results in a sine
+wave.
+
+High Pass: Applies a high-pass filter to the waveform. The effectively removes all the lower order harmonics
+until all of the harmonics in the human hearing range have been removed which results in silence when the
+knob is turned all the way to the right.
+
+Phase Disperse: Disperses phase of the waveform. Think about it as randomly spreading out the waveform
+horizontally.
+
+Shepard Tone: A shepherd’s tone is a sound that appears to be continuously increasing in pitch forever.
+This auditory illusion occurs when a sound is increasing in pitch and slowly fades out as another pitch an
+octave below it slowly fades in. The knob when dragged slowly from the left to the right will perform this
+auditory illusion.
+
+Spectral Time Skew: Morphs harmonics between wavetable positions.
+
+
+--- Page 10 ---
+
+Right Knob Morphing Algorithms
+Sync: Repeats the waveform and squishes the waveform. This results in the pitch increasing in octaves
+relatively smoothly with out playing other notes.
+
+Formant: Repeats the waveform and squishes the waveform but also makes the amplitudes of the waveform
+approach 0 the closer they get to 0 degrees or 360 degrees.
+This is similar to sync, but it avoids introducing dc offset
+
+Quantize: Quantizes the waveform to a grid. The grid gets less refined the more the knob is turned to the right.
+This is essentially bit/sample reduction.
+
+Bend: Pinches waveform at 180 degrees and morphs the rest of the wave form to the right or the left
+respectively depending on which way the knob is turned.
+
+Squeeze: Pinches waveform at 0, 180, and 360 degrees and morphs the rest of the wave form to the right or
+the left respectively depending on which way the knob is turned.
+
+Pulse: Pulse width modulation. Pinches waveform O degrees. Squishes waveform into this point. Added area of
+waveform is flat.
+
+Frequency Modulation: Plays the current oscillator at the frequency of another oscillator or sampler. This
+results in complex sounds with distinct harmonic characters and is widely used in modern sound design.
+To learn more watch the following videos
+https://www.youtube.com/watch?v=r3EQQ-XF3jA&ab_channel=FloydSteinberg
+https://www.youtube.com/watch?v=LnogZ4500B8&t=385s&ab_channel=ZenWorld
+
+Ring Modulation: Plays the current oscillator with the amplitude modulated from another oscillator or
+sampler.
+
+To learn more watch the following videos
+
+https://www.youtube.com/watch?v=rYdBHWF1_ 2k&t=230s&ab_channel=Runningonair
+https://www.youtube.com/watch?v=DCPxe6Pi1KWo&ab_channel=Sweetwater
+
+2.2 Sampler
+
+Below is the Vital Sampler with its components labeled.
+
+1. Activator
+
+2. Level Knob
+
+3. Pan Knob
+
+4. Pitch Settings
+
+5. Routing Options
+
+6. Sample View
+
+7. Sample Playback Options
+
+The sampler can be turned on or off using the activator the upper left corner of the sampler.
+
+
+--- Page 11 ---
+
+When turned on the sampler will light up, and when off the sampler will be dim and gray.
+
+The sampler's volume can be adjusted with the level knob.
+The sampler's output can be panned from left to right with the pan knob.
+
+2.2.a Pitch Settings
+
+_ PITCH
+
+The pitch adjustment on the left will adjust the incoming sample by that number of semitones.
+
+This is set to O by default so that the sampler will play the incoming sample as is.
+
+The pitch adjustment on the right will adjust the incoming sample by that number of cents. With 100 cents
+being 1 semitone.
+
+This is set to O by default so that the sampler will play the incoming sample as is.
+
+Note that samples will be sped up or slowed down to increase or decrease pitch.
+There are no granulization options available.
+
+The keyboard under the word "pitch" will open the transpose snap settings.
+
+Once open, select specific semitones that you would like to limit the left pitch
+adjustment knob to.
+
+hen a semitone is selected it will lite up in purple.
+
+If no semitones are selected, then all semitones are allowed.
+
+To understand this better, here is an illustrative example.
+
+If | want to only be able to adjust my sample by 0, or 7 semitones (a perfect 5th) | would light up the C and G
+keys.
+
+Now when | drag the pitch adjustment on the left the numbers 4 through 9 will adjust my sample note by 7
+semitones, and all other numbers will leave the pitch of the oscillator unchanged (In other words a O semitone
+change).
+
+Now if we modulate the pitch adjustment on the left with an LFO we can create an arpeggiated sound.
+
+Global snap is set up similar to transpose snap, but will limit the possible midi output notes. This can be used
+to force midi notes played to be in a specific scale or key.
+
+2.2.6 Routing Options
+
+Below the pitch controls is a routing control.
+
+EFFECTS
+
+Filter 1
+
+The sampler can be routed to either filter 1, filter 2, filter 1 & 2, effects, or direct out.
+
+
+--- Page 12 ---
+
+If any of the filter choices are selected, the signal will flow into the effects rack after the filter.
+
+If a filter choice is selected and the filter is not turned on, then the signal will simply flow into the effects rack
+with no filter applied.
+
+If direct out is chosen then the oscillator's output will come out of the synth with no filters or effects applied.
+
+2.2.c Sample View
+
+The sample view contains a sample chooser as well as an image of the chosen sample's waveform.
+
+When the sample is played the amount of the waveform that has been played will be highlighted.
+
+The sample can be chosen by clicking on the title of the sample, selecting a folder on the left and then
+selecting a specific sample on the right.
+
+Click the star icon next to a specific sample, and the star will turn purple. The sample will be added to your
+favorites folder.
+
+2.2.d Sample Playback Options
+On the right hand side of the sampler are sample playback options.
+
+Keytracking is the keyboard in the upper left corner.
+
+Activating this will make the sample be played back at a pitch according the midi note played.
+Note that samples will be sped up or slowed down to increase or decrease pitch.
+
+There are no granulization options available.
+
+If keytracking is deactivated like it is by default the sample will play at it's original pitch and speed.
+
+Shuffle is the crossing arrows in the upper right corner.
+Activating shuffle will start the sample from a random spot within the sample each time a midi note is played.
+
+Loop is the circular arrow in the lower left corner.
+Activating the loop will loop the sample endlessly
+
+Bounce Back is the double sided arrow in the bottom left corner.
+Activating Bounce Back will play the sample in reverse after the sample finishes playing forward.
+
+
+--- Page 13 ---
+
+2.3 Filters
+
+Below is a Vital filter with its components labeled.
+
+. Activator
+
+. Filter Type Chooser
+
+. Filtered Frequency Response Curve
+. Cutoff Frequency
+
+. Resonance
+
+. Filter Type Blend
+
+. Filter Input Routing
+
+/ \ . Drive Knob, Mix Knob, and Keytracking Knob
+DRIVE MIX KEY TRK
+
+Each filter can be turned on or off using the activator in the upper left corner of the filter.
+When turned on the filter will light up, and when off the filter will be dim and gray.
+
+In the middle of each filter is a visual of the filter's frequency response curve.
+
+Surrounding the filter frequency response curve are 3 sliders which control the filter's cut off frequency,
+resonance, and filter type blend.
+Note that Formant, Comb, and Phase filters may have different sliders.
+
+The cut off frequency sets the frequency where filtering will begin to be applied.
+
+The resonance adjusts the level of a peak at the cutoff frequency.
+The resonance can be set high enough that the filter begins self oscillating and the pitch of the cutoff
+frequency becomes audible.
+
+Cutoff frequency and resonance can be adjusted simultaneously by clicking and dragging inside the filter
+frequency response curve box.
+
+Filter type blend will smoothly transition from one type of filter to another.
+
+Typically each specific filter will have 2 or 3 types of filters for different positions on the slider.
+
+For example, the default filter "Analog : 12dB", smoothly transitions from low-pass, to band-pass, to high-pass
+filter when dragging the slider.
+
+In the bottom left of the filter are filter input routing options.
+
+Any oscillator, the sampler, or the other filter can be routed into the filter using these options.
+
+If something is routed into the filter the text will light up in orange, and the routing options in the oscillator or
+sampler will be updated.
+
+If an oscillator or the sampler is unrouted from a filter, it will automatically be routed to the effects rack.
+
+The drive knob will add a small amount of saturation after the filter is applied.
+The mix knob adjusted the dry/wet signal of the filter and the drive knob.
+
+Note that there may be some strange shapes on the frequency response curve when adjusting the mix knob.
+This is normal, and has to do with the way filters work regarding phase.
+
+
+--- Page 14 ---
+
+The keytracking knob will adjust the filter cutoff frequency according to the incoming midi note.
+If set to 100%, the cutoff frequency will perfectly correlate to the incoming midi note.
+
+To demonstrate this, here is an illustrative example.
+
+Set the cutoff frequency to 1046.4hz (note this is 4 times the default value of 261.6hz which is middle C), and
+set keytracking to 100%.
+
+Now play a note and slowly turn the resonance to 100%.
+
+You will hear the self oscillation of the filter playing 2 octaves up perfectly in tune with any note you play.
+
+For self oscillation one octave set the cutoff frequency to 523.2hz.
+
+For self oscillation in unison leave the cutoff frequency at it's default value.
+
+For self oscillation a perfect 5th up set the cutoff frequency to 392.4hz.
+
+*Note this wont work for very high midi notes due to rounding error.
+
+Negative values for keytracking will set the cutoff frequency lower for higher pitches and higher for lower
+pitches.
+
+Filter types
+
+The different filter types achieve the same goal but do so with different algorithms.
+
+The differences in the filter types become significantly more apparent when using self oscillation, turning up
+the filter drive, or applying post processing distortion.
+
+Analog | Dirty | Ladder | Digital
+Ladder is supposed to mimic the transistor ladder filters from Moog.
+
+12db: Frequencies are 12 decibels quieter for each octave distance from the cutoff frequency.
+Note that an octave is either half or double a frequency value.
+Blend, blends between a low-pass, band-pass, and high-pass filter.
+
+24dB: Frequencies are 24 decibels quieter for each octave distance from the cutoff frequency.
+A 24 db filter has twice the slope of a 12 db filter.
+Blend, blends between a low-pass, band-pass, and high-pass filter.
+
+Notch Blend: Blend, blends between a low-pass, notch, and high-pass 24 dB filter.
+
+Notch Spread: Blend, blends between a band-pass, and notch 24 dB filter.
+Note that in the middle of this blend is an interesting double notch filter.
+
+B/P/N: Band Peak Notch. Blend, blends between a band-pass, peak and notch filter.
+Diode
+
+Diode is supposed to mimic the diode ladder filter from Roland.
+
+Think of an Acid House Bass sound.
+
+Lowshelf: Blend, blends between a low-pass, and a band-pass filter.
+
+Lowcut: Blend, blends between a low-pass, and a band-pass filter.
+If Cutoff frequency is set high enough, sub frequencies will be cut with a slight bump at the cutoff frequency.
+
+
+--- Page 15 ---
+
+Formant
+A formant filter is supposed to mimic how the human voice produces vowel sounds.
+This is typically achieved with high peaks and low valleys which approach each other.
+
+Many of the filter controls are different for the formant filter compared to the previous filter types.
+
+The blend slider is replaced with a formant transpose slider.
+This will shift all of the peaks and valley's simultaneously in an exponential fashion.
+
+The resonance and frequency cutoff sliders, are replaced with formant X and Y sliders.
+These will alter the relationship of the peaks and valleys which can be used to produce different vowels.
+
+The drive knob is replaced with a peak knob.
+This is essentially a resonance knob for the peaks and valleys.
+
+The key track knob is replaced with a spread knob.
+When turned to the left, this will spread out all of the peaks and valleys.
+When turned to the right, the peaks and valleys will converge to a band-pass filter.
+
+Comb
+
+Comb filters are a series of notch filers.
+
+Typically placed exponentially apart or as part of the harmonic series.
+
+Comb filtering can achieve the same sound of a flanger due to the way a flanger works with phase cancellation.
+However, you should not think of a comb filter as the same as a flanger, because they do two different things.
+They are two separate tools and approaches that can be used to achieve the same result.
+
+Note that the drive knob is replaced with a cut knob.
+
+The cut knob will act differently depending on the specific comb filter algorithm chosen.
+
+This knob can be used to control a low pass, band-pass or high pass filter after the comb-filter.
+
+Or this knob can be used to control a dry wet parameter for the comb filter starting at a specific cutoff
+frequency.
+
+Negative comb filters mimic a flanger where the delayed sound is inverted from the original sound.
+Positive comb filters mimic a flanger where the delayed sound is not inverted from the original sound.
+Positive results in more even order harmonics, while negative results in more odd order harmonics.
+
+Phaser
+
+A comb filter with a less notches.
+
+Comb filtering can achieve the same sound of a phaser due to the way a phaser works with phase cancellation.
+However, you should not think of a comb filter as the same as a phaser, because they do two different things.
+They are two separate tools and approaches that can be used to achieve the same result.
+
+Blend blends between the amount of notches in the filter (goes hand in hand with poles in a phaser).
+Negative mimics a phaser where the delayed sound is inverted from the original sound.
+
+Positive mimics a phaser where the delayed sound is not inverted from the original sound.
+
+Positive results in more even order harmonics, while negative results in more odd order harmonics.
+
+
+--- Page 16 ---
+
+3.0 Modulation and Macros
+
+Parameters in Vital can be modulated in a number of different ways including but not limited to envelopes,
+LFOs, randomness, and macros.
+
+A modulator can be added to almost any parameter in Vital.
+Modulation squares are the empty boxes in vital.
+A few examples of modulation squares are shown below.
+
+To add modulation to a parameter hover over a modulation square,
+
+then click and drag the modulation on top of any parameter.
+
+Note that the modulation will be auditioned on any parameter while dragging the modulation over it, but will
+not actually be applied until the mouse click is released.
+
+Once modulation is applied to a parameter a few things will happen.
+
+A modulation circle will appear in the modulation square.
+
+The same modulation circle will appear when the mouse hovers over the modulated parameter.
+
+The second corresponding modulation circle will also appear when the modulation circle in the modulation
+square is clicked.
+
+While a midi note is played, a cyan line or curve is shown on the parameter to create a visual of how much
+modulation is being applied to the parameter.
+
+If the mouse hovers over a modulated parameter with multiple modulation sources,
+a modulation circle for each modulation source will appear with a descriptive label.
+
+Clicking and dragging a modulation circle will increase or decrease the modulation amount.
+The pie in the modulation circle is a visual of the modulation amount.
+Additionally a cyan line or curve on the parameter will be shown to visualize the modulation amount.
+
+Holding CTRL while clicking and dragging a modulation circle will allow for fine tuning.
+Holding ALT while clicking and dragging a modulation circle will allow for modulation amount to be typed in as
+a specific value.
+
+Right clicking on a modulated parameter
+will allow the option of disconnecting individual modulation sources,
+or disconnecting all modulation sources at once.
+
+
+--- Page 17 ---
+
+Right clicking on a modulation square
+will allow the option of disconnecting individual modulation destinations,
+or disconnecting all modulation destinations at once.
+
+Right clicking a modulation circle will allow the following options
+Remove: Removes modulation permanently
+
+Bypass: Modulation is bypassed temporarily until unbypass is applied
+Make Bipolar: The parameter moves symmetrically above and below the original parameter value
+Make Unipolar: The parameter moves in one direction away from the original parameter value and back.
+
+Make Stereo: Modulate the left and right parameters in opposite directions for the left and right channels
+
+3.1 Envelopes
+
+Envelope 1 is mapped to oscillator and sampler volume by default.
+This can only be unmapped by applying a different modulation source to an oscillator or sampler volume.
+
+In the upper right hand corner of the envelope view is a magnifying glass.
+
+Click and drag on this magnifying glass to zoom in and out of the envelope.
+
+Dragging up will zoom in, and dragging down will zoom out.
+
+Note that time is labeled in seconds or milliseconds on the x axis and has vertical grid lines.
+
+Each envelope has 6 parameters at the bottom of the envelope view.
+
+Delay, attack, hold, decay, sustain, release.
+
+These parameters can be adjusted by clicking and dragging their knobs
+
+Alternatively, these parameters can be adjusted by clicking and dragging the dots in the display.
+
+Closed dots adjust the endpoints of the line segments.
+Open dots adjust the curves.
+
+Delay is the amount of time in seconds after the midi note plays until the envelope begins.
+
+
+--- Page 18 ---
+
+Attack is the amount of time in seconds that it takes for the envelope to get from it's starting value to its
+maximum value.
+
+Hold is the amount of time in seconds that the envelope will stay at its maximum value if the midi note is still
+being played.
+
+Decay is the amount of time in seconds that it takes for the envelope to get from its maximum value to its
+sustain level after the amount of hold time if the midi note is still being played.
+
+Sustain is the % envelope value between the minimum and maximum.
+
+The sustain level will be reached and held after the delay, attack, hold and decay time if the midi note is still
+being played.
+
+The level will quickly move to the sustain level if the midi note is released early.
+
+Release is the amount of time in seconds after the midi note is released that it takes for the envelope to move
+from the sustain level to the minimum level.
+
+3.2 LFOs
+
+LFO stands for low frequency oscillator.
+At its core, an LFO is a modulation parameter that repeats at a specific frequency.
+
+Vital's LFO can modulate parameters in an essentially infinite amount of different shapes by using built in LFO
+shapes or creating new ones.
+
+Below is the Vital LFO with its components labeled.
+
+. LEO Modulation Squares
+. LEO Shape Chooser
+
+. LFO Shape Visual
+
+. Brush Tool
+
+. Grid Options
+
+. LFO Phase Slider
+
+. LFO Mode Chooser
+
+. Frequency Settings
+
+ON A UO KRWDHDY BP
+
+
+--- Page 19 ---
+
+9. Smooth Knob, Delay Knob, and Stereo Knob
+
+LFO Shape Chooser
+A specific LFO shape can be chosen by clicking in the upper right hand corner on the LFO Shape Chooser.
+
+Select a folder on the left and then select a specific LFO shape on the right.
+Click the star icon next to a specific LFO shape, the star will turn purple. The LFO shape will be added to your
+favorites folder.
+
+LFO Shape Visual
+The LFO Shape Visual shows how a parameter will be modulated by the LFO.
+
+The minimum value is at the bottom of the display and the maximum value is at the top.
+
+As anote is played, the LFO Shape Visual will highlight the part where the LFO is at in it's cycle.
+Click and drag on open dots to control points in the LFO shape.
+
+Note that open dots will snap to the grid when dragged close to the grid.
+
+Click and drag on closed dots to control the curve between two open dots.
+
+Hold shift while clicking and dragging on any closed dot to control all curves at once.
+
+Double click an empty space to add a new closed dot.
+
+Double click an existing closed dot to delete it.
+
+Click the squiggly line to the left of the LFO Shape Chooser to smooth out all angles in the LFO shape.
+
+Grid Options
+The grid number on the left will determine the amount of horizontal grid lines.
+
+The grid number on the right will determine the amount of vertical grid lines.
+
+Brush Tool
+
+Click on the brush icon to activate the brush tool.
+
+Note that the brush icon will become highlighted when activated.
+
+Click on the shape to the right of the brush icon to choose a brush shape to draw with.
+
+While the brush tool is activated, clicking in the LFO Shape Visual will draw the brush shape in between each
+horizontal grid with the level at the height of the mouse.
+
+Note that clicking and dragging across the LFO visual will draw across the entire visual with ease.
+
+Holding CTRL while the mouse is hovering over the LFO display will toggle the brush tool on and off.
+
+LFO Phase Slider
+
+Directly below the LFO visual is the LFO phase slider.
+
+By default the LFO phase slider will determine where the LFO shape begins.
+However this depends on the LFO mode.
+
+LFO Mode Chooser
+In the bottom left of the LFO display is the LEO Mode chooser.
+The following LFO modes are available in Vital.
+
+Trigger: Starts LFO at LFO phase slider position each time midi note is played. When the LFO reaches the end of
+the shape, the LFO starts from the beginning of the shape.
+
+Sync: Starts LFO at LFO phase slider position according to the BPM in the project. When the LFO reaches the
+end of the shape, the LFO starts from the beginning of the shape.
+
+
+--- Page 20 ---
+
+Envelope: Starts LFO at LFO phase slider position each time midi note is played. When the LFO reaches the end
+of the shape, the modulation stops.
+
+Sustain Envelope: Starts LFO at beginning of LFO each time midi note is played. When the LFO reaches the LFO
+phase slider, the modulation stops.
+
+Loop Point: Starts LFO shape at beginning of LFO each time midi note is played. When the LFO reaches the end
+of the shape, the LFO starts from the LFO phase slider position.
+
+Loop Hold: Starts LFO shape at beginning of LFO each time midi note is played. When the LFO reaches the LFO
+phase slider position, the LFO starts from the beginning of the shape.
+
+LFO Frequency Settings
+
+To the right of the LFO mode chooser are the LFO frequency settings.
+Drag the left side of these settings to adjust the frequency rate.
+
+Click the right side of these setting to adjust the frequency rate style.
+
+Below are descriptions of the frequency rate styles.
+
+Seconds: Self explanatory. Repeats are in seconds.
+
+Tempo: Repeats are in fractional intervals of project BPM. For example eighth notes (1/8)
+
+Tempo Dotted: Repeats are in fractional intervals of project BPM. For example dotted eighth notes (1/8)
+Tempo Triplets: Repeats are in fractional intervals of project BPM. For example eighth note triplets (1/8)
+
+Key track: Frequency is set to the frequency of the incoming midi note. The frequency can be offset from the
+incoming midi note by semitones or cents on the left side of the LFO frequency settings for this style.
+
+LFO Knobs
+On the bottom of the LFO display are three knobs.
+
+The smooth knob will cross-fade the beginning and end of the LFO together over the course of a specified time
+in seconds.
+
+Right clicking the word "SMOOTH" allows for replacing the smooth knob with a fade in knob.
+The fade in knob determines the amount of time in seconds for the LFO to be faded from a dry unaltered signal
+
+to a fully wet modulated signal.
+
+The delay knob determines the amount of time in seconds after the midi note is played before the LFO will be
+applied.
+
+The stereo know allows for an offset in the LFO phase slide between the left and right channels.
+
+
+--- Page 21 ---
+
+3.3 Random
+
+Random allows for random modulation to be applied to parameters.
+
+True randomness is non continuous.
+
+Modulating a parameter in a non continuous way will most likely introduce digital artifacts and clicks.
+
+For things to sound musical we would prefer to use specific randomness algorithms that allow for continuity.
+
+In general these algorithms will move a small amount from their current position to their next position to allow
+for a more continuous type of randomness.
+
+To be clear consider the following example.
+
+The goal is to generate 10 values between -10 and 10
+
+True randomness would generate something like the following vector.
+
+[5, -8, -2, 9, 10, 4, 8, -6, 8, 0]
+
+Note the numbers jump around a lot.
+
+The biggest jump is the jump from -6 to 8 which is a jump of 14.
+
+No consider another algorithm to generate random numbers where each number is the previous number plus
+a random number between -2 and 2.
+
+This algorithm would generate something like the following vector.
+
+[5, 6, 5, 3, 2, 3, 3, 2, 4, 6]
+
+Note that now the numbers move in a smoother more continuous fashion.
+
+Think about a speaker trying to play different amplitudes.
+
+The speaker has a built in digital signal processor that allows for small jumps to be played smoothly.
+
+However, large jumps can start to cause issues that will result in digital artifacts or clicks.
+
+This is why the second type of algorithm would be preferred if we would like continuous musical results free of
+artifacts and clicks.
+
+Below is the Vital Ranom Modulation Generator with its components labeled
+
+wreitnds 1. Randomness Modulation Squares
+
+2. Randomness Style Chooser
+3. Randomness Frequency Settings
+RANDOM 2 yy 4. Randomness Visual
+5. Randomness Sync Option
+FREQUENCY 6. Randomness Stereo Option
+
+Randomness Style Chooser
+The Randomness Style Chooser is located in the bottom left.
+
+Clicking on this will allow for the following randomness algorithms.
+
+Perlin: Perlin Noise. Developed by Ken Perlin to create natural forms of randomness in textures for graphics in
+the movie Tron. Perlin received an Academy Award for Technical Achievement for creating this algorithm.
+
+Sample and Hold: Holds at an amount then randomly jumps to another held amount, then randomly jumps to
+another held amount, and so on and so forth. Between randomly held amounts the modulation has a quick
+
+(but not completely vertical) slope to allow for smooth transitions free of digital artifacts and clicks.
+
+Sine Interpolate: Randomness based around a sine wave oscillation
+
+
+--- Page 22 ---
+
+Lorenz At tractor: Non repeating randomness shaped like a butterfly's open wings. At first there may appear to
+be repeating a pattern, but there is actually not. Created by Edward Norton Lorenz. Originally used to try and
+describe the atmosphere and weather. Resulted in the butterfly effect theory.
+
+https://www.youtube.com/watch?v=aAJkLh76QnM&ab_channel=It%27ssoblatant
+
+Randomness Visual
+The randomness visual shows the amount of modulation applied as midi notes are played.
+
+Randomness Frequency Settings
+In the bottom right of the randomness view are the randomness frequency settings.
+
+Note that frequency settings will make the most sense for the sample and hold randomness style.
+Other randomness style frequencies will be relative to each other.
+
+Drag the left side of these settings to adjust the frequency rate.
+
+Click the right side of these setting to adjust the frequency rate style.
+Below are descriptions of the frequency rate styles.
+
+Seconds: Frequency is in seconds.
+
+Tempo: Frequency is in fractional intervals of project BPM. For example eighth notes (1/8)
+Tempo Dotted: Frequency is in fractional intervals of project BPM. For example dotted eighth notes (1/8)
+Tempo Triplets: Frequency is in fractional intervals of project BPM. For example eighth note triplets (1/8)
+
+Key track: Frequency is set to the frequency of the incoming midi note. The frequency can be offset from the
+incoming midi note by semitones or cents on the left side of the LFO frequency settings for this style.
+
+Randomness Sync Option
+In the top of the randomness view is a Sync option.
+
+Clicking on the word Sync will highlight the word and enable the option.
+
+If the sync option is on, then randomness starts with the value it previously left off on at the end of the
+previous midi note.
+
+If the sync option is off, then randomness starts from the beginning of the randomness algorithm each time a
+midi note is played.
+
+Randomness Stereo Option
+In the top of the randomness view is a Stereo option.
+
+Clicking on the word Stereo will highlight the word and enable the option.
+If the stereo option is on, then a randomness algorithm will be generated for the left and right channels
+separately.
+
+3.4 Other Modulation Sources
+On the bottom right of the LFO menu is a 4x2 grid of additional modulation sources.
+
+VELOCITY LIFT OCT NOTE
+
+PRESSURE STEREO RANDOM
+
+
+
+--- Page 23 ---
+
+Note: Modulates parameter by an amount depending on the midi note played at the beginning of the midi
+note played.
+
+Velocity: Modulates parameter by an amount depending on the velocity of the midi note played at the
+beginning of the midi note played.
+
+Lift: Modulates parameter by an amount depending on the lift of the midi note played at the end of the midi
+note played.
+
+Oct Note: Similar to note, but modulation amounts for each note repeat every octave.
+Pressure: Responds to MPE presure
+
+Slide: Responds to MPE slide
+
+Stereo: Modulates sets different parameter values for left and right channels.
+
+Random: Modulates parameter by a random amount at the beginning of each midi note played.
+
+3.5 Macros
+
+Macros can be used to control multiple parameters at once.
+Vital comes equipped with 4 macros on the left hand side of the synth.
+
+Each macro has a macro knob, and associated modulation square beneath it.
+
+The only difference between macros and other modulation sources is that the macro knob needs to be turned
+to modulate the associated parameters.
+
+The macro knob can be turned manually by clicking and dragging, using another Vital modulation source such
+as LFO, using DAW automation, or midi controller mapping.
+
+3.6 Keyboard
+
+On the bottom of Vital is a keyboard with a pitch wheel and a modulation wheel.
+When a midi note is played it will be highlighted in purple on the keyboard.
+The keys can also be clicked with the mouse and will play.
+
+he pitch wheel will allow bending the midi note up to a maximum amount determined by the bend
+amount in the global settings off to the right.
+
+he pitch wheel and modulation wheel can be used to modulate parameters using the pitch wheel,
+and mod wheel modulation squares located above the controls on the keyboard.
+
+
+--- Page 24 ---
+
+4.0 Matrix
+
+The matrix menu shows a list of all active parameter modulations, and a modulation remap curve for the
+selected modulation
+
+BIPOLAR STEREO MORPH
+
+Random 1
+
+Qandam 2
+Random 2
+
+VEICCIT
+
+Macro i
+
+Macroi
+
+MOD REMAP 5
+
+4.1 Modulation List
+
+The list view has the following columns
+
+#: Row number. Clicking on the row number will change the number to an X and will bypass this modulation
+mapping until the X is clicked again.
+
+Source: Modulation source (LFO, Envelope, Macro, Velocity, Pitch Bend, etc...)
+
+Bipolar: Contains a switch that decide if the modulation is bipolar or unipolar.
+
+
+--- Page 25 ---
+
+Bipolar will move the modulation equally in both directions away from the original value.
+Unipolar will move the modulation in one direction away from the original value.
+
+Stereo: Contains a switch that decides if the modulation is stereo or mono. Stereo will move the modulation in
+opposite directions from the original value for the left and right channel.
+
+Morph: Contains a curve control for how the modulation will be applied to the parameter. Note that this curve
+and the curve the modulation remap curve are different curves and will both be applied for the final result.
+This curve can be used for quick simple curves, while the modulation remap curve can be used for finer tuning,
+or they can be used in combination.
+
+Amount: Modulation amount. Negative values will move the modulation in the opposite direction of positive
+values.
+
+Destination: Modulation destination. Can be any parameter in vital. While the modulation is being applied a
+cyan line visual appears in this cell.
+
+4.2 Modulation Remap Curve
+
+Click on any modulation in the list to view the modulation remap curve in the bottom of the modulation view.
+This view can be used to create unique modulation curves with interesting results including arpegiated, and
+percussive sounds.
+
+Below is the modulation Remap Curve with its components labeled.
+
+MOD REMAP 1
+
+1. Modulation Remap Curve Chooser
+2. Modulation Remap Curve Visual
+3. Brush Tool
+
+4. Grid Options
+
+Modulation Remap Curve Chooser
+
+A specific modulation remap curve can be chosen by clicking in the upper right hand corner of the modulation
+curve display on the title of the modulation curve.
+
+Select a folder on the left and then select a specific modulation curve shape on the right.
+
+Click the star icon next to a specific modulation curve, the star will turn purple and the modulation curve will
+be added to the favorites folder.
+
+
+--- Page 26 ---
+
+Modulation Remap Curve Visual
+
+The minimum value is at the bottom of the display and the maximum value is at the top.
+
+As anote is played, the modulation curve will highlight the part where the modulation is at.
+Click and drag on open dots to control points in the modulation curve.
+
+Note that open dots will snap to the grid when dragged close to the grid.
+
+Click and drag on closed dots to control the curve between two open dots.
+
+Hold shift while clicking and dragging on any closed dot to control all curves at once.
+Double click an empty space to add a new closed dot.
+
+Double click an existing closed dot to delete it.
+
+Click the squigly line to the right of the grid options to smooth out all angles in the modulation curve.
+
+Grid Options
+The grid number on the left will determine the amount of horizontal grid lines.
+The grid number on the right will determine the amount of vertical grid lines.
+
+Brush Tool
+
+Click on the brush icon to activate the brush tool.
+
+Note that the brush tool will become highlighted when activated.
+
+Click on the shape to the right of the brush icon to choose a brush shape to draw with.
+
+While the brush tool is activated, clicking in the modulation curve visual will draw the brush shape in between
+each horizontal grid with the level at the height of the mouse.
+
+Note that clicking and dragging across the modulation curve visual will draw across the entire visual with ease.
+Holding CTRL while the mouse is hovering over the modulation curve display will toggle the brush tool on and
+off.
+
+
+--- Page 27 ---
+
+5.0 Effects
+
+Vital has a total of 9 effects which can be added to the effects rack.
+
+These are some of the most common effects used in sound design and can be used to create very complex,
+rich sounds.
+
+The effects rack signal flows from top to bottom with the output of each effect flowing into the input of the
+next.
+
+The effects rack is setup in alphabetical order by default.
+
+All effects are disabled by default.
+
+To use effects simply click the activator button in the top left.
+
+To reorder the effects rack simply click and drag the effect up or down in the chain.
+
+5.1 Chorus
+
+Chorus is used to make a single instrument sound like a group of the same instrument playing at once.
+This is why it is called a chorus. Because it turns a singer into a group of singers (AKA a chorus).
+
+Chorus duplicates the original sound at different modulating delay times with slightly modulating pitches.
+This is to mimic a group of instruments playing the same sound at slightly different times and pitches.
+
+Below is Vital’s Chorus with its components labeled.
+
+VOICES FREQUENCY
+
+1 a >
+
+DEPTH DELAY1 DELAY2
+
+. Activator
+
+. Delay Visual
+
+Delay Voices Parameter
+
+. Delay Modulation Frequency
+
+. Delay Timing Knobs
+
+. Feedback Knob
+
+. Filter Frequency Response curve
+. Filter Knobs
+
+. Dry/Wet Mix Knob
+
+WO MNANKRWNE
+
+Delay Visual
+Shows a visual of the spacing of the delayed voices for the chorus.
+
+Voices
+
+Chooses the amount of pitch modulated delays for the chorus.
+
+Can be set to 4, 8, 12, or 16.
+
+Think about this as how many instruments will be playing in the group.
+Note that this setting is visualized in the delay visual.
+
+
+--- Page 28 ---
+
+Delay Modulation Frequency.
+
+Determines the amount of time before delay time modulation repeats itself.
+Can be set as a time in seconds, or a fraction of the songs BPM.
+
+Can be set to freeze to remove delay time modulation.
+
+Note that this setting is visualized in the delay visual.
+
+Delay Timing Knobs
+
+Delay 1: Relative control for delay time for half of the chorus voices.
+
+Delay 2: Relative control for delay time for the other half of the chorus voices.
+
+Depth: Multiplies each delayed voice by a different fractional amount as the knob is turned to the left.
+Adds a different increasing amount of delay time to each delayed voice as the knob is turned to the right.
+Note that these settings are visualized in the delay visual.
+
+Feedback Knob
+
+Feeds a percentage of the chorus output back into the chorus input.
+
+Negative percentages will feed a phase inverted version of the chorus output back into the chorus input.
+Negative feedback can be useful for solving phase cancellation issues especially for short delays with a lot of
+feedback.
+
+Filter Knobs
+
+A filter can be applied to the chorus output.
+
+Spread: mixes between a band-pass filter and no filter.
+
+Cutoff: Sets a cutoff frequency for the band-pass filter.
+
+Note that these settings are reflected in the filter frequency response curve
+
+Mix Knob
+Mixes the dry unaltered sound with the chorus output.
+
+5.2 Compressor
+
+The compressor in vital allows for multi-band or single band downward or upward compression.
+This allows for gentle compression, all out OTT squashing, or anything in between.
+
+Downward compression turns a signal down by a specific ratio once the signal is above a certain threshold.
+For example if a signal is 4db above its threshold and has a 4:1 ratio, then the signal will be turned down 3db
+so the output is only 1 db above the threshold.
+
+Upward compression turns a signal up by a specific ratio once the signal is below a certain threshold.
+For example if a signal is 4db below its threshold and has a 4:1 ratio, then the signal will be turned up 3db so
+the output is only 1 db below the threshold.
+
+Both downward and upward compression reduce the dynamic range of the original signal, which can be used
+to make an instrument sound hefty and large.
+
+
+--- Page 29 ---
+
+Below is the Vital compressor with its components labeled.
+
+RELEASE
+
+1. Activator
+
+2. Compressor Banding Options
+3. Compressor Visual
+
+4. Attack and Release Knobs
+
+5. Post Compressor EQ
+
+6. Compressor Mix Knob
+
+Compressor Banding Options
+Input signal can be separated into different frequency bands such that each frequency band can have its own
+
+threshold and ratio settings for downward and upward compression.
+
+The low frequency band cuts off at approximately 150 Hz.
+The high frequency band cuts off at approximately 3000 Hz.
+The frequency band cutoffs can not be changed.
+
+Compressor Visual
+The opaque bright green meters in the forefront of the visual represent the output levels of the compressor.
+
+The small horizontal white lines hovering around the peak of the meters represents the input level of the
+compressor.
+
+The distance between the meter peak and the horizontal white lines is the amount of compression attenuation
+being applied.
+
+The transparent green rectangles in the background control the compressor threshold and ratio.
+
+Note that upwards compressors are slightly more transparent than downwards compressors.
+
+Click and drag on the upper/bottom edge of these rectangles to adjust the threshold for a given compressor.
+Hold shift while clicking and dragging to adjust the threshold for all compressors at once.
+
+Click and drag within a rectangle to adjust the ratio a given compressor.
+
+Note that ratios are not shown numerically. The ratio is determined by the amount of grid lines in the rectangle
+compared to the amount of grid lines on the background.
+
+When the grid lines for a downward compressor match the grid lines in the background, the ratio is 1:1 and
+the compressor is effectively bypassed.
+
+When the grid lines for one of the compressors on the bottom half of the display become larger than the grid
+lines in the background the compressor becomes more opaque. This is because having a ratio of less than 1:1
+on an upward compressor results in downward compression.
+
+Attack and Release Knobs
+
+Attack adjusts the amount of time that it takes after the signal hits its threshold to fully attenuate the sounds.
+Turning the knob all the way to the left will immediately attenuate the sound.
+
+Turning the knob to the right allows some time for transients to pass through unaltered while fading in the
+attenuation.
+
+
+--- Page 30 ---
+
+Release adjusts the amount of time that it takes after the signal returns below the threshold to stop
+attenuating the sound.
+
+Turning the knob all the way to the left will immediately stop attenuating the sound.
+
+Turning the knob to the right allows some time to pass while attenuation is faded out.
+
+Note that attack and release very important controls on a compressor. Adjusting them can allow for a sound to
+be flattened, bring out the transients, or even creating pumping sounds.
+
+Post Compressor EQ
+Allows for post compression signal to be EQed using a Low Shelf, Mid Shelf, and High Shelf.
+
+The low frequency shelf cuts off at approximately 150 Hz.
+The high frequency shelf cuts off at approximately 3000 Hz.
+The frequency band cutoffs can not be changed.
+
+Mix Knob
+Mixes the dry unaltered sound with the post compressor post eq output.
+
+5.3 Delay
+
+Delay repeats the original signal at a specific frequency.
+Optionally a filter can be applied to each repeat.
+This can be a great tool for adding depth to a sound.
+
+Below is Vital’s Delay with its components labeled
+
+FREQUENCY
+
+h —
+viono
+
+MODE
+
+. Activator
+
+. Delay Visual
+
+. Delay Time Frequency
+
+. Delay Mode Options
+
+. Feedback Knob
+
+. Filter Frequency Response curve
+. Filter Knobs
+
+. Dry/Wet Mix Knob
+
+ON A UO KRWDHDY BP
+
+Delay Visual
+Shows visual of the delayed repeats of the original signal for the left and right channels.
+Left is on top. Right is on bottom.
+
+Delay Time Frequency
+
+Determines the amount of time before the signal repeats itself.
+Can be set as a time in seconds, or a fraction of the song’s BPM.
+Note that this setting is visualized in the delay visual.
+
+
+--- Page 31 ---
+
+Delay Mode Options
+
+Determines method playing repeats of the original signal.
+
+Note that this setting is visualized in the delay visual.
+
+Also for any mode other than mono there are two delay time frequency settings.
+
+Mono: Repeats the left and right signals at the same time.
+
+Stereo: Repeats the left and right channels at potentially different times which can be set in the two delay time
+frequency settings.
+
+Ping Pong: Repeats a mono summed version of the original signal alternating on the left and right side.
+
+The delay time frequency setting on the right determines the time until the first repeat (on the right channel),
+and the time after the repeat on the left channel to repeat on the right channel.
+
+The delay time frequency setting on the left determines the amount of time after the repeat on the right
+channel to repeat on the left channel.
+
+FREQUENCY
+
+Mid Ping Pong: Similar to ping pong, but channels are not summed to mono. Additionally a repeat that plays
+both the left and right channel repeats simultaneously is added.
+So the signal will repeat right, left, stereo, right, left, stereo, etc.
+
+FREQUENCY
+
+Feedback Knob
+
+Feeds a percentage of the delay output back into the input.
+
+Negative percentages will feed a phase inverted version of the output back into the input.
+
+Negative feedback can be useful for solving phase cancellation issues especially for short delays with a lot of
+feedback.
+
+Filter Knobs
+
+A filter can be applied to the delay output.
+
+Spread: mixes between a band-pass filter and no filter.
+
+Cutoff: Sets the cutoff frequency for the band-pass filter.
+
+Note that these settings are reflected in the filter frequency response curve
+
+Mix Knob
+Mixes the dry unaltered sound with the delay output.
+Note that this setting is visualized in the delay visual.
+
+5.4 Distortion
+
+Vital’s distortion is a waveshaping distortion.
+
+
+--- Page 32 ---
+
+Waveshaping distortion shapes the sound waves of a signal by mapping amplitude input levels to amplitude
+output levels. Additionally a gain knob is used to boost or lower the incoming input signal.
+
+This can be a great tool for adding textures and harmonics.
+
+To learn more about how wave shape relates to harmonics, watch the following video on the Fourier
+
+transform. https://www.youtube.com/watch?v=spUNpyF58BY&ab_channel=3Blue1Brown
+
+Below is Vital’s waveshapping distortion with its components labeled.
+
+Soft Clip
+
+TYPE
+
+Pre
+
+FILTER CUTOFF RESONANCE
+
+1. Activator
+
+2. Waveshaping Input Vs. Output Chart
+3. Drive Knob
+
+4. Waveshape Type Chooser
+
+5. Filter Placement Option
+
+6. Filter Frequency Response Curve
+
+7. Filter Control Knobs
+
+8. Dry/Wet Mix Knob
+
+Waveshapping Input Vs. Output Chart
+This chart shows the relationship between input amplitude and output amplitude.
+
+Input amplitude is shown on the x axis while.
+Output amplitude is shown on the y axis.
+
+Typically a function that maps numbers from an infinite range to a small fixed range will be used.
+For example the chart of 2* arctan(x)/pi is shown below.
+
+40 20 20 40
+
+Note that this function can take an infinite range as input, but the output lives between -1 and 1.
+These types of functions are useful because in digital audio the amplitude has to live between the values of -1
+and 1.
+
+Drive Knob
+The drive knob increases or decreases the amplitude of the input signal before the waveshapping is applied.
+
+
+--- Page 33 ---
+
+Note that the Waveshapping Input Vs Output chart will react to changes in the drive knob.
+This is because the x axis will reflect the input after it has been turned up or down by the drive knob.
+
+Waveshape Type Chooser
+The will choose the specific function that will map input amplitude to output amplitude.
+A brief description of each type of waveshaping distortion is below.
+
+Soft Clip: Loud signals proportionally become infinitely close to full amplitude, but never actually reach full
+amplitude. This results in a round curve before the signal is flattened when it reaches it’s amplitude limits.
+This is useful for adding some harmonics without changing the original sound too much.
+
+Hard Clip: Signals are above full amplitude are set to full amplitude. This results in the signal abruptly
+flattening with a hard angle when it reaches it’s amplitude limits. This is useful for adding odd order harmonics
+and changing the original sound to be more aggressive.
+
+Linear Fold: Signals above full amplitude are reflected back the other way. This is useful for adding a unique set
+of harmonics, and significantly changing the original sound.
+
+Sine Fold: Similar to linear fold, but the edges of the reflections are rounded off. This is useful for adding a
+unique set of harmonics, and significantly changing the original sound, but less aggressive than linear fold.
+
+Bit Crush: Output Amplitude Levels are restricted to certain values. The drive knob controls how many
+amplitude levels are allowed. This is essentially the same as bit reduction.
+
+Bit depth is the amount of possible amplitude levels an audio file can read. For reference, 16 bit files contain
+2416=65,536 possible amplitude levels.
+
+Down Sample: Same as bit crush, but the drive knob has a different sensitivity curve.
+
+Filter Placement Option
+A filter can optionally be applied before or after the distortion.
+
+This useful because distortion introduces a lot of harmonics, so it may be nice to reduce the amount of
+harmonics before or after distortion is applied. This can be used to reduce the harshness that sometimes
+comes with distorted sounds.
+
+Note that when the filter is turned on, the Filter Frequency Response Curve is highlighted in red.
+
+Filter Control Knobs
+
+Blend: Blends between low-pass, band-pass, and high-pass filter type.
+Cutoff: Sets cutoff frequency for filter
+
+Resonance: Set peak amount at the cutoff frequency.
+
+Mix Knob
+Mixes the dry unaltered sound with the distorted output.
+
+5.5EQ
+
+An equalizer with 3 attenuation points that can be set as a low-pass, low-shelf, high-pass, high-shelf, notch, or
+peak.
+
+
+--- Page 34 ---
+
+Below is Vital’s EQ with its components labeled.
+
+“A
+
+CUTOFF RESONANCE
+
+1. Activator
+
+2. EQ Visual
+
+3. Attenuation Point Chooser
+
+4. Attenuation Point Type Chooser
+4. Attenuation Point Control knobs
+
+EQ Visual
+
+The EQ frequency response curve is shown as an off-white curve.
+
+The present harmonics in the output of the EQ are shown in the background.
+
+The attenuation points are shown as off-white circles.
+
+The currently selected attenuation point will be a filled in circle.
+
+Clicking and dragging on an attenuation point will adjust the cutoff frequency and gain of the attenuation
+point.
+
+Attenuation Point Chooser
+
+Clicking on “LOW”, “BAND”, or “HIGH” will select the low, mid, or high attenuation point respectively.
+Selecting an attenuation point will fill in the respective circle on the EQ visual and will pull up the respective
+attenuation point control knobs.
+
+Attenuation Point Type Chooser
+The low and high attenuation points are set to shelves by default.
+
+Clicking on the attenuation point chooser will change the point to a low-pass or high-pass.
+The mid attenuation point is set to a peak by default.
+Clicking on the attenuation point chooser will change the point to a notch.
+
+Attenuation Point Control Knobs
+
+These knobs will control the currently selected attenuation point
+
+Gain: Selects the gain in db for the attenuation point
+
+Note that gain is disabled for low-pass, notch, and high-pass attenuation points.
+Cutoff: Selects the cutoff frequency for the attenuation point.
+
+Resonance: Set peak amount at the cutoff frequency.
+
+5.6 Filter
+
+An additional filter identical to the filters in the voice section of the synth.
+The only difference is that this filter is routed in the effects chain.
+
+
+--- Page 35 ---
+
+5.7 Flanger
+
+A flanger is a sound produced when the original sound is played with a duplicate of itself at a low but changing
+delay time.
+
+This was originally done by putting a finger on a tape machine, so that the duplicate track would play just a tiny
+bit late at a changing amount of delay. This starts to introduce notch filters because the duplicate track starts
+to cancel some of the frequencies of the original track. These notches naturally start at the top of the
+frequency range and work their way down as the delay time is increased. This results in a comb filter.
+
+For more information on the history of flangers and how they work watch the following videos.
+
+https://www.youtube.com/watch?v=Q1dB7skarks&ab_channel=OmegaStudiosSchool
+
+https://www.youtube.com/watch?v=Ici_ YOVDI 0&t=203s&ab_channel=ProAudioFiles
+https://www.youtube.com/watch?v=gYF2h5ry3kY &ab_channel=EmpressEffects
+
+For simplicity, the Vital flanger is the specific type of comb filter that would be the result of an actual flanger,
+rather than an actual flanger itself.
+
+Below is the Vital flanger with its components labeled.
+
+. Activator
+
+. Flanger Visual
+
+. Feedback knob
+
+. Center Frequency Knob
+
+. Center Frequency Modulation Frequency Settings
+. Center Frequency Modulation Depth Knob
+
+. Stereo Offset
+
+. Dry/Wet Mix Knob
+
+ON A UO KRWDHDY BP
+
+Flanger Visual
+The flanger visual shows the frequency response curve for the comb filter being applied to the sound.
+
+Note that when the offset knob is not set to 0 or 360 degrees, there are two transparent frequency response
+curves. One is for the left channel and the other is for the right channel.
+
+Feedback Knob
+
+Feeds a percentage of the flanger output back into the input.
+
+Negative percentages will feed a phase inverted version of the output back into the input.
+
+Positive percentages result in more even order harmonics, while negative results in more odd order harmonics.
+
+Center Frequency Knob
+Sets the center frequency of the comb filter
+
+Center Frequency Modulation Frequency Settings
+Center frequency of comb filter is modulated up and down to create a flanging sound.
+
+This parameter sets the amount of time it takes for the comb filter to move down and up once.
+
+
+--- Page 36 ---
+
+Can be set as a time in seconds, or a fraction of the songs BPM.
+Can be set to freeze to remove center frequency modulation.
+
+Center Frequency Modulation Depth Knob
+Sets how far the comb filter modulation moves down and up
+
+Stereo Offset
+Offsets the comb filter center frequency for the left and right channels by a degree amount.
+The degree represents the degree of the center frequency modulation cycle.
+
+Mix Knob
+Mixes the dry unaltered sound with the flanger output.
+
+5.8 Phaser
+
+A phaser duplicates the original sound runs it through an all-pass filter and then plays that back with the
+original sound.
+
+All-pass filters have a flat frequency response curve, but adjust the phase of certain frequencies.
+
+Thus, a phaser causes frequencies to cancel out in a few bands which is the same as a few notch filters.
+This process can be repeated multiple times to create more frequency bands that have been canceled out.
+For more information on the history of phasers and how they work watch the following video.
+
+https://www.youtube.com/watch?v=gYF2h5ry3kY&ab_channel=EmpressEffects
+
+For simplicity, the Vital phaser is a series of notch filters that are commonly the result of a real phaser, rather
+than an actual phaser itself.
+
+Below is the Vital phaser with its components labeled
+
+. Activator
+
+. Phaser Visual
+
+. Notch Slider
+
+. Feedback Knob
+
+. Center Frequency Knob
+
+. Center Frequency Modulation Frequency Settings.
+. Center Frequency Modulation Depth Knob
+
+. Stereo Offset
+
+. Dry/Wet Mix Knob
+
+SO ON AOR WN PB
+
+Phaser Visual
+
+The phaser visual shows the frequency response curve for the notch filters being applied to the sound.
+
+Note that when the offset knob is not set to 0 or 360 degrees, there are two transparent frequency response
+curves. One is for the left channel and the other is for the right channel.
+
+
+--- Page 37 ---
+
+Notch Slider
+
+Sets the number of notches in the series of notch filters.
+
+In aclassic phaser, adding more all pass filters would result in more notches.
+On many phasers the number of all pass filters is called “poles”.
+
+Feedback Knob
+Feeds a percentage of the phaser output back into the input.
+
+Center Frequency Knob
+Sets the center frequency of the series of notch filters.
+
+Center Frequency Modulation Frequency Settings
+Center frequency of the series of notch filters is modulated down and up.
+
+This parameter sets the amount of time it takes for the series of notch filters to move down and up once.
+Can be set as a time in seconds, or a fraction of the songs BPM.
+Can be set to freeze to remove center frequency modulation.
+
+Center Frequency Modulation Depth Knob
+Sets how far the series of notch filters modulation moves down and up
+
+Stereo Offset
+Offsets the series of notch filters center frequency for the left and right channels by a degree amount.
+The degree represents the degree of the center frequency modulation cycle.
+
+Mix Knob
+Mixes the dry unaltered sound with the phaser output.
+
+5.9 Reverb
+
+Used to create the sound of a room.
+
+Digital reverbs are typically a fast delay, with a high amount of feedback and different comb and all pass filters
+on each delay.
+
+This is trying to replicate sound traveling through the air and bouncing off different surfaces within a room.
+The delay replicates the time it takes for the sound to travel from the source to your ear, then to a wall, then
+back to your ear, then to another wall, and so on and so forth.
+
+The comb filters represent the frequencies that are lost each time the sound bounces off a different surface.
+The all pass filters represent the change in phase for different frequency bands as they travel through the air.
+Each digital reverb can work in different ways, but these are the key ideas.
+
+Below is Vital’s Reverb with its components labeled
+
+~
+
+/ /
+
+PRE LOW CUT CUTOFF CHORUS AMT
+
+7
+
+CHORUS FRO
+
+
+
+--- Page 38 ---
+
+. Activator
+
+. Pre Reverb EQ
+
+. Post Reverb EQ Visual
+
+. Post Reverb EQ Controls
+. Reverb Chorus Controls
+. Reverb Space Controls
+
+. Pre-Delay Knob
+
+. Dry/Wet Mix
+
+ON A UO KRWDHDY BP
+
+Pre Reverb EQ
+Pre Low Cut: Applies a high-pass filter to the input before reverb is applied.
+
+Pre High Cut: Applies a low-pass filter to the input before reverb is applied.
+
+Post Reverb EQ
+
+A low-shelf or a high-shelf can be applied after the reverb to apply damping.
+
+The EQ frequency response curve is shown in the visual as a purple curve.
+
+The attenuation points are shown as purple circles.
+
+The currently selected attenuation point will be a filled in circle.
+
+Clicking and dragging on an attenuation point will adjust the cutoff frequency and gain of the attenuation
+point.
+
+Note that gain is restricted to values between -6db and Odb.
+
+Clicking on “LOW”, or “HIGH” will select the low, or high attenuation point respectively.
+
+Selecting an attenuation point will fill in the respective circle on the EQ visual and will pull up the respective EQ
+control knobs.
+
+Reverb Chorus Controls
+
+Optionally a chorus effect can be applied to the reverb.
+
+Chorus Amount: Determines the amount of pitch modulation for the chorus.
+
+Chorus Frequency: Determines the frequency for the pitch modulation on the chorus.
+
+Reverb Space Controls
+Size: Makes the room sound like a small closed space or an open large hall
+Time: Time of the reverb tail in seconds
+
+Pre-Delay Knob
+Reverb can be put on a delay such that the original signal can be played by itself for a small amount of time
+
+before the reverb starts. This allows the original signal to be heard more clearly.
+The pre-delay knob determines the delay time for the reverb signal in seconds.
+
+Mix Knob
+Mixes the dry unaltered sound with the reverb output.
+
+
+--- Page 39 ---
+
+6.0 Global Settings
+
+At the bottom of the right hand panel are some of the global setting for Vital.
+
+\
+VOICES BEND VELTRK SPREAD
+
+Voices: Determines the amount of midi note that can be played at once. Note that this is different than
+Oscillator Unison voices
+
+Bend: Determines the amount of possible midi pitch bend in semitones from original pitch. For example a
+bend amount of two would allow the midi note to be bent two semitones up or down.
+
+Vel Trk: Velocity Tracking.
+
+Spread: Setting this knob all the way to the right will not impact the output of the synth. Turning this knob to
+the left will sum the stereo signals to mono.
+
+Right click spread to switch spread knob for Rotate Knob.
+Rotate: Rotates the left and right pan in a circle.
+
+To understand this, here is an illustrative example.
+
+Turn on oscillator 1 and the sampler.
+
+Pan oscillator 1 all the way to the left.
+
+Pan the sampler all the way to the right.
+
+Now slowly move the rotate knob to hear a rotating stereo field
+
+Glide: Determines the amount of time in seconds it takes for one midi note to glide into the next midi note.
+Slope: Determines the curve of the pitch glide between two midi notes.
+
+Always Glide: When activated each midi note will pitch glide starting from the previous midi note played no
+matter what. When deactivated, each midi note will only pitch glide while two midi notes are overlapping.
+
+Octave Scale: When activated glide time will depend on the distance of the two midi notes. For example
+gliding 3 octaves will take 3 times as long as it takes to glide 1 octave.
+
+Legato: When voices is set to 1, and legato is activated, modulations such as envelopes or LFOs wont be
+retriggered when a new overlapping midi note is played.
+
+
+--- Page 40 ---
+
+7.0 Advanced Settings
+
+The advanced settings in Vital are separated into individual oscillator advanced settings and Global advanced
+settings
+
+7.1 Oscillator Advanced Settings
+
+To light up the oscillator advanced settings, activate the oscillator.
+To light up the unison section add more than one voice to the oscillator.
+If the oscillator is deactivated or only uses one voice, the advanced setting will be dim and gray.
+
+Below are the advanced oscillator settings with the components labeled.
+
+Unison F
+
+STACK UNISON BLEND
+
+\
+DETUNE RANGE STEREOUNISON TABLE SPREAD SPECT SPREAD DIST SPREAD
+
+1. Note Tracking Option
+
+2. Hi Resolution Wavetable Option
+3. Oscillator Unison Stack Options
+4. Oscillator Unison Detune Range
+5. Oscillator Unison Dry/Wet Knobs
+6. Oscillator Unison Spread Knobs
+
+Note Tracking Option
+Deactivating note tracking will make this oscillator play the same note regardless of the midi note played.
+
+C3 will be played for default oscillator pitch settings.
+To play a different note, adjust the oscillator pitch settings.
+
+Hi Resolution Wavetable Option
+Wavetables will use a high resolution.
+
+This is probably unnecessary under most circumstances but may have an impact for wavetables with lots of
+high end frequencies.
+
+Oscillator Unison Stack Options
+Determines how unison voices will be stacked in terms of pitch
+
+Below are brief descriptions of the unison stack options.
+Unison: Plays voices with pitches ranging from the bottom of the detune range to the top of the detune range
+around the incoming midi note.
+
+Center Drop 12: The same as unison, but one voice is dropped down an octave and played in mono.
+
+Center Drop 24: The same as unison, but one voice is dropped down two octaves and played in mono.
+
+
+--- Page 41 ---
+
+Octave: Plays voices with pitches ranging from the bottom of the detune range to the top of the detune range
+around the incoming midi note and the octave above it.
+
+2x Octave: Plays voices with pitches ranging from the bottom of the detune range to the top of the detune
+range around the incoming midi note, the octave above it, and two octaves above it.
+
+Power Chord: Plays voices with pitches ranging from the bottom of the detune range to the top of the detune
+range around the incoming midi note and a perfect 5‘ (7 semitones) above it.
+
+Major Chord: Plays voices with pitches ranging from the bottom of the detune range to the top of the detune
+range around the incoming midi note, a major 3 (4 semitones) above it, and a perfect 5‘ (7 semitones) above
+it.
+
+Minor Chord: Plays voices with pitches ranging from the bottom of the detune range to the top of the detune
+range around the incoming midi note, a minor 3 (3 semitones) above it, and a perfect 5" (7 semitones) above
+it.
+
+Harmonics: The first voice plays the incoming midi note. Each voice added will play the next pitch in the
+harmonic series (up to 16 harmonics for 16 voices). Detune will randomly move these harmonics up or down
+which will result in an inharmonic sound.
+
+Odd Harmonics: The first voice plays the incoming midi note. Each voice added will play the next pitch in the
+odd ordered harmonic series (up to 16 harmonics for 16 voices). Detune will randomly move these harmonics
+up or down which will result in an inharmonic sound.
+
+Note that the odd ordered harmonic series excludes octaves.
+
+Oscillator Unison Detune Range
+Determines the boundary for how far a voices pitch can be detuned in semitones.
+
+Oscillator Unison Dry/Wet Knobs
+Unison Blend Knob: Adjust the volume of detuned voices.
+
+Stereo Unison: Sums stereo signal to mono when turned all the way to the left.
+
+Oscillator Unison Spread Knobs
+Table Spread: Spreads voices throughout different wavetable positions. The range of wavetable positions is
+shown visually above.
+
+Spect Spread: Spreads voices throughout different positions on the Oscillator’s Left Modulation knob. The
+range of knob positions is shown visually above.
+
+Dist Spread: Spreads voices throughout different positions on the Oscillator’s Right Modulation knob. The
+range of knob positions is shown visually above.
+
+
+--- Page 42 ---
+
+7.2 Global Advanced Settings
+
+Below are Vital’s advanced global settings with the components labeled.
+
+Round Robin
+NOTE PRIORITY
+Kill
+VOICE OVERRIDE
+
+Default
+
+TUNING
+
+1. Oscilloscope
+
+2. Frequency Spectrum Analyzer
+3. Global Oversampling
+
+4. Frequency Units Option
+
+5. Global Voice Settings
+
+Oscilloscope
+The Oscilloscope shows a current view of the waveform being played through the synth.
+
+Frequency Spectrum Analyzer
+Displays all harmonics present in the current sound.
+
+Global Oversampling
+Sets amount of oversampling for the synth.
+
+According to the nyquist theorem 2x oversampling should be sufficient for practically all sounds that a human
+can hear.
+
+However, on certain sounds with a lot of emphasis on high end frequencies, additionally oversampling may be
+a little bit helpful at the expense of CPU usage.
+
+1x oversampling will likely result in some aliasing for high end frequencies.
+
+Synths with no high end frequencies will not be impacted when set to 1x oversampling and will save some CPU
+useage.
+
+Additionally, aliasing could be used as an experimental sound design technique.
+
+Frequency Units Option
+
+Frequencies throughout Vital can be viewed in hertz (Hz) or semitones.
+
+Hertz are cycles per second.
+
+Semitones are measured in distance from middle C.
+
+Note that this setting will stay put even when presets are changed or Vital is closed and opened.
+
+
+--- Page 43 ---
+
+Global Voice Settings
+Note Priority: When more midi notes are played than global voices, this option will decide which notes are
+
+played and which are not.
+Note that a newly added midi note will always play.
+Priority is taken from the pool of existing midi notes.
+
+Below are the note priority options
+Newest: Newer midi notes are prioritized over older midi notes
+
+Oldest: Older midi notes are prioritized over newer midi notes
+
+Highest: Higher pitch midi notes are prioritized over lower pitch midi notes
+Lowest: Lower pitch midi notes are prioritized over higher pitch midi notes
+Round Robin: Similar to Highest
+
+Tuning
+Loads a tuning file to determine the pitch spacing of the midi notes.
+
+Pythagorean is the ancient original standard tuning based entirely on perfect 5ths.
+
+Try pythagorean tuning for orchestral songs or experimental songs.
+
+This tuning system contains some oddities and some rules left open to interpretation.
+
+Some older instruments even used to have two pitches for the same note.
+
+This relates to the harmonic series and how some of the higher order harmonics are “out of tune”.
+
+https://en.wikipedia.org/wiki/Pythagorean_tuning
+
+Just Intonation is an intonation system that was common in non-western pentatonic music.
+Try just intonation for songs built around the pentatonic scale or experimental songs.
+
+https://en.wikipedia.org/wiki/Just_intonation
+
+Default is the modern standard tuning. AKA Equal Temperament.
+Default tuning will probably sound the most comfortable for most modern music.
+
+https://www.youtube.com/watch?v=wUBkbrvCmGA&ab_channel=NathanNokes
+
+Tune
+Adjust the output of the synth by this number of cents. With 100 cents being 1 semitone.
+This is set to O by default so that the oscillator will play the incoming midi note as is.
+
+Transpose
+Adjust the output of the synth by this number of semitones.
+This is set to O by default so that the oscillator will play the incoming midi note as is.
+
+

@@ -54,6 +54,33 @@ else:
     USE_AI = False
     logger.info("OpenAI API key not found, using template-based generation")
 
+# Load synthesizer manuals
+SYNTH_MANUALS = {}
+
+def load_synth_manuals():
+    """Load synthesizer user manuals from the synth_manuals directory."""
+    manuals_dir = os.path.join(os.path.dirname(__file__), 'synth_manuals')
+    manual_files = {
+        'Serum 2': 'Serum 2 User Guide.txt',
+        'Phase Plant': 'Kilohearts Documentation.txt',
+        'Vital': 'Vital User Manual.txt'
+    }
+
+    for synth_name, filename in manual_files.items():
+        filepath = os.path.join(manuals_dir, filename)
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
+                # Store the full manual
+                SYNTH_MANUALS[synth_name] = content
+                logger.info(f"Loaded manual for {synth_name}: {len(content)} characters")
+        except Exception as e:
+            logger.error(f"Error loading manual for {synth_name}: {str(e)}")
+            SYNTH_MANUALS[synth_name] = None
+
+# Load manuals on startup
+load_synth_manuals()
+
 # Emotion data for chord progression generation
 EMOTIONS = [
     {
@@ -1131,11 +1158,12 @@ Create exercises that are instructional and teach craft, not story prompts. Avoi
             system_message = "You are a creative writing instructor teaching techniques and skills. Create exercises that are instructional and teach craft, not story prompts. Avoid character names and specific scenarios. Focus on teaching HOW to write. Always include 3 specific writing tips tailored to the exercise."
 
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": exercise_type["prompt"]}
             ],
+            request_timeout=50,
             temperature=0.85,
             max_tokens=800,
             presence_penalty=0.7,
@@ -1251,8 +1279,8 @@ def generate_sound_design_prompt(synthesizer, exercise_type, genre="all"):
         },
         'Phase Plant': {
             'type': 'modular',
-            'features': 'snapin effects, flexible routing, multiple oscillator types',
-            'strengths': 'modular signal flow, creative effects combinations, harmonic oscillators'
+            'features': 'snapin effects, flexible routing, multiple oscillator types (analog, wavetable, noise, granular, sampler)',
+            'strengths': 'modular signal flow, creative snapin combinations, flexible parallel processing'
         },
         'Vital': {
             'type': 'wavetable',
@@ -1338,7 +1366,7 @@ def generate_sound_design_prompt(synthesizer, exercise_type, genre="all"):
                     "Create an Eprom heavy bass using layered oscillators with distortion snapins and parallel processing chains",
                     "Design a Tipper-style surgical bass with modular signal flow, precise filter automation, and subtle harmonic movement",
                     "Build a Culprate atmospheric texture combining multiple oscillator types with creative snapin effect routing",
-                    "Create a Koan Sound neurofunk bass using harmonic oscillators, modular routing, and aggressive distortion staging",
+                    "Create a Koan Sound neurofunk bass using layered wavetable oscillators, modular routing, and aggressive distortion staging",
                     "Design a Kursa experimental sound using non-standard oscillator combinations and unconventional effect chains",
                     "Build a Seppa downtempo lead with smooth oscillator blending, modular filter routing, and spatial effects",
                     "Create a Vorso glitch bass using granular-style oscillator manipulation and complex modulation matrices",
@@ -1523,22 +1551,31 @@ def generate_sound_design_prompt(synthesizer, exercise_type, genre="all"):
                 # Fallback to random selection
                 selected_artist = random.choice(artist_pool)
 
+            # Get manual content for this synthesizer
+            manual_content = SYNTH_MANUALS.get(synthesizer, "")
+            manual_excerpt = ""
+
+            if manual_content:
+                # Include first 15000 characters of manual for context (table of contents + key features)
+                manual_excerpt = f"\n\n=== {synthesizer} USER MANUAL REFERENCE ===\n{manual_content[:15000]}\n... (manual continues)\n\nUse this manual to reference SPECIFIC features, parameters, and techniques available in {synthesizer}. When creating exercises, cite actual synthesizer capabilities from the manual above (e.g., 'Use Phase Plant's Modulator section', 'Enable Serum's Wavetable Editor', 'Activate Vital's Spectral Warp').\n"
+
             system_prompt = f"""You are an expert sound designer and educator specializing in {synthesizer}.
 {synthesizer} is a {synth_info['type']} synthesizer with {synth_info['features']}.
 It excels at {synth_info['strengths']}.
-
-IMPORTANT: You MUST base this exercise on the artist "{selected_artist}". Create a technical exercise that teaches their signature sound design techniques.
+{manual_excerpt}
+IMPORTANT: You MUST base this exercise on the artist "{selected_artist}". Create a technical exercise that teaches their signature sound design techniques using SPECIFIC features from the {synthesizer} manual referenced above.
 
 Available artists for context (but focus on {selected_artist}): All genres from Dubstep, Glitch Hop, Drum and Bass, Experimental Bass, House, Psytrance, and Hard Techno including artists like Skrillex, Virtual Riot, Noisia, KOAN Sound, Alix Perez, Daft Punk, Infected Mushroom, Charlotte De Witte, and many more.
 
 The exercise should:
 1. Reference {selected_artist}'s specific signature sound style
-2. Provide step-by-step technical guidance using {synthesizer}'s specific features
-3. Detail synthesis parameters (oscillators, filters, modulation, effects)
-4. Include tips for achieving {selected_artist}'s characteristic production techniques
+2. Provide step-by-step technical guidance using {synthesizer}'s ACTUAL features from the manual (not generic terms)
+3. Detail synthesis parameters with SPECIFIC names from the manual (oscillators, filters, modulation types, effects)
+4. Include pro-level techniques like specific modulator types, wavetable modes, spectral processing, etc.
+5. Include tips for achieving {selected_artist}'s characteristic production techniques
 
-Keep instructions clear and actionable, referencing {synthesizer}'s actual interface elements.
-Examples: "Create a Skrillex-style metallic bass", "Design a Tipper surgical bass", "Build a Virtual Riot supersized growl"."""
+Keep instructions clear and actionable, referencing {synthesizer}'s actual interface elements and specific features from the manual.
+Examples: "Create a Skrillex-style metallic bass using Serum's FM From B oscillator", "Design a Tipper surgical bass with Phase Plant's Analog oscillator and distortion snapins in series", "Build a Virtual Riot supersized growl with Vital's Spectral Morph and unison spread"."""
 
             user_prompt = f"Create a technical sound design exercise based on {selected_artist}'s signature sounds, with step-by-step synthesis instructions specific to their production style."
 
@@ -1626,12 +1663,13 @@ IMPORTANT:
 
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+            model="gpt-4o",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
-                temperature=0.8,
+                request_timeout=50,
+                temperature=0.9,
                 max_tokens=600,
                 presence_penalty=0.3,
                 frequency_penalty=0.3
@@ -1890,12 +1928,13 @@ Be specific and actionable. Focus on the METHOD, not just the outcome."""
 
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
                 temperature=0.8,
+                request_timeout=50,
                 max_tokens=600
             )
 
@@ -2103,7 +2142,8 @@ EXAMPLE OUTPUT:
                     {"role": "user", "content": user_prompt}
                 ],
                 temperature=0.9,
-                max_tokens=1500
+                max_tokens=1500,
+                request_timeout=50
             )
 
             content = response.choices[0].message.content.strip()
@@ -2407,13 +2447,14 @@ CRITICAL APPROACH:
                     user_prompt = f"Here is my writing for you to review:\n\n{user_writing}"
 
                     response = openai.ChatCompletion.create(
-                        model="gpt-4.1",
+                        model="gpt-4o",
                         messages=[
                             {"role": "system", "content": system_prompt},
                             {"role": "user", "content": user_prompt}
                         ],
                         temperature=0.7,
-                        max_tokens=800
+                        max_tokens=800,
+                        request_timeout=50
                     )
 
                     feedback = response.choices[0].message.content.strip()
@@ -2546,7 +2587,8 @@ APPROACH:
                             }
                         ],
                         max_tokens=800,
-                        temperature=0.7
+                        temperature=0.7,
+                        request_timeout=50
                     )
 
                     feedback = response.choices[0].message.content.strip()

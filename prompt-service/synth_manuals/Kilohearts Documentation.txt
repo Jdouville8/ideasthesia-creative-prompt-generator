@@ -1,0 +1,6808 @@
+--- Page 1 ---
+
+Kilohearts
+Documentation
+
+Kilohearts offer a wide selection of audio plugins compatible with all
+major DAWs. These plugins offer a great basis for understanding the
+building blocks of sound design due to their focus and unified design
+language. Once you understand the concept of how these modules
+work independently you can combine them in a modular fashion using
+our host plugins.
+
+These documentation pages describe how to use these plugins, and
+what to expect in terms of features. We encourage you to try your
+hand at the software even without reading all of this information and
+rather use it as a reference for when you get stuck at something. And
+even if you can't find the answer in here there are plenty of helpful
+developers and Kilohearts fans available to answer your questions in
+
+our Discord community.
+
+system Requirements
+
+These are the minimum recommended system requirements for
+
+running Kilohearts plugins.
+
+CPU
+
+
+--- Page 2 ---
+
+An X86 64-bit processor with SSE3 support. This is available in almost
+all computers from the last few decades.
+
+On macOS we also support the Apple "M" processor architecture.
+
+If you have many instances of our plugins running, or use a lot of
+Snapins at the same time in your patch, CPU usage will increase
+accordingly. Thus, we cannot guarantee that our plugins will work
+flawlessly in all use cases, even if your system does meet the
+minimum recommended system requirements.
+
+Operating System
+
+No matter if you are a Windows or macOS user, Kilohearts
+recommend keeping up to date with newer OS versions as they
+become available. We are not able to support OS versions that are no
+longer supported by their respective manufacturers. If you are using
+an outdated OS, please try our free trials to ensure compatibility
+before making any purchases.
+
+Software
+A DAW supporting the VST2, VST3, AAX, or Audio Unit plugin
+standards.
+
+Licensing hardware
+None
+
+However! The versions of our plugins installed via the Slate Digital
+installers use the iLok licensing scheme. If you are using these
+
+
+--- Page 3 ---
+
+versions, an iLok (USB dongle or iLok cloud) with a valid license from
+Slate Digital is required to use our plugins.
+
+Download and
+Installation
+
+Overview
+License Delivery
+Download the Installer
+
+Install
+Accept the EULA
+Plugin Formats
+
+Authenticate Machine (rarely needed)
+
+
+--- Page 4 ---
+
+Choose and Install
+Done!
+
+Additional Features
+Plugin Versions
+Trouble?
+
+Discontinued Products
+
+kHs ONE
+
+Overview
+
+
+--- Page 5 ---
+
+We strive to simplify and streamline the installation process in order to
+
+avoid the most common issues people often have when installing
+plugins onto their computers.
+
+If you encounter any problems at any point during the process, don't
+hesitate to contact support@kilohearts.com and we will help you out!
+
+License Delivery
+
+
+--- Page 6 ---
+
+KILOHEARTS
+
+Download your personalized installer:
+
+Kilohearts Installer Kilohearts Installer
+
+Latest for Windows Latest for Mac
+
+Your new license keys for reference
+
+Below are all the license keys you redeemed. Find all your license keys on your Kilohearts profile page.
+
+Carve EQ
+
+Full license created 2024-03-06:
+AKHY83S9 -ET@580FY - SMTJPG33-DZ5BPN19- 1G1NTMA2-QJXEAQWS-QHQYE1QH-2CS9IRE5
+
+kilohearts.com
+
+Y
+
+
+--- Page 7 ---
+
+There are several ways of acquiring licenses for Kilohearts plugins,
+and either way tou do it we will send you an email with the new license
+keys. But don't worry too much about the license keys, you should
+never need them.
+
+The email will have personalized installer download links at the top.
+You should always use those installers if possible to get the smoothest
+experience. If you do, your installer will automatically authenticate
+your machine on the first run and then always remember who you are.
+No need to copy/paste any license keys.
+
+It may happen that you can't find your license email immediately after
+your purchase and there are several possible reasons for this. These
+are the most common ones:
+
+Spam
+Your email was caught in your Spam, or Trash, folders. Double check
+there.
+
+Gmail
+
+Are you using Gmail? It's surprisingly common that Gmail users have
+inbox filters set up that they don't know about that make some emails
+"skip the inbox". Try searching in Gmail for "Kilohearts". You might be
+surprised!
+
+Fraud
+
+On very rare occations your order might be caught in the automated
+fraud detection system that our payment partner use. When this
+happens your order might get delayed indefinitely or even cancelled.
+
+
+--- Page 8 ---
+
+Please reach out to support@kilohearts.com if you suspect this is
+happening.
+
+Delay
+
+Your order was delayed because international banking can sometimes
+take a bit of time. Normal order processing times are typically a couple
+of seconds, but occationally it takes several minutes. Wait a minimum
+of 30 minutes to get your email before contacting
+support@kilohearts.com.
+
+Download the Installer
+
+All Kilohearts plugins are downloaded using the Kilohearts Installer. It
+will help you handle installation, updates, downgrades, and
+unistallation as quickly and painlessly as possible.
+
+Whenever you buy or demo a Kilohearts plugin you will get an email
+with a personalized installer download link. You should always use
+those installers if possible to get the smoothest experience.
+
+If, for some reason, you don't have a personalized installer available
+use the download links below. They function the same way, but if your
+computers hasn't been authorized previously you will need to do so on
+the first run. More on that in the Installation section.
+
+
+--- Page 9 ---
+
+Kilohearts Installe
+
+2.4.4 for Window
+
+Kilohearts Installe
+2.4.4 for Mac
+
+The installer itself is pretty small in terms of file size, and it
+self-updates as needed on startup.
+
+The installer will install the plugins (~50 MB download) and all the
+factory content for them (~1 GB download). It will also install any
+additional content banks that you might have access to.
+
+The installer will create a folder where most of the required files will be
+placed:
+
+Mac:/Library/Application Support/Kilohearts
+Windows:C: \ProgramData\Kilohearts
+
+On Windows, ProgramData is a hidden folder, so make sure you
+enable see hidden files in your file browser.
+
+Depending on which plugin formats you selected for installation, files
+may be placed in other locations as well so that your DAW can find
+them.
+
+If you are trying to install on a machine that lacks an internet
+connection you can download our offline installers below. Download
+them and put them on a USB drive to move them to your offline
+machine for installation.
+
+Offline Installe
+
+
+--- Page 10 ---
+
+Install
+
+The first time you run the Kilohearts Installer you will need to go
+through a few extra steps to set everything up correctly.
+
+Accept the EULA
+
+The boring (but important) bits
+
+KILOHEARTS END USER LICENSE AGREEMENT
+Copyright © 2020 Kilohearts AB
+
+Company Website: http://kilohearts.com
+Email: support@kilohearts.com
+
+END-USER LICENSE AGREEMENT FOR SOFTWARE PROVIDED WITH THIS AGREEMENT (THE "SOFTWARE PRODUCTS") CONSTITUTES IMPORTANT PLEASE READ THE TERMS AND DITIONS
+OF THIS LICENSE AGREEMENT CAREFULLY BEFORE CONTINUING WITH THIS PROGRAM INSTALL:
+
+Kilohearts End-User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and Kilohearts AB ("KILOHEARTS’) for the KILOHEARTS software product
+identified above which may include associated software components, license keys, media, printed materials, and "online" or electronic documentation, including any updates and/or new releases
+of the SOFTWARE PRODUCTS. By clicking the acceptance button that follows this license and/or installing and/or otherwise using the SOFTWARE PRODUCTS, you agree to be bound by the terms
+of this EULA. This license agreement represents the entire agreement concerning the program between you and KILOHEARTS, and it supersedes any prior proposal, representation, or
+understanding between the parties. If you do not agree to the terms of this EULA, do not install or use the SOFTWARE PRODUCTS.
+
+The SOFTWARE PRODUCTS are protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. The SOFTWARE PRODUCTS are licensed,
+not sold.
+
+1. GRANT OF LICENSE.
+The SOFTWARE PRODUCTS are licensed as follows:
+fa) Installation and Ise
+
+
+
+--- Page 11 ---
+
+Like most software companies Kilohearts requires you to accept a
+EULA (End-User License Agreement) in order to use the software.
+You only need to do this once per machine you are installing on.
+
+Plugin Formats
+
+Hello!
+
+Select which plugin formats to install:
+
+_
+w
+ose an installation folder, and make sure your DAW scans the same folder for plugins:
+
+ee (
+
+M vsT3
+
+ Aax
+
+Depending on your preferred DAW, you will want to install different
+plugin format standards. Make sure that you select the appropriate
+format for your DAW on this screen. If you make a mistake, or want to
+change your preferences later on you can access this screen again by
+clicking the cog icon on the top right of the installer.
+
+VST2 let's you chose a folder where you want to install the plugins.
+Make sure that after installation you configure your DAW to scan that
+very same folder for plugins, or they won't show in your DAW. VST3
+
+
+--- Page 12 ---
+
+doesn't let you configure a custom folder but instead always install in
+"C:\Program Files\Common Files\VST3" as dictated but the plugin
+format itself.
+
+Authenticate Machine (rarely
+needed)
+
+Enter licenses
+
+So, who might you be?
+
+In the field below, enter one of the following:
+
+— Your e-mail address. (Internet connection required)
+— Avalid license key. (You can aquire license keys from kilohearts.com)
+
+In order to make your installation process as simple as possible
+Kilohearts imprints an authentication code into your installer file,
+provided you downloaded it via the links in your license email. If that
+all worked as intended you will automatically skip this step.
+
+If you are running the anonymous installer for the first time on a
+machine it will ask you to prove which Kilohearts account is yours, so
+it can fetch all your licenses. You can do this in two ways.
+
+
+--- Page 13 ---
+
+Email
+Type the email address for your Kilohearts account, then wait for a
+verification email with a link to continue the installation process.
+
+Licence
+Paste any single one license from your license email and you will be
+instantly authenticated.
+
+Choose and Install
+
+Install
+
+Select all / none
+
+Premium Plugins Essentials Content Banks
+
+Carve EQ SY 3-Band EQ v Flanger
+
+/ msrerser Disperser
+
+ fnmunnrar Faturator
+
+Y AM Multipass
+Y DD Phase Plant
+
+Y DO: aia EO ‘iter v Phase Distortion Transient St v Impossible
+Y Ss Snap Heap
+
+50 plugins selected for installation. Cancel Install
+
+Kilohearts offer a lot of plugins and Content Banks. Any ones you own
+(including all the free ones in the Essentials category) will be
+pre-checked for installation. You can select/deselect plugins as
+desired before hitting Install.
+
+
+--- Page 14 ---
+
+Installation is usually quick, but some plugins require additional
+downloads of factory contents, like samples and wavetables.
+Depending on your internet connection your installation may take
+
+several minutes.
+
+o Downloading additional files (14%)
+
+Done!
+
+@& Kilohearts Installer
+
+Install™ Update Try Buy — Uninstall Enter licenses
+
+Premium Plugins Essentials Content Banks
+Carve EQ 3-Band EC Flanger, Phaser Animus
+Formant Filter Beings
+Bass Forge
+nserk Disperser
+ore ' p Book of the Dead
+
+Crisis Design
+
+Headline
+
+Impossible
+
+Once all the plugins are installed you can safely exits the installer and
+start your DAW, which in turn will scan your watched folders for any
+new plugins and find all the Kilohearts plugins.
+
+
+--- Page 15 ---
+
+If there were any issues during installation they will be displayed in a
+list at the bottom of the installer screen.
+
+Additional Features
+
+The Kilohearts Installer can be used to trial plugins, uninstall plugins,
+or change plugin formats. And the little "?" at the top right will display
+the contents of the logs kept on file for debugging. If you ever come up
+on a problem, they might be useful to our support staff.
+
+If you ever change your Kilohearts account you will need to
+authenticate the new account in your installer. Easiest way to do that it
+the tab Enter Licenses and paste any single license from the new
+account. Voila! You are now authenticated with both accounts.
+
+Plugin Versions
+
+
+--- Page 16 ---
+
+Update
+
+Update to version Release Notes
+
+Y 2.0.6 - Latest - Installed 208 2022-06-20
+General
+* Made spectrums in Slice EQ, Carve EQ and Multipass show the result of all voices mixed together when on poly lanes.
+« Fixed parameter context popups so that the typed value is discarded when the escape key is pressed.
+© Fixed crash that could occur when clicking the POLY button on a lane containing a nested host.
+
+Phase Plant
+Fix for audio rate modulations not respecting the enabled button
+
+Carve EQ & Slice EQ
+« Fixed “Left / Ri...” in stereo mode dropdown.
+
+All Kilohearts plugins share most of their code in a single file, so if you
+upgrade one plugin you update all of them.
+
+Upgrading your plugins to a new version is a manual process where
+you need to click the Update tab and find the version you wish to
+upgrade to. You can even find beta versions of new features if you
+check the Show preview versions checkbox.
+
+And if something strange is going on you can even downgrade to
+older versions. See our full changelog for details.
+
+Trouble?
+
+A great catch-all trick is to perform a Clean reinstall, even if you
+encountered the issues right away after installing for the first time.
+Read up on that in the Troubleshooting section of our FAQ.
+
+
+--- Page 17 ---
+
+If that didn't do it, please contact support@kilohearts.com and we'll do
+
+our best to help you out!
+
+Discontinued Products
+
+kHs ONE
+
+kHs ONE has been discontinued and is no longer available through
+the regular Kilohearts Installer. A stand-alone installer for the very last
+version of kKHs ONE is available below. Please note that kKHs ONE is
+not available in the VST3 format.
+
+Basic Usage
+
+Operating the Controls
+Kilohearts Envelopes
+
+Polyphonic Expressions
+
+
+--- Page 18 ---
+
+Hardware
+Software
+
+Microtuning
+
+Oversampling
+
+Operating the Controls
+
+Most parameters are controlled by the knobs and the sliders seen in
+the user interfaces. To use a knob or slider simply click it, and while
+holding the mouse button down, move the mouse up or down to
+change its value. Sometimes you may want more precise control
+when tuning a parameter. Hold the shift key while moving a knob or
+slider to enter fine tuning mode, where the knob or slider will move
+
+more slowly.
+
+You can reset a knob to its default position by double-clicking it.
+
+
+--- Page 19 ---
+
+Right-clicking most controls will bring up the parameter context menu
+where you can enter a numeric value using your keyboard and see
+other parameter options. For example, some parameters can be
+bound to MIDI CC messages, or made available for automation in
+your DAW. The context menu will also show you details about any
+modulations set up for the parameter.
+
+Kilohearts Envelopes
+
+Envelopes that control some value over the course of a note voice's
+life (eg. the voice volume) are common throughout Kilohearts plugins.
+The Kilohearts envelopes are mostly standardized and are based on
+the ADSR envelope, with an optional pre-delay and hold phase,
+
+making ita DAHDSR envelope.
+
+There is a graphic
+representation of the current envelope which you can tweak by
+
+
+--- Page 20 ---
+
+dragging them control points and curvatures in the graph, or by
+changing the numbers and knobs on the side.
+
+Attack
+
+When you trigger a note, the envelope will start to climb up from zero
+to its maximum level. This is known as the attack phase, the length of
+which is decided by the attack parameter of the envelope. Keep the
+attack low for a short snappy sound, or make it high for a slow sound
+which builds up over time.
+
+Attack Curve
+
+Adjusts the shape of the curve for the attack phase. Blends between
+exponential growth and logarithmic growth.
+
+Decay
+
+Next follows the decay phase, where the envelope drops down from
+its maximum level down to the sustain level. The time this takes
+depends on the decay parameter.
+
+Decay Curve
+Adjusts the falloff curve for the decay phase. This blends between
+linear falloff and exponential falloff.
+
+Sustain
+
+After the envelope has dropped down to the sustain level comes the
+sustain phase, which lasts until the note has ended. Thus, the sustain
+parameter does not influence the length of this phase but rather how
+high the sustain level is.
+
+Release
+
+
+--- Page 21 ---
+
+When the note is released, the envelope moves on to the release
+phase, where the envelope drops back down to zero. The time this
+takes is dictated by the release parameter.
+
+Release Curve
+Adjusts the falloff curve for the release phase. This blends between
+linear falloff and exponential falloff.
+
+Delay
+Initial delay before the attack phase starts. Not widely used, which is
+why this knob is placed outside of the ADSR group.
+
+Hold
+Time to hold at the maximum level before the decay phase starts. Not
+widely used, which is why this knob is placed outside of the ADSR
+
+group.
+
+Polyphonic Expressions
+
+Polyphonic expression gives the performer more precise control over
+the expressiveness of each note, whether it be in a live setting or
+programming melodies in your DAW. Where MIDI is used, polyphonic
+expressions are communicated via MPE (MIDI Polyphonic
+Expressions). MPE is a relatively recent addition to the MIDI standard.
+
+
+--- Page 22 ---
+
+In the VST3 plugin format polyphonic expressions can also be
+communicated between the DAW and the plugin via a specific API.
+
+Hardware
+
+Many controllers boast various polyphonic expression features. The
+most common ones are the ability to bend each note on a keyboard,
+individual pressure for each note, and a value for where you hit each
+key "vertically" on the keyboard.
+
+This market is pretty new, and ever changing, so it can prove quite the
+challenge to get your system set up in a way that makes all the pieces
+work together as intended. The Kilohearts support team might not
+always be able to help with hardware issues. Please contact the
+company that manufactures the controller if you are having problems
+setting up your system. In any case Kilohearts modulators will be able
+to read all of these signals and allow you to apply them to your sound
+design as you wish.
+
+Software
+
+All the systems in the chain from your controller to your DAW to the
+plugin need to support polyphonic expressions in order to get the full
+results. But you don't need to use a hardware controller to take
+advantage of polyphonic expressions. Many DAWs let you program
+the values for each track if you like.
+
+
+--- Page 23 ---
+
+Note that DAWs commonly have various relevant settings that need to
+be tweaked to enable MPE. Please consult your DAW's
+documentation for details relevant to your system.
+
+Microtuning
+
+The "per-note" pitch bend can be used to achieve microtuning. There
+are third-party software that allows any MPE-compatible plugin to be
+microtuned. Kilohearts recommend Entonal Studio for this.
+
+Oversampling
+
+Oversamping is a technique that temporarily increases your sample
+rate in order to perform an operation that might cause aliasing.
+
+A way of alleviating this is to extend the representable range by
+temporarily upsampling the audio to a higher sample rate. This causes
+less noise to leak down into the audible range that needs to be
+preserved, and leaves most of it in an inaudible high frequency range
+that can be filtered out and discarded before downsampling again to
+the original sample rate. This process is called oversampling. It's a
+straight forward but effective way to combat some of the most
+common problems in distortion and similar effects. Remember that
+
+
+--- Page 24 ---
+
+there are many, many sound design issues that cannot be helped by
+oversampling.
+
+In Kilohearts software oversampling is typically not a setting that is
+available to you as a user. If an operation could benefit from
+oversampling, the software will perform it to a reasonable degree, as
+needed.
+
+Host Plugins
+
+Overview
+The Topbar
+Macros
+Lanes
+Groups
+
+Modulation
+
+
+--- Page 25 ---
+
+Automation
+
+Overview
+
+Kilohearts offer three Plugin Hosts; Phase Plant, Multipass, and Snap
+Heap. These can be used to combine and modulate Kilohearts Snapin
+effects, using our intuitive modular system, to create your own unique
+
+sounds and effects.
+
+The Topbar
+
+> phaseplant Untitled 2 Kioheart
+v2.0.6
+
+All of the host plugins share a similar design for the top bar. It has a
+darker center area which handles presets. You can find the preset
+browser there, and you can like the loaded preset by clicking the heart
+icon. That will make it show up in the favorites folder in the preset
+
+
+--- Page 26 ---
+
+browser.The top bar also lets you edit preset names, authors, and
+descriptions by simply single-clicking the info.
+
+All the hosts also have Undo/Redo functionality built in by either
+clicking the rounded arrow icons or hitting CTRL+Z/CTRL+X. Beware
+that DAWs and plugins don't share an undo queue, so you might want
+to be careful when using the keyboard shortcuts. It's dangerously easy
+to have your DAW focused and hit CTRL+Z and undo the latest action
+from the DAWs perspective, which can easily result in deleting the
+plugin from the track.
+
+Macros
+
+Mod Wheel P Harmonic Mix , » Tuned Noise ™ Tape Echo
+
+The macro knobs can be routed to any other parameter in the host or
+on any of the modules used in the patch using the modulation system.
+This lets you control many different aspects of the sound of the patch
+using a single macro knob. The macro knobs can be renamed by
+clicking on their label. The new name is stored in the preset and is
+also instantly reflected out to your DAW for easy automation.
+
+
+--- Page 27 ---
+
+The macro knobs are probably the first thing you should take a look at
+when trying out new presets, since the preset maker may have routed
+them to allow quick adjustment of some key parameters in the preset.
+
+Lanes
+
+The various hosts all have some lanes where you are ment to add
+modules as you need them when designing your sound. These lanes
+can be vertical or horizontal, and before you add the first module in
+any lane, it will have a clear label of what types of module go in it. The
+categories are Generators, Effects and Modulators. Not all lane types
+are present in all hosts.
+
+To add a module to a lane, click the add module area which appears
+when you hover the empty space in a lane, or the dashed line if you
+hover in between existing modules. This will make a dialog appear
+giving you a selection of all the relevang modules. Simply click one to
+add it to the lane. To insert a module between existing ones hover the
+mouse in the space in between and a dashed line will appear. Click
+that. Alternatively, you can hold alt/cmd (Win/Mac) to expand the area
+for easier access.
+
+
+--- Page 28 ---
+
+Modules can be reordered or moved between lanes by clicking their
+title bars and dragging them. If you hold the ctrl/alt key when dropping
+the module you will make a copy instead of moving it.
+
+To remove a module click the little X icon next to the module name.
+
+Groups
+
+All lanes can have groups of modules, and all groups can be renamed
+or minimized for your convenience, and to make your patches more
+organized. You can also copy groups and their contents by holding the
+ctri/alt key, the same as you can for the individual modules.
+
+Modulation
+
+All hosts have the modulation lane at the bottom of the screen. This is
+where you add modulators that can be hooked up to most values in
+the patch to create more movement in your sound. Read more about
+the very deep modulation options in the modulation chapter.
+
+
+--- Page 29 ---
+
+Automation
+
+K DECAY SUSTAIN RELEASE
+4 100ms “ 100 % 5.00ms
+
+' Dan Cand tn 1 anc 4
+-12.04 dB
+
+Assign to automation slot > Slot 1 Slot 17 Slot 33 Slot 49
+
+Slot 2 Slot 18 Slot 34 Slot 50
+
+Slot 3 Slot 19 Slot 35 Slot 51
+
+Slot 4 Slot 20 Slot 36 Slot 52
+
+Slot 5 Slot 37 Slot 53
+
+Slot 6 Slot 22 Slot 38 Slot 54
+
+Slot 7 Slot 23 Slot 39 Slot 55
+
+Slot 8 Slot 24 Slot 40 Slot 56
+
+Slot 9 Slot 25 Slot 41 Slot 57
+
+Slot 10 Slot 26 Slot 42 Slot 58
+Polyphony Master pitch Bend Sei Stei27 alec eles send to
+, semis cents 5 Slot 12 Slot 28 Slot 44 Slot 60
+: Slot 13 Slot 29 Slot 45 Slot 61
+Slot 14 Slot 30 Slot 46 Slot 62
+Slot 15 Slot 31 Slot 47 Slot 63
+Slot 16 Slot 32 Slot 48 Slot 64
+
+AASTER v
+
+Gain
+
+Due to the open modular nature of our host plugins, your DAW cannot
+keep a complete list of all available parameters. However, we have
+made it possible to make specific parameters available for DAW
+automation when required. For any parameter that is always available
+in the host (eg. Master Pitch in , or any of the macros)
+automation works as normal, but for all other module parameters there
+are instead 64 automation slots to make them available externally.
+
+Right-click on almost any knob or button and click assign to
+automation slot. Select a slot, and it will get the name from the
+
+
+--- Page 30 ---
+
+function you wish to automate. To remove an automation slot,
+right-click on the knob or button and select clear automation slot.
+
+Example: Right-click on the gain knob in a generator. Assign it to a
+slot of your choice. In your host, prepare for automation as usual. In
+the list of possible destination, choose the slot you just selected in
+Phase Plant.
+
+Phase Plant
+
+Overview
+User Interface
+Generator Area
+Analog Oscillator
+Granular Generator
+
+Noise Generator
+
+
+--- Page 31 ---
+
+Sample Player
+
+Wavetable Oscillator
+
+Distortion Effect
+
+Filter Effect
+
+Non-Linear Filter Effect
+
+Mix Routing
+
+Aux Routing
+
+Envelope Output
+
+Curve Output
+
+Generator Groups
+
+
+--- Page 32 ---
+
+Audio Rate Modulation
+Effect Lanes
+Voice Settings
+
+Unison Settings
+
+Overview
+
+Phase Plant is a modular synthesizer where you can combine several
+different synthesis techniques in your sound design. Analog
+oscillators, samples, wavetables, a granular engine, and a noise
+generator create the initial sound, which can then be filtered and
+processed using any combination of Snapins from your Kilohearts
+arsenal. To bring your patch to life, Phase Plant supports an open
+ended modulation system, where you can add envelopes and LFOs
+
+
+--- Page 33 ---
+
+as you need them and route them to almost any parameter. To top it
+all off, can be used to modulate the phases,
+frequencies, and amplitudes of all generator modules, to create all
+manner of sounds based on FM and similar techniques.
+
+User Interface
+
+D phaseplant fF “* Symphonette
+v2.0.6 enove Vv
+
+el Filter Rhythm C Fifth Element C Filter
+
+Group
+
+G 5+00
+
+Ra Violin Ensemble (65) B
+
+~ (stat Creength (cr
+,
+
+NI PHASE
+jute
+f
+
+—E ov ¢ Stig C Length {- ) Crossfade
+
+Cutoff Q
+
+This is an overview of the plugin user interface (Ul). It may look a bit
+overwhelming at first, so let's try to break it down a bit.
+
+1. In the , the patch/preset name, author and description of
+the current patch is shown. By clicking the 'Browse' button, you
+toggle the preset browser. To the right you will find 'Undo' and
+
+
+--- Page 34 ---
+
+‘Redo’ buttons, allowing you to undo or redo all actions in Phase
+Plant.
+
+2. The eight large knobs under the patch name are known as the
+macro knobs. These knobs can be routed by the sound designer
+to control any other parameters in the patch in order to provide a
+few easy-to-reach knobs for tuning the sound of the patch. A
+single macro knob can even be routed to several parameters.
+
+3. To the left below the macro knobs is the generator area. This is
+where you set up your signal generation with the help of different
+oscillators and sound generators. Click in the dotted area in the
+unused generator space to add modules.
+
+4. The area to the right of the generators holds the Snapin lanes,
+which is where you add your effects. Each lane can hold multiple
+Snapins. Adding new Snapins is as easy as clicking the empty
+space at the bottom of a lane, or by clicking the space above or
+between existing Snapins.
+
+5. Along the bottom of the Phase Plant window is the modulation
+area. From here you can modulate parameters of your patch
+using LFOs (low frequency oscillators), Envelopes, MIDI input,
+and more.
+
+6. Clicking on the little keyboard icon in the status bar will reveal
+the on-screen keyboard. It can be used to play notes by clicking
+on the keys, and it will also show what notes are being played by
+incoming MIDI messages.
+
+Generator Area
+
+
+--- Page 35 ---
+
+This is where your sound is generated, modulated and filtered before
+you pass it on to the effects. Like most things in Phase Plant, the
+generator area uses a modular approach, where you add modules
+one by one to gradually build up your sound. You have several
+different modules at your disposal in the generator section. Some of
+them are oscillators that can generate a plethora of waveforms, and
+you also have access to a limited number of filters and effects, as well
+as some utility modules.
+
+
+--- Page 36 ---
+
+@ Analog
+
+LEVEL SEMI CENT HARMONIC SHIFT PHASE
+100%  +0.00 x1.000  +0.00 0° +0° G@a@n~~v
+
+ya aNaat MA AWA A hid a AMAA Slope Stereo Seed
+
+® Noise
+
+Root
+C 4+00
+Offset
+
+IN
+LEVEL SEMICENT HARMONIC. SHIFT PHASE A
+100 % +0.00 x1 .000 +0.00 0° +0° vy Male Yeah 1 RB €
+
+@ Sample
+
+1
+
+Bandlimit
+
+LEVEL SEMI CENT HARMONIC SHIFT PHASE “a e)
+100%  +0.00 1.000 +0.00 co. Vo a ~
+
+ho Cutoff Sai Slope
+ONO «
+@®o~“\.>ec<
+So \ ff oo al Drive Bias Spread Mix
+1
+> Overdrive v C A @)
+
+ATTACK DECAY SUSTAIN RELEASE BEAN! (nol
+73.2 ms aw ms x 59%  80.4ms X
+
+xo)
+Te}
+&
+®o
+=>
+Ge)
+=
+B
+
+@ Filter
+
+® Dist
+
+@ Env
+
+¢C Gain Pan Sendto LANE1
+
+Each module in the generator section will show a visual representation
+of the sound that it outputs. Most parameter changes or modulations
+you perform will be reflected by changes in these scopes. The data for
+the visalizations is generated using the same signal path that creates
+the actual sound, but the frequency is fixed and the visualization does
+not track the played note.
+
+To add a module, click on the large dashed area that appears at the
+bottom of the generator area. A popup menu will appear where you
+
+
+--- Page 37 ---
+
+can select what kind of module you want. The first time you add a
+generator module, a group and an output module will be added
+automatically as well. The generator area can hold up to 32 modules.
+
+Once added, modules can be moved and copied by dragging and
+dropping. Hold ctrl/command while dragging to make a copy with.
+
+The generator modules are the modules that actually produce the
+sound in Phase Plant. There are five different kinds: the analog
+oscillator, the noise generator, the granular engine, the sample player,
+and the wavetable oscillator. All of these sound sources are
+keytracked, meaning that their frequency depends on what note you
+are playing.
+
+Generator modules automatically route themselves in the module
+stack by mixing their output on top of the signal coming from above.
+Some modules in the generator section require input from an above
+module. If you accidentally place one such module at the top of a
+group, a red arrow will show indicating that some module is missing
+above.
+
+All generator modules also share a few parameters which are
+described below.
+
+Level
+The amplitude of the generator. The volume is scaled by this value,
+which ranges from 0% to 200%.
+
+Pitch (Semi, Cent)
+
+
+--- Page 38 ---
+
+The pitch offset from the played note expressed in semitones and
+cents. This setting can be used to make this generator play a pitch
+which is a set interval from the played note. For example, to play one
+octave higher, set this parameter to +12.00, to play one octave lower,
+set it to -12.00. You can also use the cent part to fine tune a
+generator.
+
+Harmonic
+
+This setting is similar to the pitch parameter, but it is expressed as a
+multiplier. The frequency of this generator is multiplied with whatever
+this parameter is set to. For example, to play this generator at four
+times the frequency, set this to x4.000, which corresponds to a relative
+pitch increase of two octaves. You can also set this parameter to
+x0.000, which will completely turn off keytracking for this generator.
+The frequency can then be set with the Shift parameter.
+
+Shift
+
+The shift parameter applies a fixed detuning expressed in Hz (cycles
+per second) on top of the frequency computed after applying the Pitch
+offset and harmonic multiplier. The shift can both be positive and
+negative. The shift can even push the final frequency of the oscillator
+below zero, which is allowed and will result in the generator running
+backwards in a sense.
+
+Phase
+The phase has two distinct values, phase offset and phase
+randomness.
+
+The first is noted by a '" sign and adds a fixed phase offset to the
+output. It can be used to set what phase an oscillator starts at.
+
+
+--- Page 39 ---
+
+The second is shown a +/- a number of degrees and adds
+randomness to the phase offset for each played note. If you use
+several oscillators, this will cause them to sometimes start in phase,
+and sometimes out of phase. If you are using unison, then this setting
+will randomize the phase of each unison voice individually.
+
+Analog Oscillator
+
+The analog oscillator is one of the generator modules, and it's
+probably also the generator that is easiest to understand and get
+started with. The goal of the analog oscillator is to reproduce a few
+classic waveforms with as high fidelity as possible. The Analog
+Oscillator is a great choice for presets based on subtractive synthesis
+techniques, and it also performs really well when FM is used.
+
+This generator supports unison, which is described in detail in the
+unison chapter.
+
+Waveform
+Selects what waveform the oscillator plays. Sawtooth wave, pulse
+wave, triangle wave, and sine wave are available.
+
+Sync
+
+
+--- Page 40 ---
+
+Simulates oscillator sync by running the oscillator at a higher
+frequency, but resetting its phase back to zero at the normal
+frequency.
+
+PW
+
+Adjusts the pulse width of the pulse waveform.
+
+Granular Generator
+
+Align Phases
+
+.
+&
+S
+<
+©
+=
+[o)
+
+Warm Start
+
+The granular generator is a generator module which plays several
+short snippets from a sample, called grains. It will play the sample at
+different pitch depending on the played note, in short grains starting at
+the current play cursor position. You can load any sample you like into
+the granular by browsing for it or by dragging and dropping it onto the
+granular module. Phase Plant also comes bundled with a library of
+samples that you are free to use as you see fit.
+
+Instead of showing a oscilloscope of the waveform, like the other
+modules, the granular generator will show a visual representation of
+the loaded sample. This view will also allow you to drag the play
+cursor, and will visualize all playing grains.
+
+
+--- Page 41 ---
+
+Sample Selector
+
+The name of the currently loaded sample is shown in the field below
+the sample view. Clicking the name will open a browser to let you load
+a sample from the sample library. You can step through the samples
+very conveniently by clicking the up and down arrows. In the browser
+you can also add your own user folders to the library.
+
+Edit Button
+
+Clicking the edit button opens the sample editor. Saving the sample
+through the sample editor will save the current root note in the sample
+file as well.
+
+Play Cursor
+You can control the position where grains start to play by adjusting the
+play cursor in the sample view.
+
+Grain Length
+
+You can adjust the length in milliseconds of each grain. If you enable
+length keytracking then the length will automatically adjusted to the
+played pitch, so that high pitched voices will use shorter grains. This
+makes the grains cover the same section of the sample regadless of
+what note is played.
+
+Grain Envelope
+
+An amplitude envelope will be applied to each grain as it is played.
+The envelope will be stretched to cover the whole lifetime of the grain,
+set by the grain length parameter. You can adjust the attack and
+decay times of the envelope, and the curvature of the attack and
+decay curves.
+
+Grain Spawn Rate
+The grain spawn rate can be adjusted in three different modes.
+
+
+--- Page 42 ---
+
+Free Rate
+
+Grains are spawned at a fixed rate set in Hz.
+
+Synced Rate
+
+Grains are spawned at a tempo synced rate set as a note length.
+
+Density
+
+Grains are spawned at a rate computed automatically to hit a certain
+number of simultaneously playing grains. Adjusting the length of the
+grains will thus change the grain spawn rate.
+
+Root
+
+To be able to play the sample at the correct pitch, the fundamental
+frequency of the sample must be set. While you adjust the root pitch,
+two zoomed portions of the sample will appear, taken one cycle apart
+from the sample. You can use this to help you tune the sample by eye
+in addition to tuning it by ear. When the blue and the grey waveform
+align, with one cycle inbetween the white bars, the sample is in tune.
+
+Align Phases
+
+When Align Phases is enabled the granular engine will nudge the
+position of each grain so that they are in phase with each other in
+regards to the fundamental frequency of the sample. For this to work
+the sample must have a clear fundamental frequency, and the root
+note must be tuned correctly.
+
+Warm Start
+
+
+--- Page 43 ---
+
+When Warm Start is enabled new voices will have all grains running
+when a note is struck, instead of having them spawn in one at the time
+over a period. This will give you a full sound immediately when striking
+a note.
+
+Randomizations
+
+At the bottom of the granular module are a row of parameters that
+randomizes the behaviour of each grain, making each grain unique,
+which gives variation and lushness to the sound.
+
+Random Position
+
+Randomizes the starting position in the sample of the grains.
+
+Random Timing
+
+Randomizes the start time of each grain.
+
+Random Pitch
+
+Randomizes the pitch of each grain.
+
+Random Level
+
+Randomizes the volume of each grain.
+
+Random Pan
+
+Randomizes the stereo panning of each grain.
+
+
+--- Page 44 ---
+
+Random Reverse
+
+Sets the probability that a grain will be played in reverse.
+
+Chords
+
+You can enable the chord feature of the granular generator, which
+selects the pitches of the grains according to a certain chord.
+
+Chord
+
+Select what chord you want from the dropdown. There are also some
+options which are not chords, strictly speaking.
+
+Chord Range
+
+The range knob adjusts how many notes from the chord to use,
+measured in number of octaves.
+
+Chord Picking Pattern
+
+Selects a strumming pattern for the chord; up, down, up-down or
+random.
+
+Noise Generator
+
+Slope Stereo Seed
+
+Noise
+
+RANDOM
+
+
+--- Page 45 ---
+
+Noise can be used to synthesize inharmonic elements like drum hits
+or wind. The noise generator supports three different types of noise,
+two of which are keytracked.
+
+Noise type
+Selects noise type. The options are colored noise, stepped keytracked
+noise, and smooth keytracked noise.
+
+Slope
+
+Adjusts the falloff of the spectrum for the colored noise. Ranges from
+flat (white noise), through —3 dB/octave (pink noise), to -6 dB/octave
+(brown noise).
+
+Stereo
+Blends between mono and stereo noise.
+
+Seed
+
+Selects between having the same noise sequence for each note
+(Stable) or a different one each time (Random)
+
+Sample Player
+
+Offset
+
+@ INFINITE vy € “Length (* Crossfade
+
+The sample player is a generator module which allows you to use
+sampled audio as a building block in your generator stack. It will play
+
+
+--- Page 46 ---
+
+the sample at different soeeds depending on the played note, which of
+course also adjusts the pitch of the sample. You can load any sample
+you like into the sampler by browsing for it or by dragging and
+dropping it onto the sampler module. Phase Plant also comes bundled
+with a library of samples that you are free to use as you see fit.
+
+Instead of showing a oscilloscope of the waveform, like the other
+modules, the sampler will show a visual representation of the loaded
+sample. This view will also allow you to drag the offset and adjust the
+loop points.
+
+This generator supports unison, which is described in detail in the
+unison chapter.
+
+Sample selector
+
+The name of the currently loaded sample is shown in the field below
+the sample view. Clicking the name will open a browser to let you load
+a sample from the sample library. You can step through the samples
+very conveniently by clicking the up and down arrows. In the browser
+you can also add your own user folders to the library.
+
+Save button
+
+The save button next to the sample name lets you save the current
+sample. The root, offset and current loop is saved in the sample file as
+well.
+
+Root
+
+To be able to play the sample at the correct pitch, the fundamental
+frequency of the sample must be set. While you adjust the root pitch,
+two zoomed portions of the sample will appear, taken one cycle apart
+
+
+--- Page 47 ---
+
+from the sample. You can use this to help you tune the sample by eye
+in addition to tuning it by ear. When the blue and the grey waveform
+align, with one cycle inbetween the white bars, the sample is in tune.
+
+Offset
+
+The offset parameter adjusts the starting position of the playback in
+the sample.
+
+Samples can be looped in several different ways, which is controlled
+by the parameters in the rightmost panel.
+
+Loop Mode
+
+Selects different kinds of looping. Infinite will loop forwards forever,
+sustain will loop forwards until you release the key and then keep
+playing without looping, ping pong will alternate between playing the
+looped region forwards and backwards, and finally reverse will play
+the loop only backwards.
+
+Start
+
+The loop start point.
+
+Length
+
+The length of the loop. As you adjust this, you will see a zoomed in
+portion of the sample around the loop start point (grey curve) and the
+loop end point (blue curve). You can use this visual feedback to find a
+seamless loop point by aligning the two curves. Remember that
+holding the shift key while dragging will enter fine-tuning mode.
+
+X-Fade
+
+To avoid clicks and pops when the loop wraps around, Phase Plant
+supports crossfading across the loop boundary. This parameter
+adjusts the length of the crossfade region.
+
+
+--- Page 48 ---
+
+Wavetable Oscillator
+
+Bandlimit
+
+2
+re)
+©
+pe
+®
+>
+©
+=
+
+The wavetable oscillator is a very versatile generator module. It can
+replicate pretty much any waveform you can think of. It is backed by a
+wavetable, which contains 256 frames, each one holding a sampled
+waveform 2048 samples long. By modulating the current frame over
+time, all sorts of interesting movement can be created.
+
+A versatile library of wavetables is included with Phase Plant, and you
+can also use wavetables from other sources if they are in a compatible
+format. Finally, you can create or edit wavetables with the included
+wavetable editor. Phase Plant can load wavetables from wav and flac
+files, provided they have the right length (256 x 2048 = 524 288
+samples). Furthermore, the wavetable editor has a tool for converting
+any sample to a wavetable.
+
+The wavetable editor is described in detail in the wavetable editor
+chapter.
+
+This generator supports unison which is described in detail in the
+unison chapter.
+
+Wavetable selector
+
+
+--- Page 49 ---
+
+The name of the currently loaded wavetable is shown in the field
+below the wavetable view. Clicking the name will open a browser to let
+you load a wavetable from the wavetable library. You can step through
+the wavetables very conveniently by clicking the up and down arrows.
+In the browser you can also add your own user folders to the library.
+Read more about the Kilohearts Wavetables.
+
+Frame
+Selects what frame in the wavetable to play back.
+
+Bandlimit
+Bandlimits the wavetable using a very sharp internal low pass filter.
+This feature can be use to tame a wavetable which is under heavy
+phase modulation, since the filter is applied before the phase
+modulation.
+
+Distortion Effect
+
+Drive Bias Spread Mix
+
+The distortion is an effect module that distorts the incoming signal
+from the modules above it. It is a lightweight version of the Snapin with
+the same name. Since it lives in the generator area, it can also
+partake in audio rate modulation, both as a source and as a target.
+
+If an effect in the generator area has a red arrow on its right, it means
+it lacks any input. Make sure to place it below a generator module, or
+similar, in your signal path.
+
+
+--- Page 50 ---
+
+Type
+The flavor of distortion. Select between overdrive, saturate, foldback,
+sine, hard clip, and quantize.
+
+Drive
+The drive setting will boost the input signal, causing a heavier
+distortion.
+
+Bias
+
+The bias will add a DC offset to the signal before distorting. Adding
+some bias can prevent the distorted audio from sounding hollow and
+uninteresting.
+
+Spread
+The spread will add a variable amount of bias to the left and right
+channels. This can give some nice and subtle stereo widening.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal pass through.
+
+Filter Effect
+
+Cutoff Q
+
+The filter is an effect module which can apply a variety of filters to the
+incoming signal from the modules above it. It is very similar to the filter
+Snapin in terms of capabilities, but since it lives in the generator area,
+
+
+--- Page 51 ---
+
+it can also partake in audio rate modulation, both as a source and as a
+target.
+
+If an effect in the generator area has a red arrow on its right, it means
+it lacks any input. Make sure to place it below a generator module, or
+similar, in your signal path.
+
+Type
+The type of filter. Select between low pass, band pass, high pass,
+notch, low shelf, peak, and high shelf filters.
+
+Cutoff
+
+The operating frequency of the filter. In a low-pass filter, this is the
+frequency where the signal is reduced by 3dB.
+
+Q
+
+The filter Q setting. High values for Q will make the filter resonate at
+the cutoff frequency.
+
+Gain
+The gain value for the low shelf, peak, and high shelf filter types.
+
+Slope
+
+The slope of the filter cutoff, with 1x representing a classic 2-pole filter
+and 2x behaving like a 4-pole filter.
+
+Non-Linear Filter Effect
+
+
+--- Page 52 ---
+
+Cutoff Q Drive
+
+-
+
+o
+=
+=
+=
+Zz
+
+Mode SATURATED v
+
+The non-linear filter is an effect module which can apply a variety of
+filters to the incoming signal from the modules above it. It is very
+similar to the Non-Linear Filter snapin in terms of capabilities, but
+since it lives in the generator area, it can also partake in audio rate
+modulation, both as a source and as a target.
+
+If an effect in the generator area has a red arrow on its right, it means
+it lacks any input. Make sure to place it below a generator module, or
+similar, in your signal path.
+
+Type
+The type of filter. Select between low pass, band pass, high pass,
+notch, and all pass filters.
+
+Cutoff
+
+The operating frequency of the filter.
+
+Q
+The filter Q setting. High values for Q will make the filter resonate at
+the cutoff frequency.
+
+Drive
+Overdrives the filter, which makes the effect of the nonlinear behaviour
+more prominent.
+
+Mode
+
+
+--- Page 53 ---
+
+Selects what flavor of nonlinearity you want. The clean mode has no
+nonlinearies, and does not color the signal. All other modes distort and
+color the signal in different ways to some extent.
+
+Mix Routing
+
+Level Invert
+
+The mix module is a utility module that you can think of as an effect
+that only applies a gain to the signal. The most common use of the
+mix module is to mix together the output of several generator modules
+
+above it to use the mixed signal for audio rate modulation.
+
+It also allows you to adjust the volume of a signal and invert it. Since
+the level can be the target for audio rate modulation, you can also use
+the mix module for amplitude modulation and ring modulation.
+
+Level
+Adjusts the amplitude of the signal.
+
+Invert
+Inverts the signal, turning its phase upside down.
+
+Aux Routing
+
+
+--- Page 54 ---
+
+Level Invert
+
+Aux
+
+The aux module is a utility module which is very similar to the mix
+module. The only difference is, that instead of automatically routing
+itself and using the signal coming from the modules above, it expects
+you to route its input to it using the audio rate modulation system.
+
+You can use the aux module to send audio to different parts of the
+generator stack, even to a different group. The aux module mixes its
+output onto the signal coming from above, much like a generator
+module. For technical reasons, the aux module adds one sample of
+latency to the signal.
+
+The level and invert parameters work in the same way as in the mix
+
+module
+
+Envelope Output
+
+fe)
+Cc
+>
+
+" Pan Sendto LANE 1 v
+
+The output envelope module is an output module which does two
+things. First off, it applies an amplitude envelope to the incoming
+signal. Secondly, it can send the enveloped signal on to other parts of
+
+
+--- Page 55 ---
+
+Phase Plant. You will need at least one output module in the module
+stack to be able to actually create any sound with Phase Plant.
+
+The Envelope Output module uses a standard Kilohearts envelope.
+The Out toggle is enabled by default and routes any output to effects
+lane 1. The output can be turned off completely, in which case the
+output will not be heard, but may be used for modulations.
+
+Gain
+Changes the volume of the sent signal.
+
+Pan
+Pans the sent signal left or right.
+
+Send to
+
+Selects what bus to send this output to. This can be either one of the
+effect lanes to the right of this one, or straight to the master bus, or to
+the sideband bus which can be used as a sidechain input in Snapins
+that support it.
+
+Curve Output
+
+" Pan Sendto LANE 1 v
+
+The output curve module is another output module and it's quite
+simlilar to the envelope output described above. Instead of an
+
+
+--- Page 56 ---
+
+envelope it uses an editable curve with a set length for volume
+shaping.
+
+The curve selector lets you choose from dozens of curves, all logically
+sorted in folders. Those curves can be tweaked in the curve editor
+available by clicking the the ‘pen’ button.
+
+The curve graph has two handles that allow you to set loop points
+within the curve, while the loop symbol lets you select the desired loop
+mode.
+
+The Out toggle is enabled by default and routes any output to effects
+lane 1. The output can be turned off completely, in which case the
+output will not be heard, but may be used for modulations.
+
+Gain
+Changes the volume of the sent signal.
+
+Pan
+Pans the sent signal left or right.
+
+Send to
+
+Selects what bus to send this output to. This can be either one of the
+effect lanes to the right of this one, or straight to the master bus, or to
+the sideband bus which can be used as a sidechain input in Snapins
+that support it.
+
+
+--- Page 57 ---
+
+Generator Groups
+
+Sawtooth
+
+"Pan Sendto LANE1 Vv
+
+Kilohearts plugins use groups for organizing your modules, and it's
+possible to rename groups for better readability of your work. Where
+grouping Snapins or Modulators is mostly a cosmetic thing, grouping
+the modules in the generator section has additional functionality. It is
+also not possible to place any generator module outside of a group.
+
+Generator groups are used to divide the generator stack into different
+logical units. The group header breaks the automatic routing of
+modules, and an audio signal will never automatically flow between
+two different groups. You can however route audio between groups
+using the audio rate modulation system.
+
+A common use case for generator groups is to create layered sounds,
+where each layer lives in its own group and has its own output
+modules. It can also be useful to create groups for modules that act as
+
+
+--- Page 58 ---
+
+modulation sources, so that they are isolated from the modulation
+targets that they act on.
+
+All types of groups can be moved and copied as a whole by dragging
+and dropping. Hold ctrl or command while dragging to make a copy.
+
+Audio Rate Modulation
+
+Sine FM
+
+"Pan Sendto LANE 1
+
+Sync
+
+Phase Plant support audio rate modulation between all the modules in
+the generator area. This can be used to create FM patches and other
+interesting sounds.
+
+
+--- Page 59 ---
+
+To set up an audio rate modulation, hover over the module you want
+to use as a source. A green circle with a plus symbol will appear on
+the right hand side of the module. Click the plus symbol to enter
+modulation mode. Other green plus symbols will now appear on all
+viable targets. Simply click and drag on the plus icon of the parameter
+you wish to modulate. After a modulation has been set up, the target
+will turn from blue to green to show that it is being modulated.
+
+There is some slight confusion around the term FM as it has been
+adopted by the industry. The term often refers to Phase Modulation
+which doesn't really abbreviate to FM. Here is a short guide to
+understanding the various flavors of audio rate modulation in Phase
+Plant:
+
+Classic FM
+
+Modulating the Phase value of a generator gives you the classic FM
+effect. Modulating the phase has the benefit of never causing your
+generator to go out of tune.
+
+Linear FM
+
+Modulating either the Harmonic multiplier or the Shift value creates
+two different types of linear FM. It is preferrable to modulate the
+Harmonic because it will create the same resulting waveform for all
+played pitches. If your modulation source has a DC component (it's
+not centered around 0) then Linear FM will casue the target generator
+to go out of tune.
+
+Ring Modulation
+Modulating the Level of a generator will multiply the source and target
+waveforms together. This is also Known as Ring Modulation.
+
+
+--- Page 60 ---
+
+Exponential FM
+
+Modulating the Pitch value results in exponential FM. This method of
+modulation is hard to control and almost always causes your
+generator to go out of tune. But it has uses, for example using a slow
+source modulator to create a vibrato.
+
+Effect Lanes
+
+
+--- Page 61 ---
+
+Filter
+
+_
+
+Cutoff
+
+Filter slope
+
+
+
+--- Page 62 ---
+
+Phase Plant leverages the Snapin ecosystem of effects to bring a
+wide and ever expanding range of effects to its effect section. After
+sound has been produced by the generator area, it is sent to one of
+three effect lanes, which in turn can be routed to either process the
+audio serially or in parallel.
+
+Lanes are divided into three parts. The lanes are remeniscent of the
+lanes in the other hosts, but there are a few unique features in Phase
+Plant:
+
+Poly button
+
+One unique feature of Phase Plant is that it allows all Snapin effects to
+run in polyphonic mode, where the effects processing is done for each
+voice separately instead of on all voices mixed together. Polyphonic
+mode is enabled on each lane separately by clicking this button so it
+lights up. For technical reasons, polyphonic mode can only be enabled
+on the lanes in order from left to right. In other words, if lane 2 is
+polyphonic then lane 1 also has to be.
+
+Mute button
+
+A toggle switch for muting the lane.
+
+Solo button
+This toggle button will mute all other lanes.
+
+Gain
+Changes the volume of the output of the lane.
+
+Mix
+
+
+--- Page 63 ---
+
+Adjust the output mix of the lane between completely unprocessed at
+0% to fully processed with Snapins at 100%.
+
+Send to
+
+Selects what bus to send the result of this lane to. This can be either
+one of the lanes to the right of this one, or straight to the master bus.
+
+Voice Settings
+
+Global Unison Polyphony Master pitch Bend Range
+Detune Spread Blend Bias
+
+LEGATO SMOOTH v
+
+Below the generator section are a few parameters that control some
+overarching behavior of Phase Plant.
+
+Glide Enable
+
+Enables glide, also known as portamento. This will make the pitch of a
+new voice slide from the pitch of the last one.
+
+Glide Time
+Adjusts how quickly a voice glides to the target pitch.
+
+Glide Mode
+
+
+--- Page 64 ---
+
+When glide is set to always, it happens between all notes. If set to
+legato, glide only occurs when you play a new note while still holding
+the previous one, i.e. when there are no gaps between them.
+
+Global Unison
+
+Some generators support unison mode (Analog, Sampler, and
+Wavetable). They all have individual unison settings. This global type
+of unison will create several parallel voices for every note you play.
+This includes the whole generator stack as well as any effect lanes
+which are set to polyphonic.
+
+Unison is described in detail in the Unison chapter.
+
+Polyphony
+
+You can use the polyphony setting to adjust how many voices can be
+active at once. If you play a note, and all available voices are already
+in use, the oldest and quietest voice will be recycled.
+
+There are many reasons to keep this setting at a reasonably low
+number. Having too many voices ringing out at once can cause the
+mix to be muddy, and it can also have a negative impact on CPU
+performance. Setting polyphony to 1 will make your patch
+monophonic.
+
+In monophonic mode, you can choose how notes are triggered. In
+retrig mode, every new note is always retriggered. In legato mode,
+new notes are not retriggered when you play a new note while still
+holding the previous one, i.e. when there are no gaps between them.
+
+Master Pitch
+
+
+--- Page 65 ---
+
+The master pitch controls the pitch of all generator modules at the
+same time. You can easily create a vibrato by modulating it with an
+LFO.
+
+The Cents value enables you to fine-tune Phase Plant. There are 100
+cents to every semitone.
+
+Bend Range
+
+The bend range adjusts the pitch bend range in semitones for the
+pitch wheel. This parameter is not stored in presets, but it is saved in
+your project as a global parameter.
+
+Master Gain
+The master gain fader sits at the very bottom right corner of the
+screen. It allows you to adjust the volume of your patch as a whole.
+
+Unison Settings
+
+Unison will create duplicate voices for your notes. Phase Plant
+supports unison in two different ways.
+
+First off, there is oscillator unison, which is implemented in the analog
+oscillator, the sampler, and the wavetable editor. This is the type of
+unison you should reach for first, since it is resource efficient. When
+you enable unison on an oscillator, it will generate several waveforms
+
+
+--- Page 66 ---
+
+at once internally. The output of the oscillator will be all waveforms
+mixed together, so if you use it as a modulation source, this is what
+you will get as well.
+
+The second type of unison is global unison, which you enable below
+the generator area. This includes the whole generator stack as well as
+any effect lanes which are set to polyphonic. Global unison allows you
+to add unison to FM patches and patches that require polyphonic
+effects.
+
+Unison Mode
+Phase Plant has several modes for how unison voices are created
+grouped into three types.
+
+Unison - Hard
+
+Plays all voices at the same pitch with a slight detune. All voices start
+at the same phase.
+
+Unison - Smooth
+
+Plays all voices at the same pitch with a slight detune. All voices start
+at different phases.
+
+Unison - Synthetic
+
+Plays all voices at the same pitch with a slight detune. Voice phases
+are evenly spread.
+
+
+--- Page 67 ---
+
+Creative - Frequency Stack
+
+Each additional voice has its frequency shifted by a multiple of the
+original note.
+
+Frequency Stack replaces the bias knob with range. The range
+parameter adjusts the multiplier, from -100% where all voices are the
+same, to 0% where multiples are [2, 3, 4, 5...].
+
+Creative - Pitch stack
+
+Each additional voice has its pitch shifted by a multiple of the original
+note.
+
+Pitch Stack replaces the bias knob with range. The range parameter
+adjusts the multiplier, from -100% where all voices are the same, to
+0% where each voice is exactly one octave higher than the previous.
+At +100% each voice will be two octaves higher than the previous
+one.
+
+Creative - Shepard
+
+Creates a Shepard's tone. It spreads the voices octaves apart with the
+"farthest" notes being lowered in volume. The octave where the
+volume is the loudest is determined not by which note you play, but
+rather by the center knob, which replaces the bias knob. So, in this
+mode, each C note will sound the same, regardless of which octave
+you play it in.
+
+
+--- Page 68 ---
+
+Chords
+
+There are several common chord modes. Each one will tune
+additional voices into the scale of that particular chord. The chords
+replace the bias knob with a balance control that shifts the volume of
+the voices to emphasize lower notes, or higher ones, respectively.
+
+Voice Count
+Number of voices to play simultaneously.
+
+Detune
+Amount of detune for each voice.
+
+Spread
+
+How much to pan the voices to create a wider stereo image.
+
+Blend
+
+Adjusts the balance between the detuned voices and the main voice.
+
+Bias
+
+Shifts the pitch of the flat and sharp voices. Turning this knob
+anti-clockwise will detune the detuned voices further away from the
+center pitch. Turning the knob to a plus value will tune them closer to
+the center pitch. This knob is replaced by Range for Frequency Stack
+and Pitch Stack, by Center for Shepherd, and by Balance for Chords
+(see above)
+
+Multipass
+
+
+--- Page 69 ---
+
+Overview
+User interface
+Signal path
+Band splitter
+Lanes
+
+Multiple outputs
+
+Snapin mode
+
+Overview
+
+Multipass is a multiband effect plugin with many uses. At the heart of
+the plugin is a band splitter which splits the audio into several different
+
+
+--- Page 70 ---
+
+frequency bands which can be have custom effects chains applied to
+them independently. Effect chains are built by combining and
+
+modulating in the effects lanes. come in many
+different flavors, and implements many classic effects like or
+as well as more unusual ones like and
+
+. Multipass itself can also be used as a Snapin.
+
+In addition to being loaded into Multipass, can also be loaded
+as plugins directly in your DAW. Multipass is bundled with a large
+selection of snapins, and additional premium effects can be bought
+individually or in a bundle.
+
+User interface
+
+mM ail multipass fy “* Multi Trance Gater
+v2.0.7 Brows Vv
+
+‘e) a) C Filter Mod
+
+
+
+--- Page 71 ---
+
+This is an overview of the plugin UI. It may look a bit overwhelming at
+first so let's break it down.
+
+1. In the top bar the name, author and description of the current
+patch is shown. By clicking the 'Browse' button you toggle the
+preset browser. To the right you will find 'Undo' and 'Redo'
+buttons, allowing you to undo or redo all actions in Multipass.
+
+2. The eight large knobs under the patch name are known as the
+macro knobs. These knobs can be routed by the sound designer
+to any other parameters in the patch in order to provide a few
+easy-to-reach knobs for tuning the sound of the patch. A single
+macro knob can even be routed to several parameters.
+
+3. The left-most lane is dedicated to effects you might want to apply
+before the band-splitting occurs.
+
+4. The large spectrum displayed in the middle of the plugin is the
+band splitter. It splits the audio signal into up to five different
+frequency bands which can be processed independently. The
+five lanes below the band splitter can each hold any number of
+Snapins. Adding new Snapins is as easy as clicking the empty
+space at the bottom of a lane.
+
+5. The right-most lane lets you add additional effects after the
+bands have been mixed back together.
+
+6. Running along the bottom of the UI is the modulation lane. Read
+more in the modulation chapter.
+
+Signal path
+
+Now that we have some intuition on what parts make up Multipass
+and where to find them on the screen, let's take a peek under the
+hood to see how Multipass processes the audio you send into it.
+
+
+--- Page 72 ---
+
+Input
+
+Pre FX tein) Gfpllane Post FX
+Lane Lane
+
+Band Band Band Band Band
+Lane #3 Lane #2 Lane #3 Lane #4 Lane #5
+(lowest) (highest)
+
+Band mixer
+
+Output
+
+The figure above is a schematic of the signal path through Multipass.
+The audio signal enters the plugin in the top left corner, and passes
+through a few stages of processing before leaving at the bottom right.
+Let's take a look at each of the stages in turn.
+
+Pre FX Lane
+
+Before reaching the band splitter the signal will pass through the pre
+FX lane where Snapins can be added which will affect the signal as a
+whole before band splitting.
+
+Band splitter
+
+Next up is the band splitter, which splits the signal into up to five
+bands and sends each band into its own band lane. The band splitter
+uses Linkwitz—Riley crossover filters, which ensure that a flat
+frequency response is achieved when the bands are mixed back
+together.
+
+Band lanes
+
+
+--- Page 73 ---
+
+Each audio band is processed separately by the Snapins in its band
+lane.
+
+Band mixer
+
+After the audio bands have been processed by the Snapins in the
+band lanes they are mixed back together. The band mixed also allows
+blending between the dry unprocessed signal coming out of the band
+splitter, and the wet signal which has been processed by the Snapins
+in the band lane.
+
+Post FX Lane
+
+Before the audio signal leaves Multipass the post FX lane provides
+one last chance to process the audio signal as a whole, after the
+bands have been mixed down. This can, for example, be a good place
+to place a compressor or limiter Snapin to keep the signal level in
+check. The band mixer also controls how much of each band is sent to
+the post FX lane, and how much is passed straight to the output
+without post FX processing.
+
+Band splitter
+
+The band splitter lets you adjust the crossover frequencies for the
+different bands. The spectrum analyzer in the background is a visual
+representation of the sound as it is when it enters the band splitter (i.e.
+right after the pre FX lane).
+
+
+--- Page 74 ---
+
+To change the crossover frequencies, click and drag the vertical bars
+representing the splits across the spectrum. You will notice that you
+can't drag splits across each other.
+
+As you enable and disable different lanes, splits will be added and
+removed automatically as needed.
+
+Lanes
+
+Lanes are divided into three parts. The header,
+
+where you will find a few toggle buttons, the main part of the lane,
+which holds the Snapins in the lane, and the footer where you will find
+some mixing controls.
+
+In the lane header you will find the following controls:
+
+Enable button
+
+This toggle button will turn on or off the whole lane. When the lane is
+turned off no sound will pass through it at all, and any Snapins sitting
+in it will have no effect. This will also turn off this band completely in
+the band splitter, sending the audio that would normally pass through
+this lane into the lanes next to it. It is advisable that you turn off all
+lanes that you are not using, to spare some CPU cycles, and to avoid
+unnecessary phase distortion from the filters in the band splitter.
+
+
+--- Page 75 ---
+
+Mute button
+
+A toggle switch for muting a lane. The band splitter will still send audio
+to the lane, but it will simply be discarded.
+
+Solo button
+
+This toggle button will mute all all other lanes. It is useful during sound
+design if you temporarily want to listen to the audio that passes
+through just one lane.
+
+In the lane footer you will find some knobs which impact how the
+output of the lane is mixed down during lane mixing:
+
+Gain
+Changes the volume of the output of the lane.
+
+Pan
+Pans the output of the lane left or right.
+
+Mix
+Adjust the output mix of the lane between completely unprocessed at
+0% to fully processed with Snapins at 100%.
+
+Post
+Adjusts how much of the output of this lane to send to the Post FX
+Lane for processing. At 0% the output of this lane skips the Post FX
+Lane completely, at 100% all of the output is sent through the Post FX
+Lane.
+
+
+--- Page 76 ---
+
+Multiple outputs
+
+While Multipass is a regular effect, it does in fact have 5 additional
+stereo outputs. Usually these are left silent, but in DAWs that support
+it Multipass can route the separate frequency bands to these
+additional AUX outputs. At the bottom of Multipass there is a button
+which can be toggled between three states: MAIN, MAIN + AUX and
+AUX ONLY. These three modes determine where to send the output of
+Multipass: To only the main output, to both main and AUX, or to AUX
+only respectively. Refer to the manual of your DAW to see how to set
+up multiple output routing, if possible.
+
+Snapin mode
+
+
+--- Page 77 ---
+
+multipass
+
+Multipass can also be loaded as a Snapin in Snapin hosts like Snap
+Heap, Phase Plant or itself. In this mode, the Snapin interface shows
+all named macros that have any modulation bindings. At the top,
+up/down arrows can be used to scan through presets and a full
+browser can be opened by clicking the preset name. To edit the
+current patch, press the pen icon. This will open the full Multipass
+interface in a separate window.
+
+The External Input selector allows you to choose which sidechain
+channel in the Snapin host should be mapped to the external
+sidechain channel in the contained Multipass instance. (See our guide
+to setting up sidechains in all DAWs here)
+
+Snap Heap
+
+Overview
+
+
+--- Page 78 ---
+
+User interface
+Signal path
+Lanes
+
+Snapin mode
+
+Overview
+
+Snap Heap is a modular effect plugin with many uses. At the heart of
+the plugin are seven lanes of for combining and modulating effects
+units Known as Snapins. Snapins come in many different flavors, and
+implements many classic effects like Distortion or Chorus as well as
+more unusual ones like Formant Filtering and Frequency Shifting.
+Snap Heap itself can be loaded as a Snapin in any of our host plugins.
+
+In addition to being loaded into Snap Heap, Snapins can also be
+loaded as plugins directly in your DAW. Snap Heap is bundled with a
+few different Snapins, and more can be bought from the Kilohearts
+
+website.
+
+
+--- Page 79 ---
+
+User interface
+
+Y Ssnapheap fy * “Dynamic Drum Shaper
+
+@ Resonator
+
+a4+o0 &
+
+Gain Pan Mix | Gain Pan Mix
+@leis) ss (elele
+
+This is an overview of the plugin UI. It may look a bit overwhelming at
+
+first so let's break it down.
+
+1. In the top bar the name, author and description of the current
+patch is shown. By clicking the 'Browse' button you toggle the
+preset browser. To the right you will find 'Undo' and 'Redo'
+buttons, allowing you to undo or redo all actions.
+
+2. The eight large knobs under the patch name are known as the
+macro knobs. These knobs can be routed by the sound designer
+to any other parameters in the patch in order to provide a few
+easy-to-reach knobs for tuning the sound of the patch. A single
+macro knob can even be routed to several parameters.
+
+3. The big space below the macros holds the Snapin lanes. Each
+lane can hold several Snapins. Adding new Snapin is as easy as
+clicking the empty space at the bottom of a lane.
+
+
+--- Page 80 ---
+
+4. Running along the bottom of the UI is the modulation lane. Read
+more in the modulation chapter.
+
+Signal path
+
+The input audio is passed through all of the enabled effect lanes from
+left to right. Each lane is processed in sequence, unless the "paralell
+
+routing” button is clicked. fA When parallel routing is enabled, the
+two adjacent lanes will be linked together and processed in parallel
+instead, and the result mixed together before being passed into the
+next lane. If multiple parallel routing buttons are enabled, all linked
+lanes will be processed in parallel.
+
+Lanes
+
+Lanes are divided into three parts. The header,
+
+where you will find a few toggle buttons, the main part of the lane,
+which holds the Snapins in the lane, and the footer where you will find
+
+some mixing controls.
+
+In the lane header you will find the following controls:
+
+
+--- Page 81 ---
+
+Enable button
+
+This toggle button will turn on or off the whole lane. When the lane is
+turned off no sound will pass through it at all, and any Snapins sitting
+in it will have no effect. It is advisable that you turn off all lanes that
+you are not using, to spare some CPU cycles.
+
+Mute button
+A toggle switch for muting a lane. Audio will still send audio to the
+lane, but all effects and lane mixing will be bypassed.
+
+Solo button
+
+This toggle button will mute all other lanes. It is useful during sound
+design if you temporarily want to listen to the audio that passes
+through just one lane.
+
+In the lane footer you will find some knobs which impact how the
+output of the lane is mixed down during lane mixing:
+
+Gain
+Changes the volume of the output of the lane.
+
+Pan
+Pans the output of the lane left or right.
+
+Mix
+Adjust the output mix of the lane between completely unprocessed at
+0% to fully processed with Snapins at 100%.
+
+
+--- Page 82 ---
+
+Snapin mode
+
+snapheap
+
+Snap Heap can also be loaded as a Snapin in
+
+Snapin Hosts like Multipass, Phase Plant or itself. In this mode, the
+Snapin interface shows all named macros that have any modulation
+bindings. At the top, up/down arrows can be used to scan through
+presets and a full browser can be opened by clicking the preset name.
+To edit the current patch, press the pen icon. This will open the full
+Snap Heap interface in a separate window.
+
+The External Input selector allows you to choose which sidechain
+channel in the Snapin host should be mapped to the external
+sidechain channel in the contained Snap Heap instance. (See our
+guide to setting up sidechains in all DAWs here)
+
+Effects
+
+
+--- Page 83 ---
+
+Kilohearts offer a wide range of audio effects, all of which work
+together in the modular Kilohearts Ecosystem. Many of them are free!
+
+Kilohearts Essentials
+
+Overview
+
+Designed to be combined
+
+Common controls
+
+3-Band EQ
+Bitcrush
+Channel Mixer
+
+Chorus
+
+
+--- Page 84 ---
+
+Comb Filter
+
+Compactor
+
+Compressor
+
+Delay
+
+Distortion
+
+Dynamics
+
+Ensemble
+
+Filter
+
+Flanger
+
+
+--- Page 85 ---
+
+Formant Filter
+
+Frequency Shifter
+
+Gain
+
+Gate
+
+Haas
+
+Ladder Filter
+
+Limiter
+
+Nonlinear Filter
+
+Phase Distortion
+
+
+--- Page 86 ---
+
+Phaser
+
+Pitch Shifter
+
+Resonator
+
+Reverb
+
+Reverser
+
+Ring Mod
+
+Stereo
+
+Shaper
+
+Tape Stop
+
+
+--- Page 87 ---
+
+Trance Gate
+
+Transient Shaper
+
+Overview
+
+Kilohearts Essentials is a free collection of Kilohearts Snapins.
+Snapins are individual audio effect modules, each performing a
+specific task.
+
+Designed to be combined
+
+The Kilohearts Ecosystem give you the freedom to combine these
+Snapins in infinite different ways in order to create interesting and
+unique modular effects. Snapins can be also loaded individually into
+your DAW as a standard VST, AAX or AU plugin.
+
+
+--- Page 88 ---
+
+Kilohearts Snapins are designed with simplicity in mind and with the
+expressed purpose of giving you the ability to "build your own" plugins
+from these building blocks. They are optimised to be CPU-efficient so
+they can be stacked together without melting your computer. Load one
+of our host plugins and try a few factory presets to get a feel for what
+you can do with these fundamental ingredients.
+
+When using any of the Snapins in your everyday work it can be easy
+to forget the extensive modulation options available to you by using
+them inside one of the hosts instead. It can often be extremely useful
+to set up a Snap Heap patch with only a single Snapin in it to expand
+on it's possibilities a hundredfold.
+
+Common controls
+
+All Snapins have some features in common, all of them found in the
+header section.
+
+Power button
+
+Just to the left of the Snapin title is a blue square. It works as a
+checkbox to enable the plugin. When turned off, the plugin is
+bypassed and lets all incoming sound through unaffected.
+
+Minimize (not available in stand-alone mode)
+Just like all other Kilohearts modules, Snapins can be collapsed when
+
+you want to save screen space for something else.
+
+Preset bar
+
+
+--- Page 89 ---
+
+If you click the small downwards arrow in the Snapin header, controls
+for handling presets will fold down. These controls let you see the
+name of the currently selected preset, as well as step through any
+other presets in the active folder of the associated preset browser. To
+see the full preset browser, click the little folder icon. The Snapins all
+have a little Dice icon in the preset bar that you can use to randomize
+all controls to explore the possibilities.
+
+3-Band EQ
+
+
+--- Page 90 ---
+
+WM 3-Band EQ
+
+EQ 3-Band is a three band EQ with adjustable split frequencies.
+
+Splits
+Adjusts cutoff frequency between low and mid, and between mid and
+high bands.
+
+
+--- Page 91 ---
+
+Low
+Gain for low frequency (bass) band.
+
+Mid
+
+Gain for middle frequency (midrange) band.
+
+High
+Gain for high frequency (treble) band.
+
+Bitcrush
+
+
+--- Page 92 ---
+
+Bitcrush
+
+Quantize Bits Dither
+
+ADCQ DACQ
+
+Bitcrush can be used to create distorting effects that sound like that of
+
+
+
+--- Page 93 ---
+
+scraping analog radio, or inherently lo-fi sound sources, like old video
+games. It simulates the audio being sampled and replayed using a low
+quality sampler with limited sample rate and bit depth.
+
+Rate
+
+Down sample the signal to a minimum of 200 Hz.
+
+Bits
+Quantize the amplitude of each sample of the signal. A lower value
+will result in a more distorted sound.
+
+ADC Q
+
+Quality of the analog-to-digital conversion. A lower value will add
+dissonant aliasing in the low frequencies.
+
+DAC Q
+
+Quality of the digital-to-analog conversion. A lower value will add
+dissonant aliasing in the high frequencies.
+
+Dither
+
+Adds noise to the signal in order to reduce distortion caused by
+quantization.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+
+--- Page 94 ---
+
+Channel Mixer
+
+@ Channel Mixer
+
+ue
+
+Channel Mixer gives you control over the amplitude of both stereo
+channels respectively, and also the option to cross-mix them into each
+other.
+
+Left to Left
+Scales the amplitude of the incoming left stereo channel from -1
+(phase inverted) through 0 (silent) to 1 (passthrough).
+
+Right to Left
+Scales the amplitude of the incoming right stereo channel, but outputs
+it to the left channel.
+
+
+--- Page 95 ---
+
+Left to Right
+Scales the amplitude of the incoming left stereo channel, but outputs it
+to the right channel.
+
+Right to Right
+Scales the amplitude of the incoming right stereo channel, and outputs
+it to the right channel.
+
+Chorus
+
+
+--- Page 96 ---
+
+M@ Chorus
+
+Delay Spread _ Taps
+
+CO™
+
+Depth Rate Mix
+
+Chorus enhances the stereo effect and presence of a sound by mixing
+
+it with delayed versions of itself.
+
+Delay
+
+The average delay for the delayed voices.
+
+Rate
+The frequency of how fast to vary the delay.
+
+
+--- Page 97 ---
+
+Depth
+
+How much to vary the delay.
+
+Spread
+Stereo width of the effect. A lower value will go towards a mono
+output.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Taps
+
+The number of chorus voices.
+
+Comb Filter
+
+
+--- Page 98 ---
+
+§ Comb Filter
+
+440 Hz
+
+Polarity Stereo Mix
+PLUS ON C)
+MINUS
+
+Comb Filter will mix the signal with a delayed version of itself, creating
+
+a filter with repeated troughs and peaks across the spectrum.
+
+Cutoff
+
+Cutoff setting for the filter, the distance between each peak.
+
+Mix
+
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+
+--- Page 99 ---
+
+Polarity
+
+The polarity setting swaps troughs for peaks and vice versa, with the
+plus setting having a peak at 0 Hz, and the minus setting a trough at 0
+Hz.
+
+Stereo
+
+The stereo setting flips the polarity setting for the right channel,
+allowing the the comb filter to be used for mono compatible stereo
+widening.
+
+Compressor
+
+
+--- Page 100 ---
+
+Compressor
+
+Threshold Ratio
+
+~~
+
+Attack Release
+
+Makeup Mode
+RMS
+
+Sidechain
+OFF
+
+
+
+--- Page 101 ---
+
+Compressor will even out the audio volume by lowering the volume
+when the signal is loud.
+
+Attack
+The attack time is the time it takes to lower the volume when the input
+volume is over the threshold.
+
+Release
+The release time is the time it takes to return the volume to normal
+when the input volume is under the threshold.
+
+Mode
+
+In RMS mode the compressor will measure the volume using the root
+mean square method, which gives an accurate measurement of audio
+power. In peak mode the compressor will follow the peaks in the audio
+waveform, which makes it more responsive to transients.
+
+Ratio
+
+The ratio decides how much the compressor will reduce the audio
+volume. At 1:2, for example, the volume will be lowered until it is
+halfway between the input volume and the threshold.
+
+Threshold
+
+The threshold for when the compressor will start lowering the volume.
+
+Makeup
+
+The makeup gain will increase the volume of the output signal to
+compensate for the loss in overall volume that the compressor
+Causes.
+
+VU Meter
+
+
+--- Page 102 ---
+
+Displays the current input level, the selected threshold, and the
+compressor's current attenuation.
+
+Sidechain
+
+When enabled attenuation is calculated based on a secondary input,
+but the effect is applied to the main input. (See our guide to setting up
+sidechains in all DAWs here)
+
+Compactor
+
+
+--- Page 103 ---
+
+Compactor
+
+AM 11 wu Ih
+
+Range Stereo Mix
+
+Sidechain
+
+> EEE ne
+
+
+
+--- Page 104 ---
+
+Compactor has several uses including ducking, clipping, and limiting.
+Use it without a sidechain input for limiting like functionality, and with a
+sidechain input to very exctly duck the signal based on the volume of
+the sidechain input.
+
+Attack
+The attack value decides how far ahead the audio is ducked. A higher
+value will start ducking earlier.
+
+Hold
+The hold value decides for how long the signal is ducked once the
+input is no longer above the threshold.
+
+Release
+
+The release value sets how long it takes for the audio to return to full
+volume once the input no longer passes the threshold and the hold
+stage has finished.
+
+Threshold
+
+When sidechain level reaches the threshold the input will be silenced.
+When there is no sidechain the input will be limited to the threshold
+level.
+
+Mode
+
+In RMS mode Compactor will measure the volume using the root
+mean square method, which gives an accurate measurement of audio
+power. In PEAK mode Compactor will follow the peaks in the audio
+waveform on a per-sample basis, which ensures no peaks pass the
+threshold. In ISP mode Compactor will follow peaks all peaks in the
+audio waveform, even if they occur between samples.
+
+
+--- Page 105 ---
+
+Range
+The range sets the range of the gain reduction. Values over 100% will
+exaggerate the effect.
+
+Stereo
+
+Adjusts the correlation in processing between left and right channels.
+At 0% both channels are processed the same. At 100% left and right
+channels are processed independently.
+
+Sidechain
+
+When enabled attenuation is calculated based on a secondary input,
+but the effect is applied to the main input. (See our guide to setting up
+sidechains in all DAWs here)
+
+Delay
+
+
+--- Page 106 ---
+
+Tone Feedback Pan
+
+\
+
+Duck Bounce Mix
+
+XS x
+
+
+
+--- Page 107 ---
+
+Delay will delay the input signal for an echoing effect.
+
+Delay
+The amount of time beore the delayed sound starts playing. This will
+be expressed in milliseconds or as parts of a beat, depending on Sync
+Mode.
+
+Sync Mode
+When sync is enabled the delay time will be synchronized to the song
+tempo.
+
+Feedback
+
+The feedback setting will cause the delayed sound to feed back into
+the delay. This will create an exponentially decaying echo.
+
+Pan
+Adjust the panning of the delayed sound.
+
+Ping-Pong
+
+Swaps the left and the right channel of the delayed sound when it is
+fed back into the delay. When combined with panning this will make
+the echo bounce back and forth between the speakers.
+
+Duck
+
+When duck is turned up, the output volume from the delay will
+automatically be lowered when the input volume is high.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+
+--- Page 108 ---
+
+Distortion
+
+
+--- Page 109 ---
+
+Distortion
+
+Type
+
+SATURATE
+
+FOLDBACK |
+SINE Dynamics
+
+HARD CLIP :
+QUANTIZE
+
+Bias Spread Wi
+
+
+
+--- Page 110 ---
+
+Distortion is a versatile distortion effect with a wide selection of
+algorithms.
+
+Drive
+The drive setting will boost the input signal, causing a heavier
+distortion.
+
+Bias
+
+The bias will add a DC offset to the signal before distorting. Adding
+some bias can prevent the distorted audio from sounding hollow and
+uninteresting.
+
+Spread
+The spread will add different amount of bias to the left and right
+channels. This can give some nice and subtle stereo widening.
+
+Type
+The flavor of distortion. Select between overdrive, saturate, foldback,
+sine, hard clip and quantize.
+
+Dynamics
+
+A common problem with distortion is that it can remove the dynamic
+content of the input signal, forcing the output to maximum volume.
+Turn up this knob to preserve the dynamics of the input.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+
+--- Page 111 ---
+
+Dynamics
+
+
+--- Page 112 ---
+
+Dynamics
+
+Attack Release Knee
+
+i
+
+In Gain OutGain Mix
+
+
+
+--- Page 113 ---
+
+Dynamics processing featuring upward and downward compression
+as well as expansion. Thresholds and ratio are controlled by clicking
+and dragging on the visualization in the upper part of the plugin
+interface. The visualization shows how input levels are mapped to
+output levels by the dynamics processing. The current input and
+output levels are marked in the visualizer by a moving disc.
+
+Low Threshold
+
+Low threshold for upwards compression and expansion.
+
+Low Ratio
+Ratio of upwards compression or expansion below the low threshold.
+
+High Threshold
+
+High threshold for downwards compression.
+
+High Ratio
+
+Ratio of downwards compression above the high threshold.
+
+Attack
+
+Adjusts attack time.
+
+Release
+Adjusts release time.
+
+Knee
+Smoothes the knee of the compression curve across the thresholds.
+
+In Gain
+Adjusts gain for the incoming signal.
+
+
+--- Page 114 ---
+
+Out Gain
+
+Adjusts gain after compression.
+
+Mix
+
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Ensemble
+
+
+--- Page 115 ---
+
+Ensemble
+
+Detune Spread Mix
+
+Motion
+SINE
+
+Ensemble creates the illusion of many voices playing in unison. Much
+
+
+
+--- Page 116 ---
+
+like a chorus it creates this effect by playing delayed copies of the
+incomping sound. On top of this it also modulates the phases of each
+voice to create a silky smooth result without any metallic flanging. The
+delay times for each voice is also modulated in order to detune each
+voice slighty.
+
+Voices
+Number of voices to play simultaneously.
+
+Detune
+How quickly to modulate the delay for each voice, affecting how
+detuned the voices will be.
+
+Spread
+
+Pans voices left or right for a stereo effect.
+
+Mix
+
+The dry/wet mix of this effect. A lower value will let some of the
+
+unmodified signal through.
+
+Motion
+Selects between different patterns for the modulations of the voices.
+
+Filter
+
+
+--- Page 117 ---
+
+Filter
+
+Cutoff
+
+Filter slope
+
+
+
+--- Page 118 ---
+
+Filter provides a selection of common filters.
+
+Type
+The type of filter. Select between low pass, band pass, high pass,
+notch, low shelf, peak and high shelf filters.
+
+Cutoff
+The operating frequency of the filter. In a low-pass filter this is the
+frequency where the signal is reduced by 3dB.
+
+Q
+The filter Q setting. High values for Q will make the filter resonate at
+the cutoff frequency.
+
+Gain
+The gain value for the low shelf, peak and high shelf filter types.
+
+Filter slope
+The slope of the filter cutoff, with 1x representing a classic 2-pole filter.
+
+Flanger
+
+
+--- Page 119 ---
+
+Flanger
+
+Delay Depth Rate
+
+Scroll Offset Motion
+OFF
+
+Spread Feedback Mix
+
+
+
+--- Page 120 ---
+
+Creates a flanging effect by mixing the audio with a slightly delayed
+version of itself. The length of the delay can be adjusted manually and
+modulated. Optionally, this effect can also add a phase shift between
+the dry and wet signals to create an infinte barberpole-style flanging
+effect upwards or downwards.
+
+Delay
+
+Adjusts the minimum delay.
+
+Depth
+Depth of delay modulation. Added on top of the minimum delay set by
+the delay knob.
+
+Rate
+
+Rate of delay modulation.
+
+Scroll
+Enables the phase offset and motion functions of the effect.
+
+Offset
+
+Phase offset between dry and wet signals.
+
+Motion
+Rate of modulation for the phase offset.
+
+Spread
+Stereo spread between left and right channels. Affects delay
+modulation and phase offset.
+
+Feedback
+
+
+--- Page 121 ---
+
+Feedback of the wet signal back into the delay line.
+
+Mix
+
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Formant Filter
+
+
+--- Page 122 ---
+
+Formant Filter
+
+
+
+--- Page 123 ---
+
+Formant Filter will boost two frequencies to mimic the sounds of
+
+different vowels.
+
+Vowel Selector
+Selects two frequencies to boost.
+
+Q
+
+Adjust how powerful and narrow the frequency boost is.
+
+Lows
+Allow low frequencies through the filter.
+
+Highs
+Allow high frequencies through the filter.
+
+Frequency shifter
+
+
+--- Page 124 ---
+
+Frequency Shifter
+
+Frequency Shifter will shift all the frequencies in the input signal up or
+down by a certain amount. This kind of shifting will ruin the harmonic
+content of the input signal, making it sound dissonant.
+
+Shift
+
+How much to shift all frequencies by.
+
+Gain
+
+
+--- Page 125 ---
+
+Gain will increase or decrease the volume of a signal.
+
+Gain
+Set how much to increase or decrease the volume, in decibels.
+
+VU Meter
+
+Displays the current output level on the left and right channels.
+
+Gate
+
+
+--- Page 126 ---
+
+Gate
+
+Threshold Range
+
+Tolerance Hold
+
+Attack Release
+
+- 60
+
+Look-ahead Flip
+
+
+
+--- Page 127 ---
+
+Gate will only let audio through when the input level is above a set
+threshold.
+
+Attack
+
+The attack time is the time it takes to for the gate to fully open when
+the input volume is over the threshold.
+
+Hold
+
+The hold time is the minimum time the gate will stay open.
+
+Release
+The release time is the time it takes to for the gate to fully close when
+the input volume is under the threshold.
+
+Threshold
+
+The volume threshold for when the gate will open.
+
+Tolerance
+A hysteresis range requiring the volume to drop a set amount of dB
+under the threshold before closing.
+
+Range
+
+The amount to attenuate the signal when the gate is closed.
+
+Look-ahead
+When enabled, a 5ms look-ahead will be used, allowing transients
+through at the cost of latency.
+
+Flip
+When flipped, the gate will act in reverse attenuating the signal when
+the gate is open.
+
+
+--- Page 128 ---
+
+VU Meter
+
+Displays the current input level, the selected threshold & tolerance,
+and the gate's current state.
+
+Sidechain
+
+When enabled transients are detected based on a secondary input,
+but the effect is applied to the main input. (See our guide to setting up
+sidechains in all DAWs here)
+
+Haas
+
+
+--- Page 129 ---
+
+@ Haas
+
+Delay Channel
+
+‘¢ Bagtee RIGHT
+
+HAAS will widen the stereo of the audio by delaying the left or the right
+
+channel slightly.
+
+Channel
+Which channel to delay.
+
+Delay
+The delay time.
+
+Ladder Filter
+
+
+--- Page 130 ---
+
+WH Ladder Filter
+
+Cutoft Saturate
+
+]
+"
+
+Resonance
+
+Ladder Filter simulates low pass filters found in classic hardware
+synths.
+
+
+
+--- Page 131 ---
+
+Cutoff
+
+The filter cutoff frequency.
+
+Resonance
+The filter resonance setting. High values will make the filter resonate
+at the cutoff frequency.
+
+Topology
+Selects between transistor ladder and diode ladder topology. The
+diode ladder have a slightly more gentle rolloff after the cutoff
+frequency. The two topologies also behave differently when saturation
+is enabled.
+
+Saturate
+Simulates saturation of electronic components in the filter.
+
+Drive
+Simulates overdrive of the components in saturate mode.
+
+Bias
+Simulates bias voltage over the components in saturate mode.
+
+Limiter
+
+
+--- Page 132 ---
+
+® Limiter
+
+Threshold Release
+
+O¢
+
+In gain Out gain
+
+Limiter will prevent the audio volume from going over a certain
+threshold.
+
+In gain
+Gain to apply to the input signal before limiting.
+
+Out gain
+
+Gain to apply to the input signal after limiting.
+
+
+--- Page 133 ---
+
+Threshold
+
+The maximum allowed volume.
+
+Release
+The release adjust how quickly the limiter returns the volume back to
+normal after limiting it due to a peak in the input volume.
+
+VU Meter
+
+Displays the current input level, the selected threshold, and the
+limiter's current attenuation.
+
+Nonlinear Filter
+
+
+--- Page 134 ---
+
+Nonlinear Filter
+
+_ i
+
+Cutoff Q
+
+4
+
+Mode SATURATED v
+
+
+
+--- Page 135 ---
+
+Nonlinear Filter colors and distorts the signal due to internal
+nonlinearities.
+
+Type
+The type of filter. Select between low pass, band pass, high pass and
+notch filters.
+
+Cutoff
+
+The operating frequency of the filter.
+
+Q
+
+The filter Q setting. High values for Q will make the filter resonate at
+the cutoff frequency.
+
+Drive
+Overdrives the filter, which makes the effect of the nonlinear behaviour
+more prominent.
+
+Mode
+
+Selects what flavor of nonlinearity you want. The clean mode has no
+nonlinearies, and does not color the signal. All other modes distort and
+color the signal in different ways to some extent.
+
+Phase Distortion
+
+
+--- Page 136 ---
+
+Phase Distortion
+
+Drive Normalize Tone
+
+Bias Spread
+
+Sidechain
+OFF
+
+Phase Distortion distorts the signal by offseting the phases of the
+
+
+
+--- Page 137 ---
+
+individual harmonics of the input signal. The amount of phase offset is
+controlled by the signal itself, much like FM feedback.
+
+Drive
+Controls the amount of distortion.
+
+Normalize
+Normalizes the signal, making the effect insensitive to input gain.
+
+Tone
+Filters the modulation to reduce high frequency noise.
+
+Bias
+Adds a constant phase offset to all harmonics.
+
+Spread
+
+Spreads phase offset for left and right channels for a stereo effect.
+Mix
+
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Phaser
+
+
+--- Page 138 ---
+
+M@ Phaser
+Cutoff Rate Depth
+
+On ¢
+
+Order Spread Mix
+OONn
+
+Phaser will filter the input signal, creating a series of moving peaks
+
+and troughs in the audio spectrum.
+
+Order
+A higher order setting will increase the order of the filters used by the
+phaser, creating a more pronounced effect with more peaks and
+troughs.
+
+
+--- Page 139 ---
+
+Cutoff
+Sets the cutoff of the filters in the phaser, moving the peaks and
+troughs in the audio spectrum.
+
+Depth
+Adjusts the depth of modulation of the cutoff.
+
+Rate
+
+Adjusts the rate of modulation of the cutoff.
+
+Spread
+Adds a phase offset for the cutoff modulation between the left and
+right channels, for a stereo widening effect.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Pitch Shifter
+
+
+--- Page 140 ---
+
+Pitch Shifter
+
++ Q.00
+
+Grain Size Mix
+Correlate MeXM oFF
+
+Pitch Shifter will adjust the pitch of the input signal up or down.
+
+Pitch
+
+How much to adjust the pitch, in semitones.
+
+Jitter
+
+
+--- Page 141 ---
+
+How much randomness to add to the pitch. A high jitter setting can
+give a unison-like effect.
+
+Grain Size
+
+During processing the pitch shifter chops up the audio into small
+snippets called grains. This setting adjusts the length of the grains,
+which can influence the sound.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Resonator
+
+
+--- Page 142 ---
+
+§ Resonator
+
+A 4 +00
+
+Decay Intensity Mix
+
+Resonator adds harmonic resonance to the input signal.
+
+Pitch
+
+The frequency at which to resonate.
+
+Decay
+Sets how long it takes for the resonance to ring out after the input
+goes silent.
+
+
+--- Page 143 ---
+
+Intensity
+Adjusts how much the resonance amplifies the input signal.
+
+Timbre
+
+Switches between two different harmonic series for the resonance.
+Choose between all harmonics (saw tooth wave) or odd harmonics
+(Square wave).
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Reverb
+
+
+--- Page 144 ---
+
+M Reverb
+
+Decay Dampen _ Size
+
+(>) ¢
+
+Width ~ Early Mix
+
+. .
+
+Reverb adds the sense of space to any sound by emulating the sound
+bouncing off the walls in a physical room.
+
+Decay
+The reverberation time, i.e. the time it takes for the reverb to go silent
+after sound has passed through it.
+
+Dampen
+
+
+--- Page 145 ---
+
+Adds damping to high frequencies so that they decay faster than low
+frequencies.
+
+Size
+
+Adjust the size of the virtual room that reverb simulates. Ranges from
+closet to church. While the Size knob allows incoming modulations, it
+is not advisable to modulate it with anything other than a Macro, since
+it will add crackling artifacts to the sound whenever it is moved.
+
+Width
+Adjusts the stereo width of the reverb. At 100% the left and right
+channels are completely uncorrelated in the wet sound.
+
+Early
+Adjusts the balance between early and late reflections. A higher value
+will give a brighter and more responsive reverb.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Reverser
+
+
+--- Page 146 ---
+
+@ Reverser
+
+4/16
+
+SYNC
+
+Crossfade Mix
+
+Poa
+
+%
+
+Reverser plays back delayed reversed sections of the input, mixed
+with the original dry sound.
+
+Delay time
+
+How long sections to delay and reverse. For example, setting this to
+1/4th means every beat will be played back in reverse 1/4th of a bar
+later.
+
+
+--- Page 147 ---
+
+Sync
+When sync is enabled the delay time will be synchronized to the song
+tempo.
+
+Crossfade
+Time to ramp in/out the reversed audio to avoid pops, in percent of the
+reversed section length.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Ring Mod
+
+
+--- Page 148 ---
+
+Ring Mod
+
+Bias Rectify Mix
+
+Freq. Spread
+
+|
+
+Modulator
+SINE OSCIII| ATOR
+
+
+
+--- Page 149 ---
+
+Ring Mod modulates the input with either an internal signal generator
+or a secondary input signal.
+
+Bias
+Amount of positive bias to add to the secondary input.
+
+Rectify
+Amount of positive or negative rectification to apply to the of the
+secondary input.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Frequency
+The base frequency of the internal oscillator or filter cutoff for the
+internal noise generator.
+
+Spread
+
+Shifts the frequency of the internal generator slightly for left and right
+channels to achieve a stereo effect.
+
+Stereo
+
+
+--- Page 150 ---
+
+M@ Stereo
+Mid Width Pan
+
+OM ¢
+
+Stereo can adjust the stereo width and panning. It also displays the
+
+current balance and channel correlation visually.
+
+Mid
+
+Adjusts the volume of the mono part of the signal.
+
+Width
+
+Adjusts the volume of the stereo part of the signal. The input audio
+must have at least a little stereo information for this knob to do
+anything.
+
+Pan
+Pans the signal to the left or right.
+
+
+--- Page 151 ---
+
+Stereo Meter
+
+Displays the current balance and channel correlation. When the meter
+moves into the red area the correlation is less than zero, which can
+cause problems with mono compatibility.
+
+shaper
+
+
+--- Page 152 ---
+
+Drive DCFilter Mix
+
+lw
+
+
+
+--- Page 153 ---
+
+Shaper remaps the incoming audio level according to a customizable
+graph for bespoke distortion.
+
+Drive
+The drive setting will boost the input signal, causing a heavier
+distortion.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Overflow
+Select what happens beyond the edges of the wave shape curve.
+Repeat the wave, hold the edge value, or repeat with mirroring.
+
+DC Filter
+
+Enables a DC filter that fixes any DC offset introduced by the
+distortion.
+
+Tape Stop
+
+
+--- Page 154 ---
+
+§ Tape Stop
+
+>
+
+Stop Time Start Time
+
+Tape Stop simulates the sound of slowly stopping and starting a
+playing tape.
+
+Play
+
+The current state of the tape motor.
+
+Stop Time
+
+
+--- Page 155 ---
+
+Time until the tape motor reaches full stop when stopping.
+
+Start Time
+
+Time until the tape motor reaches full soeed when starting.
+
+Curve
+The speed curve of the tape motor starting/stopping.
+
+Trance Gate
+
+
+--- Page 156 ---
+
+Trance Gate
+
+2)/3)4)/5)6)|)7/8
+
+
+
+--- Page 157 ---
+
+Trance Gate will modulate the volume of your audio based on a
+programmable rhythmic sequence.
+
+Pattern Select
+Switches between the eight different pattern slots.
+
+Pattern Editor
+
+Edits the current pattern. Click to toggle steps on or off, click and drag
+to tie steps together.
+
+Length
+
+The length of the current pattern.
+
+Attack
+Attack time for the amplitude ADSR envelope.
+
+Decay
+
+Decay time for the amplitude ADSR envelope.
+
+Sustain
+Sustain level for the amplitude ADSR envelope.
+
+Release
+Release time for the amplitude ADSR envelope.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+
+unmodified signal through.
+
+Resolution
+Length of one step in the sequencer.
+
+
+--- Page 158 ---
+
+Transient Shaper
+
+
+--- Page 159 ---
+
+Transient Shaper
+
+Attack Sustain
+
+Pump
+
+|
+
+Speed Clip
+
+Sidechain
+OFF
+
+
+
+--- Page 160 ---
+
+Transient Shaper adjusts the dynamics of a sound, with a focus on the
+initial hit; the transient.
+
+Attack
+
+The amount of amplification or attenuation of the transient.
+
+Pump
+The amount of attenuation directly after the transient, emphasizing the
+transient without increasing the level.
+
+Sustain
+The amount of amplification or attenuation of the sustained sound.
+
+Speed
+Higher values results in snappier transient modification, and lower
+values result in smoother curves.
+
+Clip
+When enabled, the output signal is clipped to OdB.
+
+Sidechain
+
+When enabled transients are detected based on a secondary input,
+but the effect is applied to the main input. (See our guide to setting up
+sidechains in all DAWs here)
+
+Convolver
+
+
+--- Page 161 ---
+
+Convolver
+
+Tone Feedback MIx
+
+
+
+--- Page 162 ---
+
+Convolver uses the mathematical process of convolution to shape
+your input using a prerecorded sound. This allows for recording the
+reverb of any physical space and applying it to any sound for example.
+
+Start
+
+Cuts the start off the impulse response. Requires a precomputation
+step before the effect can be heard.
+
+End
+
+Cuts the end off the impulse response. Requires a precomputation
+step before the effect can be heard.
+
+Fadeln
+Fades in the start of the impulse response. Requires a precomputation
+step before the effect can be heard.
+
+Fade Out
+
+Fades out the end of the impulse response. Requires a
+precomputation step before the effect can be heard.
+
+Stretch
+
+Stretches the impulse response, adjusting both it's length and pitch.
+Requires a precomputation step before the effect can be heard.
+
+Select Sample
+Convolver comes with a large library of Impulse Responses that
+should cover many of your basic needs. But you can import any
+samples you want.
+
+Reverse
+Reverse the impulse response before processing.
+
+
+--- Page 163 ---
+
+Delay
+
+Set the pre-delay time in milliseconds or as a fraction of song tempo.
+
+Tone
+Adjusts the brightness of processed output.
+
+Feedback
+
+Feeds the processed output back into the convolution engine.
+
+Mix
+
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Shaper Table
+
+
+--- Page 164 ---
+
+shapertable
+
+Drive DCFilter Mix
+
+
+
+--- Page 165 ---
+
+Shaper Table expands on the concept of waveshaping and lets you
+use a table of data for the shape remapping.
+
+Drive
+The drive setting will boost the input signal, causing a heavier
+distortion.
+
+Mix
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through.
+
+Frame
+Selects current wavetable frame. Route modulations to this to scan
+across the wavetable.
+
+Bias
+The bias will add a DC offset to the signal before distorting, in a effect
+shifting the wave shape left and right.
+
+Smooth
+Applies a smoothing filter to the wave shape, which makes the
+distortion less harsh.
+
+Phase
+The phase offset shifts the entire LFO waveform up to half a cycle left
+or right.
+
+Overflow
+Select what happens beyond the edges of the wavetable. Repeat the
+wavetable, hold the edge value, or repeat with mirroring.
+
+
+--- Page 166 ---
+
+DC Filter
+Enables a DC filter that fixes any DC offset introduced by the
+distortion.
+
+Disperser
+
+User Interface
+Building your sound
+
+Snapin mode
+
+User Interface
+
+Disperser is a stack of all-pass filters tuned to cause frequency
+dependent delay in the signal. The shape of the delay can be tuned by
+
+
+--- Page 167 ---
+
+changing different parameters of the filter through Disperser's user
+interface.
+
+1. The amount knob adjusts how pronounced the effect is by
+increasing the order of the all-pass filter.
+
+2. The frequency slider adjusts the cutoff frequency of the filter.
+Simply click and drag the vertical line in the frequency window.
+
+3. The current delay for each frequency is visualized as a group
+delay curve in the frequency window. The delay is longer where
+the curve is higher.
+
+4. The pinch knob adjusts the Q setting of the filter, which will have
+the effect of concentrating the delay around the cutoff.
+
+Building your sound
+
+The Disperser is an all-pass filter. This means it has a completely flat
+frequency response, it does not add any gain whatsoever to the sound
+you put through it. It does however effect the phase of the frequencies
+in the signal.
+
+
+--- Page 168 ---
+
+If you leave the amount at a low setting a tiny bit of phase offset will
+be added to your signal, usually not enough to be audible. It is still a
+usable tool with a low amount setting however, since it can reduce the
+"crest factor" of a signal. The crest factor is the ratio between the
+peaks of a signal, and the overall power of the signal. As an example,
+a pulse wave with a very narrow pulse width has a high crest factor (it
+has high peaks, but it still does not sound very loud). Adding a little bit
+of phase offset to such a signal will drastically lower the peaks, without
+lowering the volume or changing the sound very much (yay, free
+headroom!). Human voice can have a surprisingly high crest factor,
+and many radio stations add a little bit of all-pass filtering on the mics
+to get more headroom. If you have vocals that sound thin even though
+you compress them heavily then you may have a problem with the
+crest factor.
+
+When you start to increase the amount another property of the
+all-pass filters start to be audible; the group delay. The group delay is
+a delay which is different for each frequency band. When you have a
+medium amount setting the group delay can be used as a kind of
+frequency aware transient shaper. It will transform sharp transients
+from clicks into short zaps, since the low frequencies will be delayed
+more than the high ones.
+
+Once you crank the amount knob all the way up the group delay will
+be even higher, on the order of several hundred milliseconds. This can
+be used to create some really loud and booming drums! The bass
+from the drums will be smeared out, and it will sound louder even
+
+
+--- Page 169 ---
+
+though it isn't. In fact the peak volume of your drums will probably be
+lower than before, since all frequencies won't appear at the same
+point in time.
+
+Apart from sounds with strong transients such as drums and guitar,
+Disperser can also do magical things to synth bass sounds. Try it ona
+clean saw tooth baseline to clearly hear the effect that delaying the
+low frequencies will have on your basses.
+
+The frequency slider sets the cutoff for the all-pass filters. The group
+delay is a lot more pronounced if you keep the cutoff low.
+
+Lastly, the pinch knob will tweak the Q parameter of the filter. Turn this
+knob to adjust the shape of the group delay. A high pinch has the
+effect of concentrating the group delay in a narrow frequency band,
+hence the name. Crank it up and hear Disperser sing for you.
+
+Snapin mode
+
+
+--- Page 170 ---
+
+3.05 kHz :
+
+FH /
+
+Amount Pinch
+@ ¢
+
+Disperser can also be loaded as a Snapin in Snapin hosts like Snap
+
+Heap, Multipass or Phase Plant.
+
+
+--- Page 171 ---
+
+In Snapin mode, there is a small downwards arrow visible in the top
+right corner when your mouse cursor is over the plugin. Click it to
+reveal a preset information row. At the top, up/down arrows can be
+used to scan through presets and a full browser can be opened by
+clicking the preset name.
+
+Faturator
+
+Overview
+Operating the controls
+
+Snapin mode
+
+Overview
+
+
+--- Page 172 ---
+
+Faturator is a distortion plugin with a unique sound and tunable
+distortion, as well as stereo widening possibilities. In contrast to many
+common distortion effects Faturator preserves the dynamics of your
+sound.
+
+kYs FATURATOR rm oar]
+
+1. The drive slider saturates the audio, making it sound fuller and
+heavier.
+
+2. The fuzz slider add high frequency "fuzz" to the sound.
+
+3. The color slider emphasizes certain frequencies before distortion
+takes place.
+
+4. The mix slider mixes the dry signal with the distorted one.
+
+5. The stereo turbo knob adds stereo width by delaying the left or
+right channel slightly.
+
+6. The input VU shows the amplitude of the incoming signal in
+stereo.
+
+
+--- Page 173 ---
+
+7. The output VU shows the amplitude of the outgoing signal in
+stereo.
+
+Operating the controls
+
+Faturator is controlled by the knobs and the sliders seen in the UI. To
+move a knob or slider simply click on it, and while holding the mouse
+button down move the mouse up or down.
+
+Sometimes you might want more precise control when tuning a
+parameter. Hold the shift key while moving a knob or slider to enter
+fine tuning mode, where the knob or slider will move more slowly.
+
+You can reset a knob to its default position by double clicking it.
+
+Finally, most controls support entering the value using your keyboard
+by right-clicking on them.
+
+Snapin mode
+
+
+--- Page 174 ---
+
+
+
+--- Page 175 ---
+
+Faturator can also be loaded as a Snapin in Snapin hosts like Snap
+Heap, Multipass or Phase Plant.
+
+In Snapin mode, there is a small downwards arrow visible in the top
+right corner when your mouse cursor is over the plugin. Click it to
+reveal a preset information row. At the top, up/down arrows can be
+used to scan through presets and a full browser can be opened by
+clicking the preset name.
+
+Filter Table
+
+
+--- Page 176 ---
+
+@ filtertable
+
+——————_
+
+VV V VV VW
+
+© Filter Morph (‘e
+Cutoff Resonance Mix
+
+Phase MINIMUM v
+
+Filter Table lets
+
+you create sweeping filter effects by scanning through wavetables.
+The characteristic of the table's sound will be turned into a filter and
+applied to your sound.
+
+
+--- Page 177 ---
+
+Cutoff
+
+The cutoff frequency of the resulting filter. In Filter Table the cutoff
+signifies the frequency of harmonic 24 in the Wavetable. You can
+keytrack the cutoff in any of our Snapin Hosts by modulating it with the
+Note modulator at 100%.
+
+Mix
+
+The dry/wet mix of this effect. A lower value will let some of the
+unmodified signal through. Depending on the selected phase mode,
+the mix Know might introduce interesting phasing artefacts.
+
+Resonance
+Emphasizes or attenuates filter peaks and troughs.
+
+Phase Modes
+Selects between different phase response mode of the filter:
+
+- MINIMUM: This creates a snappy and tight filter response without
+any latency.
+
+- LINEAR: The Linear phase mode add some latency, but all phases
+will be aligned with the input, which can be important for parallel
+processing, and smooth operation of the Mix knob.
+
+- ORIGINAL: This mode attempts to preserve the phases relationships
+of the wavetable as closely as possible. It introduces some latency.
+
+- RAW: Raw mode uses the waveform in the selected frame as a filter
+kernel with as little processing as possible applied. This can create
+unpredictable artefacts.
+
+
+--- Page 178 ---
+
+Carve EQ
+
+Overview
+User interface
+Building your sound
+Sculpt tool
+Select tool
+Pencil tool
+Pan view tool
+Zoom view tool
+
+Reference tool
+
+
+--- Page 179 ---
+
+Match tool
+Edit mode & Stereo mode
+Gain & Mix
+
+Spectrum view settings
+
+Snapin mode
+
+Overview
+
+Kilohearts' Carve EQ is a powerful graphic equalizer, with 31
+third-octave bands and a versatile interface. Stereo processing is
+possible with both Left/Right and Mid/Side modes. Carve EQ has a
+workspace centric user interface provides many options for how to edit
+
+
+--- Page 180 ---
+
+the equalization curve. The EQ Match Tool can be used to
+automatically match the equalization to a reference track.
+
+User interface
+
+CARVEEQ fo “* Stereo Imager + Author
+v1.8.0 — Fu srowse 9 W
+
+This is an overview of the plugin UI. It may look a bit overwhelming at
+first, but let's try to break it down a bit.
+
+1. In the top bar the name, author and description of the current
+patch is shown. By clicking the 'Browse' button you toggle the
+preset browser.
+
+2. The top bar also holds controls for Undo and Redo as well as the
+A/B configuration selector, which allows you to quickly switch
+between two different equalization setups to compare them.
+
+
+--- Page 181 ---
+
+3. Just above the work area is a small bar containing options for the
+currently selected tool.
+
+4. In the middle of the UI you will find the main work area. It shows
+the equalization curve, as well as a real time spectrum analyzer
+of the processed audio.
+
+5. To the left of the main work area you will find a toolbar with small
+selection of tools. It also holds controls for which stereo channel
+you are editing, and whether the equalizer works in L/R or M/S
+mode.
+
+6. In the rightmost part of the work area you will also find a large
+VU meter measuring the overall volume of the processed audio,
+together with controls for overall gain and dry/wet mix.
+
+7. The very bottom of the window holds the status bar, which gives
+you tips about whatever your mouse is over at the moment. It
+also has controls for changing the appearance of the spectrum,
+and resizing or scaling the UI.
+
+Building your sound
+
+Once you have checked out some of the presets you are probably
+eager to get your hands dirty and create your own patches. We
+designed Carve EQ to be easy and fast to work with, and we hope you
+will enjoy experimenting and discovering the possibilities. Still,
+knowledge is power, so in this section we will go through all the
+features of Carve EQ in detail.
+
+
+--- Page 182 ---
+
+A graphic equalizer, like Carve EQ, works by designing a filter with a
+specific gain at certain bands on the frequency spectrum. Carve EQ
+allows you to work with 31 such bands, positioned at third octave
+intervals across the spectrum. The control points themselves s are
+only visible in Carve EQ when the Select tool is enabled. The other
+tools only let you manipulate the bands indirectly by editing the filter
+response.
+
+Sculpt tool
+
+The sculpt tool allow you to mold the frequency response in an
+organic and intuitive way. Simply grab the response curve with the left
+mouse button and drag it into the shape you want. You can adjust the
+size of the area affected by the tool by adjusting the slider in the tool
+options, or with the mouse scroll wheel. Two dashed vertical lines
+show the current size of the tool.
+
+Select tool
+
+The select tool gives you access to the individual graphic equalizer
+bands. When the tool is enabled a marker will appear on each of the
+31 bands. The markers can be dragged up and down with the mouse.
+To improve the precision while dragging, hold the Shift key. Clicking a
+handle with the right mouse button will let you set it's gain value using
+your keyboard.
+
+
+--- Page 183 ---
+
+Several handles can be selected at once by clicking and dragging a
+selection rectangle around them. They can then be dragged together.
+
+When one or more handles are selected you can press the the Delete
+to reset the selected bands back to O dB. If you are currently editing
+only one of the stereo channel the delete key will first reset the
+handles to whatever the other channel is set to, pressing the delete
+key again will reset the bands to 0 dB.
+
+Pencil tool
+
+Use the pencil tool to freehand draw your filter response. Simply click
+and drag with the mouse to draw.
+
+Pan view tool
+
+The pan view tool is used to pan the viewport along both the
+frequency and the gain axis. Simply click and drag to pan the view.
+
+It is also possible to pan the view with any tool selected by clicking
+and dragging on the axis labels below and to the right of the viewport.
+
+Zoom view tool
+
+The zoom view tool is used to zoom the viewport along the gain axis.
+Simply click and drag to zoom the view.
+
+
+--- Page 184 ---
+
+It is also possible to zoom the view with any tool selected by scrolling
+the mouse wheel when hovering the axis labels to the right of the
+viewport.
+
+Reference tool
+
+The reference tool allows you to display an overlaid spectrum of
+another sound in the main work area. This can be useful in many
+ways, for example when trying to match the equalization curve of one
+song to another one, or during mixing when you want to avoid having
+two tracks clash in the same frequency range. Reference spectrums
+can be recorded and and later loaded from profiles which can be
+easily shared between different sessions.
+
+The reference data can come from many different sources:
+
+Off
+
+Turns off the reference spectrum.
+
+Sidechain
+Displays the spectrum of the sidechain input in real time. (See our
+guide to setting up sidechains in all DAWs here)
+
+Factory profile
+
+Load one of the reference profiles bundled with the plugin.
+
+User profile
+Load one of the reference profiles you saved earlier.
+
+
+--- Page 185 ---
+
+Create profile from file
+Create a reference profile from audio in a wav file.
+
+Record
+Record the current (main or sidechain) input to a profile.
+
+Match tool
+
+The match tool is a very powerful tool which allows you to
+automatically match the the equalization to a reference. You can use
+this on the master bus to match the frequency levels of your song to
+another one. It also works well on single instrument, to match the
+timbre of one instrument to another. You can also toggle the Invert
+option to carve out space in the spectrum of one track to avoid
+
+clashing with another one.
+
+Using the match tool is a three step process:
+
+Input analysis
+
+Before the match tool can work it's magic it needs to know how its
+input sound sounds like. Press the Input Record button while playing
+your song and Curve EQ will start collecting data from the main input.
+The spectrum analyzer in the main work area will show the data
+collected so far while recording. Stop the recording when you have
+played the relevant part of the song.
+
+
+--- Page 186 ---
+
+The input profile that you record will be remembered by the plugin so
+you can use it several times. You must remember to update it if you
+want to use the match tool again after making any changes to your
+song.
+
+Target profile
+
+Now that the match algorithm knows how your input sounds like, it is
+up to you to choose what target profile to match your equalization
+curve to. This target profile is the same profile as in the Reference
+tool, and is loaded or recorded in the same way.
+
+Tweaking
+
+Once the input is analyzed and a target profile is chosen the matching
+tool with immedia_dynamictely create an EQ curve to match the input
+to the target, and you will hear the result. You then can tweak the
+resulting curve using the Detail and Amount knobs.
+
+The detail knob adjusts the sensitivity of the algorithm across the
+frequency spectrum. A higher setting will be needed to pick out narrow
+frequency peaks, while a lower setting will match the equalization
+curve with more broad brush strokes.
+
+The amount knob mixes the result of the matching algorithm with a flat
+O dB equalization curve. This allows you to dial back the matching
+effect a bit if it's too extreme.
+
+
+--- Page 187 ---
+
+Finally, there is an option invert the matched curve, carving out
+frequency space in the input for the target profile rather than matching
+
+their curves.
+
+The match tool will completely replace any equalization curve you had
+set before you started, but it does let you edit the resulting curve freely
+
+once you are done with the match tool.
+
+Edit mode & Stereo mode
+
+
+--- Page 188 ---
+
+. . a the tools in the
+
+toolbar you will find controls for handling equalization in stereo.
+
+At the bottom is a dropdown that lets you choose if the equalizer
+works in Left/Right or Mid/Side mode. The Left/Right mode will let you
+apply different equalization to the left and the right channels. The
+Mid/Side mode, on the other hand, will let you equalize the mono
+content (mid) separately from the stereo content (side).
+
+
+--- Page 189 ---
+
+On top is the edit mode selector. It lets you choose what channel to
+edit with the edit tool. By default it is set to "both channels", but you
+can change it to left, right, mid, or side to only edit that channel.
+Instead of clicking, you can also toggle the current edit mode with the
+Tab key.
+
+Gain & Mix
+
+In the bottom right corner you will find the Gain and Mix knobs.
+
+The Gain knob adjusts the overall gain of the equalizer. You can use
+this to compensate for your equalization inadvertently making the
+overall volume louder or softer.
+
+The Mix knob scales the gain of all bands, scaling it down to O GB at
+O% mix.
+
+Spectrum view settings
+
+In the status bar you will find two dropdowns which can be used to
+tune the look of the spectrum.
+
+Spectrum mode
+Adjusts the frequency resolution of spectrum analyzer. Select between
+octave or 1/3 octave bars, and exact which shows a continuous curve.
+
+Falloff
+
+
+--- Page 190 ---
+
+Adjusts how quickly the spectrum falls off to zero when the sound
+goes silent.
+
+Snapin mode
+
+Carve EQ
+
+Carve EQ can also be loaded as a Snapin in Snapin hosts like Snap
+Heap, Multipass or Phase Plant. In this mode, the Snapin interface
+shows a preview of the EQ curve, along with Offset, Gain and Mix
+
+
+--- Page 191 ---
+
+knobs. At the top, up/down arrows can be used to scan through
+presets and a full browser can be opened by clicking the preset name.
+To edit the current patch, press the pen icon. This will open the full
+Carve EQ interface in a separate window.
+
+Slice EQ
+
+Overview
+User interface
+Building your sound
+Edit tool
+Pan view tool
+Zoom view tool
+
+Reference tool
+
+
+--- Page 192 ---
+
+Edit mode & Stereo mode
+Offset, Gain & Mix
+
+Filter list
+
+Spectrum view settings
+
+Oversampling
+
+Snapin mode
+
+Overview
+
+
+--- Page 193 ---
+
+Kilohearts' Slice EQ is a powerful parametric equalizer, supporting six
+different filter types with full control over filter roll-off and Q. Stereo
+processing is possible with both Left/Right and Mid/Side modes.
+
+Slice EQ has a workspace centric user interface which gives the user
+the option between either editing the filters visually in a spectrum view,
+or controlling each filter parameter individually by turning knobs.
+
+User interface
+
+@
+
+This is an overview of the plugin UI. It may look a bit overwhelming at
+first, but let's try to break it down a bit.
+
+1. In the top bar the name, author and description of the current
+patch is shown. By clicking the 'Browse' button you toggle the
+preset browser.
+
+
+--- Page 194 ---
+
+2. The top bar also holds controls for Undo and Redo as well as the
+A/B configuration selector, which allows you to quickly switch
+between two different equalization setups to compare them.
+
+3. Just above the work area is a small bar containing options for the
+currently selected tool.
+
+4. In the middle of the UI you will find the main work area. It shows
+all the filters curves and their combined equalization curve, as
+well as a real time spectrum analyzer of the processed audio.
+
+5. To the left of the main work area you will find a toolbar with small
+selection of tools. It also holds controls for which stereo channel
+you are editing, and whether the equalizer works in L/R or M/S
+mode.
+
+6. In the rightmost part of the work area you will also find a large
+VU meter measuring the overall volume of the processed audio,
+together with controls for overall gain and dry/wet mix.
+
+7. To the right of the work area is a list of all the filters in the current
+patch. This list is hidden by default and can be expanded by
+clicking on the panel labelled Filters or right-clicking a filter
+handle.
+
+8. The very bottom of the window holds the status bar, which gives
+you tips about whatever your mouse is over at the moment. It
+also has controls for changing the appearance of the spectrum,
+changing oversampling, and resizing or scaling the UI.
+
+Building your sound
+
+
+--- Page 195 ---
+
+A parametric equalizer, like Slice EQ, works by combining the effect of
+several simple filters into a complex equalization curve across the
+whole spectrum. Slice EQ supports the following 6 different filter
+types:
+
+Peak
+
+Boosts or attenuates sound around a certain frequency.
+
+Low & High Shelf
+
+Boosts or attenuates sound below or above a certain frequency.
+
+Notch
+
+Completely cuts out sound around a certain frequency.
+
+Low & High Cut
+
+Completely cuts out sound below or above a certain frequency.
+
+For each filter, the following parameters can be _ controlled
+independently:
+
+Cutoff
+
+The center frequency for the filter. For example, the peak filter boosts
+or attenuates sound close to this frequency.
+
+Gain
+
+How much the filter boosts or attenuates the sound. Not available for
+Notch and Cut filter types.
+
+Q
+
+
+--- Page 196 ---
+
+Adjusts the bandwidth of the filter. Increasing Q will create a sharper
+peak around the cutoff frequency.
+
+Roll-off
+
+The roll-off, measured in decibels per octave, dictates how sharp the
+transition from stopband to passband is for a filter.
+
+Edit tool
+
+The first tool in the toolbar is the edit tool, and this is what you will use
+most of the time to add new filters and edit them.
+
+To add a new filter, first select the filter type from the palette in the tool
+options, then click and drag the zero decibel line to add a new filter of
+that type. When the magic wand icon in the filter type palette is
+selected the filter type will be decided automatically depending on
+where on the frequency axis you click. A small icon above the mouse
+cursor will show you what filter type will be added.
+
+Filters are edited by dragging their handles. When dragging a handle
+left and right you will change the cutoff frequency for that filter. When
+dragging up and down you will change either the gain (for peak and
+shelf filters) or Q (for cut and notch filters). To change Q for any filter
+type, hold the Alt key while dragging, or scroll the mouse wheel while
+hovering a handle with the mouse cursor. Adjust the roll-off by holding
+
+
+--- Page 197 ---
+
+the Ctrl key and dragging up and down. To increase precision while
+dragging any parameter hold the Shift key.
+
+The Q of High & Low Cut filters will snap to a value of 0.707, or about
+-3 dB, when dragging their handles. This is the Q value where the filter
+cuts as steeply as possible without overshooting and boosting any
+frequency. Additionally, High & Low Cut filters with a Roll-off of 6
+dB/octave will have their Q locked to this value for technical reasons.
+
+Several filter handles can be selected at once by clicking and dragging
+a selection rectangle around them. They can then be dragged
+together.
+
+To remove one or more filters you must first select them and then
+delete them by pressing the Delete key on your keyboard.
+
+Pan view tool
+
+The pan view tool is used to pan the viewport along both the
+frequency and the gain axis. Simply click and drag to pan the view.
+
+It is also possible to pan the view with any tool selected by clicking
+and dragging on the axis labels below and to the right of the viewport.
+
+Zoom view tool
+
+
+--- Page 198 ---
+
+The zoom view tool is used to zoom the viewport along both the
+frequency and the gain axis. Simply click and drag to zoom the view.
+
+It is also possible to zoom the view with any tool selected by scrolling
+the mouse wheel when hovering the axis labels below and to the right
+of the viewport.
+
+Reference tool
+
+The reference tool allows you to display an overlaid spectrum of
+another sound in the main work area. This can be useful in many
+ways, for example when trying to match the equalization curve of one
+song to another one, or during mixing when you want to avoid having
+two tracks clash in the same frequency range. Reference spectrums
+can be recorded and and later loaded from profiles which can be
+easily shared between different sessions.
+
+The reference data can come from many different sources:
+
+Off
+
+Turns off the reference spectrum.
+
+Sidechain
+Displays the spectrum of the sidechain input in real time. (See our
+guide to setting up sidechains in all DAWs here)
+
+Factory profile
+
+Load one of the reference profiles bundled with the plugin.
+
+
+--- Page 199 ---
+
+User profile
+Load one of the reference profiles you saved earlier.
+
+Create profile from file
+Create a reference profile from audio in a wav file.
+
+Record
+Record the current (main or sidechain) input to a profile.
+
+Edit mode & Stereo mode
+
+
+--- Page 200 ---
+
+. . a the tools in the
+
+toolbar you will find controls for handling equalization in stereo.
+
+At the bottom is a dropdown that lets you choose if the equalizer
+works in Left/Right or Mid/Side mode. The Left/Right mode will let you
+apply different equalization to the left and the right channels. The
+Mid/Side mode, on the other hand, will let you equalize the mono
+content (mid) separately from the stereo content (side).
+
+
+--- Page 201 ---
+
+On top is the edit mode selector. It lets you choose what channel to
+edit with the edit tool. By default it is set to "both channels", but you
+can change it to left, right, mid, or side to only edit that channel.
+Instead of clicking, you can also toggle the current edit mode with the
+Tab key.
+
+Offset, Gain & Mix
+
+In the bottom right corner you will find the Offset, Gain and Mix knobs.
+
+The Offset knob shifts the frequency of all filters, making it easier to do
+interesting sweeps or using the EQ as a custom filter within a Snapin
+host like Snap Heap, Multipass or Phase Plant.
+
+The Gain knob adjusts the overall gain of the equalizer. You can use
+this to compensate for your equalization inadvertently making the
+overall volume louder or softer.
+
+The Mix knob scales the Gain parameter of all filters, scaling it down
+to 0 dB at 0% mix. Low cut, high cut and notch filters are not affected.
+
+Filter list
+
+
+--- Page 202 ---
+
+Filters
+
+OP cut < 76.0 Hz
+Cutoff
+
+\
+18 dB/oct
+
+OB Peak @ 639 Hz
+Cutoff Gain
+
+4 7
+
+6 dB/oct
+
+@ Shelf > 5.30 kHz
+Cutoff Gain
+
+ee ~
+
+12 dB/ot @®
+
+The filter list is found at the
+
+far right part of the user interface. The list is hidden by default and can
+be expanded by clicking on the panel labelled Filters.
+
+
+--- Page 203 ---
+
+The filter list gives you access to each parameter of every filter via a
+knob. You can also bypass filters in this list by clicking on the toggle
+button in the top left corner of each filter. Filters can be removed by
+clicking the X button in the top right corner.
+
+Spectrum view settings
+
+In the status bar you will find two dropdowns which can be used to
+tune the look of the spectrum.
+
+Spectrum mode
+Adjusts the frequency resolution of spectrum analyzer. Select between
+octave or 1/3 octave bars, and exact which shows a continuous curve.
+
+Falloff
+
+Adjusts how quickly the spectrum falls off to zero when the sound
+goes silent.
+
+Oversampling
+
+The equalizer can optionally oversample the signal in order to provide
+filter responses shaped closer to their analog prototypes. By default
+the oversampling is enabled automatically when the sample rate is low
+enough. You can override this behaviour to force oversampling on or
+off using the dropdown in the status bar.
+
+
+--- Page 204 ---
+
+Snapin mode
+
+MH Slice EQ
+
+Slice EQ can also be loaded as a Snapin in Snapin hosts like Snap
+Heap, Multipass or Phase Plant. In this mode, the Snapin interface
+shows a preview of the EQ curve, along with Offset, Gain and Mix
+knobs. At the top, up/down arrows can be used to scan through
+presets and a full browser can be opened by clicking the preset name.
+To edit the current patch, press the pen icon. This will open the full
+Slice EQ interface in a separate window.
+
+
+--- Page 205 ---
+
+Modulation
+
+Overview
+Modulator Lane
+Modulators
+Envelope
+LFO
+LFO Table
+Curve
+Random
+
+Audio Follower
+
+
+--- Page 206 ---
+
+Pitch Tracker
+
+Note
+
+Pressure
+
+Velocity
+
+Pitch Wheel
+
+Note Gate
+
+MIDI CC
+
+MPE Timbre
+
+Remap
+
+Lower Limit / Upper Limit
+
+
+--- Page 207 ---
+
+Scale
+Sample & Hold
+
+Triggering
+
+Overview
+
+
+--- Page 208 ---
+
+Global Unison Polyphony
+8
+
+>) "1.000 Hz v a S Pyramid gO
+
+Set the influence this parameters modulation source has on it. Double click to remove this modulation.
+
+Almost all in the Kilohearts Ecosystem can be modulated.
+Modulators can be added as modules in the horizontal lane along the
+bottom of the screen. The macro buttons at the top of the screen also
+use the modulation system and are hooked up to their targets in the
+same way as other modulators like envelopes and LFOs.
+
+Hooking up a modulation source to a target parameter is done in
+pretty much the same way for all modulation sources. Look for the
+little plus icon appearing when you are hovering your mouse pointer
+over a modulation source. Clicking the plus icon selects the
+modulation source and switches the UI over to modulation target
+selection mode. In this mode, a small orange modulation knob will
+appear next to each possible modulation target. Click and drag on the
+modulation knob to connect the modulation source to the target
+parameter and set the modulation level. The modulated control will
+turn to an orange color to indicate that it is being modulated.
+
+
+--- Page 209 ---
+
+After a modulation source has been connected to a target parameter,
+the modulation knob will be visible next to the modulation source at all
+times. The modulation knob will also appear next to the modulation
+target when the target is hovered. The modulation knob can be
+dragged to adjust the level of modulation. To disconnect the
+modulation, double click the modulation knob.
+
+To better understand the modulation system it is useful to understand
+some of the internal timing of Phase Plant. Values in the generator
+section are updated for every sample. This is called "at audio rate".
+While modulators output values much less often. Typically every 64
+samples, but it can be more often depending on your DAW settings
+and other circumstances. We call this "at control rate". Therefor there
+is a limit on how fast the output of your modulators can change.
+Anything around 100 Hz or higher is likely so affected by aliasing that
+it it impossible to make any controlled changes to it. It's mostly just
+static. If you want very fast modulations, consider using the audio rate
+modulation system available in the generator stack only.
+
+
+--- Page 210 ---
+
+Phase Offset
+
+@ Macro1
+
+Macro 2 +100.0%
+
+Assign to automation slot
+
+Phase Jitter
+
+Assign to automation slot
+
+Modulations are color coded. Control rate modulations are shown in
+orange in the Ul, audio rate modulations are shown in green, and
+
+
+
+--- Page 211 ---
+
+modulations scaling other modulations are shown in_ yellow.
+Right-clicking any control will show you a context menu for it. This
+menu also holds some more detailed descriptions of any modulations
+that may affect it. In the example imaged we see the Phase parameter
+of an Analog generator being modulated by two sources, and a third
+source used to modulate the amount of modulation for the audio rate
+modulation. Each row represents one modulation. The very left square
+of color on each row is a toggle to temporarily disable their respective
+modulation. Then follows the name of the modulation source, and the
+modulation amount. To the right is a diagonal line that describes the
+"curvature" of each modulation, and is similar to using a Remap
+modulator. It can be bent upwards or downwards to create non-linear
+modulation results. Even further right an "x" button will appear if you
+hover each row, to delete the modulation. Under each row an arrow is
+displayed showing the upper and lower bounds of the results of the
+modulation on the original parameter. You can set these bounds
+instead of the modulation amount if you need that sort of precision.
+Bear in mind that these bounds can only be shown for one modulation
+each, and the total of all modulations may lead to values outside the
+bounds of each individual modulation.
+
+Modulator Lane
+
+2
+5
+E
+=
+uy
+a.
+
+
+
+--- Page 212 ---
+
+Along the bottom of the screen is the modulator lane. Here you can
+add modules that can be used for modulation such as LFOs and
+envelopes. It's possible to add up to 32 modulator modules. To add a
+modulator, click on the icon that appears in the lane as you hover it
+(the dotted area).
+
+All modulator modules have a small animated display at the right hand
+side that shows the current value that the modulator outputs. The
+value for the most recent voice is shown in blue, and the other voices
+are drawn in grey. Some modulators also have a global value which is
+used when modulating parameters which are not tied to a voice. This
+is also displayed in grey.
+
+The output depth of all modulators can be scaled by clicking and
+dragging on the animated output display. The depth can also be
+modulated by routing another modulation to this parameter.
+
+To the right in most modulator modules, you can change its output
+range. The available options are unipolar (+, output ranging from 0 to
+1), bipolar (+/-, output ranging from -1 to +1) and inverted (-, output is
+same as unipolar only inverted going from minimum 1 "up to" 0.).
+
+Modulators
+
+
+--- Page 213 ---
+
+Envelope
+
+w
+a.
+2
+D
+>
+=
+uu
+
+The envelope modulator is a modulator module that provides an
+envelope that you can use as a modulation source.
+
+It uses a standard Kilohearts envelope, and the modulation triggering
+functionality is described in detail in the triggering chapter.
+
+Trigger
+
+This is meant as a modulation target for remotely triggering the
+Envelope to restart. Right-clicking on the trigger button will bring up
+the triggering menu. The modulation triggering functionality is
+described in detail in the triggering chapter.
+
+The Envelope Modulator has one additional setting in the menu,
+Seamless. When enabled, the envelope will restart from the current
+value when triggered, instead of resetting the envelope to zero (i.e.
+the attack will start in the middle of the release).
+
+LFO
+
+
+--- Page 214 ---
+
+The LFO (Low Frequency Oscillator) module is one of the modulator
+modules you can add in the modulator lane at the bottom of the
+screen. They are ideal for modulating parameters in an oscillating and
+rhythmic fashion. The LFOs are very versatile since you can design
+your own LFO shapes. The LFO editor is described in detail in the
+curve editor chapter.
+
+Trigger
+
+This is meant as a modulation target for remotely triggering the LFO to
+restart. Right-clicking on the trigger button will bring up the triggering
+menu. The modulation triggering functionality is described in detail in
+the triggering chapter.
+
+Frequency
+Controls the speed of the oscillator, either in Hertz when in free
+
+running mode, or as a note length when running in synced mode.
+
+Phase
+Adjusts the phase offset of the LFO.
+
+Shape
+
+
+--- Page 215 ---
+
+The LFO has a vast array of predefined shapes. Clicking on the name
+of the default shape will take you to a list of available shapes,
+organized in folders. You can also edit the LFO curve yourself in the
+LFO editor.
+
+LFO Table
+
+a
+Te)
+
+o
+ke
+O
+i
+I
+
+This modulator takes modulation design to the next level. By using a
+wavetable as a modulation source, it allows you to cycle through 256
+LFO shapes in one modulator. This unique modulator opens up all
+kinds of possibilities. Use it to store a bank of rhythmical variations, or
+a variety of melodic sequences, or any other wild idea you can come
+up with. When combined with a Random modulator, LFO Tables are
+wonderful for crafting evolving generative patterns.
+
+There are hundreds of wavetables to choose from, and you can even
+edit them or create your own. The wavetable table editor is described
+in detail in the wavetable editor chapter.
+
+Trigger
+This is meant as a modulation target for remotely triggering the LFO to
+restart. Right-clicking on the trigger button will bring up the triggering
+
+
+--- Page 216 ---
+
+menu. The modulation triggering functionality is described in detail in
+the triggering chapter.
+
+Frame
+Lets you scroll through the 256 frames in the wavetable.
+
+Smooth
+Reduces the scope and the depth of a wavetable. Higher values
+flattens the wavetable curve.
+
+Curve
+
+The curve modulator is quite simlilar to the envelope modulator above.
+
+You can choose from a large number of curves, all logically sorted in
+folders. Those curves can be tweaked in the curve editor available
+under the pen symbol. This editor is described in detail in the curve
+editor chapter.
+
+
+--- Page 217 ---
+
+The curve graph has two handles that allow you to set loop points
+within the curve, while the loop symbol lets you select the desired loop
+mode.
+
+Trigger
+
+This is meant as a modulation target for remotely triggering the LFO to
+restart. Right-clicking on the trigger button will bring up the triggering
+menu. The modulation triggering functionality is described in detail in
+the triggering chapter.
+
+Modulator Rate
+Sets the rate of the modulator. The total time to complete one cycle is
+
+displayed in seconds. You can set the speed to be freewheeling or
+synced to the DAW clock.
+
+Lock
+
+Locks the loop settings to the current values when loading curves.
+
+Curve Editor
+The pen symbol opens the curve editor. Read more about the editor in
+the Curve Editor chapter.
+
+Random
+
+
+--- Page 218 ---
+
+This module outputs a stream of random values that can be used to
+
+create random movement in your patch. For polyphonic patches, the
+random modulator will output different random values for each voice.
+
+Trigger
+
+This is meant as a modulation target for remotely triggering the LFO to
+restart. Right-clicking on the trigger button will bring up the triggering
+menu. The modulation triggering functionality is described in detail in
+the triggering chapter.
+
+The Random module has an additional setting in this menu called
+voice mode, which adjusts how the random sequence is seeded with
+the following values:
+
+Unison
+
+Voices triggered together (for example a chord or by global unison, as
+well as the global modulator) will all use the same random sequence.
+
+Independent
+
+
+--- Page 219 ---
+
+Every voice and the global modulator will use an independent random
+sequence. This matches the behavior of Phase Plant v1.8 and earlier,
+and presets made with these versions will load with this mode
+selected.
+
+Frequency
+Controls how often new random values are picked, either in Hertz
+when in free running mode, or as a note length when running in
+synced mode.
+
+Jitter
+
+Randomly adjusts the timing for when values are picked, making the
+modulator less rhythmic.
+
+Smooth
+
+Blends between the random numbers to create a smooth sequence
+instead of a stepped one.
+
+Chaos
+
+Adjust the length of each random step. For lower chaos values, the
+next random value will be closer to the previous one. At 0 the random
+value will update only on triggers, and then stay the same until the
+next trigger event.
+
+Audio Follower
+
+
+--- Page 220 ---
+
+—
+D
+=
+aS
+oO
+Le
+QL
+O
+5
+<
+
+MASTER
+
+Tracks the amplitude of an incoming audio signal and generates a
+modulation signal based on that. Input can be selected in the lower left
+corner: Lane 1—3, Master, or Sideband.
+
+Gain
+Tweak the volume of the followed signal to get a good output range.
+
+Attack
+
+How quickly the output ramps up when input increases.
+
+Release
+How quickly the output falls off when input goes down.
+
+In Phase Plant Audio Follower can be used to convert some audio
+rate modulation sources to control rate. Please note that this still does
+not cause any control rate modulation targets to update on every
+sample.
+
+
+--- Page 221 ---
+
+Pitch Tracker
+
+_
+©
+—<
+O
+O
+—
+-_
+—
+O
+=
+OW
+
+Leese TIT LIU LL IU LICL UIUL ILL ILL IULUIUL ILL LUE
+8 MASTER v (Sensitivity |
+
+Tracks the pitch of an incoming audio signal and generates a
+modulation signal based on that. Input can be selected in the lower left
+
+corner: Lane 1—3 or Master or Sideband.
+
+Keyboard graph
+The vertical sliders in the graph allow you to set a range and a center
+frequency.
+
+Sensivity
+
+Low sensitivity gives more stable results and higher values allows for
+faster changes to the output.
+
+Note
+
+
+--- Page 222 ---
+
+ROOT RANGE
+M A-4 60notes .
+
+This modulator lets you use the played note as a modulation source.
+The range of this modulator is tuned to be the same as many of the
+cutoff and frequency knobs you will come across in and
+in the . This means that if you modulate these parameters at
+100%, they will perfectly track the note you play.
+
+will effect the modulation signal of the Note
+modulator.
+
+Pressure
+
+
+--- Page 223 ---
+
+ed)
+ra
+=)
+Y)
+Y)
+®
+—
+QO
+a
+
+This
+
+modulator reflects pressure data from a MIDI , 1.E. with how
+much force you are holding your keys down. It can receive it's data
+from various sources; the "channel pressure" MIDI CC, as well as
+"polyphonic aftertouch" MIDI messages. If you are using VST3 it
+additionally exposes a "Polyphonic Expression" slot to your DAW.
+
+Pressure is an MPE compatible modulator, and if your DAW supports
+this module can have a different pressure for
+each played note.
+
+
+--- Page 224 ---
+
+Velocity
+
+STRIKE v
+
+This
+
+modulator tracks the velocity of each played note (how hard the note
+was initially struck). Use this to make your patches velocity sensitive
+so they can be played both softly and loudly. It can also be used to
+track release velocity, which is available on some MIDI
+
+Pitch Wheel
+
+
+--- Page 225 ---
+
+oO
+@
+<
+=
+<
+MS
+oO
+oS
+
+This
+
+modulator tracks the pitch wheel of your keyboard or controller if
+available.
+
+When using MPE the pitch wheel module will only track the pitch
+wheel on the global channel. can be picked up
+by the Note modulator.
+
+Note Gate
+
+
+--- Page 226 ---
+
+S
+O
+©
+Ee
+O
+zx
+S
+
+The
+
+note-on and note-off messages from your MIDI controller will generate
+signals for this modulator.
+
+MIDI CC
+
+
+--- Page 227 ---
+
+Expr Pedal
+
+Any MIDI continuous controller can be used as a modulator. After
+instantiating this module, you will be asked to move a controller. Once
+detected, this controller will be bound to the module. To assign
+another controller, just click the bottom text field.
+
+MPE Timbre
+
+
+--- Page 228 ---
+
+Y
+O
+=
+—
+LL
+O_
+=
+
+S
+
+MPE
+
+controllers commonly have a third axis of polyphonic control on each
+key. Typically activated by moving your finger up and down on the key.
+The MPE Timbre module lets you use this for
+modulations.
+
+Remap
+
+
+--- Page 229 ---
+
+Map incoming values to whatever output values you need with custom
+
+remap shapes. Remap brings you even more precise control over
+your modulation. If you connect this module between an LFO and a
+generator, Remap can tweak the LFO curve in all possible ways. As
+usual, there are numerous scales and curves to choose from, and the
+editor allows you to edit them freely. Detailed info about the curve
+editor can be found in the
+
+Lower Limit / Upper Limit
+
+
+--- Page 230 ---
+
+=
+i=
+a
+_
+®
+=
+O
+I
+S
+
+The Lower- and Upper Limit modules can be used to clamp the output
+of another modulator so that it never goes outside certain values. The
+white bar in the middle can be moved vertically and the graph will
+illustrate how the value stays within the limits.
+
+Remember that you can modulate the limits when relevant.
+
+Scale
+
+
+--- Page 231 ---
+
+Adjust the output of another modulator with the Scale modulator by
+moving the white handle vertically. You can use the bottom multiplier
+control to change the order of magnitude.
+
+Remember that you can modulate the scale factor when relevant.
+
+sample & Hold
+
+
+--- Page 232 ---
+
+LS
+O
+L
+ore
+YL
+Oo
+=
+Ce
+Y)
+
+Samples a value from an input signal when triggered, and outputs that
+value constantly until triggered again. Connect an input signal by
+sending as a modulation to the center graph area, and the trigger
+signal in the same way to the trigger arrow (>).
+
+Every time the trigger signal rises past the threshold (which can be
+changed by right-clicking on the trigger arrow) a new value will be
+sampled from the input signal at that moment. That value will be held
+and output from the module until a new trigger occurs.
+
+The modulation triggering functionality is described in detail in the
+
+
+--- Page 233 ---
+
+Triggering
+
+Many of the modulation modules have a trigger button. The trigger
+button (>) can be use to trigger a modulator and restart its cycle. The
+trigger input is actually a gate, i.e. it it will turn on when you press it
+and turn off when you release it. It will restart the modulator from zero
+when turned on, and perform its sustain action until the gate is
+released (for envelopes or LFOs/Curves with sustain loop mode, for
+example).
+
+By default, the trigger gate is controlled by the note, turning it on when
+a note is struck and turning it off when the note is released. This
+behavior be changed (see below)
+
+When modulation is attached to the trigger, it will stop being triggered
+by notes and instead only by the modulation (and clicks). This
+behavior be changed (see below).
+
+Right-clicking on a modulation trigger button will bring up the trigger
+menu, where you can adjust the trigger sensitivity for when the trigger
+is modulated. You can also change the behavior for when notes
+trigger the modulator:
+
+Auto
+
+The default setting, notes do not trigger the modulator when a
+modulation is attached to the trigger. Otherwise, this mode selects
+
+
+--- Page 234 ---
+
+between "Always" and "Legato" depending on the polyphony setting in
+the Phase Plant voice settings.
+
+Never
+Notes never trigger the modulator. You can use this setting to create a
+free running LFO.
+
+Always
+
+The modulator is triggered by every note-on.
+
+Legato
+The modulator is triggered by the first note in a group of legato notes,
+but will not be triggered again until all notes are released.
+
+Content Types
+
+All Kilohearts plugins can load presets, and many of them can load
+other types of data. We call all of these resources Content. The
+number of different Content Types is ever growing as the Kilohearts
+Ecosystem becomes more and more competent.
+
+There is a unified content browser that works the same for all content
+types, and some even have dedicated editors where you can create
+your own stuff, or modify existing content.
+
+Presets
+
+
+--- Page 235 ---
+
+Overview
+
+Preset Browser
+
+Overview
+
+Presets are naturally the most common out of the content types. Every
+Kilohearts plugin ships with a number of factory presets.
+
+All Kilohearts plugins come with some factory presets. Some plugins
+have a very small number, others have hundreds and hundreds,
+depending on the complexity of the plugin.
+
+The Host Plugins have an immediately accessible preset browser,
+whilst the Snapins have a slightly hidden menu, and they basically
+share the same features. In the Snapins, click the small downward
+arrow at the top right corner to reveal a tiny version of the top bar that
+you will recognize from the Host Plugins.
+
+
+--- Page 236 ---
+
+Preset Browser
+
+To reveal the preset browser, click on the Browse button in the top bar.
+
+D> phaseplant Plonksichord 2 kitohearts
+1.8 ull
+
+Load a preset in the preset browser by clicking on it. Double clicking
+will load the preset and close the browser. You can also step through
+all the presets in the current folder by using the arrow keys, or the
+arrow buttons in the top bar.
+
+Presets are divided into a number of folders, visible on the left hand
+side. Favorites starts out empty but will be filled with any presets you
+favorite by clicking their heart icon. Factory contains the presets
+shipped with the plugins, categorized in subfolders when appropriate.
+The User folder is the default location for saving your own presets, but
+you are free to add any number of additional folders by clicking the
+Add Location button at the bottom of the list. Hovering over a location
+you've previously added will show an 'x' button, which allows you to
+
+remove it from the list again.
+
+
+--- Page 237 ---
+
+The search field has free text search of all preset information: name,
+description, and author. All words in your search will be matched in
+any order. To do exact matches of multiple words, put your search
+terms in quotes. You can also quickly search for all presets by a
+certain author by clicking the author name in the rightmost column, or
+searching for "by:Author Name".
+
+Any '#' characters in the preset desciptions will be interpreted as tags,
+which are clickable, and searchable like this: "#tag”.
+
+Left of the search field you will find back and forward arrows, which
+work much like in a web browser by taking you to the previous folder
+
+or search results.
+
+Right-clicking a preset in the browser list shows
+a small context menu with controls for setting the default preset for the
+plugin. This will make all new instances start with the specified preset
+automatically loaded.
+
+You can close the preset browser by clicking the ‘Browse’ button
+again, clicking the 'X' button on the top right, pressing the escape key,
+or double-clicking a preset.
+
+Your currently selected preset is also shown in the top bar. In the host
+plugins you can edit the name, author and description by clicking them
+directly in the topbar. Saving your changes is done with the Save
+button, and the New button clears the current patch.
+
+
+--- Page 238 ---
+
+Name: Plonksichord
+
+The Save pop up lets you choose where to save your preset. Note
+that write protected folders like ‘Factory’ and '‘Favorites' are not
+included. The Name and Author fields reflect the preset info fields in
+the top bar, but gives you an opportunity to edit it again before saving.
+
+At the top of the pop up, the Create Subfolder button lets you create
+subfolders to organize presets in any way you like.
+
+If you have any installed with content that is relevant to
+the current preset browser, they will show up in the left side listing in
+the preset browser. This works the same for all content types.
+
+
+--- Page 239 ---
+
+Curves, LFOs, Remaps,
+and Shapes
+
+Overview
+
+Editors
+
+Control Point Tool
+Free Draw Tool
+
+Stepped Draw Tool
+
+Overview
+
+
+--- Page 240 ---
+
+The LFO modulator uses a "1-dimensional" shape to describe a
+waveform, which can then be used at comparatively low frequencies
+to control other values. Curve, Remap, and Shaper use very similar
+data to do their respective tasks.
+
+There are small differences in how the data is interpreted between the
+three types, which makes it hard to repurpose a LFO waveform as a
+Curve for example. LFOs naturally loop, which makes it so that the
+last control point on the line is also the first one in a sense. This isn't
+true for a Curve shape with a clear beginning and end. Because of this
+it is not possible to load data of one type in another editor, even
+though they might seem similar.
+
+Editors
+
+The popup editors for the 1-dimensional shapes comes in three
+variations. They share a lot of functionality and are used to create or
+edit the various curves. Pictured below is the Curve Editor. Most of the
+
+
+--- Page 241 ---
+
+interface elements are the same for the LFO, Remap, and Shaper
+Editors.
+
+1. Main workspace area.
+
+2. At the left side of the screen is the toolbar. The Control Point Tool
+is selected by default. Click the other tool buttons to select them.
+
+3. At the top right you will find grid controls for horizontal and
+vertical grid divisions, as well as a magnet button for turning grid
+snapping on and off. You can also temporarily toggle snapping
+by holding down the ctrl/cmd (Win/Mac) key.
+
+4. The view can be zoomed by using the scroll wheel on the
+horizontal axis below the curve, and panned by clicking and
+dragging on the axis.
+
+5. The loop mode selector.
+
+Looping
+
+The loop mode selector and the loop handles are available in the
+Curve Editor only, and are not present in the LFO, Remap, or Shaper
+Editors. The loop handles can be set to the whole length of the curve,
+
+
+--- Page 242 ---
+
+or just a part of it. It is even possible to set both handles to the same
+point, forcing the curve to stay at that value until the loop ends. There
+are several loop modes:
+
+Off
+
+No loop. The curve will play through once exactly as drawn and then
+hold on the last control point value.
+
+Infinite
+
+Playback will loop through the loop area from left to right until the
+voice dies. Any part of the curve that is to the right of the loop end
+handle will never be played.
+
+Sustain
+
+Playback will loop through the loop area from left to right until the note
+is released, at which point it will continue from where it is and ignore
+the loop handle. Any part of the curve that is to the right of the loop
+end handle will be played in the release phase of the voice.
+
+Ping Pong
+
+Playback will loop through the loop area from left to right and then
+change direction, bouncing back and forth until the voice dies. Any
+part of the curve that is to the right of the loop end handle will never be
+played.
+
+Reverse
+
+Playback will go through the loop area from left to right and then loop
+from right to left until the voice dies. Any part of the curve that is to the
+right of the loop end handle will never be played.
+
+
+--- Page 243 ---
+
+Control Point Tool
+
+You can move control points around by clicking and dragging. Double
+clicking anywhere on the curve or an empty area creates a new
+control point. Double clicking a control point removes it. Holding shift
+while moving a control point enables finer adjustment, and holding
+control temporarily enables or disables the grid snapping. Clicking and
+dragging on the curve rather than on a control point modifies the slope
+of the curve. By clicking close to a control point the slope to/from that
+specific control point is adjusted, while clicking closer to the middle
+adjusts the slope of both control points at once.
+
+Right clicking a control point opens a context menu that allows for
+numerical coordinate entry, but also toggling the smoothing mode of
+the selected control points. Smoothing can also be toggled by control
+double clicking a control point.
+
+Clicking and dragging an empty area or while holding down shift lets
+you select multiple points at once. Selected control points can be
+modified all at once, or deleted by pressing delete or backspace.
+
+Free Draw Tool
+
+The free draw tool allows you to freely draw any shape, as the name
+suggests.
+
+
+--- Page 244 ---
+
+Stepped Draw Tool
+
+Stepped drawing will always snap to the horizontal grid and draw
+vertical bars, whether grid snapping is enabled or not. This allows you
+draw patterns the same way you would in a step sequencer.
+
+Wavetables
+
+Overview
+
+Wavetable Editor
+
+Tools
+Selection Tool
+Morph Tool
+Pen Tool
+
+Brush Tool
+
+
+--- Page 245 ---
+
+Wave Tool
+Harmonic Edit Tool
+Filter Tool
+
+Sample Conversion
+
+Effects
+
+Fixes
+
+Overview
+
+
+--- Page 246 ---
+
+c>@
+
+Favorites
+v — Growls
+i User 14 items
+
+4 Factory
+Acoustic LF LY y -“
+Chords i 4
+
+Evolving Burpy Greese
+FM
+
+Growls nasal
+
+Modulators
+
+Gross Neuron
+Morphs
+
+Screams hed Ik ;
+Squishe Ta Triple
+Sines q y p
+
+Spectral
+
+~ ; en = A
+Sweeps ae ~ SSS
+
+Synth Twitter Urukhai Voco
+
+Triangles
+
+Wavetables are a series of waveforms of equal length comprised into
+a list, where you can select one active waveform at a time. Each
+individual waveform is referred to as a frame. If you modulate the
+current frame you have a great way of modifying the waveform during
+playback to get all sorts of interesting effects.
+
+Wavetables are most commonly associated with “Wavetable
+Synthesis”, as with the Wavetable Oscillator in Phase Plant. However,
+they can be used in other ways, such as in our unique
+
+modulator.
+
+
+--- Page 247 ---
+
+Kilohearts plugins come with a big selection of Factory wavetables for
+
+many possible uses.
+
+Wavetable Editor
+
+Kilohearts offer a very capable wavetable editor built in. You can use it
+to edit any wavetable, or even to create novel wavetables from
+scratch. The wavetable editor also has a powerful tool for converting
+samples to wavetables.
+
+To launch the wavetable editor, click on the little pen button next to the
+wavetable selector on the wavetable oscillator or anywhere
+wavetables are used. This will allow you to edit the currently loaded
+
+wavetable.
+
+
+--- Page 248 ---
+
+File Edit Select View Effects Fixes
+
+|
+
+Frame 1
+
+0
+
+Frame 1
+
+150 200 250 300
+
+1. At the top of the screen, you will see a miniature version of the
+whole wavetable. You can use this view for navigating between
+frames, and as we will see later, work with keyframes inside
+tools.
+
+2. Below the wavetable view is the waveform view. This shows the
+waveform of the currently selected frame.
+
+3. Below the waveform view is the spectrum view. Here you can
+see the magnitude of all partials for the selected frame.
+
+4. At the left side of the screen is the toolbar. You can enable
+different tools here. By default the selection tool is enabled.
+
+You can pan and zoom the waveform view and the spectrum view by
+clicking and dragging or scrolling the mouse wheel on the horizontal
+and vertical axis.
+
+Tools
+
+
+--- Page 249 ---
+
+Most of the tools in the wavetable editor are modal, meaning that you
+enter a special mode when you enable the tool. When you have a
+modal tool enabled, a tool options bar will appear at the top of the
+screen, under the menu bar. The tool options bar may contain some
+options and parameters for the tool. For the duration of the mode you
+can make several different non-destructive edits using the tool. The
+changes you make will affect the sound that you hear as you play,
+even while editing.
+
+When you are happy with the result, click on the button labelled done
+in the tool options bar to commit your changes to the wavetable.
+Activating a different tool will also commit your changes. Clicking on
+the cancel button will discard your changes.
+
+Most modal tools in the wavetable editor support keyframe animation.
+This powerful concept will allow you to create movement across the
+whole wavetable with a single application of a tool. Place keyframes
+on a wavetable by clicking on the frame in the wavetable view and
+starting to make edits with the active tool. A blue marker will appear
+under the wavetable to show that a keyframe is placed there. You can
+drag and drop keyframes or delete them by double clicking.
+
+Tools that work on a section of the waveform or the spectrum often
+have handles that appear above the view that let you crossfade the
+edges of the edited region.
+
+Selection Tool
+
+
+--- Page 250 ---
+
+The default tool in the wavetable editor is the selection tool. It allows
+you to select parts of the wavetable, waveform or spectrum and copy
+and paste it. When pasting a piece of the waveform or spectrum, a
+keyframe-enabled mode will be entered where you can transform the
+pasted section.
+
+Morph Tool
+
+The morph tool allows you to crossfade between different frames in
+the wavetable. Simply place a keyframe on each frame you want to
+crossfade, and the intermediate frames will be filled in with a
+crossfaded version of the two neighboring keyframes. You can either
+do a linear or spectral morph.
+
+Pen Tool
+
+The pen tool lets you draw a curve between several control points,
+which can be animated across the wavetable using keyframe
+animation. The way you interact with the curve is similar to the LFO
+editor.
+
+The view can be zoomed by using the scroll wheel on the horizontal
+axis below the curve, and panned by clicking and dragging on the
+axis. The magnet button at the top right toggles snapping to the grid.
+Finally, clicking and dragging either of the 3-line symbols at the top
+allows you to adjust the grid resolution along both the vertical and
+horizontal axis.
+
+
+--- Page 251 ---
+
+Brush Tool
+
+The brush tool lets you freehand draw on the waveform view. Each
+frame you draw on will become a keyframe. Inbetween frames are
+interpolated linearly from the keyframes.
+
+Wave Tool
+
+The wave tool lets you insert a standard waveform into a wavetable
+frame. The phase, frequency, and positon of the inserted wave can be
+adjusted and keyframe animated.
+
+Harmonic Edit Tool
+
+The harmonic edit tool will let you directly edit the partials in the
+spectrum view by freehand drawing. The result is interpolated similarly
+to the brush tool. If you zoom in, small round widgets will appear
+under each partial which represent the phases of the partials. Click
+and drag these widgets to adjust the phases.
+
+Filter Tool
+
+The filter tool lets you apply a filter to the wavetable. Standard filter
+types are supported, and the slope of the filter can be set freely. All
+parameters can be animated across the wavetable using keyframes.
+This allows you to bake filter sweeps into your wavetables.
+
+Sample Conversion
+
+
+--- Page 252 ---
+
+A powerful feature of the wavetable editor is its ability to convert a
+sample to a wavetable. Drag and drop a sample onto the wavetable
+editor or browse for a sample using File > Create from Sample to start
+a conversion.
+
+Q Wavetable Editor oO x
+
+The conversion is implemented as a keyframe animated modal tool.
+The old wavetable data is still present underneath the sample data
+you are importing, and you can blend between them using the mix
+parameter.
+
+When you have selected a sample to use, a visual representation of
+the input sample will be added to the UI over the wavetable view.
+
+For conversion to work well, the tool needs to know the root pitch of
+the sample. It will try to detect this automatically, but you can also edit
+the root pitch manually in the tool options bar. The pitch of each
+keyframe can also be offset from the root pitch by using the pitch bend
+parameter for samples where the pitch is not static. Playing around
+with the pitch bend can also create interesting effects similar to a
+formant shift.
+
+Adjusting the source parameter for keyframes will let you adjust which
+location of the sample they map to.
+
+
+--- Page 253 ---
+
+Since it is unlikely that the root pitch is spot on for the whole sample,
+some phase drift will occur. The tool mitigates this problem by trying to
+align the phases. You can choose between a few different strategies
+that can be used for this task. Try them out to see which one performs
+best for your use case.
+
+Effects
+
+In the effects menu at the top of the screen you will find many
+interesting effects that you can apply to your wavetable. All of these
+effects are modal tools whose parameters can be keyframe animated.
+
+Automatic EQ
+
+Applies equalization to the wavetable frames which will try to flatten
+out the spectrum somewhat to a gentle slope, while still preserving the
+finer detail in the spectrum. You can use this to clean up a wavetable
+where different frames vary wildly in spectral energy.
+
+Frame Blend
+
+Frame blend weighs together adjacent frames. One example: Frame 5
+will after processing become a mixture of frames 2, 3, 4, 5, 6, 7 and 8.
+The amount of frames to be mixed can be set with the "Distance"
+parameter.
+
+Comb Filter
+
+Applies a comb filter. Since this effect is implemented in the frequency
+domain, it can do some things that normal comb filter can't, like
+warping the comb pattern in the spectrum.
+
+
+--- Page 254 ---
+
+Disperse
+This effect is similar to the Disperser plugin. It will add a phase shift to
+all partials which increases in amount for higher partials.
+
+Distortion
+A versatile distortion effect with adjustable Drive, Bias, and Mix. It has
+six distortion types selectable from a dropdown menu.
+
+Phase Offset
+
+Adds a phase offset to the wavetable frames. You can blend between
+a linearly frequency dependent phase shift, which simply offsets the
+waveform, to shifting every partial by the same angle.
+
+Power Sync
+Creates a novel sync-like effect to the wavetable.
+
+Rectify
+Rectifies the waveform, i.e. flips the negative part of it so it's all
+positive.
+
+Reset Phases
+Resets the phases of all partials to a specified value. The effect can
+be blended.
+
+Self FM
+
+Phase modulates the waveform with itself as the modulator.
+
+Sine FM
+
+Phase modulates the waveform with a sine wave as the modulator.
+
+Squarify
+
+
+--- Page 255 ---
+
+Removes all even harmonics, mimicking the harmonic profile of a
+square wave, hence the name.
+
+Sync
+
+Applies an effect to the waveform similar to oscillator sync.
+
+Tilt EQ
+
+Applies a sloped EQ curve to the waveform.
+
+Fixes
+
+In the fixes dropdown menu you will find some commands that can
+help you fix problematic wavetables. These are not modal tools, and
+will apply their effect immediately.
+
+Normalize
+Removes DC and normalizes the volume of all frames, measured
+using RMS. Also makes sure that no peak goes over 100%.
+
+Remove DC
+Removes any DC from the wavetable.
+
+Invert
+Invert Time plays the waveform backwards and Invert Amplitude
+inverts the phase.
+
+Align
+
+Align Fundamentals sets the phase of the first harmonic in all frames
+to be identical to the selected frame. Align All Phases sets the phase
+of all harmonics to be identical to the selected frame. Align Frames
+
+
+--- Page 256 ---
+
+phase-shifts each frame without changing the phase ratio of its
+harmonics, so that they get maximum correlation to the selected
+frame.
+
+The point of these three fixes is to reduce disturbing phase effects
+when modulating the frame in the wavetabler oscillator. In the effects
+menu, there is also a related tool called Reset Phases which sets the
+phase of all harmonics to a specific value.
+
+samples, Grains, and
+IRs
+
+Overview
+File formats
+Sample Editor
+
+Tools
+
+Selection Tool
+
+
+--- Page 257 ---
+
+Pan Tool
+
+Zoom Tool
+
+Stereo Mode
+
+Grid settings
+
+Top menu
+
+Normalize
+
+Remove DC
+
+Reverse
+
+Convert to Mono/Stereo
+
+
+--- Page 258 ---
+
+Overview
+
+Offset
+
+Align Phases
+
+Warm Start
+
+Granular
+
+Samples can be utilized by several different plugins and modules
+within the Kilohearts system. First and foremost the Sample Generator
+in Phase Plant. But the Granular Generator also loads samples. And
+
+so does the Convolver plugin.
+
+
+--- Page 259 ---
+
+convolver
+
+Tone Feedback Mix
+
+While these samples all share their
+file type and data structure, they are generally created specifically for
+the different purposes. For example: with Convolver you will normally
+load a sample of the type "Impulse Response", which will not always
+be very usable for other purposes.
+
+File formats
+
+Kilohearts factory samples are stored in the FLAC format, but you can
+also load uncompressed WAV and AIFF files.
+
+
+--- Page 260 ---
+
+Sample Editor
+
+Anywhere you can load a sample, you can also open the sample
+editor. To launch it click the little pen button to the right of the selected
+
+sample name.
+
+Tools
+
+The sample editor has basic functions for deleting parts or adjusting
+gain, but offers little in ways of changing the sounds. It is meant as a
+
+
+--- Page 261 ---
+
+tool for organizing and cleaning up recordings rather than applying
+effects.
+
+Selection Tool
+
+The selection tool doubles as a gain adjustment tool, and provides
+options for creating fade ins/fade outs.
+
+Start by selecting a section of your sample. You can modify your
+
+selection by clicking and dragging the left and right selection lines. For
+greater accuracy you might want to zoom in on the edges of your
+selection. Once you are happy simply move your mouse cursor over
+the selected area and three handles will appear. The middle handle
+adjusts the gain of the selection, while the two handles to the sides
+introduce a fade effect over the full selection. Click and drag all these
+
+
+--- Page 262 ---
+
+handles to modify the amount of gain change, or the curvaure of the
+fade.
+
+Pan Tool
+
+Click and drag the sample view to pan. You can pad even without the
+Pan tool selected by draging on either of the graph axis.
+
+Zoom Tool
+
+Click and drag the sample view to zoom or out. You can zoom even
+without the Zoom tool selected by using your scroll wheel while
+hovering the sample area or the axis.
+
+Stereo mode
+
+Per default the sample editor will show you both stereo
+channels overlaid, and if you modify your sample you modify both
+channels equally. Using the Stereo controls in the left hand toolbar
+you can isolate the channels and make edits to just one channel at the
+time.
+
+Grid settings
+
+
+--- Page 263 ---
+
+In the upper right corner you'll find controls for how grid lines behave.
+Clicking the little magnet button next to the grid settings component
+will enable grid snapping.
+
+Top menu
+
+The top menu has some common actions available, like saving,
+copying, deleting e.t.c. It also has an "Operations" menu with a few
+more audio specific actions.
+
+Normalize
+
+Normalize will adjust the gain of your selection (or the full sample if
+you have no action selection) so that the highest peak will be set to
+exactly OdB.
+
+Remove DC
+
+If a sample is unevenly biased towards positive or negative values, it
+is said to have DC (direct current). This often isn't audible, but
+becomes a problem for multiple reasons. Remove DC will adjust your
+selection (or the full sample if you have no action selection) to make
+sure it is evenly centered.
+
+Reverse
+
+Reverse will reverse your selection (or the full sample if you have no
+action selection).
+
+
+--- Page 264 ---
+
+Convert to Mono/Stereo
+
+Depending on the sample you loaded, it might have stereo information
+or not. This action will either collapse your sample data to mono, or
+duplicate it into two stereo channels as appropriate.
+
+Content Banks
+
+Overview
+Installation
+
+The Bank Maker
+
+Overview
+
+
+--- Page 265 ---
+
+All the different types of Content used within Kilohearts plugins can be
+compiled into Content Banks. A Content Bank can contain any
+Content Types, or mixes of different types, but they are typically
+grouped for a particular purpose. Like a set of Impulse Responses for
+convolution, or a set of Phase Plant presets by a particular sound
+designer.
+
+D> phaseplant Untitled
+<
+
+PO.LY-CckisRIO M E
+by Hrdnew Feng
+
+el. 2 Ar
+aAr
+a
+By
+a
+a
+2
+4
+a
+4
+4
+sar
+aaAr
+
+You can find Content Banks published by Kilohearts on the Content
+Bank page. But there are third party banks available througout the
+internet too.
+
+Installation
+
+
+--- Page 266 ---
+
+The installation process differs between the official banks that are
+distributed by Kilohearts, and third-party banks.
+
+The first category are installed just like the plugins, using the
+Kilohearts Installer. These banks require a valid license key (or the
+Kilohearts Subscription) to be usable.
+
+VY Confirm
+
+Install these banks?
+
+Sonoae Borealis by Various Artists
+
+S Ok X Cancel
+
+The third-party banks come in files ending with ".bank" and you install
+them by drag-dropping the file on any running Kilohearts Host Plugin.
+
+The Bank Maker
+
+If you are looking to compose your own Content Banks you can!
+Download the Kilohearts Bank Maker below.
+
+Bank Maker
+Windows
+Bank Maker
+
+
+--- Page 267 ---
+
+8 Untitled - kHs Bank Maker - Oo x
+File Edit
+
+Set Header Image
+
+Description Content Type Author Folder File Size
+
+You can specify a custom header image for your Content Bank. This
+image will be cropped depending on how the user resizes the content
+browser, so parts of it may not be visible. Use the below image as a
+template, where black areas may be cropped, but the white center
+part will always be visible.
+
+Glossary
+
+
+--- Page 268 ---
+
+Aliasing
+
+Many types of audio processing generates various kinds of distortion,
+generating high frequency content that is outside of the frequency
+range that can be digitally representable at the current sample rate.
+For mathematical reasons this audio does not just get naturally cut off
+and discarded, but "leaks" down into the audible range as a dissonant
+noise called aliasing.
+
+Controller
+
+A hardware device (commonly in the form of a keyboard) that
+generates MIDI notes and messages that are sent through your DAW
+to the plugins for processing.
+
+DAW
+
+Kilohearts plugins are not standalone programs. They needs to be
+used in conjunction with a host application where they are loaded as
+plugins. These applications are usually called "DAWs" (Digital Audio
+Workstations) or simply "hosts". There are many different DAWs
+available on the market, and Kilohearts plugins works with those that
+support either the VST2, VST3, AAX, or the Audio Unit (AU) plugin
+architecture. See system requirements for details.
+
+License
+
+Kilohearts software are protected against piracy using a system where
+you need to have a license for each plugin present on your computer
+in order to use it. Most of the time this is nothing you have to worry
+about since the process of getting the licenses to where they need to
+be is mostly automated through our installer. The license consists of a
+long string of characters and digits that can be cryptographically
+validated by each plugin.
+
+Macro
+
+
+--- Page 269 ---
+
+A Macro is a value that doesn't effect anything by default, but they can
+be connected to control other values using the modulation system.
+Preset designers will connect Macros to some important aspects of
+their preset and name them accordingly. Macros are automatically
+available to the host DAW for automation.
+
+Modulation
+The process of changing any parameter values during playback to get
+differences in the sound is called Modulation.
+
+Modulator
+A modulator is a type of module that is used to affect the value of one
+or more other parameters.
+
+Module
+
+In the Kilohearts Host plugins there are many blank areas where you
+add components to shape or generate your sound. These components
+are collectively refered to as modules.
+
+Parameter
+
+A parameter is simply a setting. Like the Cutoff frequency on a filter, or
+some value that has a finite set of states, like if an effect is bypassed
+or not. Almost all parameters in an audio plugin will have a visible
+control for it on screen, or it wouldn't really be a setting. But there are
+exceptions to the rule. Some values can only be accessed through
+your DAW, and so on.
+
+Patch
+A patch is a configuration of a plugin that gives it a certain sound.
+Whenever you pull a slider or turn a knob you modify the current
+patch.
+
+
+--- Page 270 ---
+
+Preset
+
+Presets are ready-made patches which ship with plugins. Kilohearts
+plugins come with varying amount of factory presets depending on the
+complexity of the plugin. Simpler ones might only have a handfull,
+while Phase Plant comes with several hundred presets ready to be
+used in any song. Presets also make good starting points for your own
+patches.
+
+Snapin
+
+Similarly to how a DAW will load plugins, Kilohearts Host plugins can
+also load small audio effects called Snapins. Snapins can be used
+either directly in your DAW as plugin or used as modules in a patch.
+Read more in the Snapins chapter.
+
+VST
+
+VST (Virtual Studio Technology) is a plugin format developed by
+Steinberg and it is widely adopted by many DAWs. It comes in several
+versions that are not backwards compatible. The most prevailent ones
+being VST2.4 (often referred to as simply "VST"), and VST3.
+Kilohearts support both of these and you are free to chose your
+preferred plugin formats during installation.
+
+Acknowledgements
+
+The development of Kilohearts products was helped by the following
+
+pieces of excellent open source software:
+
+Boost C++ Libraries
+
+
+--- Page 271 ---
+
+Skia Graphics Library
+Copyright © 2011, Google Inc.
+
+Symbiosis AU/VST
+Copyright © 2010-2013, NuEdge Development / Magnus Lidstr6m
+
+LodePNG
+Copyright © 2005-2015, Lode Vandevenne
+
+C++ optimized SHA1 algorithm
+Copyright © 2011, Micael Hildenborg
+
+miniz
+By Rich Geldreich
+
+FastDelegate
+By Don Clugston
+
+FFTReal
+By Laurent de Soras
+
+libFLAC - Free Lossless Audio Codec library
+Copyright © 2000-2009, Josh Coalson
+Copyright © 2011-2016, Xiph.Org Foundation
+
+

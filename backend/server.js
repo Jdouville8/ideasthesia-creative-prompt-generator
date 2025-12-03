@@ -214,7 +214,7 @@ app.post('/api/prompts/generate', authenticateToken, async (req, res) => {
       genres,
       userId
     }, {
-      timeout: 10000,
+      timeout: 60000,  // Increased to 60 seconds for OpenAI API calls
       headers: {
         'X-Request-ID': span.spanContext().traceId
       }
@@ -291,7 +291,7 @@ app.post('/api/sound-design/generate', async (req, res) => {
       genre: selectedGenre,
       userId
     }, {
-      timeout: 10000,
+      timeout: 60000,  // Increased to 60 seconds for OpenAI API calls
       headers: {
         'X-Request-ID': span.spanContext().traceId
       }
@@ -332,6 +332,7 @@ app.post('/api/chord-progression/generate', async (req, res) => {
         userId: userId || 'anonymous'
       },
       {
+        timeout: 60000,  // Increased to 60 seconds for OpenAI API calls
         headers: {
           'Content-Type': 'application/json',
           'X-Request-ID': span.spanContext().traceId
@@ -373,6 +374,7 @@ app.post('/api/drawing/generate', async (req, res) => {
         userId: userId || 'anonymous'
       },
       {
+        timeout: 60000,  // Increased to 60 seconds for OpenAI API calls
         headers: {
           'Content-Type': 'application/json',
           'X-Request-ID': span.spanContext().traceId
@@ -422,6 +424,7 @@ app.post('/api/writing/feedback', async (req, res) => {
         wordCount
       },
       {
+        timeout: 60000,  // Increased to 60 seconds for OpenAI API calls
         headers: {
           'Content-Type': 'application/json',
           'X-Request-ID': span.spanContext().traceId
@@ -467,6 +470,7 @@ app.post('/api/drawing/feedback', async (req, res) => {
         difficulty
       },
       {
+        timeout: 60000,  // Increased to 60 seconds for OpenAI API calls
         headers: {
           'Content-Type': 'application/json',
           'X-Request-ID': span.spanContext().traceId
