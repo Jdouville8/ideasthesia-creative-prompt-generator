@@ -43,7 +43,9 @@ function App() {
     'Melancholy', 'Elation', 'Resentment', 'Awe', 'Nostalgia', 'Serenity',
     'Apprehension', 'Defiance', 'Longing', 'Tenderness', 'Shame', 'Triumph',
     'Ambivalence', 'Existential Dread', 'Euphoria', 'Loneliness', 'Vindication',
-    'Wonder', 'Frustration', 'Disgust'
+    'Wonder', 'Frustration', 'Disgust', 'Tranquility', 'Yearning', 'Despair',
+    'Anticipation', 'Bittersweet', 'Rapture', 'Wistfulness', 'Contentment',
+    'Anguish', 'Exhilaration'
   ];
 
   // Drawing Exercise states

@@ -67,7 +67,14 @@ const ChordProgressionPromptDisplay = ({ progression }) => {
   };
 
   const handleCopy = () => {
-    const textToCopy = `${progression.title}\n\n${progression.progression}\n\n${progression.explanation}`;
+    let textToCopy = `${progression.title}\n\nChord Progression:\n${progression.progression}`;
+
+    if (progression.melody) {
+      textToCopy += `\n\nTop Melody:\n${progression.melody}`;
+    }
+
+    textToCopy += `\n\n${progression.explanation}`;
+
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -94,6 +101,20 @@ const ChordProgressionPromptDisplay = ({ progression }) => {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
+  };
+
+  // Parse markdown bold syntax (**text** -> <strong>text</strong>)
+  const renderTextWithBold = (text) => {
+    if (!text) return null;
+
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        const boldText = part.slice(2, -2);
+        return <strong key={index}>{boldText}</strong>;
+      }
+      return <span key={index}>{part}</span>;
+    });
   };
 
   if (!progression) {
@@ -191,7 +212,7 @@ const ChordProgressionPromptDisplay = ({ progression }) => {
         </div>
       )}
 
-      {/* Chord Progression */}
+      {/* Chord Progression and Melody */}
       <div className="mb-6">
         <h3 className={`text-lg font-semibold mb-3 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
           Chord Progression
@@ -199,7 +220,13 @@ const ChordProgressionPromptDisplay = ({ progression }) => {
         <div className={`p-4 rounded-lg font-mono text-lg ${
           isDarkMode ? 'bg-gray-700 text-blue-300' : 'bg-blue-50 text-blue-900'
         }`}>
-          {progression.progression}
+          {renderTextWithBold(progression.progression)}
+          {progression.melody && (
+            <>
+              <br /><br />
+              {renderTextWithBold(progression.melody)}
+            </>
+          )}
         </div>
       </div>
 
@@ -210,7 +237,7 @@ const ChordProgressionPromptDisplay = ({ progression }) => {
         </h3>
         <div className={`prose max-w-none ${isDarkMode ? 'prose-invert' : ''}`}>
           <p className={`whitespace-pre-wrap ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            {progression.explanation}
+            {renderTextWithBold(progression.explanation)}
           </p>
         </div>
       </div>

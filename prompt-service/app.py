@@ -374,41 +374,253 @@ def sanitize_ai_content(content):
 
     return content.strip()
 
-def chord_name_to_midi_notes(chord_name, root_note=60):
+def chord_name_to_midi_notes(chord_name, root_note=60, voicing_style='rich', previous_chord_notes=None):
     """
-    Convert a chord name like 'Cmaj7' or 'Am add9' to MIDI note numbers.
-    Returns a list of MIDI note numbers.
+    Convert a chord name to MIDI note numbers with rich voicings and voice leading.
+
+    Args:
+        chord_name: Chord quality like 'maj7', 'add9', etc.
+        root_note: MIDI number for root note
+        voicing_style: 'rich' (default), 'jazz', 'simple', or 'open'
+        previous_chord_notes: List of MIDI notes from previous chord for voice leading
+
+    Returns:
+        List of MIDI note numbers with inversions and voice leading applied
     """
-    # Basic chord note mappings (intervals from root)
+    import random
+
+    # Expanded chord patterns with intervals from root
     chord_patterns = {
+        # Basic triads
         'major': [0, 4, 7],
         'minor': [0, 3, 7],
-        'maj7': [0, 4, 7, 11],
-        'minor7': [0, 3, 7, 10],
-        'm7': [0, 3, 7, 10],
-        'add9': [0, 4, 7, 14],  # root, major 3rd, 5th, 9th (octave + 2)
+        'dim': [0, 3, 6],
+        'aug': [0, 4, 8],
         'sus2': [0, 2, 7],
         'sus4': [0, 5, 7],
-        'dim': [0, 3, 6],
+
+        # 7th chords
+        'maj7': [0, 4, 7, 11],
+        '7': [0, 4, 7, 10],  # dominant 7th
+        'dom7': [0, 4, 7, 10],
+        'minor7': [0, 3, 7, 10],
+        'm7': [0, 3, 7, 10],
         'dim7': [0, 3, 6, 9],
+        'm7b5': [0, 3, 6, 10],  # half-diminished
+        'half-dim': [0, 3, 6, 10],
+        'maj7#5': [0, 4, 8, 11],
+
+        # 9th chords
         'maj9': [0, 4, 7, 11, 14],
+        '9': [0, 4, 7, 10, 14],  # dominant 9th
+        'dom9': [0, 4, 7, 10, 14],
         'minor9': [0, 3, 7, 10, 14],
         'm9': [0, 3, 7, 10, 14],
+        'add9': [0, 4, 7, 14],
+        'add2': [0, 2, 4, 7],
+
+        # Altered dominant chords
+        '7b9': [0, 4, 7, 10, 13],
+        '7#9': [0, 4, 7, 10, 15],
+        '7b5': [0, 4, 6, 10],
+        '7#5': [0, 4, 8, 10],
+        '7#11': [0, 4, 7, 10, 18],
+        '7b9b5': [0, 4, 6, 10, 13],
+        '7#9#5': [0, 4, 8, 10, 15],
+
+        # 11th chords
+        'maj11': [0, 4, 7, 11, 14, 17],
+        '11': [0, 4, 7, 10, 14, 17],
+        'm11': [0, 3, 7, 10, 14, 17],
         'add11': [0, 4, 7, 17],
+
+        # 13th chords
+        'maj13': [0, 4, 7, 11, 14, 21],
+        '13': [0, 4, 7, 10, 14, 21],
+        'm13': [0, 3, 7, 10, 14, 21],
+
+        # 6th chords
         '6': [0, 4, 7, 9],
         'minor6': [0, 3, 7, 9],
         'm6': [0, 3, 7, 9],
-        'power': [0, 7],  # power chord (root and 5th)
+        '6/9': [0, 4, 7, 9, 14],
+        'm6/9': [0, 3, 7, 9, 14],
+
+        # Special voicings
+        'power': [0, 7],
+        '5': [0, 7],
+        'maj7#11': [0, 4, 7, 11, 18],
+        'min-maj7': [0, 3, 7, 11],
+        'mmaj7': [0, 3, 7, 11],
     }
 
-    # Default to major triad if pattern not found
-    return [root_note + interval for interval in chord_patterns.get(chord_name.lower(), [0, 4, 7])]
+    # Get base intervals
+    intervals = chord_patterns.get(chord_name.lower(), [0, 4, 7])  # default to major
 
-def parse_chord_progression(progression_text):
+    # Apply voicing style
+    notes = apply_voicing_style(root_note, intervals, voicing_style)
+
+    # Apply voice leading if we have a previous chord
+    if previous_chord_notes and len(previous_chord_notes) > 0:
+        notes = apply_voice_leading(notes, previous_chord_notes, root_note)
+
+    return notes
+
+
+def apply_voicing_style(root_note, intervals, style='rich'):
+    """
+    Apply different voicing styles to a chord.
+
+    Styles:
+        - 'simple': Basic close voicing in middle register
+        - 'rich': Add color tones, use inversions, spread across octaves
+        - 'jazz': Drop-2/drop-3 voicings, omit 5ths, add tensions
+        - 'open': Wide spacing between notes
+    """
+    import random
+
+    if style == 'simple':
+        # Basic close voicing
+        return [root_note + interval for interval in intervals]
+
+    elif style == 'rich':
+        # Add richness: occasionally omit 5th, add color tones, vary octaves
+        notes = []
+
+        for i, interval in enumerate(intervals):
+            note = root_note + interval
+
+            # Omit perfect 5th sometimes in 7th+ chords (unless it's altered)
+            if interval == 7 and len(intervals) >= 4 and random.random() > 0.6:
+                continue
+
+            # Spread some notes up an octave for open voicing
+            if len(intervals) >= 4 and i > 0 and random.random() > 0.5:
+                note += 12
+
+            notes.append(note)
+
+        # Add occasional color tones (9th, 11th, 13th)
+        if len(intervals) >= 3 and random.random() > 0.6:
+            color_tones = [14, 17, 21]  # 9th, 11th, 13th
+            color = random.choice(color_tones)
+            if color not in intervals:
+                notes.append(root_note + color + 12)  # Add in higher octave
+
+        return sorted(set(notes))  # Remove duplicates and sort
+
+    elif style == 'jazz':
+        # Jazz voicings: drop-2, omit 5th, add tensions
+        notes = []
+
+        for i, interval in enumerate(intervals):
+            # Omit perfect 5th in extended chords
+            if interval == 7 and len(intervals) >= 4:
+                continue
+
+            note = root_note + interval
+
+            # Drop-2 voicing: take second-highest note down an octave
+            if i == len(intervals) - 2 and len(intervals) >= 4:
+                note -= 12
+
+            notes.append(note)
+
+        # Add extensions for dominant chords
+        if 10 in intervals:  # Has dominant 7th
+            if random.random() > 0.5:
+                notes.append(root_note + 14)  # Add 9th
+
+        return sorted(set(notes))
+
+    elif style == 'open':
+        # Wide spacing
+        notes = []
+        octave_offset = 0
+
+        for i, interval in enumerate(intervals):
+            note = root_note + interval + octave_offset
+            notes.append(note)
+
+            # Increase octave offset every 2 notes
+            if i % 2 == 1:
+                octave_offset += 12
+
+        return sorted(set(notes))
+
+    else:
+        # Default fallback
+        return [root_note + interval for interval in intervals]
+
+
+def apply_voice_leading(current_notes, previous_notes, root_note):
+    """
+    Apply voice leading by finding the inversion that minimizes movement.
+
+    This creates smooth transitions between chords by:
+    1. Keeping common tones
+    2. Moving other voices by the smallest interval possible
+    3. Preferring stepwise motion over large leaps
+    """
+    if not previous_notes or len(current_notes) == 0:
+        return current_notes
+
+    # Generate possible inversions (move notes up/down octaves)
+    def generate_inversions(notes, num_inversions=3):
+        inversions = [notes]
+
+        for _ in range(num_inversions):
+            # Move lowest note up an octave
+            new_inversion = sorted(notes[1:] + [notes[0] + 12])
+            inversions.append(new_inversion)
+            notes = new_inversion
+
+        # Also try moving highest notes down
+        notes = sorted(current_notes)
+        for _ in range(num_inversions):
+            if notes[-1] - 12 >= root_note - 12:  # Don't go too low
+                new_inversion = sorted(notes[:-1] + [notes[-1] - 12])
+                inversions.append(new_inversion)
+                notes = new_inversion
+
+        return inversions
+
+    # Calculate voice leading distance
+    def voice_leading_distance(notes1, notes2):
+        """Calculate total movement between two chords"""
+        if len(notes1) != len(notes2):
+            # Pad shorter list
+            if len(notes1) < len(notes2):
+                notes1 = list(notes1) + [notes1[-1]] * (len(notes2) - len(notes1))
+            else:
+                notes2 = list(notes2) + [notes2[-1]] * (len(notes1) - len(notes2))
+
+        total_distance = 0
+        for n1, n2 in zip(sorted(notes1), sorted(notes2)):
+            total_distance += abs(n1 - n2)
+
+        return total_distance
+
+    # Find best inversion
+    inversions = generate_inversions(current_notes, num_inversions=4)
+    best_inversion = current_notes
+    best_distance = float('inf')
+
+    for inversion in inversions:
+        distance = voice_leading_distance(previous_notes, inversion)
+        if distance < best_distance:
+            best_distance = distance
+            best_inversion = inversion
+
+    return best_inversion
+
+def parse_chord_progression(progression_text, voicing_style='rich'):
     """
     Parse AI-generated chord progression text into a list of chord dictionaries.
-    Expected format: "Cmaj7 - Am - Fmaj7 - G"
-    Returns: [{'name': 'Cmaj7', 'root': 60, 'notes': [60, 64, 67, 71]}, ...]
+    Supports slash chords (e.g., G/B) and applies voice leading.
+
+    Expected format: "Cmaj7 - Am - Fmaj7 - G/B"
+    Returns: [{'name': 'Cmaj7', 'root': 60, 'notes': [60, 64, 67, 71], 'bass': 60}, ...]
     """
     # Note name to MIDI number mapping (C4 = 60)
     note_map = {
@@ -418,12 +630,26 @@ def parse_chord_progression(progression_text):
     }
 
     chords = []
+    previous_chord_notes = None
+
     # Split by common delimiters
     chord_names = [c.strip() for c in progression_text.replace('→', '-').split('-')]
 
     for chord_name in chord_names:
         if not chord_name:
             continue
+
+        # Handle slash chords (e.g., G/B means G chord with B in the bass)
+        bass_note = None
+        if '/' in chord_name:
+            chord_part, bass_part = chord_name.split('/', 1)
+            chord_name = chord_part.strip()
+
+            # Parse bass note
+            bass_name = bass_part.strip()[0].upper()
+            if len(bass_part.strip()) > 1 and bass_part.strip()[1] in ['#', 'b', '♭', '♯']:
+                bass_name += 'b' if bass_part.strip()[1] in ['b', '♭'] else '#'
+            bass_note = note_map.get(bass_name, 60) - 12  # Bass note in lower octave
 
         # Extract root note
         root_name = chord_name[0].upper()
@@ -434,37 +660,174 @@ def parse_chord_progression(progression_text):
             quality = chord_name[1:].strip()
 
         root_midi = note_map.get(root_name, 60)
-        notes = chord_name_to_midi_notes(quality if quality else 'major', root_midi)
 
-        chords.append({
-            'name': chord_name,
+        # Generate notes with voice leading from previous chord
+        notes = chord_name_to_midi_notes(
+            quality if quality else 'major',
+            root_midi,
+            voicing_style=voicing_style,
+            previous_chord_notes=previous_chord_notes
+        )
+
+        # If slash chord, replace lowest note with bass note
+        if bass_note is not None:
+            # Remove any notes that are close to the bass note to avoid muddy voicing
+            notes = [n for n in notes if abs(n - bass_note) > 3]
+            notes = [bass_note] + notes
+
+        chord_data = {
+            'name': chord_name + (f'/{bass_part.strip()}' if bass_note else ''),
             'root': root_midi,
-            'notes': notes
-        })
+            'notes': notes,
+            'bass': bass_note if bass_note else notes[0]
+        }
+
+        chords.append(chord_data)
+        previous_chord_notes = notes  # Use for voice leading in next chord
 
     return chords
 
-def create_midi_file(chord_progression, tempo=80, duration_per_chord=4.0):
+def parse_melody_notation(melody_string):
     """
-    Create a MIDI file from a chord progression.
+    Parse melody notation into list of (note, duration) tuples.
+    Supports formats like:
+    - "E4(half) - D4(quarter) - C4(quarter)"
+    - "E4(2.0) - D4(1.0) - C4(1.0)"
+    - "C4 D4 E4 F4" (assumes quarter notes = 1.0 beat each)
+
+    Returns: List of dicts with 'note_number' and 'duration'
+    """
+    import re
+
+    if not melody_string or not isinstance(melody_string, str):
+        return []
+
+    # Duration mappings
+    duration_map = {
+        'whole': 4.0,
+        'half': 2.0,
+        'quarter': 1.0,
+        'eighth': 0.5,
+        'sixteenth': 0.25,
+        'dotted_half': 3.0,
+        'dotted_quarter': 1.5,
+        'dotted_eighth': 0.75,
+    }
+
+    # Note name to MIDI number mapping
+    note_names = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}
+
+    melody_notes = []
+
+    # Split by common separators
+    parts = re.split(r'[-,\s]+', melody_string.strip())
+
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
+
+        # Try to match note with duration: C4(half) or C4(2.0)
+        match = re.match(r'([A-G][#b]?)(\d+)\s*\(([^)]+)\)', part)
+        if match:
+            note_name, octave, duration_str = match.groups()
+
+            # Calculate MIDI note number
+            base_note = note_names.get(note_name[0])
+            if base_note is None:
+                continue
+
+            # Handle sharps and flats
+            if len(note_name) > 1:
+                if note_name[1] == '#':
+                    base_note += 1
+                elif note_name[1] == 'b':
+                    base_note -= 1
+
+            midi_note = base_note + (int(octave) + 1) * 12
+
+            # Parse duration
+            try:
+                duration = float(duration_str)
+            except ValueError:
+                duration = duration_map.get(duration_str.lower(), 1.0)
+
+            melody_notes.append({'note_number': midi_note, 'duration': duration})
+
+        else:
+            # Try simple format: C4 or C#4
+            match = re.match(r'([A-G][#b]?)(\d+)', part)
+            if match:
+                note_name, octave = match.groups()
+
+                base_note = note_names.get(note_name[0])
+                if base_note is None:
+                    continue
+
+                # Handle sharps and flats
+                if len(note_name) > 1:
+                    if note_name[1] == '#':
+                        base_note += 1
+                    elif note_name[1] == 'b':
+                        base_note -= 1
+
+                midi_note = base_note + (int(octave) + 1) * 12
+                melody_notes.append({'note_number': midi_note, 'duration': 1.0})  # Default quarter note
+
+    return melody_notes
+
+
+def create_midi_file(chord_progression, tempo=80, duration_per_chord=4.0, melody=None):
+    """
+    Create a MIDI file from a chord progression and optional melody.
+
+    Args:
+        chord_progression: List of chord dictionaries with 'notes'
+        tempo: Tempo in BPM
+        duration_per_chord: Duration of each chord in beats
+        melody: Optional melody string or list of melody note dicts
+
     Returns the MIDI file as bytes.
     """
-    # Create MIDI file with 1 track
-    midi = MIDIFile(1)
-    track = 0
+    # Create MIDI file with 2 tracks (chords + melody)
+    num_tracks = 2 if melody else 1
+    midi = MIDIFile(num_tracks)
+
+    chord_track = 0
+    melody_track = 1
     channel = 0
-    time = 0  # Start at beat 0
-    volume = 100
+    time = 0
+    chord_volume = 80  # Slightly quieter for chords
+    melody_volume = 100  # Louder for melody
 
-    # Add track name and tempo
-    midi.addTrackName(track, time, "Chord Progression")
-    midi.addTempo(track, time, tempo)
+    # Add track names and tempo
+    midi.addTrackName(chord_track, time, "Chord Progression")
+    midi.addTempo(chord_track, time, tempo)
 
-    # Add each chord
+    # Add chord track
+    time = 0
     for chord in chord_progression:
         for note in chord['notes']:
-            midi.addNote(track, channel, note, time, duration_per_chord, volume)
+            midi.addNote(chord_track, channel, note, time, duration_per_chord, chord_volume)
         time += duration_per_chord
+
+    # Add melody track if provided
+    if melody:
+        midi.addTrackName(melody_track, 0, "Melody")
+
+        # Parse melody if it's a string
+        if isinstance(melody, str):
+            melody_notes = parse_melody_notation(melody)
+        else:
+            melody_notes = melody
+
+        # Add melody notes
+        time = 0
+        for note_data in melody_notes:
+            midi_note = note_data['note_number']
+            duration = note_data['duration']
+            midi.addNote(melody_track, channel, midi_note, time, duration, melody_volume)
+            time += duration
 
     # Write to bytes buffer
     buffer = io.BytesIO()
@@ -1685,50 +2048,89 @@ def generate_chord_progression(selected_emotions):
 
     # Generate with AI if available
     if USE_AI:
-        system_prompt = f"""You are a music theory expert and composer specializing in emotional harmonic progression.
+        system_prompt = f"""You are a world-class composer and music theorist specializing in rich, emotive harmony.
 
-Create a chord progression that evokes: {emotion_names}
+  Create a chord progression WITH TOP MELODY that evokes: {emotion_names}
 
-Tonal Center(s): {combined_tonal_centers}
-Suggested Chord Colors: {', '.join(combined_chord_colors)}
+  Requirements:
+  - 4-8 chords with RICH, COMPLEX voicings - go beyond basic triads!
+  - Use extended harmonies: maj9, min9, maj7#11, 13, 6/9, add9, sus2, sus4
+  - Include altered dominants when appropriate: 7#9, 7b9, 7#5, 7b5, 7#11
+  - Use slash chords for smooth bass motion (e.g., G/B, Fmaj7/A)
+  - A compelling melodic line that moves over the chords
+  - Voice leading that creates smooth transitions
+  - Melodic contour that reflects the emotional journey
+  - Consider register (where melody sits) for emotional impact
+  - Add color tones (9ths, 11ths, 13ths) to create depth and emotion
 
-Guidelines:
-{combined_notes}
+  Available chord types include:
+  Extended: maj9, min9, maj11, 11, maj13, 13, add9, add11, 6/9, m6/9
+  Altered: 7b9, 7#9, 7b5, 7#5, 7#11, 7b9b5, 7#9#5
+  Special: maj7#11, maj7#5, min-maj7, m7b5, dim7
+  Slash chords: Use them for interesting bass lines (e.g., Cmaj9/E)
 
-IMPORTANT FORMAT:
-1. Start with "Progression:" followed by the chord progression (e.g., "Progression: Cmaj7 - Am7 - Fmaj7 - G")
-2. Then provide a detailed explanation of WHY this progression was created, including:
-   - How the harmonic choices reflect the emotion(s)
-   - Voice leading and tension/resolution decisions
-   - The emotional arc of the progression
-   - Specific intervals or movements that create the feeling
+  Tonal Center(s): {combined_tonal_centers}
+  Suggested Chord Colors: {', '.join(combined_chord_colors)}
 
-Keep the progression 4-8 chords. Be specific about chord qualities (maj7, add9, sus2, etc)."""
+  {combined_notes}
+
+  OUTPUT FORMAT:
+  1. Progression: [chord symbols with slash notation if needed]
+  2. Top Melody: [note names with rhythm, e.g., "E4(half) - F#4(quarter) - G4(quarter)"]
+  3. Explanation: [Detailed analysis of harmonic and melodic choices]
+     - Why this progression evokes the emotion
+     - How melody interacts with harmony
+     - Voice leading decisions
+     - Tension/resolution points
+     - Emotional arc from start to finish
+
+EXAMPLE OUTPUT:
+  Progression: Cmaj9 - Am11 - Fmaj7#11 - G13/B - Em7 - Am7/G - Dm9 - G7#9
+  Top Melody: E5(half) - D5(quarter) - C5(quarter) - D5(half) - E5(quarter) - F5(quarter) - G5(whole)
+
+  Explanation:
+  The progression opens with Cmaj9 providing lush harmonic texture while the melody starts on the 3rd (E) creating warmth...
+  [etc]
+  """
 
         user_prompt = f"Create a chord progression for: {emotion_names}"
 
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4o",  # Using GPT-4o for better creative composition
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
-                temperature=0.7,
-                max_tokens=500
+                temperature=0.9,
+                max_tokens=1500
             )
 
             content = response.choices[0].message.content.strip()
 
-            # Parse the response to extract progression and explanation
+            # Parse the response to extract progression, melody, and explanation
             lines = content.split('\n')
             progression_line = ""
+            melody_line = ""
             explanation = []
+            found_progression = False
+            found_melody = False
 
             for i, line in enumerate(lines):
-                if line.startswith("Progression:"):
-                    progression_line = line.replace("Progression:", "").strip()
-                elif progression_line:  # After we found the progression, rest is explanation
+                line_stripped = line.strip()
+
+                if line_stripped.startswith("Progression:"):
+                    progression_line = line_stripped.replace("Progression:", "").strip()
+                    found_progression = True
+                elif line_stripped.startswith("Top Melody:") or line_stripped.startswith("Melody:"):
+                    melody_line = line_stripped.replace("Top Melody:", "").replace("Melody:", "").strip()
+                    found_melody = True
+                elif line_stripped.startswith("Explanation:"):
+                    # Start collecting explanation from next line
+                    explanation = lines[i+1:]
+                    break
+                elif found_progression and found_melody:
+                    # After we found both progression and melody, collect explanation
                     explanation.append(line)
 
             if not progression_line:
@@ -1741,8 +2143,13 @@ Keep the progression 4-8 chords. Be specific about chord qualities (maj7, add9, 
             # Parse chord progression
             chords = parse_chord_progression(progression_line)
 
-            # Create MIDI file
-            midi_bytes = create_midi_file(chords, tempo=80, duration_per_chord=4.0)
+            # Create MIDI file with melody
+            midi_bytes = create_midi_file(
+                chords,
+                tempo=80,
+                duration_per_chord=4.0,
+                melody=melody_line if melody_line else None
+            )
             midi_base64 = base64.b64encode(midi_bytes).decode('utf-8')
 
             # Determine difficulty and time based on complexity
@@ -1760,6 +2167,7 @@ Keep the progression 4-8 chords. Be specific about chord qualities (maj7, add9, 
             return {
                 'title': f"{emotion_names} Chord Progression",
                 'progression': progression_line,
+                'melody': melody_line if melody_line else None,
                 'explanation': explanation_text,
                 'emotions': selected_emotions,
                 'difficulty': difficulty,
@@ -1999,7 +2407,7 @@ CRITICAL APPROACH:
                     user_prompt = f"Here is my writing for you to review:\n\n{user_writing}"
 
                     response = openai.ChatCompletion.create(
-                        model="gpt-3.5-turbo",
+                        model="gpt-4.1",
                         messages=[
                             {"role": "system", "content": system_prompt},
                             {"role": "user", "content": user_prompt}
