@@ -1,6 +1,6 @@
 # 🎨 Ideasthesia Creative Prompt Generator
 
-An AI-powered creative training platform that generates exercises for writers, artists, and music producers. Built with React, Node.js, Python, and OpenAI's GPT models (GPT-3.5-turbo and GPT-4o Vision), **Ideasthesia** helps you develop your creative skills through structured, AI-generated practice exercises with intelligent feedback.
+An AI-powered creative training platform that generates exercises for writers, artists, and music producers. Built with React, Node.js, Python, and OpenAI's GPT models (GPT-4o & GPT-4o Vision), **Ideasthesia** helps you develop your creative skills through structured, AI-generated practice exercises with intelligent feedback.
 
 ![Ideasthesia](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -61,7 +61,7 @@ Generate AI-powered creative writing exercises tailored to your preferred genres
 
 - **AI Feedback System**:
   - Submit your writing for constructive AI analysis once you reach the word count target
-  - Powered by OpenAI GPT-3.5-turbo for intelligent, context-aware feedback
+  - Powered by OpenAI GPT-4o for intelligent, context-aware feedback
   - Critical, honest feedback that addresses you directly (not generic "the student" responses)
   - Markdown-formatted feedback with clear sections:
     - **Strengths**: What worked well in your writing
@@ -270,7 +270,7 @@ Tips:
 
 **Prompt Generation Service (Python):**
 - Flask API
-- OpenAI GPT-3.5-turbo for text generation and writing feedback
+- OpenAI GPT-4o for text generation and writing feedback
 - OpenAI GPT-4o Vision API for drawing image analysis
 - MIDIUtil for MIDI file generation
 - Content sanitization to prevent AI hallucinations
@@ -885,7 +885,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **OpenAI** for GPT-3.5-turbo and GPT-4o Vision APIs
+- **OpenAI** for GPT-4o and GPT-4o Vision APIs
 - **Google** for OAuth authentication
 - **The music production community** for artist references
 - **Literary community** for creative inspiration
