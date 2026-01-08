@@ -1648,13 +1648,15 @@ Exercise Types (choose one):
 - **Discovery**: Exploring inversions and paradoxes from narratives (echo as source, forgetting as creation)
 
 Format like this:
-**[Exercise Type]**: [Reference a specific book/concept]. [Main instruction—concrete, evocative, strange]. [Short poetic questions or observations]. | [Inviting end phrase]
+**[Exercise Type]**: [Reference a specific book/concept]. [Main instruction—concrete, evocative, strange, intense]. [Short poetic questions or observations]. | [Inviting end phrase]
 
 IMPORTANT:
 - Be specific with literary references—name the book, the concept, the image
 - Make it feel literary, not generic ("razor rain on Mars" not "rain")
 - Remove ALL judgment language
 - Create emotional/conceptual depth, not just "make a spooky sound"
+- Show variety, not just sound scapes but intense character articulations like anger in a bass noise. This is extremely importnant for allowing user to channel different experiences, emotions and levels of energy.
+- Do not only assign an excercise telling the user to make pads and soundscapes, use character or antagonist creatures as direction towards intense sounds like bass noises
 - Embrace paradox and complexity from the source material
 - Suggest varied time frames: "5 minutes," "until it aches," "work until it cuts," "stop when time breaks"
 - Let the exercise feel like play, not work"""
